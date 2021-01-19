@@ -1,14 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald:300,400,500,700');
 
 :root{
-  --navbar-background:#881919;
+  --theme-color:#881919;
 
   --scroll-bar-track-color: #535353;
-  --scroll-bar-color: #881919;
+  --scroll-bar-color: #612020;
   --scroll-bar-hover-color: #ca7b7b;
 
   --backto-top-color: #881919;
   --backto-top-hover:  #535353;
+
+  --body-text-color: #666666
 }
 
 html{
@@ -16,6 +18,39 @@ html{
   -webkit-transition: all 0.3s;
   scroll-behavior: smooth;
 }
+
+body {
+  background: #fff;
+  color: var(--body-text-color);
+  font-family: "Open Sans", sans-serif;
+}
+
+p {
+  padding: 0;
+  margin: 0 0 30px 0;
+  font-size: 16px;
+}
+
+table {
+  font-size: 14px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+label,
+button {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  margin: 0 0 20px 0;
+  padding: 0;
+}
+
 
 /*scroll-bar*/
 /* width */
@@ -45,7 +80,7 @@ html{
 }
 
 .bg-rover{
-  background-color: var(--navbar-background);
+  background-color: var(--theme-color);
 }
 
 .nav-link:hover{
@@ -53,15 +88,28 @@ html{
 }
 /* navbar */
 
+.btn-outline-rover{
+  color: var(--theme-color);
+  border-color: var(--theme-color);
+}
+
+.btn-outline-rover:hover{
+  color: #ffffff;
+  border-color: var(--theme-color);
+  background-color: var(--theme-color);
+}
+
 /* header */
-header {
-  padding: 300px 0 300px;
+header {  
+  margin-top: 70px;
   background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('file:///Volumes/Animus/Jon/Dropbox/website/hellcity.jpg');
   -webkit-background-size: cover;
   -moz-background-size:  cover;
   -o-background-size: cover;
   background-size: cover;
 
+
+  color: var(--theme-color);
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
   background-position: center;
@@ -73,6 +121,7 @@ header {
   font-size: 48px;
   font-weight: bolder;
   font-family: 'Poppins', sans-serif;
+  color: var(--theme-color);
 }
 /* header */
 section {
