@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:300,400,500,700');
+
+:root{
+  --navbar-background:#881919;
+
+  --scroll-bar-track-color: #535353;
+  --scroll-bar-color: #881919;
+  --scroll-bar-hover-color: #ca7b7b;
+
+  --backto-top-color: #881919;
+  --backto-top-hover:  #535353;
+}
+
+html{
+  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif !important;
+  -webkit-transition: all 0.3s;
+  scroll-behavior: smooth;
+}
+
+/*scroll-bar*/
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background-color:var(--scroll-bar-track-color); 
+  border-radius: 0px;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var( --scroll-bar-color); 
+  border-radius: 0px;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scroll-bar-hover-color); 
+}
+/*scroll-bar*/
+
+/* navbar */
+.navbar{
+  Padding: 16px 10px 16px 10px;
+  font-size: 16px;
+}
+
+.bg-rover{
+  background-color: var(--navbar-background);
+}
+
+.nav-link:hover{
+  color: rgb(250, 250, 250) !important;
+}
+/* navbar */
+
+/* header */
+header {
+  padding: 300px 0 300px;
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('file:///Volumes/Animus/Jon/Dropbox/website/hellcity.jpg');
+  -webkit-background-size: cover;
+  -moz-background-size:  cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero-header{
+  font-size: 48px;
+  font-weight: bolder;
+  font-family: 'Poppins', sans-serif;
+}
+/* header */
+section {
+  padding: 150px 0;
+}
+
+
+
+/* Backtotop */
+#myBtn {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 40px; /* Place the button at the bottom of the page */
+  right: 7px; /* Place the button 70px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: var(--backto-top-color); /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 8px 13px 8px 13px; /* Some padding */
+  border-radius: 500px; /* Rounded corners */
+  font-size: 14px; /* Increase font size */
+}
+
+#myBtn:hover {
+  background-color: var(--backto-top-hover); /* Add a color on hover */
+}
+/* /backtotop */
