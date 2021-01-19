@@ -8,6 +8,9 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="{{ asset('img/logo/fav.png') }}">
+
   <title>34th National Rover Moot</title>
 
   <!-- STYLES -->
@@ -17,6 +20,7 @@
 
   <!-- Custom styles -->
   <link href="{{ asset('css/scrolling-nav.css') }}" rel="stylesheet">
+  <link href="{{ asset('css/form.css') }}" rel="stylesheet">
 
 </head>
 
@@ -25,20 +29,26 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-rover fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">Moot Logo</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand js-scroll-trigger mb-0" href="{{ url('') }}">
+       <img src="{{ asset('img/logo/1.png') }}" alt="Moot Logo"  style="max-width: 50px;" class="">
+       34th NRSM
+      </a>
+      <button class="navbar-toggler mb-1" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#about">About</a>
+            <a class="nav-link mb-1" href="{{ url('/#about') }}">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#services">Services</a>
+            <a class="nav-link mb-1" href="{{ url('/#programme') }}">Programme</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#login">Login</a>
+            <a class="nav-link mb-1" href="{{ url('/#register') }}">Register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mb-1" href="{{ route('login') }}">Login</a>
           </li>
         </ul>
       </div>
@@ -47,14 +57,21 @@
 
 @yield('content')
 
+<!-- back to top button -->
   <button title="Go to Top" data-tooltip="tooltip"  data-placement="bottom"  onclick="topFunction()" id="myBtn"><i class="fa fa-chevron-up"></i></button>
+<!-- /back to top button -->
+  
+
   <!-- Footer -->
   <footer class="py-5 bg-dark">
-    <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2020</p>
+    <div class="container">      
+      <div class="col-12 text-white mt-4 text-center">
+          Copyright &copy;  {{ now()->year }}<strong><a target="_blank" href="" class="white"> SLSA</a> </strong>. All Rights Reserved 
+      </div>
     </div>
     <!-- /.container -->
   </footer>
+  <!-- /Footer -->
 
   <!-- SCRIPTS -->
     <script src="{{ asset('js/app.js') }}" differ></script>
