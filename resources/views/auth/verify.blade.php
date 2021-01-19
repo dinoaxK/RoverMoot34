@@ -18,7 +18,7 @@
                     <div class="alert alert-success" role="alert">
                         {{ __('A fresh verification link has been sent to your email address.') }}
                     </div>
-                @endif
+                @endif                       
                     <div class="alert alert-info" role="alert">
                         <h2 class="text-center alert-heading">{{ __('Before proceeding, please check your email for a verification link.') }}</h4>
                         <hr>

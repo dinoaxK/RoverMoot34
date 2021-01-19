@@ -3,6 +3,9 @@
 :root{
   --theme-color:#881919;
 
+  --navbar-dropdown-bg: #e45757;
+  --navvar-dropdown-bg-hover: #f38080;
+
   --scroll-bar-track-color: #535353;
   --scroll-bar-color: #612020;
   --scroll-bar-hover-color: #ca7b7b;
@@ -10,7 +13,9 @@
   --backto-top-color: #881919;
   --backto-top-hover:  #535353;
 
-  --body-text-color: #666666
+  --body-text-color: #666666;
+
+  --text-white: #fff;
 }
 
 html{
@@ -77,6 +82,24 @@ button {
 .navbar{
   Padding: 16px 10px 16px 10px;
   font-size: 16px;
+}
+
+.navbar .dropdown-menu{
+  padding: 0 !important;
+  margin: 0 !important;
+  font-size: 16px !important;
+  border: none !important;
+  background-color: var(--navbar-dropdown-bg) !important;
+  text-align: center !important;
+}
+
+.navbar .dropdown-item{
+  color: var(--text-white) !important;
+}
+
+.navbar .dropdown-item:hover,.navbar .dropdown-item:focus {
+  color: var(--text-white) !important;
+  background-color: var(--navvar-dropdown-bg-hover) !important;
 }
 
 .bg-rover{
