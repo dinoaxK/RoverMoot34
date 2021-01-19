@@ -27,9 +27,9 @@
 <body id="page-top">
 
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-rover fixed-top" id="mainNav">
+  <nav class="navbar navbar-expand-lg navbar-light bg-0 fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger mb-0" href="{{ url('') }}">
+      <a class="navbar-brand js-scroll-trigger mb-0 d-none" href="{{ url('') }}">
        <img src="{{ asset('img/logo/1.png') }}" alt="Moot Logo"  style="max-width: 50px;" class="">
        34th NRSM
       </a>
@@ -113,6 +113,8 @@
 </body>
 
 <script type="text/javascript">
+
+
   //Get the button:
   mybutton = document.getElementById("myBtn");
   
@@ -139,6 +141,22 @@
     //tooltip initiation
     $('[data-tooltip="tooltip"]').tooltip()
 
+    //on scroll navbar
+    $(window).scroll(function() {
+      var navbar = $(".navbar");
+      var navbar_brand = $(".navbar-brand")
+      var scroll = $(window).scrollTop();
+
+      if (scroll >= 200) {
+        navbar.removeClass('bg-0').addClass("bg-rover");
+        navbar.removeClass('navbar-light').addClass('navbar-dark');
+        navbar_brand.removeClass('d-none')
+      } else {
+        navbar.removeClass("bg-rover").addClass('bg-0');
+        navbar.removeClass('navbar-dark').addClass('navbar-light');
+        navbar_brand.addClass('d-none')
+      }
+    });
   })
 </script>
 
