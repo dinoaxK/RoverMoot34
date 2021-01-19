@@ -1,7 +1,7 @@
 @extends('layouts.web')
 
 @section('content')
-  <header class="bg-dark text-white min-vh-100" style="background-image: url({{ asset('img/background/1.jpg') }}); ">
+  <header class="bg-dark min-vh-100" style="background-image: url({{ asset('img/background/1.jpg') }}); padding: 200px 0 200px;">
     <div class="container ">
       <div class="row">
         <div class="col-lg-5 order-lg-1 text-right">
@@ -9,9 +9,9 @@
         </div>
         <div class="col-lg-7 order-lg-2">
           <h1 class="hero-header">34th National <br> Rover Scout Moot</h1>
-          <p class="lead">Welcome to the first ever national rover scout moot</p>
+          <p class="lead" style="font-size: 18px; font-weight: 500;">Welcome to the first ever national rover scout moot</p>
           
-          <a href="#about" class="btn btn-lg btn-outline-light">Lets Start</a>
+          <a href="#about" class="btn btn-lg btn-outline-rover">Lets Start</a>
         </div>
       </div>
     </div>
@@ -29,7 +29,7 @@
     </div>
   </section>
 
-  <section id="services" class="bg-light">
+  <section id="programme" class="bg-light">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto">
@@ -40,11 +40,11 @@
     </div>
   </section>
 
-  <section id="login">
+  <section id="register">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto">
-          <h2>Login</h2>
+          <h2>Register</h2>
           <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero odio fugiat voluptatem dolor, provident officiis, id iusto! Obcaecati incidunt, qui nihil beatae magnam et repudiandae ipsa exercitationem, in, quo totam.</p>
         </div>
       </div>
