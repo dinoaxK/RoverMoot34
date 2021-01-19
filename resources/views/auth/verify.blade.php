@@ -19,7 +19,7 @@
                         {{ __('A fresh verification link has been sent to your email address.') }}
                     </div>
                 @endif
-                    <div class="alert alert-warning" role="alert">
+                    <div class="alert alert-info" role="alert">
                         <h2 class="text-center alert-heading">{{ __('Before proceeding, please check your email for a verification link.') }}</h4>
                         <hr>
                         <p  class="text-center">{{ __('If you did not receive the email') }},</p>
