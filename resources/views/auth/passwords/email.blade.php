@@ -45,6 +45,9 @@
                         </div>
                     </div>
                 </form>
+                
+                <p class=" text-center mt-5 mb-5">Don't have a account yet? <a href="{{ route('register') }}">Sign up here</a></p>
+            
             </div>
         </div>
     </div>

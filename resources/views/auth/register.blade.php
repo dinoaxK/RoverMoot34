@@ -77,6 +77,9 @@
                         </div>
                     </div>
                 </form>
+                
+                <p class=" text-center mt-1 mb-5">Already Signed up? <a href="{{ route('login') }}">Login here</a></p>
+            
                 </div>
             </div>
         </div>
