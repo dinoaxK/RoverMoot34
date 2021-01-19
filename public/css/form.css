@@ -1,0 +1,20 @@
+:root{
+  --input-border-color:  #7f7f7f;
+}
+.form-control{
+  border: 3px solid var(--input-border-color) !important;
+  border-radius: 2rem !important;
+  height: 3rem;
+}
+
+.form-control:focus{
+  box-shadow: 0 0 0 0.3rem rgba(80, 220, 52, 0.253) !important
+}
+
+label{
+  font-size: 14px !important;
+}
+
+.btn{
+  border-radius: 2.3rem;
+}
