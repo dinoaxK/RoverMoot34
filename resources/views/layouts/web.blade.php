@@ -65,7 +65,7 @@
                     <a class="nav-link mb-1" href="{{ route('home') }}">{{ __('Moot') }}</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link mb-1" href="">Register</a>
+                  <a class="nav-link mb-1" href="{{ route('register') }}">Register</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a id="navbarDropdown" class="nav-link  mb-1 dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -164,6 +164,15 @@
         navbar.removeClass('navbar-dark').addClass('navbar-light');
         navbar_brand.addClass('d-none')
       }
+    });
+
+    // show hide background on mobile nav bar
+    $('.navbar-toggler').click(function(e) {
+      $('.navbar').toggleClass('bg-0');
+      $('.navbar').toggleClass('bg-rover');
+      $('.navbar').toggleClass('navbar-light');
+      $('.navbar').toggleClass('navbar-dark');
+
     });
   })
 </script>
