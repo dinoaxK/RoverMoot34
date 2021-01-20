@@ -11,7 +11,7 @@
         <h1 class="hero-header">34th National <br> Rover Scout Moot</h1>
         <p class="lead" style="font-size: 18px; font-weight: 500;">Welcome to the first ever national rover scout moot</p>
         
-        <a href="#about" class="btn btn-lg btn-outline-rover">Lets Start</a>
+        <a href="{{ route('register') }}" class="btn btn-lg btn-outline-rover">Lets Start</a>
     </div>
     </div>
 </div>
