@@ -20,17 +20,17 @@
       contentType: false,           
       beforeSend: function(){
         // Show loader
-        $("#spinner").removeClass('d-none');
-        $('#btnSavePayment').attr('disabled','disabled');
+        $("#btnSubmitScoutSpinner").removeClass('d-none');
+        $('#btnSubmitScout').attr('disabled','disabled');
       },
       success: function(data){
-        $("#spinner").addClass('d-none');
-        $('#btnSavePayment').removeAttr('disabled');
+        $("#btnSubmitScoutSpinner").addClass('d-none');
+        $('#btnSubmitScout').removeAttr('disabled');
         if(data['errors']){
           $.each(data['errors'], function(key, value){
-            $('#error-'+key).show();
+            $('#'+key+'-err').show();
             $('#'+key).addClass('is-invalid');
-            $('#error-'+key).append('<strong>'+value+'</strong>');
+            $('#'+key+'-err').append('<strong>'+value+'</strong>');   
             window.location.hash = '#'+key;
           });
         }else if (data['success']){
@@ -51,8 +51,8 @@
         }
       },
       error: function(err){
-        $("#spinner").addClass('d-none');
-        $('#btnSavePayment').removeAttr('disabled');
+        $("#btnSubmitScoutSpinner").addClass('d-none');
+        $('#btnSubmitScout').removeAttr('disabled');
         SwalSystemErrorDanger.fire({
           title: 'PaymentFailed!',
           text: 'Please Try Again or Contact Administrator: admin@fit.bit.lk',

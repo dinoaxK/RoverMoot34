@@ -12,13 +12,16 @@ return [
     | as the size rules. Feel free to tweak each of these messages here.
     |
     */
-
     'accepted' => 'The :attribute must be accepted.',
     'active_url' => 'The :attribute is not a valid URL.',
+    'address' => 'The :attribute may only contain letters, comma, numbers, spaces, slashes, dashes, colons , and dots. ',
     'after' => 'The :attribute must be a date after :date.',
     'after_or_equal' => 'The :attribute must be a date after or equal to :date.',
     'alpha' => 'The :attribute may only contain letters.',
+    'alpha_capital' => 'The :attribute may only contain captital letters.',
     'alpha_dash' => 'The :attribute may only contain letters, numbers, dashes and underscores.',
+    'alpha_space' => 'The :attribute may only contain letters and spaces.',
+    'alpha_dash_space' => 'The :attribute may only contain letters, spaces and dashes.',
     'alpha_num' => 'The :attribute may only contain letters and numbers.',
     'array' => 'The :attribute must be an array.',
     'before' => 'The :attribute must be a date before :date.',
@@ -90,20 +93,22 @@ return [
         'string' => 'The :attribute must be at least :min characters.',
         'array' => 'The :attribute must have at least :min items.',
     ],
+    'multicolumn_unique'=> 'The :attribute is already exists.',
     'multiple_of' => 'The :attribute must be a multiple of :value',
+    'nic_old' => 'The :attribute should be format of old id number.(eg:123456789V)',
     'not_in' => 'The selected :attribute is invalid.',
     'not_regex' => 'The :attribute format is invalid.',
     'numeric' => 'The :attribute must be a number.',
     'password' => 'The password is incorrect.',
     'present' => 'The :attribute field must be present.',
     'regex' => 'The :attribute format is invalid.',
-    'required' => 'The :attribute field is required.',
-    'required_if' => 'The :attribute field is required when :other is :value.',
-    'required_unless' => 'The :attribute field is required unless :other is in :values.',
-    'required_with' => 'The :attribute field is required when :values is present.',
-    'required_with_all' => 'The :attribute field is required when :values are present.',
-    'required_without' => 'The :attribute field is required when :values is not present.',
-    'required_without_all' => 'The :attribute field is required when none of :values are present.',
+    'required' => 'The :attribute is required.',
+    'required_if' => 'The :attribute is required when :other is :value.',
+    'required_unless' => 'The :attribute is required unless :other is in :values.',
+    'required_with' => 'The :attribute is required when :values is present.',
+    'required_with_all' => 'The :attribute is required when :values are present.',
+    'required_without' => 'The :attribute is required when :values is not present.',
+    'required_without_all' => 'The :attribute is required when none of :values are present.',
     'same' => 'The :attribute and :other must match.',
     'size' => [
         'numeric' => 'The :attribute must be :size.',
@@ -118,6 +123,7 @@ return [
     'uploaded' => 'The :attribute failed to upload.',
     'url' => 'The :attribute format is invalid.',
     'uuid' => 'The :attribute must be a valid UUID.',
+
 
     /*
     |--------------------------------------------------------------------------

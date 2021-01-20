@@ -52,19 +52,19 @@
                             <div class="input-group">
                                 <div class="input-group-prepend col-4 px-0">
                                     <input type="text" class="form-control text-uppercase" id="initials" name="initials" placeholder="e.g. CKS" required autocomplete="last_name"/>
-                                    <span id="initials-err" class="invalid-feedback text-center" role="alert"></span>
                                 </div>
                                 <input id="lastName" type="text" class="form-control text-capitalize" name="lastName" placeholder="e.g. Wickramarachchi" required autocomplete="last_name" >
                             </div>  
+                            <span id="initials-err" class="invalid-feedback text-center" role="alert"></span> <br>
                             <span id="lastName-err" class="invalid-feedback text-center" role="alert"></span>
                         </div>
                     </div>
 
                     <div class="form-row justify-content-center">
                         <div class="form-group col-md-12 mb-5">
-                            <label for="initials" class="col-form-label text-center w-100">Full Name *</label>    
-                            <input id="initials" type="text" class="form-control text-capitalize" name="initials" placeholder="e.g. Charith Kumara Sampath Wickramarachchi" required autocomplete="full_name" >
-                            <span id="initials-err" class="invalid-feedback text-center" role="alert"></span>
+                            <label for="fullName" class="col-form-label text-center w-100">Full Name *</label>    
+                            <input id="fullName" type="text" class="form-control text-capitalize" name="fullName" placeholder="e.g. Charith Kumara Sampath Wickramarachchi" required autocomplete="full_name" >
+                            <span id="fullName-err" class="invalid-feedback text-center" role="alert"></span>
                         </div>
                     </div>
 
@@ -86,11 +86,11 @@
                         </div>                     
                         <div class="form-group col-md-6 mb-5 text-center">
                             <div class="form-check form-check-inline my-1">
-                                <input type="radio" class="form-check-input" name="uniqueType" id="uniqueTypeNic" value="nic" checked />
+                                <input type="radio" class="form-check-input" name="idType" id="idType" value="nic" checked />
                                 <label for="nic" class="form-check-label">National ID No</label>
                             </div>   
                             <div class="form-check form-check-inline my-1">
-                                <input type="radio" class="form-check-input" name="uniqueType" id="uniqueTypeNic" value="passport"/>
+                                <input type="radio" class="form-check-input" name="idType" id="idType" value="passport"/>
                                 <label for="passport" class="form-check-label">Passport *</label>
                             </div>   
                             <input id="nic" type="text" class="form-control text-uppercase" name="nic" placeholder="NIC/ Passport" required>
@@ -100,7 +100,10 @@
 
                     <div class="form-row justify-content-center">
                         <div class="form-group col-md-12 mb-5">
-                            <label for="educationDetails" class="col-form-label text-center w-100">Educational/ Job Details</label>    
+                            <label for="educationDetails" class="col-form-label text-center w-100">Educational/ Job Details</label> 
+                            <small class="form-text text-center text-white">
+                                Enter only letters
+                            </small>    
                             <input id="educationDetails" type="text" class="form-control" name="educationDetails" placeholder="Highest Qualification/ Occupation">
                             <span id="educationDetails-err" class="invalid-feedback text-center" role="alert"></span>
                         </div>
@@ -112,15 +115,15 @@
                     <div class="form-row justify-content-center">
                         <div class="form-group col-md-9 mb-5">
                             <label for="highestScoutAward" class="col-form-label text-center w-100">Highest Scout Award *</label>    
-                            <select name="highestScoutAward" class="form-control" required>                                
+                            <select name="highestScoutAward" id="highestScoutAward" class="form-control" required>                                
                                 <option value="">Select Award</option>
                                 <option value="Membership">Membership</option>
                                 <option value="Bronze Star">Bronze Star</option>
                                 <option value="Silver Star">Silver Star</option>
                                 <option value="Gold Star">Gold Star</option>
-                                <option value="Scout Award/ Scout Master's">Scout Award/ Scout Master's</option>
-                                <option value="District Commissioner's Cord">District Commissioner's Cord</option>
-                                <option value="Chief Commissioner's Award">Chief Commissioner's Award</option>
+                                <option value="Scout Award/ Scout Master Award">Scout Award/ Scout Master's</option>
+                                <option value="District Commissioner Cord">District Commissioner's Cord</option>
+                                <option value="Chief Commissioner Award">Chief Commissioner's Award</option>
                                 <option value="President Scout Award">President Scout Award</option>
                             </select>
                             <span id="highestScoutAward-err" class="invalid-feedback text-center" role="alert"></span>
@@ -140,7 +143,7 @@
                                 <option value="Rover Ideals Badge">Rover Ideals Badge</option>
                                 <option value="Membership">Membership</option>
                                 <option value="Invested Rover">Invested Rover</option>
-                                <option value="Good Citizen's Decoration">Good Citizen's Decoration</option>
+                                <option value="Good Citizen Decoration">Good Citizen's Decoration</option>
                                 <option value="BP Award">BP Award</option>
                                 <option value="Rover Instructor">Rover Instructor</option>
                             </select>
@@ -207,14 +210,14 @@
                                 <option value="Gampaha">Gampaha</option>
                                 <option value="Hambanthota">Hambanthota</option>
                                 <option value="Homagama">Homagama</option>
-                                <option value="JaffnaKaluthara">JaffnaKaluthara</option>
+                                <option value="Jaffna">Jaffna</option>
                                 <option value="Kaluthara">Kaluthara</option>
                                 <option value="Kandy">Kandy</option>
                                 <option value="Kankasanthurai">Kankasanthurai</option>
                                 <option value="Kegalle">Kegalle</option>
                                 <option value="Kilinochchi">Kilinochchi</option>
                                 <option value="Kurunegala">Kurunegala</option>
-                                <option value="MannarMatale">MannarMatale</option>
+                                <option value="Mannar">Mannar</option>
                                 <option value="Matale">Matale</option>
                                 <option value="Matara">Matara</option>
                                 <option value="Monaragala">Monaragala</option>
@@ -250,7 +253,7 @@
                             <small  id="mobileNumberHelpBlock" class="form-text text-center text-white">
                                 If using Whatsapp/ Viber, Please mention that number here
                             </small>   
-                            <input id="mobileNumber" type="number" class="form-control" name="mobileNumber" placeholder="Number with country code (e.g. +94777123456)" required autocomplete="phone" >
+                            <input id="mobileNumber" type="number" class="form-control" name="mobileNumber" placeholder="Number with country code (e.g. 0094777123456)" required autocomplete="phone" >
                             <span id="mobileNumber-err" class="invalid-feedback text-center" role="alert"></span>
                         </div>
                         <div class="form-group col-md-6 mb-5">
@@ -258,7 +261,7 @@
                             <small id="telephoneNumberHelpBlock" class="form-text text-center text-white">
                                &nbsp;
                             </small>     
-                            <input id="telephoneNumber" type="number" class="form-control" name="telephoneNumber" placeholder="Number with country code (e.g. +94812212345)" required autocomplete="phone" >
+                            <input id="telephoneNumber" type="number" class="form-control" name="telephoneNumber" placeholder="Number with country code (e.g. 0094812212345)" required autocomplete="phone" >
                             <span id="telephoneNumber-err" class="invalid-feedback text-center" role="alert"></span>
                         </div>
                     </div>
@@ -278,7 +281,7 @@
                     <div class="form-row justify-content-center">
                         <div class="form-group col-md-6 mb-5">
                             <label for="country" class="col-form-label text-center w-100">Country *</label>    
-                            <select name="country" id="gender" class="form-control" required autocomplete="country">                                
+                            <select name="country" id="country" class="form-control" required autocomplete="country">                                
                                 <option value="">Select Country</option>
                             </select>
                             <span id="country-err" class="invalid-feedback text-center" role="alert"></span>
@@ -297,7 +300,7 @@
                     <div class="form-row justify-content-center">
                         <div class="form-group col-md-4 mb-5">
                             <label for="contactPersontTitle" class="col-form-label text-center w-100">Title *</label>    
-                            <select name="contactPersontTitle" id="titcontactPersontTitlele" class="form-control">                                
+                            <select name="contactPersontTitle" id="contactPersontTitle" class="form-control">                                
                                 <option value="">Select Title Here</option>
                                 <option value="Mr">Mr</option>
                                 <option value="Master">Master</option>
@@ -309,17 +312,36 @@
                             <span id="contactPersontTitle-err" class="invalid-feedback text-center" role="alert"></span>
                         </div>
                         <div class="form-group col-md-8 mb-5">
-                            <label for="contactPerson" class="col-form-label text-center w-100">Full Name *</label>    
-                            <input id="contactPerson" type="text" class="form-control text-capitalize" name="contactPerson" placeholder="Enter Full Name" required >
-                            <span id="contactPerson-err" class="invalid-feedback text-center" role="alert"></span>
+                            <label for="contactPersonName" class="col-form-label text-center w-100">Full Name *</label>    
+                            <input id="contactPersonName" type="text" class="form-control text-capitalize" name="contactPersonName" placeholder="Enter Full Name" required >
+                            <span id="contactPersonName-err" class="invalid-feedback text-center" role="alert"></span>
+                        </div>
+                    </div>
+                    <div class="form-row justify-content-center">
+                        <div class="form-group col-md-6 mb-5">
+                            <label for="contactPersonMobileNumber" class="col-form-label text-center w-100">Telephone (Mobile) *</label> 
+                            <small  id="contactPersonMobileNumberHelpText" class="form-text text-center text-white">
+                                If using Whatsapp/ Viber, Please mention that number here
+                            </small>   
+                            <input id="contactPersonMobileNumber" type="number" class="form-control" name="contactPersonMobileNumber" placeholder="Number with country code (e.g. 0094777123456)" required>
+                            <span id="contactPersonMobileNumber-err" class="invalid-feedback text-center" role="alert"></span>
+                        </div>
+                        <div class="form-group col-md-6 mb-5">
+                            <label for="contactPersonTelephoneNumber" class="col-form-label text-center w-100">Telephone (Residence/ Office)</label>
+                            <small id="contactPersonTelephoneNumberHelpText" class="form-text text-center text-white">
+                               &nbsp;
+                            </small>     
+                            <input id="contactPersonTelephoneNumber" type="number" class="form-control" name="contactPersonTelephoneNumber" placeholder="Number with country code (e.g. 0094812212345)" >
+                            <span id="contactPersonTelephoneNumber-err" class="invalid-feedback text-center" role="alert"></span>
                         </div>
                     </div>
                 </form>
                 
                 <div class="form-group row mt-5 mb-0">
                     <div class="col-md-12 text-center">
-                        <button type="submit" class="btn btn-lg btn-primary w-50">
+                        <button id="btnSubmitScout" type="button" onclick="submit_scout()" class="btn btn-lg btn-primary w-50">
                             Submit
+                            <span id="btnSubmitScoutSpinner" class="spinner-border spinner-border-sm d-none " role="status" aria-hidden="true"></span>
                         </button>
                     </div>
                 </div>
