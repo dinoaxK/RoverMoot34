@@ -29,7 +29,7 @@
     </div>
   </section>
 
-  <section id="programme" class="bg-light">
+  <section id="programme" class="bg-light text-dark">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto">

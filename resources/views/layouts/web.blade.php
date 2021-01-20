@@ -16,11 +16,12 @@
   <!-- STYLES -->
     <!-- BOOTSTRAP -->      <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <!-- FONT AWESOME -->   <link rel="stylesheet" href="{{ asset('vendor/font-awesome/css/all.css') }}">
-  <!-- /STYLES -->
+  
 
-  <!-- Custom styles -->
-  <link href="{{ asset('css/scrolling-nav.css') }}" rel="stylesheet">
-  <link href="{{ asset('css/form.css') }}" rel="stylesheet">
+    <!-- Custom styles -->
+    <link href="{{ asset('css/core.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/form.css') }}" rel="stylesheet">
+  <!-- /STYLES -->
 
 </head>
 
@@ -39,16 +40,20 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
+            <a class="nav-link mb-1" href="{{ url('/') }}">Home</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link mb-1" href="{{ url('/#about') }}">About</a>
           </li>
           <li class="nav-item">
             <a class="nav-link mb-1" href="{{ url('/#programme') }}">Programme</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link mb-1" href="{{ url('/#register') }}">Register</a>
-          </li>
 
            @guest
+           
+              <li class="nav-item">
+                <a class="nav-link mb-1" href="{{ url('/#register') }}">Register</a>
+              </li>
                 @if (Route::has('login'))
                     <li class="nav-item">
                         <a class="nav-link mb-1" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -57,7 +62,10 @@
                 
             @else
                 <li class="nav-item">
-                    <a class="nav-link mb-1" href="{{ route('home') }}">{{ __('Home') }}</a>
+                    <a class="nav-link mb-1" href="{{ route('home') }}">{{ __('Moot') }}</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link mb-1" href="">Register</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a id="navbarDropdown" class="nav-link  mb-1 dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -90,7 +98,7 @@
   
 
   <!-- Footer -->
-  <footer class="py-5 bg-dark">
+  <footer class="py-5 bg-footer">
     <div class="container">      
       <div class="col-12 text-white mt-4 text-center">
           Copyright &copy;  {{ now()->year }}<strong><a target="_blank" href="" class="white"> SLSA</a> </strong>. All Rights Reserved 
@@ -107,7 +115,7 @@
     <script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
 
     <!-- Custom JavaScript -->
-    <script src="{{ asset('js/scrolling-nav.js') }}"></script>
+    <script src="{{ asset('js/core.js') }}"></script>
   <!-- /SCRIPTS -->
 
 </body>

@@ -1,14 +1,27 @@
 :root{
-  --input-border-color:  #7f7f7f;
+  --input-border-color:  #7f7f7f00;
+  --input-border-bottom-color:  #c4c4c4;
+  --inputbox-shadow:  rgba(60, 183, 255, 0.582);  
+  --invalid-inputbox-shadow:  rgba(172, 30, 30, 0.582);
+  --input-text-color: rgb(233, 233, 233);
 }
 .form-control{
-  border: 3px solid var(--input-border-color) !important;
+  border: 1px solid var(--input-border-color) !important;
+  border-bottom: 2px solid var(--input-border-bottom-color) !important;
   border-radius: 2rem !important;
-  height: 3rem;
+  height: 3.2rem;
+  background-color: transparent !important;
+  font-size: 14px;
+  padding: 20px;
+  color: var(--input-text-color) !important;
 }
 
-.form-control:focus{
-  box-shadow: 0 0 0 0.3rem rgba(80, 220, 52, 0.253) !important
+.form-control:focus, .form-control:hover{
+  box-shadow: 0 0 0.5rem 0.1rem var(--inputbox-shadow) !important
+}
+
+.is-invalid, .is-invalid:focus, .is-invalid:hover{
+  box-shadow: 0 0 0.6rem 0.3rem var(--invalid-inputbox-shadow) !important
 }
 
 label{
