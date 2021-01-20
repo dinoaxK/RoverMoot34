@@ -20,4 +20,5 @@ Route::get('/', function () {
 
 Auth::routes(['verify' => true]);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/moot/home', [App\Http\Controllers\Portal\Scout\HomeController::class, 'index'])->name('home');
+Route::get('/moot/register', [App\Http\Controllers\Portal\Scout\RegisterController::class, 'index'])->name('register');
