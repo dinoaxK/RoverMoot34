@@ -155,7 +155,7 @@
       var navbar_brand = $(".navbar-brand")
       var scroll = $(window).scrollTop();
 
-      if (scroll >= 200) {
+      if (scroll >= 100) {
         navbar.removeClass('bg-0').addClass("bg-rover");
         navbar.removeClass('navbar-light').addClass('navbar-dark');
         navbar_brand.removeClass('d-none')
@@ -177,5 +177,6 @@
   })
 </script>
 
+@yield('script')
 
 </html>
