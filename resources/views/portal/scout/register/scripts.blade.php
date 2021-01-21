@@ -1,7 +1,7 @@
 @section('script')
 <script type="text/javascript">
   // SAVE PAYMENT
-  submit_scout = () => {
+  save_info = () => {
 
     
     // FORM PAYLOAD
@@ -13,7 +13,7 @@
       headers: {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
       },
-      url: "{{ route('register') }}",
+      url: "{{ route('moot.register') }}",
       type: 'post',
       data: formData,
       processData: false,
@@ -36,8 +36,8 @@
         }else if (data['success']){
           $('.form-control').val('');
           SwalDoneSuccess.fire({
-            title: 'Payment Submitted to review!',
-            text: 'You\'ll be notified once reviewed',
+            title: 'Saved Successfully!',
+            text: 'Information Saved Successfully',
           }).then((result) => {
             if(result.isConfirmed) {
               location.reload()
@@ -45,8 +45,8 @@
           });
         }else if (data['error']){
           SwalSystemErrorDanger.fire({
-            title: 'PaymentFailed!',
-            text: 'Please Try Again or Contact Administrator: admin@fit.bit.lk',
+            title: 'Saving Failed!',
+            text: 'Please Try Again or Contact Administrator: admin@scout.lk',
           })
         }
       },
@@ -54,8 +54,8 @@
         $("#btnSubmitScoutSpinner").addClass('d-none');
         $('#btnSubmitScout').removeAttr('disabled');
         SwalSystemErrorDanger.fire({
-          title: 'PaymentFailed!',
-          text: 'Please Try Again or Contact Administrator: admin@fit.bit.lk',
+          title: 'Saving Failed!',
+          text: 'Please Try Again or Contact Administrator: admin@scout.lk',
         })
       }
     });
