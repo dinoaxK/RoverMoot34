@@ -339,12 +339,26 @@
                 
                 <div class="form-group row mt-5 mb-0">
                     <div class="col-md-12 text-center">
-                        <button id="btnSubmitScout" type="button" onclick="submit_scout()" class="btn btn-lg btn-primary w-50">
-                            Submit
+                        <button id="btnSubmitScout" type="button" onclick="save_info()" class="btn btn-lg btn-primary w-25">
+                            Save Info
+                            <span id="btnSubmitScoutSpinner" class="spinner-border spinner-border-sm d-none " role="status" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                </div>                
+                <p class="text-center text-white">
+                    You can submit your application once you are done saving all the required information
+                </p> 
+                <div class="form-group row mt-5 mb-0">
+                    <div class="col-md-12 text-center">
+                        <button id="btnSubmitScout" type="button" onclick="submit_application()" class="btn btn-lg btn-success w-50">
+                            Submit Application
                             <span id="btnSubmitScoutSpinner" class="spinner-border spinner-border-sm d-none " role="status" aria-hidden="true"></span>
                         </button>
                     </div>
                 </div>
+                <p class="text-center text-white">
+                    If you have any issues regarding registration, please contact Administrator: admin@scout.lk
+                </p> 
             </div>
         </div>
     </div>
