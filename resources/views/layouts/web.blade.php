@@ -65,7 +65,7 @@
                     <a class="nav-link mb-1" href="{{ route('home') }}">{{ __('Moot') }}</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link mb-1" href="{{ route('register') }}">Register</a>
+                  <a class="nav-link mb-1" href="{{ route('moot.register') }}">Register</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a id="navbarDropdown" class="nav-link  mb-1 dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -113,9 +113,13 @@
 
     <!-- Plugin JavaScript -->
     <script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+    <!-- SWEET ALERT 2 -->
+    <script src="{{ asset('vendor/sweetalert2/sweetalert2.all.js') }}"></script>
+    <!-- /SWEET ALERT 2 -->
 
     <!-- Custom JavaScript -->
     <script src="{{ asset('js/core.js') }}"></script>
+    <script src="{{ asset('js/sweetalert.js') }}"></script>
   <!-- /SCRIPTS -->
 
 </body>
