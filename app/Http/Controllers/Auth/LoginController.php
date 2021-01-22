@@ -29,7 +29,7 @@ class LoginController extends Controller
      * @var string
      */
     public function redirectTo(){
-        return ('/moot/home');
+        return ('/home');
     }
 
     public function logout(Request $request)
