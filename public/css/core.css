@@ -22,6 +22,8 @@
   --text-white: #fff;
 
   --bg-footer: rgb(8, 8, 34);
+
+  --black: #000;
 }
 
 html{
@@ -155,7 +157,6 @@ button {
 /* header */
 header {  
   margin-top: 0px;
-  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('file:///Volumes/Animus/Jon/Dropbox/website/hellcity.jpg');
   -webkit-background-size: cover;
   -moz-background-size:  cover;
   -o-background-size: cover;
@@ -176,6 +177,15 @@ header {
   font-family: 'Poppins', sans-serif;
   color: var(--theme-color);
 }
+
+.print-header{
+  font-size: 24px;
+  font-weight: bolder;
+  font-family: 'Poppins', sans-serif;
+  color: var(--black);
+}
+
+
 /* header */
 section {
   padding: 150px 0;

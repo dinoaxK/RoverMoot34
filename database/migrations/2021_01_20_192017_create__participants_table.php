@@ -15,7 +15,7 @@ class CreateParticipantsTable extends Migration
     {
         Schema::create('participants', function (Blueprint $table) {
             $table->id();            
-            $table->string('reg_no')->unique()->nullable();
+            $table->string('image')->nullable();
             $table->integer('user_id')->unique();
             $table->string('title')->nullable();
             $table->string('first_name')->nullable();
@@ -49,6 +49,13 @@ class CreateParticipantsTable extends Migration
             $table->bigInteger('contact_person_mobile')->nullable();
             $table->bigInteger('contact_person_telephone')->nullable();
             $table->string('education')->nullable();
+            $table->boolean('application_submit')->nullable();
+            $table->string('application_proof')->nullable();
+            $table->boolean('application_status')->nullable();
+            $table->boolean('payment_submit')->nullable();
+            $table->string('payment_referece')->nullable();
+            $table->string('payment_proof')->nullable();
+            $table->boolean('payment_status')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
