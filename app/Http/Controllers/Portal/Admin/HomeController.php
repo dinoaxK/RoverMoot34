@@ -5,9 +5,9 @@ namespace App\Http\Controllers\Portal\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class RegisterController extends Controller
+class HomeController extends Controller
 {
-        /**
+    /**
      * Create a new controller instance.
      *
      * @return void
@@ -24,6 +24,6 @@ class RegisterController extends Controller
      */
     public function index()
     {
-        return view('portal.admin.register');
+        return view('portal.admin.home');
     }
 }

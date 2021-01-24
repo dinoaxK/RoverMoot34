@@ -22,7 +22,15 @@ Route::post('logout',[App\Http\Controllers\Auth\LoginController::class,'logout']
 
 Auth::routes(['verify' => true]);
 
+// ADMIN PORTAL
+Route::get('/admin/home', [App\Http\Controllers\Portal\Admin\HomeController::class, 'index'])->name('admin.home');
+Route::get('/admin/register', [App\Http\Controllers\Portal\Admin\RegisterController::class, 'index'])->name('admin.register');
+
+// /ADMIN PORTAL
+
+// SCOUT PORTAL
 Route::get('home', [App\Http\Controllers\Portal\Scout\HomeController::class, 'index'])->name('home');
+Route::get('profile', [App\Http\Controllers\Portal\Scout\ProfileController::class, 'index'])->name('profile');
 Route::get('/moot/register', [App\Http\Controllers\Portal\Scout\RegisterController::class, 'index'])->name('moot.register');
 Route::post('/moot/register', [App\Http\Controllers\Portal\Scout\RegisterController::class, 'save_info'])->name('moot.register');
 Route::post('/moot/register/submit', [App\Http\Controllers\Portal\Scout\RegisterController::class, 'submit_application'])->name('moot.register.submit');
@@ -34,3 +42,4 @@ Route::post('/moot/register/scanned', [App\Http\Controllers\Portal\Scout\Registe
 
 
 Route::get('/moot/register/print/application', [App\Http\Controllers\Portal\Scout\PrintController::class, 'index'])->name('moot.application.print');
+// SCOUT PORTAL
