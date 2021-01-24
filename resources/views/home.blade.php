@@ -21,13 +21,15 @@
     <div class="row justify-content-center">
         <div class="col-lg-9 mt-5">
             <div class="py-5">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+                @if(Auth::user()->participant && Auth::user()->participant->application_status == 1)
 
-                    {{ __('You are logged in!') }}
+                @else
+                    <div class="alert alert-warning" role="alert">
+                        <h2 class="alert-heading">Register Now!</h4>
+                        <p>Moot will be available as soon as you are registered!! </p>
+                        <p class="mb-0">Stay tuned for the First Ever Virtual National Rover Scout Moot...</p>
+                    </div>          
+                @endif
             </div>
         </div>
     </div>
