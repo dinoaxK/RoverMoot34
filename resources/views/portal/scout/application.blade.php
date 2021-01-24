@@ -34,41 +34,48 @@
       <hr>
         
         <div class="row">
-          <div class="col-3">
-              <p class="text-dark text-uppercase">Full Name:</p>
-          </div>
-          <div class="col-9">                
-              <p class="text-dark text-uppercase">{{ $participant->title }} {{ $participant->full_name }}</p>
-          </div>
-        </div>
-
-                
-        <div class="row">
-          <div class="col-3">
-              <p class="text-dark text-uppercase">Name with Initials:</p>
-          </div>
-          <div class="col-9">                
-              <p class="text-dark text-uppercase">{{ $participant->initials }} {{ $participant->last_name }}</p>
-          </div>
-        </div>
-
-        
-        <div class="row">
-          <div class="col-3">
-              <p class="text-dark text-uppercase">Date of Birth:</p>
-          </div>
-          <div class="col-9">                
-              <p class="text-dark text-uppercase">{{ $participant->dob }}</p>
-          </div>
-        </div>
-        
-        <div class="row">
-          <div class="col-3">
-              <p class="text-dark text-uppercase">{{ $participant->id_type }}: </p>
-          </div>
-          <div class="col-9">                
-              <p class="text-dark text-uppercase">{{ $participant->number }}</p>
-          </div>
+            <div class="col-9">
+                <div class="row">
+                    <div class="col-4">
+                        <p class="text-dark text-uppercase">Full Name:</p>
+                    </div>
+                    <div class="col-8">                
+                        <p class="text-dark text-uppercase">{{ $participant->title }} {{ $participant->full_name }}</p>
+                    </div>
+                  </div>
+          
+                          
+                  <div class="row">
+                    <div class="col-4">
+                        <p class="text-dark text-uppercase">Name with Initials:</p>
+                    </div>
+                    <div class="col-8">                
+                        <p class="text-dark text-uppercase">{{ $participant->initials }} {{ $participant->last_name }}</p>
+                    </div>
+                  </div>
+          
+                  
+                  <div class="row">
+                    <div class="col-4">
+                        <p class="text-dark text-uppercase">Date of Birth:</p>
+                    </div>
+                    <div class="col-8">                
+                        <p class="text-dark text-uppercase">{{ $participant->dob }}</p>
+                    </div>
+                  </div>
+                  
+                  <div class="row">
+                    <div class="col-4">
+                        <p class="text-dark text-uppercase">{{ $participant->id_type }}: </p>
+                    </div>
+                    <div class="col-8">                
+                        <p class="text-dark text-uppercase">{{ $participant->number }}</p>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-3">
+                <img src="{{ asset('storage/participants/profile_images/'.$participant->image) }}" alt="Profile Image" width="200px">
+            </div>
         </div>
 
         <h6 class="text-center text-dark text-uppercase mt-3">Contact Details</h6>
@@ -98,13 +105,13 @@
               <p class="text-dark text-uppercase">Telephone (Mobile): </p>
           </div>
           <div class="col-3">                
-              <p class="text-dark text-uppercase">00{{ $participant->mobile }}</p>
+              <p class="text-dark text-uppercase">{{ $participant->mobile }}</p>
           </div>
           <div class="col-3">
               <p class="text-dark text-uppercase">Telephone (Other): </p>
           </div>
           <div class="col-3">                
-              <p class="text-dark text-uppercase">00{{ $participant->telephone }}</p>
+              <p class="text-dark text-uppercase">{{ $participant->telephone }}</p>
           </div>
         </div>
 
@@ -124,13 +131,13 @@
               <p class="text-dark text-uppercase">Telephone (Mobile): </p>
           </div>
           <div class="col-3">                
-              <p class="text-dark text-uppercase">00{{ $participant->contact_person_mobile }}</p>
+              <p class="text-dark text-uppercase">{{ $participant->contact_person_mobile }}</p>
           </div>
           <div class="col-3">
               <p class="text-dark text-uppercase">Telephone (Other): </p>
           </div>
           <div class="col-3">                
-              <p class="text-dark text-uppercase">00{{ $participant->contact_person_telephone }}</p>
+              <p class="text-dark text-uppercase">{{ $participant->contact_person_telephone }}</p>
           </div>
         </div>
        
