@@ -1,6 +1,7 @@
 @extends('layouts.web')
 
 @section('content')
+
 <header class="bg-dark min-vh-100" style="background-image: url({{ asset('img/background/1.jpg') }}); padding: 200px 0 200px;">
 <div class="container ">
     <div class="row">

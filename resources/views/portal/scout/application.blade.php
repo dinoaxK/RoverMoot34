@@ -8,7 +8,7 @@
               <h3 class="print-header text-center text-uppercase">34th Natonal Rover Moot - Virtual (Based in Kandy)</h3>
               <h3 class="text-center text-dark text-uppercase">25th - 28th March, 2021</h3>
               <h3 class="print-header text-center text-dark text-uppercase">Participant's Registration</h3>
-              <h3 class="text-right text-dark text-uppercase p-0 m-0"><small>(Office Use Only)</small> Reg-No: {{ $participant->id }}</h3>
+              <h3 class="text-right text-dark text-uppercase p-0 m-0"><small>(Office Use Only)</small> Serial-No: {{ $participant->id }} | {{ $participant->submit_date }}</h3>
           </div>
         </div>
 <hr>

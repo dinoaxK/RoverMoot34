@@ -15,7 +15,17 @@ class RoverAwardSeeder extends Seeder
     public function run()
     {
         DB::table('rover_awards')->truncate();
-        $awards = ['Rover Ideals Badge', 'Membership','Invested Rover','Good Citizen Decoration','BP Award','Rover Instructor'];
+        $awards = [
+          'Recruit', 
+          'Rover Square', 
+          'Invested Rover',
+          'One Rover Star Completed', 
+          'Two Rover Stars Completed',  
+          'Three Rover Stars Completed',  
+          'Four Rover Stars Completed',  
+          'BP Award',
+          'Rover Instructor'
+        ];
         foreach( $awards as $key => $award):
           DB::table('rover_awards')->insert(
           array(

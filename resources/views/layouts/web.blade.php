@@ -11,16 +11,20 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="{{ asset('img/logo/fav.png') }}">
 
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+  
   <title>34th National Rover Moot</title>
 
   <!-- STYLES -->
     <!-- BOOTSTRAP -->      <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <!-- FONT AWESOME -->   <link rel="stylesheet" href="{{ asset('vendor/font-awesome/css/all.css') }}">
+    <!-- FONT AWESOME -->   <link rel="stylesheet" href="{{ asset('vendor/font-awesome/css/all.css') }}"> 
   
 
     <!-- Custom styles -->
     <link href="{{ asset('css/core.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/form.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/form.css') }}" rel="stylesheet"> 
+    <!-- DROPZONE -->       
+    <link rel="stylesheet" href="{{ asset('vendor/dropzone/drop-zone.css') }}">
   <!-- /STYLES -->
 
 </head>
@@ -40,7 +44,7 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link mb-1" href="{{ url('/') }}">Home</a>
+            <a class="nav-link mb-1"  href="{{ url('/') }}">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link mb-1" href="{{ url('/#about') }}">About</a>
@@ -116,6 +120,7 @@
     <!-- SWEET ALERT 2 -->
     <script src="{{ asset('vendor/sweetalert2/sweetalert2.all.js') }}"></script>
     <!-- /SWEET ALERT 2 -->
+    <!-- DROPZONE JS--> <script src="{{ asset('vendor/dropzone/drop-zone.js') }}"></script>
 
     <!-- Custom JavaScript -->
     <script src="{{ asset('js/core.js') }}"></script>

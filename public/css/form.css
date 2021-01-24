@@ -22,7 +22,12 @@
 }
 
 .is-invalid, .is-invalid:focus, .is-invalid:hover{
-  box-shadow: 0 0 0.6rem 0.3rem var(--invalid-inputbox-shadow) !important
+  box-shadow: 0 0 0.6rem 0.3rem var(--invalid-inputbox-shadow) !important;
+}
+
+.invalid-feedback{
+  font-size: 12px !important;
+  font-family: "Poppins", sans-serif;
 }
 
 label{

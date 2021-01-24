@@ -15,7 +15,14 @@ class ScoutAwardSeeder extends Seeder
     public function run()
     {
       DB::table('scout_awards')->truncate();
-        $awards = ['Membership','Bronze Star','Silver Star','Gold Star','Scout Award/ Scout Master Award','District Commissioner Cord','Chief Commissioner Award','President Scout Award'];
+        $awards = [
+          'Membership',
+          'Scout Masters Award',
+          'District Commissioners Award',
+          'Chief Commissioners Challenge Award',
+          'Bushmans Thong',
+          'President Scout Award'
+        ];
         foreach( $awards as $key => $award):
           DB::table('scout_awards')->insert(
           array(

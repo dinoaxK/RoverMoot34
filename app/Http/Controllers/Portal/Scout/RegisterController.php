@@ -12,6 +12,7 @@ use App\Models\Title;
 use App\Models\WarrantSection;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 
@@ -66,6 +67,7 @@ class RegisterController extends Controller
             'lastName' => ['nullable', 'alpha', 'min:3'],
             'fullName' => ['nullable', 'alpha_dash_space'],
             'initials' => ['nullable', 'alpha_capital'],
+            'profileImage'=> ['nullable', 'image', 'dimensions:ratio=1/1'],
             'dob' => ['nullable' , 'date','before:today'],
             'gender' => ['nullable', Rule::in(['Male', 'Female', 'Other'])],
             'idType' => ['nullable', Rule::in(['nic', 'passport'])],
@@ -98,7 +100,11 @@ class RegisterController extends Controller
             'educationDetails' => ['nullable', 'min:3'],
 
 
-        ]);
+        ],
+        [
+            'dimensions'=>'Image must be cropped to a square shape (Ratio= 1:1)'
+        ]
+    );
 
             //CHECK UNIQUE TYPE AND VALIDATE UNIQUE ID
         if($request->idType == 'nic'):
@@ -142,7 +148,8 @@ class RegisterController extends Controller
                 $participant = new Participant;
                 $participant->user_id = $user_id;
             endif;
-            
+
+
             $participant->title = $request->title;
             $participant->first_name = $request->firstName;
             $participant->middle_names = $request->middleName;
@@ -176,9 +183,23 @@ class RegisterController extends Controller
             $participant->contact_person_mobile = $request->contactPersonMobileNumber;
             $participant->contact_person_telephone = $request->contactPersonTelephoneNumber;
             $participant->education = $request->educationDetails;
-
-            if($participant->save()):
-                return response()->json(['success'=>'success']);
+            if($request->profileImage):
+                $image_ext = $request->file('profileImage')->getClientOriginalExtension();
+                $img_name = $user_id.'_profile_pic_'.date('Y-m-d').'_'.time().'.'. $image_ext;
+                $participant->image = $img_name;   
+            //SAVE PROFILE IMAGE
+                if($path = $request->file('profileImage')->storeAs('public/participants/profile_images/', $img_name)):
+                    //SAVE PROFILE IMAGE DB RECORD
+                    
+                    // $user->profile_pic = $img_name;
+                    if($participant->save()):
+                            return response()->json(['success'=>'success']);
+                    endif;
+                endif;
+            else:
+                if($participant->save()):
+                    return response()->json(['success'=>'success']);
+                endif;
             endif;
         endif;
         return response()->json(['error'=>'error']);
@@ -257,11 +278,31 @@ class RegisterController extends Controller
                 'warrantValidDate' => ['required', 'date'],
             ]);
         endif;
+        $participant = Participant::where('user_id', $user_id)->first();
 
-        if($validator->fails() || $uniqueID_validator->fails() || $warrant_validator->fails()):
-            return response()->json(['errors'=>$validator->errors()->merge($uniqueID_validator->errors())->merge($warrant_validator->errors())]);
+        if($participant->image == Null):
+            $image_validator =  Validator::make($request->all(), 
+                [                         
+                    'profileImage'=> ['required', 'image', 'dimensions:ratio=1/1'],
+                ],
+                [
+                    'dimensions'=>'image must be cropped to a square shape (Ratio= 1:1)'
+                ]
+            );
         else:
-            $participant = Participant::where('user_id', $user_id)->first();
+            $image_validator =  Validator::make($request->all(), 
+                [                         
+                    'profileImage'=> ['nullable', 'image', 'dimensions:ratio=1/1'],
+                ],
+                [
+                    'dimensions'=>'image must be cropped to a square shape (Ratio= 1:1)'
+                ]
+            );
+        endif;
+
+        if($validator->fails() || $uniqueID_validator->fails() || $warrant_validator->fails() || $image_validator->fails()):
+            return response()->json(['errors'=>$validator->errors()->merge($uniqueID_validator->errors())->merge($warrant_validator->errors())->merge($image_validator->errors())]);
+        else:
             
             $participant->title = $request->title;
             $participant->first_name = $request->firstName;
@@ -296,10 +337,104 @@ class RegisterController extends Controller
             $participant->contact_person_mobile = $request->contactPersonMobileNumber;
             $participant->contact_person_telephone = $request->contactPersonTelephoneNumber;
             $participant->education = $request->educationDetails;
+            $participant->application_submit = 1;
+            $participant->submit_date = date('Y-m-d');
 
-            if($participant->save()):
-                return response()->json(['success'=>'success']);
+            if($request->profileImage):
+
+                $image_ext = $request->file('profileImage')->getClientOriginalExtension();
+                $img_name = $user_id.'_profile_pic_'.date('Y-m-d').'_'.time().'.'. $image_ext;
+                $participant->image = $img_name;   
+                //SAVE PROFILE IMAGE
+                if($path = $request->file('profileImage')->storeAs('public/participants/profile_images/', $img_name)):
+                    //SAVE PROFILE IMAGE DB RECORD
+                    
+                    // $user->profile_pic = $img_name;
+                    if($participant->save()):
+                            return response()->json(['success'=>'success']);
+                    endif;
+                endif;
+            else:
+                if($participant->save()):
+                    return response()->json(['success'=>'success']);
+                endif;
             endif;
+        endif;
+        return response()->json(['error'=>'error']);
+    }
+
+    public function saveRegPayment(Request $request)
+    {
+      $user_id = Auth::user()->id;
+
+      $validator = Validator::make($request->all(), 
+        [     
+            'paymentDate'=>['required', 'before_or_equal:today'],
+            'paymentReference'=>['required'],
+            'paymentProof'=>['required', 'image']
+        ]
+      );
+      if($validator->fails()):
+        return response()->json(['errors'=>$validator->errors()]);
+      else:
+        $participant = Participant::where('user_id', $user_id)->first();
+        $participant->payment_date = $request->paymentDate;
+        $participant->payment_reference = $request->paymentReference;
+        $participant->payment_submit = 1;
+  
+        $file_ext = $request->file('paymentProof')->getClientOriginalExtension();
+        $file_name = $participant->id.'_'.date('Y-m-d').'_'.time().'.'. $file_ext;
+  
+        $participant->payment_proof = $file_name;
+  
+        if($path = $request->file('paymentProof')->storeAs('public/participants/payments/'.$user_id,$file_name)):
+          if($participant->save()):
+            return response()->json(['success'=>'success']);
+          endif;
+  
+        endif;
+  
+      endif;
+      return response()->json(['error'=>'error']);
+    }
+    
+    public function saveScannedApplication(Request $request)
+    {
+      $user_id = Auth::user()->id;
+
+      $validator = Validator::make($request->all(), 
+        [     
+            'applicationProof'=>['required', 'image']
+        ]
+      );
+      if($validator->fails()):
+        return response()->json(['errors'=>$validator->errors()]);
+      else:
+        $participant = Participant::where('user_id', $user_id)->first();
+  
+        $file_ext = $request->file('applicationProof')->getClientOriginalExtension();
+        $file_name = $participant->id.'_'.date('Y-m-d').'_'.time().'.'. $file_ext;
+  
+        $participant->application_proof = $file_name;
+  
+        if($path = $request->file('applicationProof')->storeAs('public/participants/applications/'.$user_id,$file_name)):
+          if($participant->save()):
+            return response()->json(['success'=>'success']);
+          endif;
+  
+        endif;
+  
+      endif;
+      return response()->json(['error'=>'error']);
+    }
+
+
+    public function deleteProfileImage(Request $request)
+    {
+        $image_name = Participant::where('user_id', Auth::user()->id )->first()->image;
+
+        if(Participant::where('user_id', Auth::user()->id )->update(['image' => NULL]) && Storage::delete($image_name)):
+            return response()->json(['success'=>'success']);
         endif;
         return response()->json(['error'=>'error']);
     }

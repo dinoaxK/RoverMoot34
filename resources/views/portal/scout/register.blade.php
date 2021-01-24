@@ -14,9 +14,105 @@
     <div class="row justify-content-center">
         <div class="col-lg-9 mt-5">
             <div class="py-5">
+            
                 <p>Fields Marked with (*) are Mandatory.</p>
+
+            @if( $participant != NULL && $participant->application_submit == 1 )
+                
+                @if( $participant != NULL && $participant->payment_submit == 0 )
+
+                    <form id="paymentForm">
+                        @csrf
+                        <h3 class="text-left mt-4 mb-4">Payment Details</h3>
+        
+                    <div class="form-row justify-content-center"> 
+                        <div class="form-group col-md-6 mb-5">
+                            <label for="paymentDate" class="col-form-label text-center w-100">Paid Date *</label>    
+                            <input value="{{ $participant->payment_date ?? "" }}" id="paymentDate" type="date" class="form-control" name="paymentDate"required autocomplete="paidDate">
+                            <span id="paymentDate-err" class="invalid-feedback text-center" role="alert"></span>
+                        </div>
+                        <div class="form-group col-md-6 mb-5">
+                            <label for="paymentReference" class="col-form-label text-center w-100">Payment Reference *</label>    
+                            <input value="{{ $participant->payment_reference ?? "" }}" id="paymentReference" type="text" class="form-control" name="paymentReference" placeholder=" (e.g. cheque no, transaction id)" required autocomplete="paymentReference" autofocus>
+                            <span id="paymentReference-err" class="invalid-feedback text-center" role="alert"></span>
+                        </div>
+                    </div>
+                        <span id="paymentProofHelp" class="form-text text-white text-center">Upload your scanned bank slip/ payment proof here in JPEG/ PNG file format</span>
+                        <div class="drop-zone" id="paymentProof">
+                            <span class="drop-zone__prompt">Upload your Scanned Bank Slip/ Payment Proof * <br><small>Drop image File here or click to upload</small> </span>
+                            <input accept="image/*" type="file" name="paymentProof"  class="drop-zone__input"/>
+                        </div>
+                        <span id="paymentProof-err" class="invalid-feedback text-center" role="alert"></span>
+                    </form>
+                    <p class="text-center text-white pt-5">
+                        <small>Please recheck before submit, you can not change once Submitted</small> 
+                    </p> 
+                    <div class="form-group row mt-5 mb-0">
+                        <div class="col-md-12 text-center">
+                            <button id="btnPaymentScout" type="button" onclick="submit_payment()" class="btn btn-lg btn-success w-50">
+                                Submit Payment
+                                <span id="btnPaymentScoutSpinner" class="spinner-border spinner-border-sm d-none " role="status" aria-hidden="true"></span>
+                            </button>
+                        </div>
+                    </div>
+                    <hr>
+                @endif             
+            
+            @else
+
+
                 <form id="scoutRegisterForm">
                     @csrf
+                @if($participant != NULL && $participant->image != NULL)
+                
+                    <h3 class="text-left mt-4 mb-4">Profile Image</h3>
+                    <hr class="bg-success">
+                    <div class="form-row justify-content-center mt-5">
+                        <div class="col-lg">
+                            <div class="form-group">
+                                <div class="drop-zone" style="background: url({{ asset('storage/participants/profile_images/'.$participant->image)}}) no-repeat center; background-size: cover;">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <button type="button" class="btn btn-lg btn-outline-danger w-25" id="btnDeleteImage" role="button" aria-expanded="false" onclick="delete_profile_image()">
+                                                    <i class="fa fa-trash"></i>
+                                                    Delete
+                                                    <span id="btnDeleteImageSpinner" class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                                                </button>
+        
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>  
+                            </div>
+                        </div>
+                    </div>
+                @else
+                    {{-- <form id="profileImageForm"> --}}
+                        @csrf
+                        <h3 class="text-left mt-4 mb-4">Profile Image</h3>
+                        <hr class="bg-success">
+                        <p id="profileImageHelp" class="text-white text-center">Upload your Profile Image here in JPEG/ PNG file format.</span>
+                        <p id="profileImageHelp" class="text-white text-center">Image height and width must be in 1 : 1 ratio (Square Shape)</span>
+                        <div class="drop-zone" id="profileImage">
+                            <span class="drop-zone__prompt">Upload your Profile Image * <br><small>Drop image File here or click to upload</small> </span>
+                            <input accept="image/*" type="file" name="profileImage"  class="drop-zone__input"/>
+                        </div>
+                        <span id="profileImage-err" class="invalid-feedback text-center" role="alert"></span>  
+                    {{-- </form> --}}
+                    {{-- <p class="text-center text-white pt-2">
+                        <small>Please recheck before submit, you can not change once Submitted</small> 
+                    </p> 
+                    <div class="form-group row mt-1 mb-0">
+                        <div class="col-md-12 text-center">
+                            <button id="btnUploadProfileImage" type="button" onclick="upload_profile_image()" class="btn btn-success w-25">
+                                Upload
+                                <span id="btnUploadProfileImageSpinner" class="spinner-border spinner-border-sm d-none " role="status" aria-hidden="true"></span>
+                            </button>
+                        </div>
+                    </div> --}}
+                    <hr>                      
+                @endif
 
                     <h3 class="text-left mt-4 mb-4">Personal Details</h3>
                     <hr class="bg-success">
@@ -73,7 +169,7 @@
                         </div>
                     </div>
 
-                    <div class="form-row justify-content-center">
+                    <div class="form-row justify-content-center mt-5">
                         <div class="form-group col-md-2 mb-5">
                             <label for="gender" class="col-form-label text-center w-100">Gender *</label>    
                             <select name="gender" id="gender" class="form-control" required>                                
@@ -415,6 +511,66 @@
                     </div>
                 </div>                    
                 @endif
+                <hr>
+            @endif
+            
+            @if( $participant != NULL && $participant->application_submit == 1 && $participant->application_proof ==NULL )
+            <div class="form-row justify-content-center">            
+                <p class="text-center">
+                    Printed application must be scanned and submitted along with the signature verifications of: <br> Rover Scout Master, ADC(Rovers) and District Commissioner                
+                </p>
+                <p class="text-center col-12">
+                    All <span class=" text-success">printed, verified and scanned Applications</span> should be uploaded inorder to complete the registration
+                    <br>
+                </p>
+                <p class="text-center">
+                    Application closing date will be <span class=" text-success">05th March 2021</span>, All <span class=" text-success">printed, verified and scanned Application</span>
+                    must be submitted on or before the given deadline.   
+                </p>
+            </div>
+            @if( $participant != NULL && $participant->application_submit == 1 )
+            <div class="form-row justify-content-center">
+                <button onclick="print_application()" class="col-md-4 btn btn-primary float-right">
+                    <i class="fa fa-print"></i> 
+                    Click Here to Print Your Application
+                </button>
+            </div>
+            @endif
+
+            <form id="applicationProofForm">
+                @csrf
+                <h3 class="text-left mt-4 mb-4">Printed, Verified and Scanned Application</h3>    
+
+                <span id="applicationProofHelp" class="form-text text-white text-center">Upload your scanned application here in JPEG/ PNG file format</span>
+                <div class="drop-zone" id="applicationProof">
+                    <span class="drop-zone__prompt">Upload your Scanned Application *<br><small>Drop image File here or click to upload</small> </span>
+                    <input accept="image/*" type="file" name="applicationProof"  class="drop-zone__input"/>
+                </div>
+                <span id="applicationProof-err" class="invalid-feedback text-center" role="alert"></span>
+            </form>
+            <p class="text-center text-white pt-5">
+                <small>Please recheck before submit, you can not change once Submitted</small> 
+            </p> 
+            <div class="form-group row mt-5 mb-0">
+                <div class="col-md-12 text-center">
+                    <button id="btnScannedScout" type="button" onclick="submit_scanned_application()" class="btn btn-lg btn-success w-50">
+                        Submit Scanned Application
+                        <span id="btnScannedScoutSpinner" class="spinner-border spinner-border-sm d-none " role="status" aria-hidden="true"></span>
+                    </button>
+                </div>
+            </div>
+            @endif
+
+            
+            @if( $participant != NULL && $participant->application_submit == 1 && $participant->payment_submit == 1 && $participant->application_proof != NULL && $participant->image != NULL && $participant->application_status == NULL )
+
+            <div class="alert alert-success" role="alert">
+                <h4 class="alert-heading">Registration Successfully Submitted!</h4>
+                <p>Your documents will be reviewed. You'll be Notified on {{ Auth::user()->email }}, once your registration is approved</p>
+                <hr>
+                <p class="mb-0">Thank you for registering to 34th National Rover Moot, Feel free to contact us on admin@scout.lk for assistance</p>
+            </div>
+            @endif
                 <p class="text-center text-white">
                     If you have any issues regarding registration, please contact Administrator: admin@scout.lk
                 </p> 

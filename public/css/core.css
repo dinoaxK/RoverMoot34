@@ -27,7 +27,7 @@
 }
 
 html{
-  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif !important;
+  font-family: "Poppins", sans-serif !important;
   -webkit-transition: all 3s;
   scroll-behavior: smooth;
 }
@@ -35,7 +35,7 @@ html{
 body {
   background: var(--body-bg-color);
   color: var(--body-text-color);
-  font-family: "Open Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 p {
@@ -139,6 +139,10 @@ button {
 }
 
 .nav-link:hover{
+  color: var(--navlink-hover) !important;
+}
+
+.nav-link.active{  
   color: var(--navlink-hover) !important;
 }
 /* navbar */
