@@ -83,19 +83,19 @@ class RegisterController extends Controller
             'warrantSection' => ['nullable', 'exists:warrant_sections,name'],
             'warrantValidDate' => ['nullable', 'date'],
 
-            'crewNumber' => ['nullable', 'integer'],
+            'crewNumber' => ['nullable', 'integer', 'min:0'],
             'crewDistrict' => ['nullable', 'exists:scout_districts,name'],
             'crewName'=> ['nullable', 'alpha_dash_space', 'min:3'],
-            'mobileNumber'=>['nullable', 'numeric', 'digits_between:8,15'],
-            'telephoneNumber'=>['nullable', 'numeric', 'digits_between:8,15'],            
+            'mobileNumber'=>['nullable', 'numeric', 'digits_between:13,15'],
+            'telephoneNumber'=>['nullable', 'numeric', 'digits_between:13,15'],            
             'address' => ['nullable', 'address'],
             'country' => ['nullable', 'exists:countries,name'],
             'zipCode' => ['nullable', 'numeric', 'digits_between:5,10'],
             
             'contactPersontTitle' => ['nullable', 'exists:titles,name'],
             'contactPersonName' => ['nullable', 'alpha_dash_space'],
-            'contactPersonMobileNumber'=>['nullable', 'numeric', 'digits_between:8,15'],
-            'contactPersonTelephoneNumber'=>['nullable', 'numeric', 'digits_between:8,15'],
+            'contactPersonMobileNumber'=>['nullable', 'numeric', 'digits_between:13,15'],
+            'contactPersonTelephoneNumber'=>['nullable', 'numeric', 'digits_between:13,15'],
 
             'educationDetails' => ['nullable', 'min:3'],
 
@@ -231,16 +231,16 @@ class RegisterController extends Controller
             'crewNumber' => ['required', 'integer'],
             'crewDistrict' => ['required', 'exists:scout_districts,name'],
             'crewName'=> ['required', 'alpha_dash_space', 'min:3'],
-            'mobileNumber'=>['required', 'numeric', 'digits_between:8,15'],
-            'telephoneNumber'=>['required', 'numeric', 'digits_between:8,15'],            
+            'mobileNumber'=>['required', 'numeric', 'digits_between:13,15'],
+            'telephoneNumber'=>['required', 'numeric', 'digits_between:13,15'],            
             'address' => ['required', 'address'],
             'country' => ['required', 'exists:countries,name'],
             'zipCode' => ['nullable', 'numeric', 'digits_between:5,10'],
             
             'contactPersontTitle' => ['required', 'exists:titles,name'],
             'contactPersonName' => ['required', 'alpha_dash_space'],
-            'contactPersonMobileNumber'=>['required', 'numeric', 'digits_between:8,15'],
-            'contactPersonTelephoneNumber'=>['nullable', 'numeric', 'digits_between:8,15'],
+            'contactPersonMobileNumber'=>['required', 'numeric', 'digits_between:13,15'],
+            'contactPersonTelephoneNumber'=>['nullable', 'numeric', 'digits_between:13,15'],
 
             'educationDetails' => ['nullable', 'min:3'],
 
