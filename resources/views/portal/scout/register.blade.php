@@ -349,7 +349,7 @@
                         </div> 
                         <div class="form-group col-md-4 mb-5">
                             <label for="crewNumber" class="col-form-label text-center w-100">Crew Number *</label>    
-                            <input value="{{ $participant->crew_number ?? "" }}" id="crewNumber" type="number" class="form-control" name="crewNumber" placeholder="e.g. 500" required>
+                            <input value="{{ $participant->crew_number ?? "" }}" id="crewNumber" type="number" min="0" class="form-control" name="crewNumber" placeholder="e.g. 500" required>
                             <span id="crewNumber-err" class="invalid-feedback text-center" role="alert"></span>
                         </div>
                         <div class="form-group col-md-4 mb-5">
@@ -385,7 +385,7 @@
                             <small  id="mobileNumberHelpBlock" class="form-text text-center text-white">
                                 If using Whatsapp/ Viber, Please mention that number here
                             </small>   
-                            <input value="{{ $participant->mobile ?? "" }}" id="mobileNumber" type="number" class="form-control" name="mobileNumber" placeholder="Number with country code (e.g. 0094777123456)" required autocomplete="phone" >
+                            <input value="{{ $participant->mobile ?? "" }}" id="mobileNumber" type="number" min="0" class="form-control" name="mobileNumber" placeholder="Number with country code (e.g. 0094777123456)" required autocomplete="phone" >
                             <span id="mobileNumber-err" class="invalid-feedback text-center" role="alert"></span>
                         </div>
                         <div class="form-group col-md-6 mb-5">
@@ -393,7 +393,7 @@
                             <small id="telephoneNumberHelpBlock" class="form-text text-center text-white">
                                &nbsp;
                             </small>     
-                            <input value="{{ $participant->telephone ?? "" }}" id="telephoneNumber" type="number" class="form-control" name="telephoneNumber" placeholder="Number with country code (e.g. 0094812212345)" required autocomplete="phone" >
+                            <input value="{{ $participant->telephone ?? "" }}" id="telephoneNumber" type="number" min="0" class="form-control" name="telephoneNumber" placeholder="Number with country code (e.g. 0094812212345)" required autocomplete="phone" >
                             <span id="telephoneNumber-err" class="invalid-feedback text-center" role="alert"></span>
                         </div>
                     </div>
@@ -432,7 +432,7 @@
                         <div class="form-group col-md-6 mb-5">
                             <label for="zipCode" class="col-form-label text-center w-100">Zip/ Postal Code</label>    
                             
-                            <input value="{{ $participant->zip ?? "" }}" id="zipCode" type="number" class="form-control" name="zipCode" placeholder="Zip/ Postal Code " required autocomplete="zip" >
+                            <input value="{{ $participant->zip ?? "" }}" id="zipCode" type="number" min="0" class="form-control" name="zipCode" placeholder="Zip/ Postal Code " required autocomplete="zip" >
                             <span id="zipCode-err" class="invalid-feedback text-center" role="alert"></span>
                         </div>
                     </div>
@@ -471,7 +471,7 @@
                             <small  id="contactPersonMobileNumberHelpText" class="form-text text-center text-white">
                                 If using Whatsapp/ Viber, Please mention that number here
                             </small>   
-                            <input value="{{ $participant->contact_person_mobile ?? "" }}" id="contactPersonMobileNumber" type="number" class="form-control" name="contactPersonMobileNumber" placeholder="Number with country code (e.g. 0094777123456)" required>
+                            <input value="{{ $participant->contact_person_mobile ?? "" }}" id="contactPersonMobileNumber" type="number" min="0" class="form-control" name="contactPersonMobileNumber" placeholder="Number with country code (e.g. 0094777123456)" required>
                             <span id="contactPersonMobileNumber-err" class="invalid-feedback text-center" role="alert"></span>
                         </div>
                         <div class="form-group col-md-6 mb-5">
@@ -479,7 +479,7 @@
                             <small id="contactPersonTelephoneNumberHelpText" class="form-text text-center text-white">
                                &nbsp;
                             </small>     
-                            <input value="{{ $participant->contact_person_telephone ?? "" }}" id="contactPersonTelephoneNumber" type="number" class="form-control" name="contactPersonTelephoneNumber" placeholder="Number with country code (e.g. 0094812212345)" >
+                            <input value="{{ $participant->contact_person_telephone ?? "" }}" id="contactPersonTelephoneNumber" type="number" min="0" class="form-control" name="contactPersonTelephoneNumber" placeholder="Number with country code (e.g. 0094812212345)" >
                             <span id="contactPersonTelephoneNumber-err" class="invalid-feedback text-center" role="alert"></span>
                         </div>
                     </div>
