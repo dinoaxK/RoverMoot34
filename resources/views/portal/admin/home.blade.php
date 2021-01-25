@@ -3,14 +3,14 @@
 @section('content')
 
 
-<div class="container min-vh-100 mb-5 pt-5">
-    <div class="row justify-content-center pt-5">
+<div class="container min-vh-100 mt-5 mb-5 pt-5">
+    <div class="row pt-5">
     <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item active" aria-current="page">Home</li>
     </ol>
     </nav>
-        <div class="col-lg-10 mt-5">
+        <div class="col-lg-12 mt-5">
             <div class="py-5">
                 @if(Auth::user()->participant && Auth::user()->participant->application_status == 1)
 
