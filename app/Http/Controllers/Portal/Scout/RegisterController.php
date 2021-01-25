@@ -387,7 +387,7 @@ class RegisterController extends Controller
   
         $participant->payment_proof = $file_name;
   
-        if($path = $request->file('paymentProof')->storeAs('public/participants/payments/'.$user_id,$file_name)):
+        if($path = $request->file('paymentProof')->storeAs('public/participants/payments/',$file_name)):
           if($participant->save()):
             return response()->json(['success'=>'success']);
           endif;
@@ -417,7 +417,7 @@ class RegisterController extends Controller
   
         $participant->application_proof = $file_name;
   
-        if($path = $request->file('applicationProof')->storeAs('public/participants/applications/'.$user_id,$file_name)):
+        if($path = $request->file('applicationProof')->storeAs('public/participants/applications/',$file_name)):
           if($participant->save()):
             return response()->json(['success'=>'success']);
           endif;
