@@ -20,7 +20,8 @@ class DatabaseSeeder extends Seeder
             DistrictSeeder::class,
             ScoutAwardSeeder::class,
             RoverAwardSeeder::class,
-            WarrantSeeder::class
+            WarrantSeeder::class,
+            UserSeeder::class
         ]);
     }
 }
