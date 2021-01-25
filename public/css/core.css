@@ -64,6 +64,13 @@ button {
   padding: 0;
 }
 
+th,td {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  margin: 0 0 20px 0;
+  padding: 0;
+  font-size: 11px !important;
+}
 
 /*scroll-bar*/
 /* width */
@@ -223,3 +230,24 @@ section {
   background-color: var(--backto-top-hover); /* Add a color on hover */
 }
 /* /backtotop */
+
+/* DATATABLE */
+.dataTables_wrapper .dataTables_paginate .paginate_button{
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+  color: rgb(0, 0, 0) !important;
+  border: 1px solid #ffffff!important;
+  background-color: #2980B9!important;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(100%, #ffffff))!important;
+  background: -webkit-linear-gradient(top, #ffffff 0%, #ffffff 100%)!important;
+  background: -moz-linear-gradient(top, #ffffff 0%, #ffffff 100%)!important;
+  background: -ms-linear-gradient(top, #ffffff 0%, #ffffff 100%)!important;
+  background: -o-linear-gradient(top, #ffffff 0%, #ffffff 100%)!important;
+  background: linear-gradient(to bottom, #ffffff 0%, #ffffff 100%)!important;
+}
+
+/* /DATATABLE */
