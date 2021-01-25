@@ -15,6 +15,13 @@
         <div class="col-lg-9 mt-5">
             <div class="py-5">
 
+                <div class="row justify-content-center">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary w-50" data-toggle="modal" data-target="#changePasswordModal">
+                    Change Password
+                    </button>                    
+                </div>
+
                 @if( $participant != NULL )
 
                 <div class="row">
@@ -232,7 +239,8 @@
     </div>
 </div>
 
+@include('portal.scout.profile.modals')
 
-@include('portal.scout.register.scripts')
+@include('portal.scout.profile.scripts')
 
 @endsection
