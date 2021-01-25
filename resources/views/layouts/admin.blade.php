@@ -19,10 +19,13 @@
     <!-- BOOTSTRAP -->      <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <!-- FONT AWESOME -->   <link rel="stylesheet" href="{{ asset('vendor/font-awesome/css/all.css') }}"> 
   
+    <!-- DATATABLE  -->
+    <link rel="stylesheet" href="{{ asset('vendor/datatables/css/dataTables.min.css') }}" >
+    <link rel="stylesheet" href="{{ asset('vendor/datatables/css/dataTables.bootstrap4.min.css') }}" >
+    <!-- DATATABLE -->
 
     <!-- Custom styles -->
     <link href="{{ asset('css/core.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/form.css') }}" rel="stylesheet"> 
     <!-- DROPZONE -->       
     <link rel="stylesheet" href="{{ asset('vendor/dropzone/drop-zone.css') }}">
   <!-- /STYLES -->
@@ -32,9 +35,9 @@
 <body id="page-top" class="bg-light">
 
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-0 fixed-top" id="mainNav">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-rover fixed-top mb-5" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger mb-0 d-none" href="{{ url('') }}">
+      <a class="navbar-brand js-scroll-trigger mb-0" href="{{ url('') }}">
        <img src="{{ asset('img/logo/1.png') }}" alt="Moot Logo"  style="max-width: 50px;" class="">
        34th NRSM
       </a>
@@ -96,7 +99,11 @@
 
   <!-- SCRIPTS -->
     <script src="{{ asset('js/app.js') }}" differ></script>
-
+    <!-- DATATABLE SCRIPTS -->
+    {{-- <script src="{{ asset('vendor/jquery/jquery.validate.js') }}"></script> --}}
+    <script src="{{ asset('vendor/datatables/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('vendor/datatables/js/dataTables.bootstrap4.min.js') }}"></script>
+    <!-- /DATATABLE SCRIPTS -->
     <!-- Plugin JavaScript -->
     <script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
     <!-- SWEET ALERT 2 -->
@@ -140,31 +147,7 @@
     //tooltip initiation
     $('[data-tooltip="tooltip"]').tooltip()
 
-    //on scroll navbar
-    $(window).scroll(function() {
-      var navbar = $(".navbar");
-      var navbar_brand = $(".navbar-brand")
-      var scroll = $(window).scrollTop();
 
-      if (scroll >= 100) {
-        navbar.removeClass('bg-0').addClass("bg-rover");
-        navbar.removeClass('navbar-light').addClass('navbar-dark');
-        navbar_brand.removeClass('d-none')
-      } else {
-        navbar.removeClass("bg-rover").addClass('bg-0');
-        navbar.removeClass('navbar-dark').addClass('navbar-light');
-        navbar_brand.addClass('d-none')
-      }
-    });
-
-    // show hide background on mobile nav bar
-    $('.navbar-toggler').click(function(e) {
-      $('.navbar').toggleClass('bg-0');
-      $('.navbar').toggleClass('bg-rover');
-      $('.navbar').toggleClass('navbar-light');
-      $('.navbar').toggleClass('navbar-dark');
-
-    });
   })
 </script>
 
