@@ -21,7 +21,8 @@ class DatabaseSeeder extends Seeder
             ScoutAwardSeeder::class,
             RoverAwardSeeder::class,
             WarrantSeeder::class,
-            UserSeeder::class
+            UserSeeder::class,
+            RankSeeder::class
         ]);
     }
 }
