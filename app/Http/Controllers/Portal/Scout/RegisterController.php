@@ -9,6 +9,7 @@ use App\Models\RoverAward;
 use App\Models\ScoutAward;
 use App\Models\ScoutDistrict;
 use App\Models\Title;
+use App\Models\WarrantRank;
 use App\Models\WarrantSection;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -45,6 +46,7 @@ class RegisterController extends Controller
         $warrants = WarrantSection::all();
         $districts = ScoutDistrict::orderBy('name')->get();
         $countries = Country::orderBy('name')->get();
+        $ranks = WarrantRank::all();
         return view ('portal.scout.register', compact(
             'participant', 
             'titles', 
@@ -52,7 +54,8 @@ class RegisterController extends Controller
             'rovers',
             'warrants',
             'districts',
-            'countries'
+            'countries',
+            'ranks'
          ));
     }
 
@@ -67,7 +70,7 @@ class RegisterController extends Controller
             'lastName' => ['nullable', 'alpha', 'min:3'],
             'fullName' => ['nullable', 'alpha_dash_space'],
             'initials' => ['nullable', 'alpha_capital'],
-            'profileImage'=> ['nullable', 'image', 'dimensions:ratio=1/1'],
+            'profileImage'=> ['nullable', 'image', 'mimes:jpeg,png'],
             'dob' => ['nullable' , 'date','before:today'],
             'gender' => ['nullable', Rule::in(['Male', 'Female', 'Other'])],
             'idType' => ['nullable', Rule::in(['nic', 'passport'])],
@@ -80,6 +83,7 @@ class RegisterController extends Controller
 
             'participantType' => ['nullable', Rule::in(['Rover', 'Scout Master'])],
             'warrantNumber' => ['nullable'],
+            'warrantRank' => ['nullable', 'exists:warrant_ranks,name'],
             'warrantSection' => ['nullable', 'exists:warrant_sections,name'],
             'warrantValidDate' => ['nullable', 'date'],
 
@@ -99,6 +103,9 @@ class RegisterController extends Controller
 
             'educationDetails' => ['nullable', 'min:3'],
 
+            'paymentDate'=>['nullable', 'before_or_equal:today'],
+            'paymentReference'=>['nullable'],
+            'paymentProof'=>['nullable', 'image', 'mimes:jpeg,png']
 
         ],
         [
@@ -168,6 +175,7 @@ class RegisterController extends Controller
             
             $participant->participant_type = $request->participantType;
             $participant->warrant_number = $request->warrantNumber;
+            $participant->warrant_rank = $request->warrantRank;
             $participant->warrant_section = $request->warrantSection;
             $participant->warrant_expire = $request->warrantValidDate;
             $participant->crew_number = $request->crewNumber;
@@ -183,24 +191,60 @@ class RegisterController extends Controller
             $participant->contact_person_mobile = $request->contactPersonMobileNumber;
             $participant->contact_person_telephone = $request->contactPersonTelephoneNumber;
             $participant->education = $request->educationDetails;
-            if($request->profileImage):
-                $image_ext = $request->file('profileImage')->getClientOriginalExtension();
-                $img_name = $user_id.'_profile_pic_'.date('Y-m-d').'_'.time().'.'. $image_ext;
-                $participant->image = $img_name;   
-            //SAVE PROFILE IMAGE
-                if($path = $request->file('profileImage')->storeAs('public/participants/profile_images/', $img_name)):
-                    //SAVE PROFILE IMAGE DB RECORD
+            $participant->payment_date = $request->paymentDate;
+            $participant->payment_reference = $request->paymentReference;
+
+            if($request->paymentProof):
+                $file_ext = $request->file('paymentProof')->getClientOriginalExtension();
+                $file_name = $participant->id.'_'.date('Y-m-d').'_'.time().'.'. $file_ext;
+          
+                $participant->payment_proof = $file_name;          
+                if($path = $request->file('paymentProof')->storeAs('public/participants/payments/',$file_name)):
                     
-                    // $user->profile_pic = $img_name;
-                    if($participant->save()):
+                    if($request->profileImage):
+                        $image_ext = $request->file('profileImage')->getClientOriginalExtension();
+                        $img_name = $user_id.'_profile_pic_'.date('Y-m-d').'_'.time().'.'. $image_ext;
+                        $participant->image = $img_name;   
+                        //SAVE PROFILE IMAGE
+                        if($path = $request->file('profileImage')->storeAs('public/participants/profile_images/', $img_name)):
+                            //SAVE PROFILE IMAGE DB RECORD
+                            
+                            // $user->profile_pic = $img_name;
+                            if($participant->save()):
+                                    return response()->json(['success'=>'success']);
+                            endif;
+                        endif;
+                    else:
+                        if($participant->save()):
                             return response()->json(['success'=>'success']);
-                    endif;
-                endif;
+                        endif;
+                    endif;          
+                endif;                  
+                
             else:
-                if($participant->save()):
-                    return response()->json(['success'=>'success']);
-                endif;
+                if($request->profileImage):
+                    $image_ext = $request->file('profileImage')->getClientOriginalExtension();
+                    $img_name = $user_id.'_profile_pic_'.date('Y-m-d').'_'.time().'.'. $image_ext;
+                    $participant->image = $img_name;   
+                    //SAVE PROFILE IMAGE
+                    if($path = $request->file('profileImage')->storeAs('public/participants/profile_images/', $img_name)):
+                        //SAVE PROFILE IMAGE DB RECORD
+                        
+                        // $user->profile_pic = $img_name;
+                        if($participant->save()):
+                                return response()->json(['success'=>'success']);
+                        endif;
+                    endif;
+                else:
+                    if($participant->save()):
+                        return response()->json(['success'=>'success']);
+                    endif;
+                endif;  
+
+
             endif;
+            
+
         endif;
         return response()->json(['error'=>'error']);
     }
@@ -244,6 +288,9 @@ class RegisterController extends Controller
 
             'educationDetails' => ['nullable', 'min:3'],
 
+            'paymentDate'=>['required', 'before_or_equal:today'],
+            'paymentReference'=>['required']
+
 
         ]);
 
@@ -268,12 +315,14 @@ class RegisterController extends Controller
         if($request->participantType == 'Rover'):
             $warrant_validator =  Validator::make($request->all(), [
                 'warrantNumber' => ['nullable'],
+                'warrantRank' => ['nullable', 'exists:warrant_ranks,name'],
                 'warrantSection' => ['nullable', 'exists:warrant_sections,name'],
                 'warrantValidDate' => ['nullable', 'date'],
             ]);
         else:
             $warrant_validator =  Validator::make($request->all(), [
                 'warrantNumber' => ['required'],
+                'warrantRank' => ['required', 'exists:warrant_ranks,name'],
                 'warrantSection' => ['required', 'exists:warrant_sections,name'],
                 'warrantValidDate' => ['required', 'date'],
             ]);
@@ -283,7 +332,7 @@ class RegisterController extends Controller
         if($participant->image == Null):
             $image_validator =  Validator::make($request->all(), 
                 [                         
-                    'profileImage'=> ['required', 'image', 'dimensions:ratio=1/1'],
+                    'profileImage'=> ['required', 'image', 'mimes:jpeg,png'],
                 ],
                 [
                     'dimensions'=>'image must be cropped to a square shape (Ratio= 1:1)'
@@ -292,10 +341,24 @@ class RegisterController extends Controller
         else:
             $image_validator =  Validator::make($request->all(), 
                 [                         
-                    'profileImage'=> ['nullable', 'image', 'dimensions:ratio=1/1'],
+                    'profileImage'=> ['nullable', 'image', 'mimes:jpeg,png'],
                 ],
                 [
                     'dimensions'=>'image must be cropped to a square shape (Ratio= 1:1)'
+                ]
+            );
+        endif;
+
+        if($participant->payment_proof == Null):
+            $image_validator =  Validator::make($request->all(), 
+                [                         
+                    'paymentProof'=>['required', 'image', 'mimes:jpeg,png']
+                ]
+            );
+        else:
+            $image_validator =  Validator::make($request->all(), 
+                [                         
+                    'paymentProof'=>['nullable', 'image', 'mimes:jpeg,png']
                 ]
             );
         endif;
@@ -322,6 +385,7 @@ class RegisterController extends Controller
 
             $participant->participant_type = $request->participantType;
             $participant->warrant_number = $request->warrantNumber;
+            $participant->warrant_rank = $request->warrantRank;
             $participant->warrant_section = $request->warrantSection;
             $participant->warrant_expire = $request->warrantValidDate;
             $participant->crew_number = $request->crewNumber;
@@ -339,25 +403,58 @@ class RegisterController extends Controller
             $participant->education = $request->educationDetails;
             $participant->application_submit = 1;
             $participant->submit_date = date('Y-m-d');
+            $participant->payment_date = $request->paymentDate;
+            $participant->payment_reference = $request->paymentReference;
+            $participant->payment_submit = 1;
 
-            if($request->profileImage):
-
-                $image_ext = $request->file('profileImage')->getClientOriginalExtension();
-                $img_name = $user_id.'_profile_pic_'.date('Y-m-d').'_'.time().'.'. $image_ext;
-                $participant->image = $img_name;   
-                //SAVE PROFILE IMAGE
-                if($path = $request->file('profileImage')->storeAs('public/participants/profile_images/', $img_name)):
-                    //SAVE PROFILE IMAGE DB RECORD
+            if($request->paymentProof):
+                $file_ext = $request->file('paymentProof')->getClientOriginalExtension();
+                $file_name = $participant->id.'_'.date('Y-m-d').'_'.time().'.'. $file_ext;
+          
+                $participant->payment_proof = $file_name;          
+                if($path = $request->file('paymentProof')->storeAs('public/participants/payments/',$file_name)):
                     
-                    // $user->profile_pic = $img_name;
-                    if($participant->save()):
+                    if($request->profileImage):
+                        $image_ext = $request->file('profileImage')->getClientOriginalExtension();
+                        $img_name = $user_id.'_profile_pic_'.date('Y-m-d').'_'.time().'.'. $image_ext;
+                        $participant->image = $img_name;   
+                        //SAVE PROFILE IMAGE
+                        if($path = $request->file('profileImage')->storeAs('public/participants/profile_images/', $img_name)):
+                            //SAVE PROFILE IMAGE DB RECORD
+                            
+                            // $user->profile_pic = $img_name;
+                            if($participant->save()):
+                                    return response()->json(['success'=>'success']);
+                            endif;
+                        endif;
+                    else:
+                        if($participant->save()):
                             return response()->json(['success'=>'success']);
-                    endif;
-                endif;
+                        endif;
+                    endif;          
+                endif;                  
+                
             else:
-                if($participant->save()):
-                    return response()->json(['success'=>'success']);
-                endif;
+                if($request->profileImage):
+                    $image_ext = $request->file('profileImage')->getClientOriginalExtension();
+                    $img_name = $user_id.'_profile_pic_'.date('Y-m-d').'_'.time().'.'. $image_ext;
+                    $participant->image = $img_name;   
+                    //SAVE PROFILE IMAGE
+                    if($path = $request->file('profileImage')->storeAs('public/participants/profile_images/', $img_name)):
+                        //SAVE PROFILE IMAGE DB RECORD
+                        
+                        // $user->profile_pic = $img_name;
+                        if($participant->save()):
+                                return response()->json(['success'=>'success']);
+                        endif;
+                    endif;
+                else:
+                    if($participant->save()):
+                        return response()->json(['success'=>'success']);
+                    endif;
+                endif;  
+
+
             endif;
         endif;
         return response()->json(['error'=>'error']);
@@ -434,6 +531,16 @@ class RegisterController extends Controller
         $image_name = Participant::where('user_id', Auth::user()->id )->first()->image;
 
         if(Participant::where('user_id', Auth::user()->id )->update(['image' => NULL]) && Storage::delete($image_name)):
+            return response()->json(['success'=>'success']);
+        endif;
+        return response()->json(['error'=>'error']);
+    }
+
+    public function deletePaymentProof(Request $request)
+    {
+        $image_name = Participant::where('user_id', Auth::user()->id )->first()->payment_proof;
+
+        if(Participant::where('user_id', Auth::user()->id )->update(['payment_proof' => NULL]) && Storage::delete($image_name)):
             return response()->json(['success'=>'success']);
         endif;
         return response()->json(['error'=>'error']);
