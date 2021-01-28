@@ -54,11 +54,13 @@ class CreateParticipantsTable extends Migration
             $table->date('submit_date')->nullable();
             $table->string('application_proof')->nullable();
             $table->string('application_status')->nullable();
+            $table->longText('application_status_msg')->nullable();
             $table->boolean('payment_submit')->default(0);
             $table->date('payment_date')->nullable();
             $table->string('payment_reference')->nullable();
             $table->string('payment_proof')->nullable();
             $table->string('payment_status')->nullable();
+            $table->longText('payment_status_msg')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

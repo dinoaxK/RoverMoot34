@@ -29,15 +29,5 @@ class ProfileController extends Controller
         return view('portal.admin.register.profile', compact('participant'));
     }
 
-    public function application($id)
-    {
-        $participant = Participant::find($id);
-        return view('portal.admin.register.application', compact('participant'));
-    }
 
-    public function payment($id)
-    {
-        $participant = Participant::find($id);
-        return view('portal.admin.register.payment', compact('participant'));
-    }
 }

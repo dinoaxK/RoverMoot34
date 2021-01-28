@@ -40,6 +40,7 @@
     </div>
 </div>
 
+@include('portal.admin.register.modals')
+@endsection
 
 @include('portal.admin.register.scripts')
-@endsection

@@ -12,7 +12,10 @@
         <h1 class="hero-header">34th National <br> Rover Scout Moot</h1>
         <p class="lead" style="font-size: 18px; font-weight: 500;">Welcome to the first ever national rover scout moot</p>
         
+        @if(Auth::user()->participant && Auth::user()->participant->application_status == 1 && Auth::user()->participant->payment_status == 1)
+        @else
         <a href="{{ route('moot.register') }}" class="btn btn-lg btn-outline-rover">Register</a>
+        @endif
     </div>
     </div>
 </div>
@@ -21,7 +24,14 @@
     <div class="row justify-content-center">
         <div class="col-lg-9 mt-5">
             <div class="py-5">
-                @if(Auth::user()->participant && Auth::user()->participant->application_status == 1)
+                @if(Auth::user()->participant && Auth::user()->participant->application_status == 1 && Auth::user()->participant->payment_status == 1)
+
+
+
+                    Stay Tuned!!
+
+
+
 
                 @else
                     <div class="alert alert-warning" role="alert">

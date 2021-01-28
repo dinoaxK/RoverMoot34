@@ -15,7 +15,6 @@
         <div class="col-lg-9 mt-5">
             <div class="py-5">
             
-                <p>Fields Marked with (*) are Mandatory.</p>
 
             @if( $participant != NULL && $participant->application_submit == 1 && $participant->payment_submit == 1 )
                 
@@ -24,6 +23,7 @@
             @else
 
 
+                <p>Fields Marked with (*) are Mandatory.</p>
                 <form id="scoutRegisterForm">
                     @csrf
                 @if($participant != NULL && $participant->image != NULL)
@@ -588,7 +588,7 @@
             @endif
 
             
-            @if( $participant != NULL && $participant->application_submit == 1 && $participant->payment_submit == 1 && $participant->application_proof != NULL && $participant->image != NULL && $participant->application_status == NULL )
+            @if( $participant != NULL && $participant->application_submit == 1 && $participant->payment_submit == 1 && ($participant->application_status != 1 || $participant->payment_status != 1))
 
             <div class="alert alert-success" role="alert">
                 <h4 class="alert-heading">Registration Successfully Submitted!</h4>
@@ -596,6 +596,17 @@
                 <hr>
                 <p class="mb-0">Thank you for registering to 34th National Rover Moot, Feel free to contact us on admin@scout.lk for assistance</p>
             </div>
+            @endif
+
+
+            @if($participant != NULL && $participant->application_status == 1 && $participant->payment_status == 1)
+            <div class="alert alert-success" role="alert">
+                <h4 class="alert-heading">Registration Successfull!</h4>
+                <p>Your Registration is Approved, Click on Moot to start your virtual moot journey</p>
+                <hr>
+                <p class="mb-0">Thank you for registering to 34th National Rover Moot, Feel free to contact us on admin@scout.lk for assistance</p>
+            </div>
+                
             @endif
                 <p class="text-center text-white">
                     If you have any issues regarding registration, please contact Administrator: admin@scout.lk

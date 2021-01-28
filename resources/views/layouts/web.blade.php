@@ -68,9 +68,12 @@
                 <li class="nav-item">
                     <a class="nav-link mb-1" href="{{ route('home') }}">{{ __('Moot') }}</a>
                 </li>
+                @if(Auth::user()->participant && Auth::user()->participant->application_status == 1 && Auth::user()->participant->payment_status == 1)
+                @else
                 <li class="nav-item">
                   <a class="nav-link mb-1" href="{{ route('moot.register') }}">Register</a>
                 </li>
+                @endif
                 <li class="nav-item dropdown">
                     <a id="navbarDropdown" class="nav-link  mb-1 dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         {{ Auth::user()->name }}

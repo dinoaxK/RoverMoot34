@@ -22,6 +22,7 @@
     <!-- DATATABLE  -->
     <link rel="stylesheet" href="{{ asset('vendor/datatables/css/dataTables.min.css') }}" >
     <link rel="stylesheet" href="{{ asset('vendor/datatables/css/dataTables.bootstrap4.min.css') }}" >
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.5/css/buttons.dataTables.min.css" >
     <!-- DATATABLE -->
 
     <!-- Custom styles -->
@@ -55,6 +56,12 @@
                 <li class="nav-item">
                   <a class="nav-link mb-1" href="{{ route('admin.register') }}">Registration</a>
                 </li>
+                @if(Auth::user()->role=='super_admin')
+                <li class="nav-item">
+                  <a class="nav-link mb-1" href="{{ route('admin.register') }}">Users</a>
+                </li>
+                  
+                @endif
                 <li class="nav-item dropdown">
                     <a id="navbarDropdown" class="nav-link  mb-1 dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         {{ Auth::user()->name }}
@@ -103,6 +110,11 @@
     {{-- <script src="{{ asset('vendor/jquery/jquery.validate.js') }}"></script> --}}
     <script src="{{ asset('vendor/datatables/js/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('vendor/datatables/js/dataTables.bootstrap4.min.js') }}"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.5/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.flash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.print.min.js"></script>
     <!-- /DATATABLE SCRIPTS -->
     <!-- Plugin JavaScript -->
     <script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>

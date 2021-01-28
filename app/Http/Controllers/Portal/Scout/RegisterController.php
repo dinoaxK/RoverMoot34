@@ -530,7 +530,7 @@ class RegisterController extends Controller
     {
         $image_name = Participant::where('user_id', Auth::user()->id )->first()->image;
 
-        if(Participant::where('user_id', Auth::user()->id )->update(['image' => NULL]) && Storage::delete($image_name)):
+        if(Participant::where('user_id', Auth::user()->id )->update(['image' => NULL]) && Storage::delete('public/participants/profile_images/'.$image_name)):
             return response()->json(['success'=>'success']);
         endif;
         return response()->json(['error'=>'error']);
@@ -540,7 +540,7 @@ class RegisterController extends Controller
     {
         $image_name = Participant::where('user_id', Auth::user()->id )->first()->payment_proof;
 
-        if(Participant::where('user_id', Auth::user()->id )->update(['payment_proof' => NULL]) && Storage::delete($image_name)):
+        if(Participant::where('user_id', Auth::user()->id )->update(['payment_proof' => NULL]) && Storage::delete('public/participants/payments/'.$image_name)):
             return response()->json(['success'=>'success']);
         endif;
         return response()->json(['error'=>'error']);
