@@ -17,46 +17,9 @@
             
                 <p>Fields Marked with (*) are Mandatory.</p>
 
-            @if( $participant != NULL && $participant->application_submit == 1 )
+            @if( $participant != NULL && $participant->application_submit == 1 && $participant->payment_submit == 1 )
                 
-                @if( $participant != NULL && $participant->payment_submit == 0 )
-
-                    <form id="paymentForm">
-                        @csrf
-                        <h3 class="text-left mt-4 mb-4">Payment Details</h3>
-        
-                    <div class="form-row justify-content-center"> 
-                        <div class="form-group col-md-6 mb-5">
-                            <label for="paymentDate" class="col-form-label text-center w-100">Paid Date *</label>    
-                            <input value="{{ $participant->payment_date ?? "" }}" id="paymentDate" type="date" class="form-control" name="paymentDate"required autocomplete="paidDate">
-                            <span id="paymentDate-err" class="invalid-feedback text-center" role="alert"></span>
-                        </div>
-                        <div class="form-group col-md-6 mb-5">
-                            <label for="paymentReference" class="col-form-label text-center w-100">Payment Reference *</label>    
-                            <input value="{{ $participant->payment_reference ?? "" }}" id="paymentReference" type="text" class="form-control" name="paymentReference" placeholder=" (e.g. cheque no, transaction id)" required autocomplete="paymentReference" autofocus>
-                            <span id="paymentReference-err" class="invalid-feedback text-center" role="alert"></span>
-                        </div>
-                    </div>
-                        <span id="paymentProofHelp" class="form-text text-white text-center">Upload your scanned bank slip/ payment proof here in JPEG/ PNG file format</span>
-                        <div class="drop-zone" id="paymentProof">
-                            <span class="drop-zone__prompt">Upload your Scanned Bank Slip/ Payment Proof * <br><small>Drop image File here or click to upload</small> </span>
-                            <input accept="image/*" type="file" name="paymentProof"  class="drop-zone__input"/>
-                        </div>
-                        <span id="paymentProof-err" class="invalid-feedback text-center" role="alert"></span>
-                    </form>
-                    <p class="text-center text-white pt-5">
-                        <small>Please recheck before submit, you can not change once Submitted</small> 
-                    </p> 
-                    <div class="form-group row mt-5 mb-0">
-                        <div class="col-md-12 text-center">
-                            <button id="btnPaymentScout" type="button" onclick="submit_payment()" class="btn btn-lg btn-success w-50">
-                                Submit Payment
-                                <span id="btnPaymentScoutSpinner" class="spinner-border spinner-border-sm d-none " role="status" aria-hidden="true"></span>
-                            </button>
-                        </div>
-                    </div>
-                    <hr>
-                @endif             
+           
             
             @else
 
@@ -93,7 +56,6 @@
                         <h3 class="text-left mt-4 mb-4">Profile Image</h3>
                         <hr class="bg-success">
                         <p id="profileImageHelp" class="text-white text-center">Upload your Profile Image here in JPEG/ PNG file format.</span>
-                        <p id="profileImageHelp" class="text-white text-center">Image height and width must be in 1 : 1 ratio (Square Shape)</span>
                         <div class="drop-zone" id="profileImage">
                             <span class="drop-zone__prompt">Upload your Profile Image * <br><small>Drop image File here or click to upload</small> </span>
                             <input accept="image/*" type="file" name="profileImage"  class="drop-zone__input"/>
@@ -152,7 +114,7 @@
                             <label for="lastName" class="col-form-label text-center w-100">Name with Initials *</label>  
                             <div class="input-group">
                                 <div class="input-group-prepend col-4 px-0">
-                                    <input value="{{ $participant->initials ?? "" }}" type="text" class="form-control text-uppercase" id="initials" name="initials" placeholder="e.g. CKS" required autocomplete="last_name"/>
+                                    <input value="{{ $participant->initials ?? "" }}" type="text" class="form-control" id="initials" name="initials" placeholder="e.g. CKS" required autocomplete="last_name"/>
                                 </div>
                                 <input value="{{ $participant->last_name ?? "" }}" id="lastName" type="text" class="form-control name text-capitalize" name="lastName" placeholder="e.g. Wickramarachchi" required autocomplete="last_name" >
                             </div>  
@@ -310,13 +272,31 @@
                     </div>
 
                     <div class="form-row justify-content-center">
-                        <div class="form-group col-md-5 mb-5">
+                        <div class="form-group col-md-4 mb-5">
                             <label for="warrantNumber" class="col-form-label text-center w-100">Warrant Number (If Any)</label>    
                             <input value="{{ $participant->warrant_number ?? "" }}" id="warrantNumber" type="text" class="form-control text-uppercase" name="warrantNumber">
                             <span id="warrantNumber-err" class="invalid-feedback text-center" role="alert"></span>
                         </div>
-                        <div class="form-group col-md-4 mb-5">
-                            <label for="warrantSection" class="col-form-label text-center w-100">Rank/ Section</label>    
+                        <div class="form-group col-md-3 mb-5">
+                            <label for="warrantRank" class="col-form-label text-center w-100">Rank</label>    
+                            <select name="warrantRank" id="warrantRank" class="form-control">                                
+                                <option value="">Select Section</option>                          
+                                @foreach($ranks as $rank)
+                                    @if($participant != NULL)
+                                        @if($participant->warrant_rank == $rank->name)                                            
+                                            <option value="{{ $rank->name }}" selected>{{ $rank->name }}</option> 
+                                        @else
+                                            <option value="{{ $rank->name }}">{{ $rank->name }}</option> 
+                                        @endif
+                                    @else
+                                        <option value="{{ $rank->name }}">{{ $rank->name }}</option>   
+                                    @endif                                                                 
+                                @endforeach
+                            </select>
+                            <span id="warrantRank-err" class="invalid-feedback text-center" role="alert"></span>
+                        </div>
+                        <div class="form-group col-md-3 mb-5">
+                            <label for="warrantSection" class="col-form-label text-center w-100">Section</label>    
                             <select name="warrantSection" id="warrantSection" class="form-control">                                
                                 <option value="">Select Section</option>                          
                                 @foreach($warrants as $warrant)
@@ -333,7 +313,7 @@
                             </select>
                             <span id="warrantSection-err" class="invalid-feedback text-center" role="alert"></span>
                         </div>
-                        <div class="form-group col-md-3 mb-5">
+                        <div class="form-group col-md-2 mb-5">
                             <label for="warrantValidDate" class="col-form-label text-center w-100">Valid Till</label>    
                             <input value="{{ $participant->warrant_expire ?? "" }}" id="warrantValidDate" type="date" class="form-control" name="warrantValidDate">
                             <span id="warrantValidDate-err" class="invalid-feedback text-center" role="alert"></span>
@@ -483,13 +463,59 @@
                             <span id="contactPersonTelephoneNumber-err" class="invalid-feedback text-center" role="alert"></span>
                         </div>
                     </div>
+
+                    <h3 class="text-left mt-4 mb-4">Payment Details</h3>
+        
+                    <div class="form-row justify-content-center"> 
+                        <div class="form-group col-md-6 mb-5">
+                            <label for="paymentDate" class="col-form-label text-center w-100">Paid Date *</label>    
+                            <input value="{{ $participant->payment_date ?? "" }}" id="paymentDate" type="date" class="form-control" name="paymentDate"required autocomplete="paidDate">
+                            <span id="paymentDate-err" class="invalid-feedback text-center" role="alert"></span>
+                        </div>
+                        <div class="form-group col-md-6 mb-5">
+                            <label for="paymentReference" class="col-form-label text-center w-100">Payment Reference *</label>    
+                            <input value="{{ $participant->payment_reference ?? "" }}" id="paymentReference" type="text" class="form-control" name="paymentReference" placeholder=" (e.g. cheque no, transaction id)" required autocomplete="paymentReference">
+                            <span id="paymentReference-err" class="invalid-feedback text-center" role="alert"></span>
+                        </div>
+                    </div>
+                    @if($participant != NULL && $participant->payment_proof != NULL)
+                        <div class="form-row justify-content-center mt-5">
+                            <div class="col-lg">
+                                <div class="form-group">
+                                    <div class="drop-zone" style="background: url({{ asset('storage/participants/payments/'.$participant->payment_proof)}}) no-repeat center; background-size: cover;">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <button type="button" class="btn btn-lg btn-outline-danger w-25" id="btnDeletePayment" role="button" aria-expanded="false" onclick="delete_payment_proof()">
+                                                        <i class="fa fa-trash"></i>
+                                                        Delete
+                                                        <span id="btnDeletePaymentSpinner" class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                                                    </button>
+            
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>  
+                                </div>
+                            </div>
+                        </div>
+                    @else
+                        <span id="paymentProofHelp" class="form-text text-white text-center">Upload your scanned bank slip/ payment proof here in JPEG/ PNG file format</span>
+                        <div class="drop-zone" id="paymentProof">
+                            <span class="drop-zone__prompt">Upload your Scanned Bank Slip/ Payment Proof * <br><small>Drop image File here or click to upload</small> </span>
+                            <input accept="image/*" type="file" name="paymentProof"  class="drop-zone__input"/>
+                        </div>
+                        <span id="paymentProof-err" class="invalid-feedback text-center" role="alert"></span>
+                    
+                    @endif
+
                 </form>
                 
                 <div class="form-group row mt-5 mb-0">
                     <div class="col-md-12 text-center">
-                        <button id="btnSubmitScout" type="button" onclick="save_info()" class="btn btn-lg btn-primary w-25">
+                        <button id="btnSaveScout" type="button" onclick="save_info()" class="btn btn-lg btn-primary w-25">
                             Save Info
-                            <span id="btnSubmitScoutSpinner" class="spinner-border spinner-border-sm d-none " role="status" aria-hidden="true"></span>
+                            <span id="btnSaveScoutSpinner" class="spinner-border spinner-border-sm d-none " role="status" aria-hidden="true"></span>
                         </button>
                     </div>
                 </div>                
