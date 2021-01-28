@@ -33,12 +33,12 @@
       contentType: false,           
       beforeSend: function(){
         // Show loader
-        $("#btnSubmitScoutSpinner").removeClass('d-none');
-        $('#btnSubmitScout').attr('disabled','disabled');
+        $("#btnSaveScoutSpinner").removeClass('d-none');
+        $('#btnSaveScout').attr('disabled','disabled');
       },
       success: function(data){
-        $("#btnSubmitScoutSpinner").addClass('d-none');
-        $('#btnSubmitScout').removeAttr('disabled');
+        $("#btnSaveScoutSpinner").addClass('d-none');
+        $('#btnSaveScout').removeAttr('disabled');
         if(data['errors']){
           $.each(data['errors'], function(key, value){
             $('#'+key+'-err').show();
@@ -64,8 +64,8 @@
         }
       },
       error: function(err){
-        $("#btnSubmitScoutSpinner").addClass('d-none');
-        $('#btnSubmitScout').removeAttr('disabled');
+        $("#btnSaveScoutSpinner").addClass('d-none');
+        $('#btnSaveScout').removeAttr('disabled');
         SwalSystemErrorDanger.fire({
           title: 'Saving Failed!',
           text: 'Please Try Again or Contact Administrator: admin@scout.lk',
@@ -147,68 +147,6 @@
   // /PRINT APPLICATION
 
 
-  // SUBMIT PAYMENT
-  submit_payment = () => {
-
-        
-    // FORM PAYLOAD
-    var formData = new FormData($("#paymentForm")[0]);
-    $('.form-control').removeClass('is-invalid');
-    $('.invalid-feedback').html('');
-    $('.invalid-feedback').hide();
-    $.ajax({
-      headers: {
-        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-      },
-      url: "{{ route('moot.application.payment') }}",
-      type: 'post',
-      data: formData,
-      processData: false,
-      contentType: false,           
-      beforeSend: function(){
-        // Show loader
-        $("#btnPaymentScoutSpinner").removeClass('d-none');
-        $('#btnPaymentScout').attr('disabled','disabled');
-      },
-      success: function(data){
-        $("#btnPaymentScoutSpinner").addClass('d-none');
-        $('#btnPaymentScout').removeAttr('disabled');
-        if(data['errors']){
-          $.each(data['errors'], function(key, value){
-            $('#'+key+'-err').show();
-            $('#'+key).addClass('is-invalid');
-            $('#'+key+'-err').append(value);   
-            window.location.hash = '#'+key;
-          });
-        }else if (data['success']){
-          $('.form-control').val('');
-          SwalDoneSuccess.fire({
-            title: 'Payment Submitted!',
-            text: 'Payment Submitted Successfully',
-          }).then((result) => {
-            if(result.isConfirmed) {
-              print_application();
-              location.reload()
-            }
-          });
-        }else if (data['error']){
-          SwalSystemErrorDanger.fire({
-            title: 'Submit Failed!',
-            text: 'Please Try Again or Contact Administrator: admin@scout.lk',
-          })
-        }
-      },
-      error: function(err){
-        $("#btnPaymentScoutSpinner").addClass('d-none');
-        $('#btnPaymentScout').removeAttr('disabled');
-        SwalSystemErrorDanger.fire({
-          title: 'Submit Failed!',
-          text: 'Please Try Again or Contact Administrator: admin@scout.lk',
-        })
-      }
-    });
-  }
-  // SUBMIT PAYMENT
 
   
   // SUBMIT SCANNED APPLICATION
@@ -378,6 +316,60 @@
           error: function(err){
             $("#btnDeleteImageSpinner").addClass('d-none');
             $('#btnDeleteImage').removeAttr('disabled');
+            SwalSystemErrorDanger.fire();
+          }
+        });
+      }else{
+        SwalNotificationWarningAutoClose.fire({
+          title: 'Deletion Process Aborted!',
+        });
+      }
+    });
+  }
+  // /DELETE PROFILE IMAGE
+
+    // DELETE PROFILE IMAGE
+  delete_payment_proof = () => {
+
+    SwalQuestionWarningAutoClose.fire({
+      title: 'Are you sure?',
+      text: 'You must upload your payment image once again if you delete.',
+    }).then((result) => {
+      if(result.isConfirmed){
+        $.ajax({
+          headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+          },
+          url: "{{ route('moot.application.delete.payment.proof') }}",
+          type: 'post',
+          processData: false,
+          contentType: false,           
+          beforeSend: function(){
+            // Show loader
+            $("#btnDeletePaymentSpinner").removeClass('d-none');
+            $('#btnDeletePayment').attr('disabled','disabled');
+          },
+          success: function(data){
+            $("#btnDeletePaymentSpinner").addClass('d-none');
+            $('#btnDeletePayment').removeAttr('disabled');
+            if (data['status'] = 'success'){
+              SwalDoneSuccess.fire({
+                title: 'Payment Image Deleted!',
+                text: 'Please upload corrected payment image again',
+              }).then((result) => {
+                if(result.isConfirmed) {
+                  location.reload()
+                }
+              });
+            }else{
+              SwalSystemErrorDanger.fire({
+                title: 'Delete Failed!',
+              });
+            }
+          },
+          error: function(err){
+            $("#btnDeletePaymentSpinner").addClass('d-none');
+            $('#btnDeletePayment').removeAttr('disabled');
             SwalSystemErrorDanger.fire();
           }
         });
