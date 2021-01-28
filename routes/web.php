@@ -50,6 +50,7 @@ Route::post('/moot/register/submit', [App\Http\Controllers\Portal\Scout\Register
 Route::post('/moot/register/profileImage', [App\Http\Controllers\Portal\Scout\RegisterController::class, 'uploadProfileImage'])->name('moot.application.profile.Image');
 Route::post('/moot/register/delete/profileImage', [App\Http\Controllers\Portal\Scout\RegisterController::class, 'deleteProfileImage'])->name('moot.application.delete.profile.image');
 Route::post('/moot/register/payment', [App\Http\Controllers\Portal\Scout\RegisterController::class, 'saveRegPayment'])->name('moot.application.payment');
+Route::post('/moot/register/delete/paymentProof', [App\Http\Controllers\Portal\Scout\RegisterController::class, 'deletePaymentProof'])->name('moot.application.delete.payment.proof');
 Route::post('/moot/register/scanned', [App\Http\Controllers\Portal\Scout\RegisterController::class, 'saveScannedApplication'])->name('moot.application.scanned');
 
 
