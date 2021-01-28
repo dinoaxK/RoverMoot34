@@ -4,16 +4,7 @@
 <div class="container min-vh-80 mb-5">
     <div class="row justify-content-center">
         <div class="col-lg-9 mt-5">
-            <div class="py-5">
-
-                 <div class="row">
-                    <div class="col-6">
-                        <button class="btn btn-lg btn-success w-100" onclick="approve()">Approve</button>
-                    </div>
-                    <div class="col-6">                
-                        <button class="btn btn-lg btn-danger w-100" onclick="decline()">Decline</button>
-                    </div>
-                </div>           
+            <div class="py-5">          
 
                 <div class="row">
                     <div class="col-3">
@@ -40,44 +31,44 @@
                     <div class="col-9">
                         <div class="row">
                             <div class="col-4">
-                                <p class="text-white text-uppercase">Full Name:</p>
+                                <p class="text-dark text-uppercase">Full Name:</p>
                             </div>
                             <div class="col-8">                
-                                <p class="text-white text-uppercase">{{ $participant->title }} {{ $participant->full_name }}</p>
+                                <p class="text-dark text-uppercase">{{ $participant->title }} {{ $participant->full_name }}</p>
                             </div>
                         </div>
-
+                
                                 
                         <div class="row">
                             <div class="col-4">
-                                <p class="text-white text-uppercase">Name with Initials:</p>
+                                <p class="text-dark text-uppercase">Name with Initials:</p>
                             </div>
                             <div class="col-8">                
-                                <p class="text-white text-uppercase">{{ $participant->initials }} {{ $participant->last_name }}</p>
+                                <p class="text-dark text-uppercase">{{ $participant->initials }} {{ $participant->last_name }}</p>
                             </div>
                         </div>
-
+                
                         
                         <div class="row">
                             <div class="col-4">
-                                <p class="text-white text-uppercase">Date of Birth:</p>
+                                <p class="text-dark text-uppercase">Date of Birth:</p>
                             </div>
                             <div class="col-8">                
-                                <p class="text-white text-uppercase">{{ $participant->dob }}</p>
+                                <p class="text-dark text-uppercase">{{ $participant->dob }}</p>
                             </div>
                         </div>
                         
                         <div class="row">
                             <div class="col-4">
-                                <p class="text-white text-uppercase">{{ $participant->id_type }}: </p>
+                                <p class="text-dark text-uppercase">{{ $participant->id_type }}: </p>
                             </div>
                             <div class="col-8">                
-                                <p class="text-white text-uppercase">{{ $participant->number }}</p>
+                                <p class="text-dark text-uppercase">{{ $participant->number }}</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-3">
-                        <img src="{{ asset('storage/participants/profile_images/'.$participant->image) }}" alt="Profile Image" width="200px">
+                        <img src="{{ asset('storage/participants/profile_images/'.$participant->image) }}" alt="Profile Image" style="max-height: 200px; max-width: 200px;">
                     </div>
                 </div>
 
@@ -127,7 +118,15 @@
                         <p class="text-white ">{{ $participant->user->email }}</p>
                     </div>
                 </div>
-
+        
+                <div class="row">
+                <div class="col-3">
+                    <p class="text-dark text-uppercase">Email:</p>
+                </div>
+                <div class="col-9">                
+                    <p class="text-dark ">{{ $participant->contact_person_title }} {{ $participant->contact_person_name }}</p>
+                </div>
+                </div>
 
                 <div class="row">
                     <div class="col-3">
@@ -182,25 +181,25 @@
 
                 <div class="row">
                     <div class="col-12">
-                        <h5 class="text-white text-uppercase">Warrant Details: </h5>
+                        <h5 class="text-dark text-uppercase">Warrant Details: </h5>
                     </div>
                     <div class="col-1">
-                        <p class="text-white text-uppercase">Number: </p>
-                    </div>
-                    <div class="col-3">                
-                        <p class="text-white text-uppercase">{{ $participant->warrant_number }}</p>
-                    </div>
-                    <div class="col-1">
-                        <p class="text-white text-uppercase">Section: </p>
-                    </div>
-                    <div class="col-3">                
-                        <p class="text-white text-uppercase">{{ $participant->warrant_section }}</p>
-                    </div>
-                    <div class="col-2">
-                        <p class="text-white text-uppercase">valid Till: </p>
+                        <p class="text-dark text-uppercase">Number: </p>
                     </div>
                     <div class="col-2">                
-                        <p class="text-white text-uppercase">{{ $participant->warrant_expire }}</p>
+                        <p class="text-dark text-uppercase">{{ $participant->warrant_number }}</p>
+                    </div>
+                    <div class="col-1">
+                        <p class="text-dark text-uppercase">Section: </p>
+                    </div>
+                    <div class="col-4">                
+                        <p class="text-dark text-uppercase">{{ $participant->warrant_rank }} {{ $participant->warrant_section }}</p>
+                    </div>
+                    <div class="col-2">
+                        <p class="text-dark text-uppercase">valid Till: </p>
+                    </div>
+                    <div class="col-2">                
+                        <p class="text-dark text-uppercase">{{ $participant->warrant_expire }}</p>
                     </div>
                 </div>
 
