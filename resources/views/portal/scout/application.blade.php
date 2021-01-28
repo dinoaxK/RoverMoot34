@@ -74,7 +74,7 @@
                   </div>
             </div>
             <div class="col-3">
-                <img src="{{ asset('storage/participants/profile_images/'.$participant->image) }}" alt="Profile Image" width="200px">
+                <img src="{{ asset('storage/participants/profile_images/'.$participant->image) }}" alt="Profile Image" style="max-height: 200px; max-width: 200px;">
             </div>
         </div>
 
@@ -122,6 +122,15 @@
           </div>
           <div class="col-9">                
               <p class="text-dark ">{{ $participant->user->email }}</p>
+          </div>
+        </div>        
+        
+        <div class="row">
+          <div class="col-3">
+              <p class="text-dark text-uppercase">Email:</p>
+          </div>
+          <div class="col-9">                
+              <p class="text-dark ">{{ $participant->contact_person_title }} {{ $participant->contact_person_name }}</p>
           </div>
         </div>
 
@@ -184,14 +193,14 @@
           <div class="col-1">
               <p class="text-dark text-uppercase">Number: </p>
           </div>
-          <div class="col-3">                
+          <div class="col-2">                
               <p class="text-dark text-uppercase">{{ $participant->warrant_number }}</p>
           </div>
           <div class="col-1">
               <p class="text-dark text-uppercase">Section: </p>
           </div>
-          <div class="col-3">                
-              <p class="text-dark text-uppercase">{{ $participant->warrant_section }}</p>
+          <div class="col-4">                
+              <p class="text-dark text-uppercase">{{ $participant->warrant_rank }} {{ $participant->warrant_section }}</p>
           </div>
           <div class="col-2">
               <p class="text-dark text-uppercase">valid Till: </p>
