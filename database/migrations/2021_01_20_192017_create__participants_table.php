@@ -34,6 +34,7 @@ class CreateParticipantsTable extends Migration
             $table->date('rover_award_date')->nullable();
             $table->string('participant_type')->nullable();
             $table->string('warrant_number')->nullable();
+            $table->string('warrant_rank')->nullable();
             $table->string('warrant_section')->nullable();
             $table->date('warrant_expire')->nullable();
             $table->integer('crew_number')->nullable();
