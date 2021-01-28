@@ -15,7 +15,7 @@ class WarrantSeeder extends Seeder
     public function run()
     {
       DB::table('warrant_sections')->truncate();
-        $warrants = ['Singithi Scout Master', 'Cub Scout Master', 'Scout Master', 'Rover Scout Master', 'Group Scout Master', 'District Scout Master', 'Assistant District Commissioner', 'District Commissioner'];
+        $warrants = ['Singithi Scout Master', 'Cub Scout Master', 'Scout Master', 'Rover Scout Master', 'Group Scout Master', 'District Scout Master', 'Assistant District Commissioner', 'District Commissioner', 'National Head Quater Commissioner', 'Assistant Cheif Commissioner', 'Cheif Commissioner'];
         foreach( $warrants as $key => $warrant):
           DB::table('warrant_sections')->insert(
           array(
