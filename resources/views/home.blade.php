@@ -2,7 +2,7 @@
 
 @section('content')
 
-<header class="bg-dark min-vh-100" style="background-image: url({{ asset('img/background/1.jpg') }}); padding: 200px 0 200px;">
+<header class="bg-dark min-vh-100" style="background-image: url({{ asset('img/background/2.jpg') }}); padding: 200px 0 200px;">
 <div class="container ">
     <div class="row">
     <div class="col-lg-5 order-lg-1 text-right">

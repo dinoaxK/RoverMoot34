@@ -135,9 +135,6 @@
 
 <script type="text/javascript">
 
-
-  //Get the button:
-  mybutton = document.getElementById("myBtn");
   
   // When the user scrolls down 20px from the top of the document, show the button
   window.onscroll = function() {scrollFunction()};
@@ -159,6 +156,12 @@
 
   
   $(function () {
+    $('.carousel').carousel({
+      interval: 4000
+    });
+    
+  //Get the button:
+  mybutton = document.getElementById("myBtn");
     //tooltip initiation
     $('[data-tooltip="tooltip"]').tooltip()
 
@@ -179,14 +182,7 @@
       }
     });
 
-    // show hide background on mobile nav bar
-    $('.navbar-toggler').click(function(e) {
-      $('.navbar').toggleClass('bg-0');
-      $('.navbar').toggleClass('bg-rover');
-      $('.navbar').toggleClass('navbar-light');
-      $('.navbar').toggleClass('navbar-dark');
 
-    });
   })
 </script>
 

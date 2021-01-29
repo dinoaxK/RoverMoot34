@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\News;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -15,7 +16,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index');
+    $newss = News::all();
+    return view('index', compact('newss'));
 });
 
 Route::post('logout',[App\Http\Controllers\Auth\LoginController::class,'logout']);
@@ -45,6 +47,9 @@ Route::post('/admin/users/deactivate/user', [App\Http\Controllers\Portal\Admin\U
 Route::post('/admin/users/activate/user', [App\Http\Controllers\Portal\Admin\UserController::class, 'activate_user'])->name('user.activate');
 Route::post('/admin/users/create/user', [App\Http\Controllers\Portal\Admin\UserController::class, 'create_user'])->name('user.create');
 
+Route::get('/admin/news', [App\Http\Controllers\Portal\Admin\NewsController::class, 'index'])->name('admin.news');
+Route::post('/admin/users/create/news', [App\Http\Controllers\Portal\Admin\NewsController::class, 'create_news'])->name('news.create');
+Route::post('/admin/users/delete/news', [App\Http\Controllers\Portal\Admin\NewsController::class, 'delete_news'])->name('news.delete');
 
 // /ADMIN PORTAL
 
