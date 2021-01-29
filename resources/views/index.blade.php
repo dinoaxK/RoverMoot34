@@ -98,9 +98,9 @@
           <p>Both your Application and Payment will need to be approved to complete your registration.</p>
           <p>Only registered participants will be able to access the Moot page and other Moot benefits (e.g. Moot Scarf, Certificate etc.).</p>
         </div>
-        <div class="col-lg-4 justify-content-center" style="background-image:url({{ asset('img/background/mascot1.jpg') }});">
+        {{-- <div class="col-lg-4 justify-content-center" style="background-image:url({{ asset('img/background/mascot1.jpg') }});">
         
-        </div>
+        </div> --}}
       </div>
     </div>
   </section>
