@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Portal\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Mail\AdminCreatedMail;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use Yajra\DataTables\Facades\DataTables;
 
@@ -81,12 +83,25 @@ class UserController extends Controller
             $user = new User();
             $user->name = $request->name;
             $user->email = $request->email;
-            $user->password = Hash::make($request->name);
+            $user->password = Hash::make($request->password);
+            $user->email_verified_at = date('Y-m-d H:i:s');
             $user->role = $request->role;
             $user->status ='active';
 
+                
+            $details = [
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => $request->password
+            ];
+
             if($user->save()):
-                return response()->json(['success'=>'success']);
+
+                if(Mail::to($request->email)->send(new AdminCreatedMail($details))):
+                    else: 
+                        return response()->json(['success'=>'success']);
+                    endif;
+
             endif;
         endif;
         return response()->json(['error'=>'error']);
