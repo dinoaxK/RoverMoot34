@@ -58,7 +58,7 @@
                 </li>
                 @if(Auth::user()->role=='super_admin')
                 <li class="nav-item">
-                  <a class="nav-link mb-1" href="{{ route('admin.register') }}">Users</a>
+                  <a class="nav-link mb-1" href="{{ route('admin.users') }}">Users</a>
                 </li>
                   
                 @endif

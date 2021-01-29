@@ -4,7 +4,6 @@
   $(document).ready(function(){
 
     var table = $('.yajra-datatable').DataTable({
-      searching: false,
       processing: true,
       serverSide: true,
 

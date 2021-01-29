@@ -42,7 +42,6 @@ class RegisterController extends Controller
             $data = Participant::where('application_submit', 1)->orWhere('payment_submit', 1)->latest();
             return DataTables::of($data)
                 ->addIndexColumn()
-                ->rawColumns(['action'])
                 ->make(true);
         }
     }
