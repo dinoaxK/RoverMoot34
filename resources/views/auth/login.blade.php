@@ -36,9 +36,9 @@
                     <div class="form-group row  justify-content-center">
                         <label for="password" class="col-md-8 col-form-label text-center">{{ __('Password') }}</label>
 
-                        <div class="col-md-8">
-                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
+                        <div class="col-md-8">                               
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                                <span toggle="#password-field" class="fa fa-fw fa-eye toggle-password text-primary" style="float: right; margin-right: 10px; margin-left: -25px; margin-top: -25px; position: relative; z-index: 2;"></span>
                             @error('password')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
