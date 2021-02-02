@@ -9,8 +9,8 @@
         <img src="{{ asset('img/logo/1.png') }}" alt="Moot Logo"  style="max-width: 100%;" class="mb-5">
     </div>
     <div class="col-lg-7 order-lg-2">
-        <h1 class="hero-header">34th National <br> Rover Scout Moot</h1>
-        <p class="lead" style="font-size: 18px; font-weight: 500;">Welcome to the first ever national rover scout moot</p>
+        <h1 class="hero-header">34th National Centenary<br> Rover Scout Moot</h1>
+        <p class="lead" style="font-size: 18px; font-weight: 500;">Welcome to the first ever virtual national rover scout moot</p>
         
         @if(Auth::user()->participant && Auth::user()->participant->application_status == 1 && Auth::user()->participant->payment_status == 1)
         @else
@@ -27,8 +27,22 @@
                 @if(Auth::user()->participant && Auth::user()->participant->application_status == 1 && Auth::user()->participant->payment_status == 1)
 
 
-
-                    Stay Tuned!!
+                <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-ride="carousel">
+                    <div class="carousel-inner">
+                    @foreach($newss as $news)
+                        @if ($loop->first)
+                        
+                    <div class="carousel-item active">
+                        <img src="{{ asset('/storage/news/'.$news->image) }}" style="height: auto;" class="d-block w-100" alt="Moot News">
+                    </div>
+                    @endif
+                    <div class="carousel-item">
+                        <img src="{{ asset('/storage/news/'.$news->image) }}" style="height: auto;" class="d-block w-100" alt="Moot News">
+                    </div>
+                    
+                    @endforeach
+                    </div>
+                </div>
 
 
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Portal\Scout;
 
+use App\Models\News;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -24,6 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $newss = News::all();
+        return view('home', compact('newss'));
     }
 }
