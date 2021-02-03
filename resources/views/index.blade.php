@@ -26,9 +26,9 @@
           <h5 class="text-center hero-header text-white" style="font-size: 36px;">About the Moot</h2>
         </div>
         <div class="col-lg-8 mx-auto">
-          <p class="lead">34th National Rover Moot- the biannual gathering of Rover Scouts of Sri Lanka Scout Association, will be held virtually from 25th to 28th of March 2021 via Zoom, Facebook & YouTube. Young scouts between the age of 17 to 26 years are eligible to participate in this camp.</p>
-          <p class="lead">Rover scouting was initiated in Sri Lanka in 1920. Since its inception, Rover scouting has grown up to a larger platform which gathers the youth of the country, mentoring  them to lead a successful adult life utilising the guidance and the philosophy for a thriving adulthood mentioned in "Rovering to Success"  the life-guide book for Rovers written by Baden-Powell himself..</p>
-          <p class="lead">While celebrating  the Rover Centenary, the 34th National Rover Moot will provide  an opportunity to the creative young Rovers to take part in the Moot logo and theme competition from which an official logo and a theme for the Moot will be selected. The competition will be launched on the [date]  and we invite all the talented Rovers out there to take part in this as an initial step of celebrating the centenary.</p>
+          <p class="lead text-center">34th National Rover Moot- the biannual gathering of Rover Scouts of Sri Lanka Scout Association, will be held virtually from 25th to 28th of March 2021 via Zoom, Facebook & YouTube. Young scouts between the age of 17 to 26 years are eligible to participate in this camp.</p>
+          <p class="lead text-center">Rover scouting was initiated in Sri Lanka in 1920. Since its inception, Rover scouting has grown up to a larger platform which gathers the youth of the country, mentoring  them to lead a successful adult life utilising the guidance and the philosophy for a thriving adulthood mentioned in "Rovering to Success"  the life-guide book for Rovers written by Baden-Powell himself..</p>
+          <p class="lead text-center">While celebrating  the Rover Centenary, the 34th National Rover Moot will provide  an opportunity to the creative young Rovers to take part in the Moot logo and theme competition from which an official logo and a theme for the Moot will be selected. The competition will be launched on the [date]  and we invite all the talented Rovers out there to take part in this as an initial step of celebrating the centenary.</p>
          
           
         </div>
@@ -49,6 +49,7 @@
           <h5 class="text-center hero-header" style="font-size: 36px;">Programme</h2>
         </div>
         <div class="col-lg-12 mx-0 px-0">
+          <p class=" text-center">Coming Soon!</p> 
           <!-- <img src="{{ asset('img/background/comming-soon.jpg') }}" width="100%" alt=""> -->
         </div>
       </div>
