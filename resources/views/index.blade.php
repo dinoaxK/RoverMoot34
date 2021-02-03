@@ -57,21 +57,39 @@
   </section>
 
 
-  <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-ride="carousel">
+  <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
+    <ol class="carousel-indicators">
+    @foreach($newss as $news)
+      @if($loop->first)        
+        <li data-target="#carouselExampleIndicators" data-slide-to="{{ $loop->index }}" class="active"></li>
+      @else
+        <li data-target="#carouselExampleIndicators" data-slide-to="{{ $loop->index }}"></li>
+      @endif
+
+    @endforeach
+    </ol>
     <div class="carousel-inner">
     @foreach($newss as $news)
-        @if ($loop->first)
-        
-      <div class="carousel-item active">
-          <img src="{{ asset('/storage/news/'.$news->image) }}" style="height: auto;" class="d-block w-100" alt="Moot News">
-      </div>
-    @endif
-      <div class="carousel-item">
-          <img src="{{ asset('/storage/news/'.$news->image) }}" style="height: auto;" class="d-block w-100" alt="Moot News">
-      </div>
+      @if ($loop->first)      
+        <div class="carousel-item active">
+            <img   src="{{ asset('/storage/news/'.$news->image) }}" style="height: auto;" class="d-block w-100" alt="Moot News">
+        </div>
+      @else
+        <div class="carousel-item">
+            <img src="{{ asset('/storage/news/'.$news->image) }}" style="height: auto;" class="d-block w-100" alt="Moot News">
+        </div>
+      @endif
       
     @endforeach
     </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
   </div>
 
 
