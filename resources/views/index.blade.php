@@ -9,7 +9,8 @@
         </div>
         <div class="col-lg-7 order-lg-2">
           <h1 class="hero-header">34th National Centenary <br> Rover Scout Moot</h1>
-          <p class="lead" style="font-size: 18px; font-weight: 500;">Welcome to the first ever virtual national rover scout moot</p>
+          {{-- <p class="lead" style="font-size: 18px; font-weight: 500;">Welcome to the first ever virtual national rover scout moot</p> --}}
+          <p class="lead" style="font-size: 18px; font-weight: 500;">Celebrating 100 years of Rover Scouting in Sri Lanka</p>
           
           <a href="{{ route('moot.register') }}" class="btn btn-lg btn-outline-rover">Register Now!</a>
           <a href="{{ url('/#about') }}" class="btn  btn-outline-warning">Learn More</a>
@@ -21,8 +22,10 @@
   <section id="about">
     <div class="container">
       <div class="row">
+        <div class="col-lg-12">
+          <h5 class="text-center hero-header text-white" style="font-size: 36px;">About the Moot</h2>
+        </div>
         <div class="col-lg-8 mx-auto">
-          <h2>About the Moot</h2>
           <p class="lead">34th National Rover Moot- the biannual gathering of Rover Scouts of Sri Lanka Scout Association, will be held virtually from 25th to 28th of March 2021 via Zoom, Facebook & YouTube. Young scouts between the age of 17 to 26 years are eligible to participate in this camp.</p>
           <p class="lead">Rover scouting was initiated in Sri Lanka in 1920. Since its inception, Rover scouting has grown up to a larger platform which gathers the youth of the country, mentoring  them to lead a successful adult life utilising the guidance and the philosophy for a thriving adulthood mentioned in "Rovering to Success"  the life-guide book for Rovers written by Baden-Powell himself..</p>
           <p class="lead">While celebrating  the Rover Centenary, the 34th National Rover Moot will provide  an opportunity to the creative young Rovers to take part in the Moot logo and theme competition from which an official logo and a theme for the Moot will be selected. The competition will be launched on the [date]  and we invite all the talented Rovers out there to take part in this as an initial step of celebrating the centenary.</p>
@@ -39,12 +42,14 @@
     </div>
   </section>
 
-  <section id="programme" class="bg-light text-dark">
+  <section id="programme" class="bg-light text-dark" >
     <div class="container">
       <div class="row">
-        <div class="col-lg-8 mx-auto">
-          <h2>Programme</h2>
-          <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut optio velit inventore, expedita quo laboriosam possimus ea consequatur vitae, doloribus consequuntur ex. Nemo assumenda laborum vel, labore ut velit dignissimos.</p>
+        <div class="col-lg-12">
+          <h5 class="text-center hero-header" style="font-size: 36px;">Programme</h2>
+        </div>
+        <div class="col-lg-12 mx-0 px-0">
+          <!-- <img src="{{ asset('img/background/comming-soon.jpg') }}" width="100%" alt=""> -->
         </div>
       </div>
     </div>
@@ -72,8 +77,10 @@
   <section id="register" class="bg-light text-dark">
     <div class="container">
       <div class="row">
+        <div class="col-lg-12">
+          <h5 class="text-center hero-header" style="font-size: 36px;">Register</h2>
+        </div>
         <div class="col-lg-8 mx-auto">
-          <h2>Register</h2>
           <p>To join the Virtual National Rover Scout Moot, you need to follow these steps.</p>
           <ul>
             <li>
