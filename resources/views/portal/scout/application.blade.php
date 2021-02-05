@@ -9,7 +9,7 @@
      /* change the margins as you want them to be. */
 }
 </style>
-<div class="pt-5 mt-5 ml-5" style="padding: 110px 0 80px;">
+<div class="pt-0 mt-0 ml-5" style="padding: 110px 0 80px;">
     <div class="container ">
         <div class="row">
           <div class="col-12 justify-content-center">
@@ -230,7 +230,7 @@
 
 
         <h6 class="text-center text-dark text-uppercase mt-3">Recommendations (Signatures)</h6>
-    <hr class="mb-5 pb-5">
+    <hr class="mb-0 pb-5">
 
     <div class="row justify-content-center">
       <div class="col-4">
