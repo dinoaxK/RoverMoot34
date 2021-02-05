@@ -1,6 +1,14 @@
 @extends('layouts.web')
 
 @section('content')
+
+<style>
+@page {
+    size: 21cm 29.7cm;
+    /* margin: 30mm 45mm 30mm 45mm; */
+     /* change the margins as you want them to be. */
+}
+</style>
 <div class="pt-5 mt-5 ml-5" style="padding: 110px 0 80px;">
     <div class="container ">
         <div class="row">
