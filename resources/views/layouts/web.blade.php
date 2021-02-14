@@ -131,6 +131,16 @@
     <script src="{{ asset('js/sweetalert.js') }}"></script>
   <!-- /SCRIPTS -->
 
+  <!-- Flyzoo script v3 -->
+<!-- <script type="text/javascript">
+(function () {
+ window._FlyzooApplicationId="602134684fb4d51ab0141e2d602132b7bb547e4bc011c605";
+ var fz = document.createElement('script'); fz.type = 'text/javascript'; fz.async = true;
+ fz.src = '//widget.flyzoo.co/scripts/flyzoo.start.js';
+ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(fz, s);
+})();
+</script> -->
+
 </body>
 
 <script type="text/javascript">
