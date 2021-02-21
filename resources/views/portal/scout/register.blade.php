@@ -594,7 +594,7 @@
                 <h4 class="alert-heading">Registration Successfully Submitted!</h4>
                 <p>Your documents will be reviewed. You'll be Notified on {{ Auth::user()->email }}, once your registration is approved</p>
                 <hr>
-                <p class="mb-0">Thank you for registering to 34th National Rover Moot, Feel free to contact us on 34th.rover.moot.sl@gmail.com for assistance</p>
+                <p class="mb-0">Thank you for registering to 34th National Rover Moot, Feel free to contact us on rovermoot.2021@gmail.com for assistance</p>
             </div>
             @endif
 
@@ -604,12 +604,12 @@
                 <h4 class="alert-heading">Registration Successfull!</h4>
                 <p>Your Registration is Approved, Click on Moot to start your virtual moot journey</p>
                 <hr>
-                <p class="mb-0">Thank you for registering to 34th National Rover Moot, Feel free to contact us on 34th.rover.moot.sl@gmail.com for assistance</p>
+                <p class="mb-0">Thank you for registering to 34th National Rover Moot, Feel free to contact us on rovermoot.2021@gmail.com for assistance</p>
             </div>
                 
             @endif
                 <p class="text-center text-white">
-                    If you have any issues regarding registration, please contact Administrator:<br> 34th.rover.moot.sl@gmail.com / +94 777 478 292
+                    If you have any issues regarding registration, please contact Administrator:<br> rovermoot.2021@gmail.com / +94 777 478 292
                 </p> 
             </div>
         </div>

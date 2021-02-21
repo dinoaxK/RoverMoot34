@@ -59,7 +59,7 @@
         }else if (data['error']){
           SwalSystemErrorDanger.fire({
             title: 'Saving Failed!',
-            text: 'Please Try Again or Contact Administrator: 34th.rover.moot.sl@gmail.com',
+            text: 'Please Try Again or Contact Administrator: rovermoot.2021@gmail.com',
           })
         }
       },
@@ -68,7 +68,7 @@
         $('#btnSaveScout').removeAttr('disabled');
         SwalSystemErrorDanger.fire({
           title: 'Saving Failed!',
-          text: 'Please Try Again or Contact Administrator: 34th.rover.moot.sl@gmail.com',
+          text: 'Please Try Again or Contact Administrator: rovermoot.2021@gmail.com',
         })
       }
     });
@@ -122,7 +122,7 @@
         }else if (data['error']){
           SwalSystemErrorDanger.fire({
             title: 'Submit Failed!',
-            text: 'Please Try Again or Contact Administrator: 34th.rover.moot.sl@gmail.com',
+            text: 'Please Try Again or Contact Administrator: rovermoot.2021@gmail.com',
           })
         }
       },
@@ -131,7 +131,7 @@
         $('#btnSubmitScout').removeAttr('disabled');
         SwalSystemErrorDanger.fire({
           title: 'Submit Failed!',
-          text: 'Please Try Again or Contact Administrator: 34th.rover.moot.sl@gmail.com',
+          text: 'Please Try Again or Contact Administrator: rovermoot.2021@gmail.com',
         })
       }
     });
@@ -195,7 +195,7 @@
         }else if (data['error']){
           SwalSystemErrorDanger.fire({
             title: 'Submit Failed!',
-            text: 'Please Try Again or Contact Administrator: 34th.rover.moot.sl@gmail.com',
+            text: 'Please Try Again or Contact Administrator: rovermoot.2021@gmail.com',
           })
         }
       },
@@ -204,7 +204,7 @@
         $('#btnScannedScout').removeAttr('disabled');
         SwalSystemErrorDanger.fire({
           title: 'Submit Failed!',
-          text: 'Please Try Again or Contact Administrator: 34th.rover.moot.sl@gmail.com',
+          text: 'Please Try Again or Contact Administrator: rovermoot.2021@gmail.com',
         })
       }
     });
@@ -257,7 +257,7 @@
         }else if (data['error']){
           SwalSystemErrorDanger.fire({
             title: 'Upload Failed!',
-            text: 'Please Try Again or Contact Administrator: 34th.rover.moot.sl@gmail.com',
+            text: 'Please Try Again or Contact Administrator: rovermoot.2021@gmail.com',
           })
         }
       },
@@ -266,7 +266,7 @@
         $('#btnUploadProfileImage').removeAttr('disabled');
         SwalSystemErrorDanger.fire({
           title: 'Upload Failed!',
-          text: 'Please Try Again or Contact Administrator: 34th.rover.moot.sl@gmail.com',
+          text: 'Please Try Again or Contact Administrator: rovermoot.2021@gmail.com',
         })
       }
     });
