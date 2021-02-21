@@ -48,7 +48,7 @@
           location.reload();
           SwalSystemErrorDanger.fire({
             title: 'Upload Failed!',
-            text: 'Please Try Again or Contact Administrator: 34th.rover.moot.sl@gmail.com',
+            text: 'Please Try Again or Contact Administrator: rovermoot.2021@gmail.com',
           })
         }
       },
@@ -57,7 +57,7 @@
         $('.btn').removeAttr('disabled');
         SwalSystemErrorDanger.fire({
           title: 'Upload Failed!',
-          text: 'Please Try Again or Contact Administrator: 34th.rover.moot.sl@gmail.com',
+          text: 'Please Try Again or Contact Administrator: rovermoot.2021@gmail.com',
         })
       }
     });
