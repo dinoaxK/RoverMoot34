@@ -109,12 +109,12 @@
             </li>
             <li>
               <p>
-                Step 02: Complete your Rover Moot Registration Payment to the account below and snap a photo of the payment proof (e.g. Bank Slip) 
+                Step 02: Complete your Rover Moot Registration Payment (Rs. 300.00) to the account below and snap a photo of the payment proof (e.g. Bank Slip) 
               </p>
             </li>
             <li>
               <p>
-                Step 03: Go to Register and fill out the Rover Moot Application providing all the required details including the photo of your paid bank slip or receipt. (You can save your details and submit your application later. your details will be editable until you submit)
+                Step 03: Go to Register and fill out the Rover Moot Application providing all the required details including the photo of your paid bank slip (Registration Fee: Rs. 300.00) or receipt. (You can save your details and submit your application later. your details will be editable until you submit)
               </p>
             </li>
             <li>
