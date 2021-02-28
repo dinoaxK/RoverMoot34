@@ -1,7 +1,5 @@
 @extends('layouts.web')
 
-@extends('layouts.web')
-
 @section('content')
 <header class="bg-dark text-white" style="background-image: url({{ asset('img/background/1.jpg') }}); padding: 110px 0 80px;">
     <div class="container ">
@@ -21,7 +19,7 @@
 
                     <input type="hidden" name="token" value="{{ $token }}">
 
-                    <div class="form-group row">
+                    <div class="form-group row justify-content-center">
                         <label for="email" class="col-md-8 col-form-label text-center">{{ __('E-Mail Address') }}</label>
 
                         <div class="col-md-8">
@@ -35,7 +33,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group row">
+                    <div class="form-group row justify-content-center">
                         <label for="password" class="col-md-8 col-form-label text-center">{{ __('Password') }}</label>
 
                         <div class="col-md-8">
@@ -49,7 +47,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group row">
+                    <div class="form-group row justify-content-center">
                         <label for="password-confirm" class="col-md-8 col-form-label text-center">{{ __('Confirm Password') }}</label>
 
                         <div class="col-md-8">
@@ -57,8 +55,8 @@
                         </div>
                     </div>
 
-                    <div class="form-group row mb-0">
-                        <div class="col-md-6 offset-md-4">
+                    <div class="form-group row justify-content-center mt-5  mb-0">
+                        <div class="col-md-6  text-center">
                             <button type="submit" class="btn btn-lg btn-primary">
                                 {{ __('Reset Password') }}
                             </button>

@@ -210,7 +210,9 @@
                     Account No: <br>
                     Account Name: <br>
                     Bank: <br>
-                    Branch:
+                    Branch: <br>
+
+                    <small>(All Payments should be made payable in “Colombo”, and in favour of “Sri Lanka Scout Association”)</span>
                   </p>
                 </div>
               </div>
@@ -218,13 +220,13 @@
 
           </div>
 
-          <div class="row justify-content-center">
+          <div class="row justify-content-center px-5">
 
             <p>You'll be notified by email once your application and payment is approved.</p>
             <p>Both your Application and Payment must be approved to complete your moot registration.</p>
             <p>Only registered participants will be able to access the Moot page and other Moot benefits (e.g. Moot Scarf, Certificate etc.).</p>
   
-            <button class="btn btn-lg btn-outline-rover w-50 my-5 wow fadeInUp">Register Now!</button>
+            <a class="btn btn-lg btn-outline-rover w-50 my-5 wow fadeInUp" href="{{ route('moot.register') }}">Register Now!</a>
           </div>
         </div>
         {{-- <div class="col-lg-4 justify-content-center" style="background-image:url({{ asset('img/background/mascot1.jpg') }});">
