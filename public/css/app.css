@@ -9816,6 +9816,14 @@ a.text-danger:hover, a.text-danger:focus {
   color: #ae1c17 !important;
 }
 
+.text-rover {
+  color: var(--theme-color) !important;
+}
+
+a.text-rover:hover, a.text-rover:focus {
+  color: #ae1c17 !important;
+}
+
 .text-light {
   color: #f8f9fa !important;
 }
