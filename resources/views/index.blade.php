@@ -210,7 +210,9 @@
                     Account No: <br>
                     Account Name: <br>
                     Bank: <br>
-                    Branch:
+                    Branch: <br>
+
+                    <small>(All Payments should be made payable in “Colombo”, and in favour of “Sri Lanka Scout Association”)</span>
                   </p>
                 </div>
               </div>
