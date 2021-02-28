@@ -25,6 +25,9 @@
     <link href="{{ asset('css/form.css') }}" rel="stylesheet"> 
     <!-- DROPZONE -->       
     <link rel="stylesheet" href="{{ asset('vendor/dropzone/drop-zone.css') }}">
+
+    
+    <link href="{{ asset('vendor/animate/animate.min.css') }}" rel="stylesheet">
   <!-- /STYLES -->
 
 </head>
@@ -110,6 +113,9 @@
     <div class="container">      
       <div class="col-12 text-white mt-4 text-center">
           Copyright &copy;  {{ now()->year }}<strong><a target="_blank" href="" class="white"> SLSA</a> </strong>. All Rights Reserved 
+      </div>                    
+      <div class="col-12 credits text-center">
+          Designed by <strong><a target="_blank" href="https://www.linkedin.com/in/dinusha-kulasooriya-599a68a6/" class="white">Dinusha D. Kulasooriya </a> </strong>
       </div>
     </div>
     <!-- /.container -->
@@ -126,9 +132,18 @@
     <!-- /SWEET ALERT 2 -->
     <!-- DROPZONE JS--> <script src="{{ asset('vendor/dropzone/drop-zone.js') }}"></script>
 
+    
+  <script src="{{ asset('vendor/easing/easing.min.js') }}"></script>
+  <script src="{{ asset('vendor/wow/wow.min.js') }}"></script>
+  <script src="{{ asset('vendor/waypoints/waypoints.min.js') }}"></script>
+  <script src="{{ asset('vendor/counterup/counterup.min.js') }}"></script>
+  <script src="{{ asset('vendor/superfish/hoverIntent.js') }}"></script>
+  <script src="{{ asset('vendor/superfish/superfish.min.js') }}"></script>
+
     <!-- Custom JavaScript -->
     <script src="{{ asset('js/core.js') }}"></script>
     <script src="{{ asset('js/sweetalert.js') }}"></script>
+    
   <!-- /SCRIPTS -->
 
   <!-- Flyzoo script v3 -->
@@ -168,6 +183,15 @@
   $(function () {
     $('.carousel').carousel({
       interval: 4000
+    });
+
+    // Initiate the wowjs
+    new WOW().init();
+
+    // jQuery counterUp
+    $('[data-toggle="counter-up"]').counterUp({
+      delay: 20,
+      time: 3000
     });
 
     $(".toggle-password").click(function() {

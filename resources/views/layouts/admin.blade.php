@@ -102,6 +102,10 @@
       <div class="col-12 text-white mt-4 text-center">
           Copyright &copy;  {{ now()->year }}<strong><a target="_blank" href="" class="white"> SLSA</a> </strong>. All Rights Reserved 
       </div>
+                         
+      <div class="col-12 credits text-center">
+          Designed by <strong><a target="_blank" href="https://www.linkedin.com/in/dinusha-kulasooriya-599a68a6/" class="white">Dinusha D. Kulasooriya </a> </strong>
+      </div>
     </div>
     <!-- /.container -->
   </footer>
