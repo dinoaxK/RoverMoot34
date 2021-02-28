@@ -202,6 +202,12 @@ section {
   padding: 150px 0;
 }
 
+#facts .counters span {
+  font-size: 72px;
+  display: block;
+  color: var(--theme-color);
+}
+
 #joinus{
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
