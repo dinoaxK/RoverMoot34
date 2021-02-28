@@ -26,7 +26,7 @@
       headers: {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
       },
-      url: "{{ route('moot.register') }}",
+      url: "{{ route('moot.register.save') }}",
       type: 'post',
       data: formData,
       processData: false,
