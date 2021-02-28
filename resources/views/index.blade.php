@@ -8,7 +8,7 @@
           <img src="{{ asset('img/logo/1.png') }}" alt="Moot Logo"  style="max-width: 100%;" class="mb-5">
         </div>
         <div class="col-lg-7 order-lg-2">
-          <h1 class="hero-header">34th National Centenary <br> Rover Scout Moot</h1>
+          <h1 class="hero-header wow pulse">34th National Centenary <br> Rover Scout Moot</h1>
           {{-- <p class="lead" style="font-size: 18px; font-weight: 500;">Welcome to the first ever virtual national rover scout moot</p> --}}
           <p class="lead" style="font-size: 18px; font-weight: 500;">Celebrating 100 years of Rover Scouting in Sri Lanka</p>
           
@@ -26,15 +26,38 @@
           <h5 class="text-center hero-header text-white" style="font-size: 36px;">About the Moot</h2>
         </div>
         <div class="col-lg-8 mx-auto">
-          <p class="lead text-center">34th National Rover Moot- the biannual gathering of Rover Scouts of Sri Lanka Scout Association, will be held virtually from 25th to 28th of March 2021 via Zoom, Facebook & YouTube. Young scouts between the age of 17 to 26 years are eligible to participate in this camp.</p>
+          <p class="lead text-center">34th National Rover Moot- the biannual gathering of Rover Scouts of Sri Lanka Scout Association, will be held virtually from 23rd to 26th of April 2021 via Zoom, Facebook & YouTube. Young scouts between the age of 17 to 26 years are eligible to participate in this camp.</p>
           <p class="lead text-center">Rover scouting was initiated in Sri Lanka in 1920. Since its inception, Rover scouting has grown up to a larger platform which gathers the youth of the country, mentoring  them to lead a successful adult life utilising the guidance and the philosophy for a thriving adulthood mentioned in "Rovering to Success"  the life-guide book for Rovers written by Baden-Powell himself..</p>
-          <p class="lead text-center">While celebrating  the Rover Centenary, the 34th National Rover Moot will provide  an opportunity to the creative young Rovers to take part in the Moot logo and theme competition from which an official logo and a theme for the Moot will be selected. The competition will be launched on the [date]  and we invite all the talented Rovers out there to take part in this as an initial step of celebrating the centenary.</p>
+          <p class="lead text-center">While celebrating  the Rover Centenary, the 34th National Rover Moot will provide  an opportunity to the creative young Rovers to take part in various pre-moot and moot activities</p>
          
           
         </div>
       </div>
     </div>
   </section>
+
+  <section id="facts" class="bg-light text-dark">
+    <div class="container wow fadeInUp">
+      <div class="row counters">
+        <div class="col-lg-4 col-12 text-center">
+          <span data-toggle="counter-up">1000</span>
+          <p>+ Participants</p>
+        </div>
+
+        <div class="col-lg-4 col-12 text-center">
+          <span data-toggle="counter-up">37</span>
+          <p>Districts</p>
+        </div>
+
+        <div class="col-lg-4 col-12 text-center">
+          <span data-toggle="counter-up">4</span>
+          <p>Days</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section><!-- #facts -->
 
   <section id="joinus" class="bg-light text-dark" style="background-image: url({{ asset('img/background/1.jpg') }});">
     <div class="container my-0 py-0" >
@@ -99,39 +122,110 @@
         <div class="col-lg-12">
           <h5 class="text-center hero-header" style="font-size: 36px;">Register</h2>
         </div>
-        <div class="col-lg-8 mx-auto">
-          <p>To join the Virtual National Rover Scout Moot, you need to follow these steps.</p>
-          <ul>
-            <li>
-              <p>
-                Step 01: Sign up and create an account with your email and password (You need to verify your email to complete signup)
-              </p>
-            </li>
-            <li>
-              <p>
-                Step 02: Complete your Rover Moot Registration Payment (Rs. 300.00) to the account below and snap a photo of the payment proof (e.g. Bank Slip) 
-              </p>
-            </li>
-            <li>
-              <p>
-                Step 03: Go to Register and fill out the Rover Moot Application providing all the required details including the photo of your paid bank slip (Registration Fee: Rs. 300.00) or receipt. (You can save your details and submit your application later. your details will be editable until you submit)
-              </p>
-            </li>
-            <li>
-              <p>
-                Step 04: After submitting the application, print the auto generated application and get it verified by your Rover Scout Master, Your District's Asst. District Commissioner (Rovers) And District Commissioner with their relevant stamps.
-              </p>
-            </li>
-            <li>
-              <p>
-                Step 05: Go to "Register" and upload a clear photo of your signed application.
-              </p>
-            </li>
-          </ul>
+        <div class="col-lg-12 mx-auto">
+          <p class=" text-center">To join the Virtual National Rover Scout Moot, you need to follow these steps.</p>
 
-          <p>You'll be notified by email once your application and payment is approved.</p>
-          <p>Both your Application and Payment will need to be approved to complete your registration.</p>
-          <p>Only registered participants will be able to access the Moot page and other Moot benefits (e.g. Moot Scarf, Certificate etc.).</p>
+          <div class="row mb-5">
+
+            <div class="col-lg-6 my-3">
+              <div class="card wow fadeInUp border-0 h-100">
+                <div class="card-header bg-transparent border-0">
+                  Step 01
+                </div>
+
+                <div class="card-body">
+                  <p>
+                    Go to login to Sign up and create an account with your email and password (You need to verify the email to complete your signup)
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 my-3">
+              <div class="card border-0 wow fadeInUp h-100" data-wow-delay="0.25s">
+                <div class="card-header bg-transparent border-0">
+                  Step 02
+                </div>
+
+                <div class="card-body">
+                  <p>
+                    Complete your Rover Moot Registration Payment <span class=" text-danger">(Rs. 300.00)</span> to the account below and snap a photo of the payment proof (e.g. Bank Slip) <br> <br>
+                 
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-lg-6 my-3">
+              <div class="card wow fadeInUp border-0 h-100" data-wow-delay="0.5s">
+                <div class="card-header bg-transparent border-0">
+                  Step 03
+                </div>
+
+                <div class="card-body">
+                  <p>
+                    Go to Register and fill out the Rover Moot Application providing all the required details including the photo of your paid bank slip or receipt. (You can save your details and submit your application later. your details will be editable until you submit)
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-lg-6 my-3">
+              <div class="card border-0 wow fadeInUp h-100" data-wow-delay="0.75s">
+                <div class="card-header bg-transparent border-0">
+                  Step 04
+                </div>
+
+                <div class="card-body">
+                  <p>
+                    After submitting the application, print the auto generated application and get it verified by your Rover Scout Master, Your District's Asst. District Commissioner (Rovers) And District Commissioner with their relevant stamps.
+                  </p>
+                </div>
+              </div>
+            </div>
+                        
+            <div class="col-lg-6 my-3">
+              <div class="card wow fadeInUp border-0 h-100" data-wow-delay="1s">
+                <div class="card-header bg-transparent border-0">
+                  Step 05
+                </div>
+
+                <div class="card-body">
+                  <p>
+                    Go to "Register" and upload a clear photo of your signed application.
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-lg-6 my-3">
+              <div class="card border-0 wow fadeInUp bg-secondary text-light h-100" data-wow-delay="1.25s">
+                <div class="card-header bg-transparent border-0">
+                  Bank Details
+                </div>
+
+                <div class="card-body">
+                  <p>
+                                                        
+                    Account No: <br>
+                    Account Name: <br>
+                    Bank: <br>
+                    Branch:
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="row justify-content-center">
+
+            <p>You'll be notified by email once your application and payment is approved.</p>
+            <p>Both your Application and Payment must be approved to complete your moot registration.</p>
+            <p>Only registered participants will be able to access the Moot page and other Moot benefits (e.g. Moot Scarf, Certificate etc.).</p>
+  
+            <button class="btn btn-lg btn-outline-rover w-50 my-5 wow fadeInUp">Register Now!</button>
+          </div>
         </div>
         {{-- <div class="col-lg-4 justify-content-center" style="background-image:url({{ asset('img/background/mascot1.jpg') }});">
         
