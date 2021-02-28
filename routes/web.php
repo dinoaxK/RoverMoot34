@@ -57,7 +57,7 @@ Route::post('/admin/users/delete/news', [App\Http\Controllers\Portal\Admin\NewsC
 Route::get('home', [App\Http\Controllers\Portal\Scout\HomeController::class, 'index'])->name('home');
 Route::get('profile', [App\Http\Controllers\Portal\Scout\ProfileController::class, 'index'])->name('profile');
 Route::get('/moot/register', [App\Http\Controllers\Portal\Scout\RegisterController::class, 'index'])->name('moot.register');
-Route::post('/moot/register', [App\Http\Controllers\Portal\Scout\RegisterController::class, 'save_info'])->name('moot.register');
+Route::post('/moot/register', [App\Http\Controllers\Portal\Scout\RegisterController::class, 'save_info'])->name('moot.register.save');
 Route::post('/moot/register/submit', [App\Http\Controllers\Portal\Scout\RegisterController::class, 'submit_application'])->name('moot.register.submit');
 
 Route::post('/moot/register/profileImage', [App\Http\Controllers\Portal\Scout\RegisterController::class, 'uploadProfileImage'])->name('moot.application.profile.Image');
