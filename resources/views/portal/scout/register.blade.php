@@ -363,17 +363,23 @@
                         <div class="form-group col-md-6 mb-5">
                             <label for="mobileNumber" class="col-form-label text-center w-100">Telephone (Mobile) *</label> 
                             <small  id="mobileNumberHelpBlock" class="form-text text-center text-white">
+                                Number with country code (e.g. 94777123456)
+                            </small>  
+                            <small  id="mobileNumberHelpBlock" class="form-text text-center text-white">
                                 If using Whatsapp/ Viber, Please mention that number here
-                            </small>   
-                            <input value="{{ $participant->mobile ?? "" }}" id="mobileNumber" type="number" min="0" class="form-control" name="mobileNumber" placeholder="Number with country code (e.g. 0094777123456)" required autocomplete="phone" >
+                            </small>  
+                            <input value="{{ $participant->mobile ?? "" }}" id="mobileNumber" type="number" min="0" class="form-control" name="mobileNumber" placeholder="Number with country code (e.g. 94777123456)" required autocomplete="phone" >
                             <span id="mobileNumber-err" class="invalid-feedback text-center" role="alert"></span>
                         </div>
                         <div class="form-group col-md-6 mb-5">
                             <label for="telephoneNumber" class="col-form-label text-center w-100">Telephone (Residence/ Office) *</label>
+                            <small  id="mobileNumberHelpBlock" class="form-text text-center text-white">
+                                Number with country code (e.g. 94812212345)
+                            </small> 
                             <small id="telephoneNumberHelpBlock" class="form-text text-center text-white">
                                &nbsp;
-                            </small>     
-                            <input value="{{ $participant->telephone ?? "" }}" id="telephoneNumber" type="number" min="0" class="form-control" name="telephoneNumber" placeholder="Number with country code (e.g. 0094812212345)" required autocomplete="phone" >
+                            </small>    
+                            <input value="{{ $participant->telephone ?? "" }}" id="telephoneNumber" type="number" min="0" class="form-control" name="telephoneNumber" placeholder="Number with country code (e.g. 94812212345)" required autocomplete="phone" >
                             <span id="telephoneNumber-err" class="invalid-feedback text-center" role="alert"></span>
                         </div>
                     </div>
@@ -447,19 +453,25 @@
                     </div>
                     <div class="form-row justify-content-center">
                         <div class="form-group col-md-6 mb-5">
-                            <label for="contactPersonMobileNumber" class="col-form-label text-center w-100">Telephone (Mobile) *</label> 
+                            <label for="contactPersonMobileNumber" class="col-form-label text-center w-100">Telephone (Mobile) *</label>
+                            <small  id="mobileNumberHelpBlock" class="form-text text-center text-white">
+                                Number with country code (e.g. 94777123456)
+                            </small>   
                             <small  id="contactPersonMobileNumberHelpText" class="form-text text-center text-white">
                                 If using Whatsapp/ Viber, Please mention that number here
                             </small>   
-                            <input value="{{ $participant->contact_person_mobile ?? "" }}" id="contactPersonMobileNumber" type="number" min="0" class="form-control" name="contactPersonMobileNumber" placeholder="Number with country code (e.g. 0094777123456)" required>
+                            <input value="{{ $participant->contact_person_mobile ?? "" }}" id="contactPersonMobileNumber" type="number" min="0" class="form-control" name="contactPersonMobileNumber" placeholder="Number with country code (e.g. 94777123456)" required>
                             <span id="contactPersonMobileNumber-err" class="invalid-feedback text-center" role="alert"></span>
                         </div>
                         <div class="form-group col-md-6 mb-5">
                             <label for="contactPersonTelephoneNumber" class="col-form-label text-center w-100">Telephone (Residence/ Office)</label>
+                            <small  id="mobileNumberHelpBlock" class="form-text text-center text-white">
+                                Number with country code (e.g. 94812212345)
+                            </small> 
                             <small id="contactPersonTelephoneNumberHelpText" class="form-text text-center text-white">
                                &nbsp;
                             </small>     
-                            <input value="{{ $participant->contact_person_telephone ?? "" }}" id="contactPersonTelephoneNumber" type="number" min="0" class="form-control" name="contactPersonTelephoneNumber" placeholder="Number with country code (e.g. 0094812212345)" >
+                            <input value="{{ $participant->contact_person_telephone ?? "" }}" id="contactPersonTelephoneNumber" type="number" min="0" class="form-control" name="contactPersonTelephoneNumber" placeholder="Number with country code (e.g. 94812212345)" >
                             <span id="contactPersonTelephoneNumber-err" class="invalid-feedback text-center" role="alert"></span>
                         </div>
                     </div>
