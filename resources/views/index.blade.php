@@ -72,7 +72,7 @@
           <h5 class="text-center hero-header" style="font-size: 36px;">Programme</h2>
         </div>
         <div class="col-lg-12 mx-0 px-0">
-          <p class=" text-center">Coming Soon!</p> 
+          <p class=" text-center">Stay Tuned!</p> 
           <!-- <img src="{{ asset('img/background/comming-soon.jpg') }}" width="100%" alt=""> -->
         </div>
       </div>
@@ -149,7 +149,7 @@
 
                 <div class="card-body">
                   <p>
-                    Complete your Rover Moot Registration Payment <span class=" text-danger">(Rs. 300.00)</span> to the account below and snap a photo of the payment proof (e.g. Bank Slip) <br> <br>
+                    Complete your Rover Moot Registration Payment <span class=" text-danger">(Rs. 300.00)</span> to the account below or by visiting National Scout Head Quarters; and snap a photo of the payment proof (e.g. Bank Slip) <br> <br>
                  
                   </p>
                 </div>
@@ -206,11 +206,10 @@
 
                 <div class="card-body">
                   <p>
-                                                        
-                    Account No: <br>
-                    Account Name: <br>
-                    Bank: <br>
-                    Branch: <br>
+                    <small>When the deposit is made, please specify “ROVER MOOT 2021 / DISTRICT” in the Bank Deposit slip<br><br> </small>                                     
+                    Account No: 2041 0015 0085 323<br>
+                    Bank: Peoples Bank<br>
+                    Branch: Head Office Branch, Colombo-02<br><br>
 
                     <small>(All Payments should be made payable in “Colombo”, and in favour of “Sri Lanka Scout Association”)</span>
                   </p>
