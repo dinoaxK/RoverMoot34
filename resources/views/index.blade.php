@@ -72,7 +72,7 @@
           <h5 class="text-center hero-header" style="font-size: 36px;">Programme</h2>
         </div>
         <div class="col-lg-12 mx-0 px-0">
-          <p class=" text-center">Coming Soon!</p> 
+          <p class=" text-center">Stay Tuned!</p> 
           <!-- <img src="{{ asset('img/background/comming-soon.jpg') }}" width="100%" alt=""> -->
         </div>
       </div>
