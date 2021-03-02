@@ -346,12 +346,18 @@
                             </small>  
                         </div> 
                         <div class="form-group col-md-4 mb-5">
-                            <label for="crewNumber" class="col-form-label text-center w-100">Crew Number *</label>    
+                            <label for="crewNumber" class="col-form-label text-center w-100">Crew Number *</label> 
+                            <small class="form-text text-center text-white">
+                                e.g. 500 (Number Only)
+                            </small>    
                             <input value="{{ $participant->crew_number ?? "" }}" id="crewNumber" type="number" min="0" class="form-control" name="crewNumber" placeholder="e.g. 500" required>
                             <span id="crewNumber-err" class="invalid-feedback text-center" role="alert"></span>
                         </div>
                         <div class="form-group col-md-4 mb-5">
-                            <label for="crewDistrict" class="col-form-label text-center w-100">Crew District *</label>    
+                            <label for="crewDistrict" class="col-form-label text-center w-100">Crew District *</label>  
+                            <small class="form-text text-center text-white">
+                                &nbsp;
+                            </small>   
                             <select name="crewDistrict" id="crewDistrict" class="form-control">                                
                                 <option value="">Select District</option>                      
                                 @foreach($districts as $district)
@@ -369,7 +375,10 @@
                             <span id="crewDistrict-err" class="invalid-feedback text-center" role="alert"></span>
                         </div>                        
                         <div class="form-group col-md-4 mb-5">
-                            <label for="crewName" class="col-form-label text-center w-100">Crew Name *</label>    
+                            <label for="crewName" class="col-form-label text-center w-100">Crew Name *</label> 
+                            <small class="form-text text-center text-white">
+                                e.g. Rego Rovers (Name Only)
+                            </small>    
                             <input value="{{ $participant->crew_name ?? "" }}" id="crewName" type="text" class="form-control text-capitalize" name="crewName" placeholder="e.g. Rego Rovers" required>
                             <span id="crewName-err" class="invalid-feedback text-center" role="alert"></span>
                         </div>
