@@ -252,6 +252,7 @@ class RegisterController extends Controller
     public function submit_application(Request $request)
     {
         $user_id = Auth::user()->id;
+        $participant = Participant::where('user_id', $user_id)->first();
         $validator = Validator::make($request->all(), 
         [            
             'title' => ['required', 'exists:titles,name'],
@@ -297,13 +298,17 @@ class RegisterController extends Controller
         //CHECK UNIQUE TYPE AND VALIDATE UNIQUE ID
         if($request->idType == 'nic'):
             if(strlen($request->number)>10):
-            $uniqueID_validator =  Validator::make($request->all(), [
-                'number' => ['required', 'numeric', 'digits:12', 'unique:participants,number'],
-            ]);
+                if($participant->number == NULL):
+                    $uniqueID_validator =  Validator::make($request->all(), [
+                        'number' => ['required', 'numeric', 'digits:12', 'unique:participants,number'],
+                    ]);
+                endif;
             else:
-            $uniqueID_validator =  Validator::make($request->all(), [
-                'number' => ['required', 'alpha_num', 'min:10', 'regex:/^([0-9]{9}[x|X|v|V])$/', 'unique:participants,number'],
-            ]);
+                if($participant->number == NULL):
+                    $uniqueID_validator =  Validator::make($request->all(), [
+                        'number' => ['required', 'alpha_num', 'min:10', 'regex:/^([0-9]{9}[x|X|v|V])$/'],
+                    ]);
+                endif;
             endif;
         else:
             $uniqueID_validator =  Validator::make($request->all(), [
@@ -327,7 +332,6 @@ class RegisterController extends Controller
                 'warrantValidDate' => ['required', 'date'],
             ]);
         endif;
-        $participant = Participant::where('user_id', $user_id)->first();
 
         if($participant->image == Null):
             $image_validator =  Validator::make($request->all(), 
