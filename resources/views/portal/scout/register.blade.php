@@ -80,7 +80,10 @@
                     <hr class="bg-success">
                     <div class="form-row justify-content-center">
                         <div class="form-group col-md-4 mb-5">
-                            <label for="title" class="col-form-label text-center w-100">Title *</label>    
+                            <label for="title" class="col-form-label text-center w-100">Title *</label> 
+                            <small class="form-text text-center text-white">
+                                &nbsp;
+                            </small>    
                             <select name="title" id="title" class="form-control">                             
                                 <option value="" >Select Title Here</option>                            
                                 @foreach($titles as $title)
@@ -98,7 +101,10 @@
                             <span id="title-err" class="invalid-feedback text-center" role="alert"></span>
                         </div>
                         <div class="form-group col-md-8 mb-5">
-                            <label for="firstName" class="col-form-label text-center w-100">First Name *</label>    
+                            <label for="firstName" class="col-form-label text-center w-100">First Name *</label> 
+                            <small class="form-text text-center text-white">
+                                Start with Capital letter (e.g. Charith)
+                            </small>       
                             <input value="{{ $participant->first_name ?? "" }}" id="firstName" type="text" class="form-control name text-capitalize" name="firstName" placeholder="Start with Capital letter (e.g. Charith)" required autocomplete="first_name">
                             <span id="firstName-err" class="invalid-feedback text-center" role="alert"></span>
                         </div>
@@ -106,12 +112,18 @@
 
                     <div class="form-row justify-content-center">
                         <div class="form-group col-md-6 mb-5">
-                            <label for="middleName" class="col-form-label text-center w-100">Middle Names</label>    
+                            <label for="middleName" class="col-form-label text-center w-100">Middle Names</label>  
+                            <small class="form-text text-center text-white">
+                                First Letters of name with Capital letter (e.g. Kumara Sampath)
+                            </small>         
                             <input value="{{ $participant->middle_names ?? "" }}" id="middleName" type="text" class="form-control name text-capitalize" name="middleName" placeholder="First Letters of name with Capital letter (e.g. Kumara Sampath)" autocomplete="middle_names" >
                             <span id="middleName-err" class="invalid-feedback text-center" role="alert"></span>
                         </div>
                         <div class="form-group col-md-6 mb-5">
                             <label for="lastName" class="col-form-label text-center w-100">Name with Initials *</label>  
+                            <small class="form-text text-center text-white">
+                                Initials: e.g. CKS (without spaces) | Last Name: e.g. Wickramarachchi
+                            </small>   
                             <div class="input-group">
                                 <div class="input-group-prepend col-4 px-0">
                                     <input value="{{ $participant->initials ?? "" }}" type="text" class="form-control" id="initials" name="initials" placeholder="e.g. CKS" required autocomplete="last_name"/>
@@ -125,7 +137,13 @@
 
                     <div class="form-row justify-content-center">
                         <div class="form-group col-md-12 mb-5">
-                            <label for="fullName" class="col-form-label text-center w-100">Full Name *</label>    
+                            <label for="fullName" class="col-form-label text-center w-100">Full Name *</label>  
+                            <small class="form-text text-center text-white">
+                                Will be auto filled, edit only if necessary
+                            </small>    
+                            <small class="form-text text-center text-white">
+                                e.g. Charith Kumara Sampath Wickramarachchi
+                            </small>    
                             <input value="{{ $participant->full_name ?? "" }}" id="fullName" type="text" class="form-control text-capitalize" name="fullName" placeholder="e.g. Charith Kumara Sampath Wickramarachchi" required autocomplete="full_name" >
                             <span id="fullName-err" class="invalid-feedback text-center" role="alert"></span>
                         </div>
@@ -278,7 +296,7 @@
                             <span id="warrantNumber-err" class="invalid-feedback text-center" role="alert"></span>
                         </div>
                         <div class="form-group col-md-3 mb-5">
-                            <label for="warrantRank" class="col-form-label text-center w-100">Rank</label>    
+                            <label for="warrantRank" class="col-form-label text-center w-100">Section</label>    
                             <select name="warrantRank" id="warrantRank" class="form-control">                                
                                 <option value="">Select Section</option>                          
                                 @foreach($ranks as $rank)
@@ -296,9 +314,9 @@
                             <span id="warrantRank-err" class="invalid-feedback text-center" role="alert"></span>
                         </div>
                         <div class="form-group col-md-3 mb-5">
-                            <label for="warrantSection" class="col-form-label text-center w-100">Section</label>    
+                            <label for="warrantSection" class="col-form-label text-center w-100">Rank</label>    
                             <select name="warrantSection" id="warrantSection" class="form-control">                                
-                                <option value="">Select Section</option>                          
+                                <option value="">Select Rank</option>                          
                                 @foreach($warrants as $warrant)
                                     @if($participant != NULL)
                                         @if($participant->warrant_section == $warrant->name)                                            
