@@ -251,7 +251,7 @@
 
                     <div class="form-row justify-content-center">
                         <div class="form-group col-md-9 mb-5">
-                            <label for="highestRoverAward" class="col-form-label text-center w-100">Highest Rover Award *</label>    
+                            <label for="highestRoverAward" class="col-form-label text-center w-100">Highest Rover Award</label>    
                             <select name="highestRoverAward" id="highestRoverAward" class="form-control" required>                                
                                 <option value="">Select Award</option>                          
                                 @foreach($rovers as $rover)
@@ -269,7 +269,7 @@
                             <span id="highestRoverAward-err" class="invalid-feedback text-center" role="alert"></span>
                         </div>
                         <div class="form-group col-md-3 mb-5">
-                            <label for="highestRoverAwardDate" class="col-form-label text-center w-100">Date *</label>    
+                            <label for="highestRoverAwardDate" class="col-form-label text-center w-100">Date</label>    
                             <input value="{{ $participant->rover_award_date ?? "" }}" id="highestRoverAwardDate" type="date" class="form-control" name="highestRoverAwardDate"  required>
                             <span id="highestRoverAwardDate-err" class="invalid-feedback text-center" role="alert"></span>
                         </div> 

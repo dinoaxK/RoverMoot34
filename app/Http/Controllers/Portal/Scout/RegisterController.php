@@ -267,14 +267,14 @@ class RegisterController extends Controller
                   
             'highestScoutAward' => ['nullable', 'exists:scout_awards,name'],
             'highestScoutAwardDate' => ['nullable', 'date', 'before:today'],
-            'highestRoverAward' => ['required', 'exists:rover_awards,name'],
-            'highestRoverAwardDate' => ['required', 'date', 'before:today'],
+            'highestRoverAward' => ['nullable', 'exists:rover_awards,name'],
+            'highestRoverAwardDate' => ['nullable', 'date', 'before:today'],
 
             'participantType' => ['required', Rule::in(['Rover', 'Scout Master'])],
 
-            'crewNumber' => ['required', 'integer'],
-            'crewDistrict' => ['required', 'exists:scout_districts,name'],
-            'crewName'=> ['required', 'alpha_dash_space', 'min:3'],
+            'crewNumber' => ['nullable', 'integer'],
+            'crewDistrict' => ['nullable', 'exists:scout_districts,name'],
+            'crewName'=> ['nullable', 'alpha_dash_space', 'min:3'],
             'mobileNumber'=>['required', 'numeric', 'digits_between:11,15'],
             'telephoneNumber'=>['required', 'numeric', 'digits_between:11,15'],            
             'address' => ['required', 'address'],
