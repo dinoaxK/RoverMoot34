@@ -158,10 +158,10 @@ class RegisterController extends Controller
 
 
             $participant->title = $request->title;
-            $participant->first_name = $request->firstName;
-            $participant->middle_names = $request->middleName;
-            $participant->last_name = $request->lastName;
-            $participant->full_name = $request->fullName;
+            $participant->first_name = ucwords($request->firstName);
+            $participant->middle_names = ucwords($request->middleName);
+            $participant->last_name = ucwords($request->lastName);
+            $participant->full_name = ucwords($request->fullName);
             $participant->initials = $request->initials;
             $participant->dob = $request->dob;
             $participant->gender = $request->gender;
@@ -187,7 +187,7 @@ class RegisterController extends Controller
             $participant->country = $request->country;
             $participant->zip = $request->zipCode;
             $participant->contact_person_title = $request->contactPersontTitle;
-            $participant->contact_person_name = $request->contactPersonName;
+            $participant->contact_person_name = ucwords($request->contactPersonName);
             $participant->contact_person_mobile = $request->contactPersonMobileNumber;
             $participant->contact_person_telephone = $request->contactPersonTelephoneNumber;
             $participant->education = $request->educationDetails;
@@ -368,10 +368,10 @@ class RegisterController extends Controller
         else:
             
             $participant->title = $request->title;
-            $participant->first_name = $request->firstName;
-            $participant->middle_names = $request->middleName;
-            $participant->last_name = $request->lastName;
-            $participant->full_name = $request->fullName;
+            $participant->first_name = ucwords($request->firstName);
+            $participant->middle_names = ucwords($request->middleName);
+            $participant->last_name = ucwords($request->lastName);
+            $participant->full_name = ucwords($request->fullName);
             $participant->initials = $request->initials;
             $participant->dob = $request->dob;
             $participant->gender = $request->gender;
@@ -397,7 +397,7 @@ class RegisterController extends Controller
             $participant->country = $request->country;
             $participant->zip = $request->zipCode;
             $participant->contact_person_title = $request->contactPersontTitle;
-            $participant->contact_person_name = $request->contactPersonName;
+            $participant->contact_person_name = ucwords($request->contactPersonName);
             $participant->contact_person_mobile = $request->contactPersonMobileNumber;
             $participant->contact_person_telephone = $request->contactPersonTelephoneNumber;
             $participant->education = $request->educationDetails;
