@@ -296,17 +296,19 @@ class RegisterController extends Controller
         ]);
 
         //CHECK UNIQUE TYPE AND VALIDATE UNIQUE ID
+        $uniqueID_validator =  Validator::make($request->all(), [
+        ]);
         if($request->idType == 'nic'):
             if(strlen($request->number)>10):
-                if($participant->number == NULL):
+                if(is_null($participant->number)):
                     $uniqueID_validator =  Validator::make($request->all(), [
                         'number' => ['required', 'numeric', 'digits:12', 'unique:participants,number'],
                     ]);
                 endif;
             else:
-                if($participant->number == NULL):
+                if(is_null($participant->number)):
                     $uniqueID_validator =  Validator::make($request->all(), [
-                        'number' => ['required', 'alpha_num', 'min:10', 'regex:/^([0-9]{9}[x|X|v|V])$/'],
+                        'number' => ['required', 'alpha_num', 'min:10', 'regex:/^([0-9]{9}[x|X|v|V])$/', 'unique:participants,number'],
                     ]);
                 endif;
             endif;
