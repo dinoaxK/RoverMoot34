@@ -106,4 +106,22 @@ class UserController extends Controller
         endif;
         return response()->json(['error'=>'error']);
     }
+
+    public function edit_user_getdetails(Request $request)
+    {
+        $user = User::find($request->id);
+        return $user;
+    }
+
+    public function update_user(Request $request)
+    {
+        $user = User::find($request->editUserId);
+        $user->role = $request->editRole;
+
+        if($user->save()):
+            return response()->json(['success'=>'success']);
+        endif;
+        
+        return response()->json(['error'=>'error']);
+    }
 }

@@ -46,6 +46,8 @@ Route::get('/admin/users/list', [App\Http\Controllers\Portal\Admin\UserControlle
 Route::post('/admin/users/deactivate/user', [App\Http\Controllers\Portal\Admin\UserController::class, 'deactivate_user'])->name('user.deactivate');
 Route::post('/admin/users/activate/user', [App\Http\Controllers\Portal\Admin\UserController::class, 'activate_user'])->name('user.activate');
 Route::post('/admin/users/create/user', [App\Http\Controllers\Portal\Admin\UserController::class, 'create_user'])->name('user.create');
+Route::post('/admin/users/edit/user/getdetails', [App\Http\Controllers\Portal\Admin\UserController::class, 'edit_user_getdetails'])->name('user.edit.get.details');
+Route::post('/admin/users/update/user', [App\Http\Controllers\Portal\Admin\UserController::class, 'update_user'])->name('user.update');
 
 Route::get('/admin/news', [App\Http\Controllers\Portal\Admin\NewsController::class, 'index'])->name('admin.news');
 Route::post('/admin/users/create/news', [App\Http\Controllers\Portal\Admin\NewsController::class, 'create_news'])->name('news.create');
