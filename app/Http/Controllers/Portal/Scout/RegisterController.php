@@ -296,13 +296,13 @@ class RegisterController extends Controller
 
         //CHECK UNIQUE TYPE AND VALIDATE UNIQUE ID
         if($request->idType == 'nic'):
-            if(strlen($request->nic)>10):
+            if(strlen($request->number)>10):
             $uniqueID_validator =  Validator::make($request->all(), [
-                'number' => ['required', 'numeric', 'digits:12'],
+                'number' => ['required', 'numeric', 'digits:12', 'unique:participants,number'],
             ]);
             else:
             $uniqueID_validator =  Validator::make($request->all(), [
-                'number' => ['required', 'alpha_num', 'min:10', 'regex:/^([0-9]{9}[x|X|v|V])$/'],
+                'number' => ['required', 'alpha_num', 'min:10', 'regex:/^([0-9]{9}[x|X|v|V])$/', 'unique:participants,number'],
             ]);
             endif;
         else:
