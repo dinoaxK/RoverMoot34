@@ -504,6 +504,20 @@
                     </div>
 
                     <h3 class="text-left mt-4 mb-4">Payment Details</h3>
+                    <p class=" text-center mb-0">
+                       <small>
+                           Complete your Rover Moot Registration Payment <span class=" text-danger">(Rs. 300.00)</span> to the account below or by visiting National Scout Head Quarters; and snap a photo of the payment proof (e.g. Bank Slip) <br> <br>
+                       </small> 
+                    </p>
+
+                    <p class=" text-center">
+                        <small>When the deposit is made, please specify “ROVER MOOT 2021 / DISTRICT” in the Bank Deposit slip<br><br>                                     
+                        Account No: <strong>2041 0015 0085 323</strong> <br>
+                        Bank: <strong>Peoples Bank</strong> <br>
+                        Branch: <strong>Head Office Branch, Colombo-02</strong> <br><br>
+
+                        (All Payments should be made payable in “Colombo”, and in favour of “Sri Lanka Scout Association”)</span>
+                    </p>
         
                     <div class="form-row justify-content-center"> 
                         <div class="form-group col-md-6 mb-5">
