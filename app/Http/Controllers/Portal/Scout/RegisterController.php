@@ -117,11 +117,11 @@ class RegisterController extends Controller
         if($request->idType == 'nic'):
             if(strlen($request->number)>10):
             $uniqueID_validator =  Validator::make($request->all(), [
-                'number' => ['nullable', 'numeric', 'digits:12', 'unique:participants,number'],
+                'number' => ['nullable', 'numeric', 'digits:12'],
             ]);
             else:
             $uniqueID_validator =  Validator::make($request->all(), [
-                'number' => ['nullable', 'alpha_num', 'min:10', 'regex:/^([0-9]{9}[x|X|v|V])$/', 'unique:participants,number'],
+                'number' => ['nullable', 'alpha_num', 'min:10', 'regex:/^([0-9]{9}[x|X|v|V])$/'],
             ]);
             endif;
         else:
