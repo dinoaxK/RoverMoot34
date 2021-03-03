@@ -21,7 +21,7 @@ class BlockRegistration
         $participant = Null;
         $uid = Auth::user()->id;
 
-        if(Participant::where('user_id', $uid)->first()!=Null || date('Y-m-d')<='2021-03-05'):
+        if(Participant::where('user_id', $uid)->first()!=Null || date('Y-m-d')<='2021-03-31'):
             return $next($request);
         else:
             return redirect('/login');
