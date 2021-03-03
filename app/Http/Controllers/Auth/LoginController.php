@@ -29,7 +29,14 @@ class LoginController extends Controller
      * @var string
      */
     public function redirectTo(){
-        return ('/home');
+        $status= Auth::user()->status;
+        if($status != 'deactive'):
+            return ('/home');
+        else:
+            Auth::logout();
+            return abort(403);
+        endif;
+
     }
 
     public function logout(Request $request)
