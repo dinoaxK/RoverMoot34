@@ -41,7 +41,43 @@ class RegisterController extends Controller
     public function get_participants_list(Request $request)
     {
         if ($request->ajax()) {
-            $data = Participant::where('application_submit', 1)->orWhere('payment_submit', 1)->get();
+            $data = Participant::where('created_at', '!=', Null);
+            if($request->name!=null){
+                $data = $data->where('first_name','like', '%'. $request->name.'%')
+                ->orWhere('last_name','like', '%'. $request->name.'%')
+                ->orWhere('full_name','like', '%'. $request->name.'%')
+                ->orWhere('initials','like', '%'. $request->name.'%')
+                ->orWhere('middle_names','like', '%'. $request->name.'%');
+            }
+            if($request->nic!=null){
+                $data = $data->where('number','like','%'. $request->nic.'%');
+            }            
+            if($request->application!=null){
+                if($request->application == 0){
+                    $data = $data->where('application_status',NULL);
+                }else{
+                    $data = $data->where('application_status',$request->application);
+                }
+            }
+            if($request->payment!=null){
+                if($request->payment == 0){
+                    $data = $data->where('payment_status',NULL);
+                }else{
+                    $data = $data->where('payment_status',$request->payment);
+                }
+            }
+            if($request->registration!=null){
+                if($request->registration == 0){
+                    $data = $data->where('application_submit', 0)->orWhere('payment_submit', 0);
+                }else if($request->registration == 1){
+                    $data = $data->where('application_submit', 1)->orWhere('payment_submit', 1);
+                }else if($request->registration == 2){
+                    $data = $data->where('application_proof','!=', Null);
+                }else if($request->registration == 3){
+                    $data = $data->where('payment_status',1)->orWhere('application_status', 1);
+                }
+            }
+            $data = $data->get();
             return DataTables::of($data)
                 ->addIndexColumn()
                 ->make(true);

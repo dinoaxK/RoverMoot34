@@ -7,7 +7,17 @@
       processing: true,
       serverSide: true,
 
-      ajax: "{{ route('paricipant.list') }}",
+      ajax: 
+      {
+        url:"{{ route('paricipant.list') }}",
+        data : function (d) {
+            d.name = $('#name').val();
+            d.nic = $('#nic').val();
+            d.application = $('#application').val();
+            d.payment = $('#payment').val();
+            d.registration = $('#registration').val();
+        }
+      },
       columns: [
           {
             data: 'id', 
@@ -116,6 +126,10 @@
     table.draw();
 
   }
+
+  $('.form-control').on('change', function(){
+    search();
+  });
 
 
   view_profile = (id) => {
