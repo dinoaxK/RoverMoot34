@@ -12,6 +12,13 @@
   }); 
   // /FULL NAME 
 
+  $('#citizenship').change(function(){
+    if( $('#citizenship').val() == 'Foreign National' ){
+      $('#crewDistrict').val('Foreign');
+      $("#idType[value='passport']").prop("checked",true);
+    }
+  });
+
 
   // SAVE PARTICIPANT
   save_info = () => {

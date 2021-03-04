@@ -182,12 +182,12 @@
                         <div class="form-group col-md-3 mb-5">
                             <label for="citizenship" class="col-form-label text-center w-100">Citizenship *</label>    
                             <select name="citizenship" id="citizenship" class="form-control" required>   
-                                @if( $participant != Null && $participant->gender == "Sri Lankan" )
+                                @if( $participant != Null && $participant->citizenship == "Sri Lankan" )
                                     <option value="Sri Lankan" Selected>Sri Lankan</option>
                                     <option value="Foreign National">Foreign National</option>
-                                @elseif($participant != Null && $participant->gender == "Foreign National")
+                                @elseif($participant != Null && $participant->citizenship == "Foreign National")
                                     <option value="Sri Lankan">Sri Lankan</option>
-                                    <option value="Foreign National" Foreign National>Female</option>
+                                    <option value="Foreign National" Selected>Foreign National</option>
                                 @else
                                     <option value="Sri Lankan">Sri Lankan</option>
                                     <option value="Foreign National">Foreign National</option>
@@ -346,7 +346,7 @@
                             </small>  
                         </div> 
                         <div class="form-group col-md-4 mb-5">
-                            <label for="crewNumber" class="col-form-label text-center w-100">Crew Number *</label> 
+                            <label for="crewNumber" class="col-form-label text-center w-100">Crew Number</label> 
                             <small class="form-text text-center text-white">
                                 e.g. 500 (Number Only)
                             </small>    
@@ -356,7 +356,7 @@
                         <div class="form-group col-md-4 mb-5">
                             <label for="crewDistrict" class="col-form-label text-center w-100">Crew District *</label>  
                             <small class="form-text text-center text-white">
-                                &nbsp;
+                                If from NHQ; select 'National HQ'
                             </small>   
                             <select name="crewDistrict" id="crewDistrict" class="form-control">                                
                                 <option value="">Select District</option>                      
@@ -375,7 +375,7 @@
                             <span id="crewDistrict-err" class="invalid-feedback text-center" role="alert"></span>
                         </div>                        
                         <div class="form-group col-md-4 mb-5">
-                            <label for="crewName" class="col-form-label text-center w-100">Crew Name *</label> 
+                            <label for="crewName" class="col-form-label text-center w-100">Crew Name</label> 
                             <small class="form-text text-center text-white">
                                 e.g. Rego Rovers (Name Only)
                             </small>    
