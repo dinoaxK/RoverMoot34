@@ -5,22 +5,88 @@
 
 <div class="container min-vh-100 mt-5 mb-5 pt-5">
     <div class="row pt-5">
-    <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item active" aria-current="page">Home</li>
-    </ol>
-    </nav>
+        <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active" aria-current="page">Home</li>
+        </ol>
+        </nav>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="card bg-secondary">
+                <div class="card-body">
+                    <h1>{{ App\Models\Participant::where('application_submit', 0)->where('application_status', Null)->count() }}</h1>
+                    <p>Pending Applications</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card bg-primary">
+                <div class="card-body">
+                    <h1>{{ App\Models\Participant::where('application_submit', 1)->where('application_status', Null)->count() }}</h1>
+                    <p>Applications Submits</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card bg-secondary">
+                <div class="card-body">
+                    <h1>{{ App\Models\Participant::where('application_submit', 1)->where('payment_status', 0)->where('application_status', 0)->count() }}</h1>
+                    <p>Pending Registrations</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card bg-success">
+                <div class="card-body">
+                    <h1>{{ App\Models\Participant::where('application_status', 1)->where('payment_status', 1)->count() }}</h1>
+                    <p>Successful Registrations</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card bg-danger">
+                <div class="card-body">
+                    <h1>{{ App\Models\Participant::where('application_status', 2)->count() }}</h1>
+                    <p>Declined Applications</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card bg-danger">
+                <div class="card-body">
+                    <h1>{{ App\Models\Participant::where('payment_status', 2)->count() }}</h1>
+                    <p>Declined Payments</p>
+                </div>
+            </div>
+        </div>
         <div class="col-lg-12 mt-5">
-            <div class="py-5">
-                @if(Auth::user()->participant && Auth::user()->participant->application_status == 1)
-
-                @else
-                    <div class="alert alert-warning" role="alert">
-                        <h2 class="alert-heading">Dashboard Under Construction!</h4>
-                        <p>Dashboard will be available as soon!! </p>
-                        <p class="mb-0">Stay tuned for the First Ever Virtual National Rover Scout Moot...</p>
-                    </div>          
-                @endif
+            <div class="card text-dark">
+                <div class="card-header">Activity Log</div>
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>id</th>
+                                <th>activity</th>
+                                <th>reference</th>
+                                <th>performed by</th>
+                                <th>performed at</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($activities as $activity)
+                            <tr>
+                                <td>{{ $activity->id }}</td>
+                                <td>{{ $activity->activity }}</td>
+                                <td>{{ $activity->reference }}</td>
+                                <td>{{ $activity->user }}</td>
+                                <td>{{ $activity->created_at }}</td>
+                            </tr>                                
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Portal\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Activity;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -24,6 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('portal.admin.home');
+        $activities = Activity::all();
+        return view('portal.admin.home', compact('activities'));
     }
 }
