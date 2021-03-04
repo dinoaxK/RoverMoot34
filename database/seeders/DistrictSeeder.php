@@ -15,6 +15,7 @@ class DistrictSeeder extends Seeder
     public function run()
     {
         $districts = [
+            'National HQ',
             'Akkaraipaththu-Kalmunai',
             'Ampara',
             'Anuradhapura',
@@ -51,7 +52,8 @@ class DistrictSeeder extends Seeder
             'Trincomalee',
             'Vavuniya',
             'Wattala-Jaela',
-            'Wennappuwa'
+            'Wennappuwa',
+            'Foreign'
         ];
         
         DB::table('scout_districts')->truncate();

@@ -274,7 +274,7 @@ class RegisterController extends Controller
             'participantType' => ['required', Rule::in(['Rover', 'Scout Master'])],
 
             'crewNumber' => ['nullable', 'integer'],
-            'crewDistrict' => ['nullable', 'exists:scout_districts,name'],
+            'crewDistrict' => ['required', 'exists:scout_districts,name'],
             'crewName'=> ['nullable', 'alpha_dash_space', 'min:3'],
             'mobileNumber'=>['required', 'numeric', 'digits_between:11,15'],
             'telephoneNumber'=>['required', 'numeric', 'digits_between:11,15'],            

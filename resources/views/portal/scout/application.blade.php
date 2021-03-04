@@ -135,7 +135,7 @@
         
         <div class="row">
           <div class="col-3">
-              <p class="text-dark text-uppercase">Email:</p>
+              <p class="text-dark text-uppercase">Contact Person:</p>
           </div>
           <div class="col-9">                
               <p class="text-dark ">{{ $participant->contact_person_title }} {{ $participant->contact_person_name }}</p>
