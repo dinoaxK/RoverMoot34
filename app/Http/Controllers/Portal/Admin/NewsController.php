@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Portal\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Activity;
 use App\Models\News;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
@@ -46,6 +48,11 @@ class NewsController extends Controller
             $news->image=$file_name;
             if($path = $request->file('image')->storeAs('public/news/',$file_name)):
                 if($news->save()):
+                    $activity = new Activity;
+                    $activity->user = Auth::user()->name;
+                    $activity->activity = 'create news';          
+                    $activity->reference = $file_name; 
+                    $activity->save(); 
                     return response()->json(['success'=>'success']);
                 endif;
             endif;
@@ -57,7 +64,12 @@ class NewsController extends Controller
     {
         $image_name = News::where('id', $request->id )->first()->image;
 
-        if(News::where('id', $request->id )->delete() && Storage::delete('public/news/'.$image_name)):
+        if(News::where('id', $request->id )->delete() && Storage::delete('public/news/'.$image_name)):            
+            $activity = new Activity;
+            $activity->user = Auth::user()->name;
+            $activity->activity = 'delete news';          
+            $activity->reference = $image_name; 
+            $activity->save(); 
             return response()->json(['success'=>'success']);
         endif;
         return response()->json(['error'=>'error']);

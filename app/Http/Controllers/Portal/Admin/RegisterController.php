@@ -7,9 +7,11 @@ use App\Mail\ApplicationApproveMail;
 use App\Mail\ApplicationDeclineMail;
 use App\Mail\PaymentApproveMail;
 use App\Mail\PaymentDeclineMail;
+use App\Models\Activity;
 use App\Models\Participant;
 use Dotenv\Store\File\Paths;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 use Yajra\DataTables\Facades\DataTables;
@@ -39,7 +41,7 @@ class RegisterController extends Controller
     public function get_participants_list(Request $request)
     {
         if ($request->ajax()) {
-            $data = Participant::where('application_submit', 1)->orWhere('payment_submit', 1)->latest();
+            $data = Participant::where('application_submit', 1)->orWhere('payment_submit', 1)->get();
             return DataTables::of($data)
                 ->addIndexColumn()
                 ->make(true);
@@ -66,7 +68,12 @@ class RegisterController extends Controller
         
         if(Mail::to($email)->send(new ApplicationApproveMail($participant))):             
         else: 
-            if(Participant::where('id', $request->id)->update(['application_status'=>1])):            
+            if(Participant::where('id', $request->id)->update(['application_status'=>1])):  
+                $activity = new Activity;
+                $activity->user = Auth::user()->name;
+                $activity->activity = 'approve application';          
+                $activity->reference = $participant->id; 
+                $activity->save();         
                 return response()->json(['success'=>'success']);
             endif;
         endif;
@@ -87,6 +94,11 @@ class RegisterController extends Controller
         else: 
 
             if(Participant::where('id', $request->id)->update(['application_status'=>2, 'application_proof'=>Null, 'submit_date'=>Null, 'application_submit'=>0, 'application_status_msg'=>$request->message ]) && Storage::delete('public/participants/applications/'.$participant->application_proof)):            
+                $activity = new Activity;
+                $activity->user = Auth::user()->name;
+                $activity->activity = 'decline application';          
+                $activity->reference = $participant->id; 
+                $activity->save(); 
                 return response()->json(['success'=>'success']);
             endif;
             
@@ -102,7 +114,12 @@ class RegisterController extends Controller
 
         if(Mail::to($email)->send(new PaymentApproveMail($participant))):             
         else: 
-            if(Participant::where('id', $request->id)->update(['payment_status'=>1])):            
+            if(Participant::where('id', $request->id)->update(['payment_status'=>1])):
+                $activity = new Activity;
+                $activity->user = Auth::user()->name;
+                $activity->activity = 'approve payment';          
+                $activity->reference = $participant->id; 
+                $activity->save();             
                 return response()->json(['success'=>'success']);
             endif;
         endif;
@@ -122,7 +139,11 @@ class RegisterController extends Controller
         if(Mail::to($email)->send(new PaymentDeclineMail($details))):             
         else: 
             if(Participant::where('id', $request->id)->update(['payment_status'=>2, 'payment_proof'=>Null, 'payment_submit'=>0, 'payment_status_msg'=>$request->message ]) && Storage::delete('public/participants/payments/'.$participant->payment_proof)):
-         
+                $activity = new Activity;
+                $activity->user = Auth::user()->name;
+                $activity->activity = 'decline payment';          
+                $activity->reference = $participant->id; 
+                $activity->save(); 
                 return response()->json(['success'=>'success']);
             endif;
         endif;
