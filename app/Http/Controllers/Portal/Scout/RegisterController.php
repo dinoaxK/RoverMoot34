@@ -44,7 +44,7 @@ class RegisterController extends Controller
         $scouts = ScoutAward::all();
         $rovers = RoverAward::all();
         $warrants = WarrantSection::all();
-        $districts = ScoutDistrict::orderBy('name')->get();
+        $districts = ScoutDistrict::get();
         $countries = Country::orderBy('name')->get();
         $ranks = WarrantRank::all();
         return view ('portal.scout.register', compact(
