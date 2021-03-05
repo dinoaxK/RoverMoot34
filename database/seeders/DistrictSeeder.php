@@ -31,6 +31,7 @@ class DistrictSeeder extends Seeder
             'Jaffna',
             'Kaluthara',
             'Kandy',
+            'KDU',
             'Kankasanthurai',
             'Kegalle',
             'Kilinochchi',
