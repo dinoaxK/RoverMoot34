@@ -320,12 +320,21 @@ class RegisterController extends Controller
 
         //CHECK PARTICIPANT TYPE AND VALIDATE WARRANT INFO
         if($request->participantType == 'Rover'):
-            $warrant_validator =  Validator::make($request->all(), [
-                'warrantNumber' => ['nullable'],
-                'warrantRank' => ['nullable', 'exists:warrant_ranks,name'],
-                'warrantSection' => ['nullable', 'exists:warrant_sections,name'],
-                'warrantValidDate' => ['nullable', 'date'],
-            ]);
+            if($request->warrantRank != Null || $request->warrantSection != Null):
+                $warrant_validator =  Validator::make($request->all(), [
+                    'warrantNumber' => ['required'],
+                    'warrantRank' => ['required', 'exists:warrant_ranks,name'],
+                    'warrantSection' => ['required', 'exists:warrant_sections,name'],
+                    'warrantValidDate' => ['required', 'date'],
+                ]);
+            else:
+                $warrant_validator =  Validator::make($request->all(), [
+                    'warrantNumber' => ['nullable'],
+                    'warrantRank' => ['nullable', 'exists:warrant_ranks,name'],
+                    'warrantSection' => ['nullable', 'exists:warrant_sections,name'],
+                    'warrantValidDate' => ['nullable', 'date'],
+                ]);
+            endif;
         else:
             $warrant_validator =  Validator::make($request->all(), [
                 'warrantNumber' => ['required'],
