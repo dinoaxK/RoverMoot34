@@ -218,10 +218,18 @@
 
                 <div class="row">
                     <div class="col-3">
-                        <p class="text-white text-uppercase">Educational/ Job Details:</p>
+                        <p class="text-white text-uppercase">Paid Date:</p>
                     </div>
                     <div class="col-9">                
-                        <p class="text-white text-uppercase ">{{ $participant->education }}</p>
+                        <p class="text-white text-uppercase ">{{ $participant->payment_date }}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-3">
+                        <p class="text-white text-uppercase">Reference:</p>
+                    </div>
+                    <div class="col-9">                
+                        <p class="text-white text-uppercase ">{{ $participant->payment_reference }}</p>
                     </div>
                 </div>
 
