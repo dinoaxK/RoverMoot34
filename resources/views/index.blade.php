@@ -40,7 +40,10 @@
   </section>
 
   <section class="my-0 py-0">
+  @if(date('Y-m-d')<='2021-04-23')
     <img src="{{ asset('/img/countdown/'.\Carbon\Carbon::parse('2021-04-24 00:00:00')->diffInDays(\Carbon\Carbon::now()).'.jpg') }}" alt="" width="100%">
+  
+  @endif
   </section>
 
   <section id="facts" class="bg-light text-dark">
