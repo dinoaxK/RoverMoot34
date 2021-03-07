@@ -5,7 +5,7 @@ namespace App\Exports;
 use App\Models\Participant;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\FromArray; 
-use Maatwebsite\Excel\Concerns\withHeadings;
+use Maatwebsite\Excel\Concerns\WithHeadings;
 
 class ParticipantExport implements FromArray, withHeadings
 {
