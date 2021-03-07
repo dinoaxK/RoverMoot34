@@ -63,6 +63,9 @@
                             </form>
                         </div>
                     </div>
+                    <div class="w-100">
+                      <a href="{{ route('paricipant.list.export.excel') }}" class="btn btn-lg btn-outline-success float-right"><i class="fa fa-file-excel"></i> Export (Excel)</a>
+                    </div>
                     <table class="table table-bordered yajra-datatable text-center">
                         <thead>
                             <tr>

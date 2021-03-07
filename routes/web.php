@@ -41,6 +41,8 @@ Route::post('/admin/register/decline/application', [App\Http\Controllers\Portal\
 Route::post('/admin/register/approve/payment', [App\Http\Controllers\Portal\Admin\RegisterController::class, 'approve_payment'])->name('approve.payment');
 Route::post('/admin/register/decline/payment', [App\Http\Controllers\Portal\Admin\RegisterController::class, 'decline_payment'])->name('decline.payment');
 
+Route::get('/admin/register/export/list/excel', [App\Http\Controllers\Portal\Admin\RegisterController::class, 'excel'])->name('paricipant.list.export.excel');
+
 Route::get('/admin/users', [App\Http\Controllers\Portal\Admin\UserController::class, 'index'])->name('admin.users');
 Route::get('/admin/users/list', [App\Http\Controllers\Portal\Admin\UserController::class, 'get_users_list'])->name('user.list');
 Route::post('/admin/users/deactivate/user', [App\Http\Controllers\Portal\Admin\UserController::class, 'deactivate_user'])->name('user.deactivate');

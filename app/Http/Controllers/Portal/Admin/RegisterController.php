@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Portal\Admin;
 
+use App\Exports\ParticipantExport;
 use App\Http\Controllers\Controller;
 use App\Mail\ApplicationApproveMail;
 use App\Mail\ApplicationDeclineMail;
@@ -15,6 +16,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 use Yajra\DataTables\Facades\DataTables;
+use Excel;
 
 class RegisterController extends Controller
 {
@@ -187,5 +189,55 @@ class RegisterController extends Controller
             endif;
         endif;
         return response()->json(['error'=>'error']);     
+    }
+
+    function excel()
+    {
+
+        $participant_data = Participant::get();
+        foreach($participant_data as $participant)
+        {
+            $participant_array[] = array(
+                $participant->crew_district,
+                $participant->title, 
+                $participant->first_name,
+                $participant->middle_names, 
+                $participant->last_name,
+                $participant->initials,
+                $participant->full_name,
+                $participant->dob,
+                $participant->gender,
+                $participant->citizenship,
+                $participant->id_type,
+                $participant->number,
+                $participant->education,
+                $participant->scout_award,
+                $participant->scout_award_date,
+                $participant->rover_award,
+                $participant->rover_award_date,
+                $participant->participant_type,
+                $participant->warrant_number,
+                $participant->warrant_expire,
+                $participant->crew_number.' '.$participant->crew_district.' '.$participant->crew_name,
+                $participant->mobile,
+                $participant->telephone,
+                $participant->address,
+                $participant->country, 
+                $participant->zip, 
+                $participant->contact_person_title.' '.$participant->contact_person_name, 
+                $participant->contact_person_mobile, 
+                $participant->contact_person_telephone, 
+                $participant->submit_date, 
+                $participant->payment_date, 
+                $participant->payment_reference
+            );
+        }
+
+        $participant_array = new ParticipantExport($participant_array);
+        return Excel::download($participant_array, 'Participants_'.date('Y-m-d H:i:s').'.xlsx');
+
+        return redirect()->route('admin.register');
+
+
     }
 }
