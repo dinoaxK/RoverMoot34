@@ -104,12 +104,13 @@ class RegisterController extends Controller
         
         if(Mail::to($email)->send(new ApplicationApproveMail($participant))):             
         else: 
+            $activity = new Activity;
+            $activity->user = Auth::user()->name;
+            $activity->activity = 'approve application';          
+            $activity->reference = $participant->id; 
+            $activity->save(); 
             if(Participant::where('id', $request->id)->update(['application_status'=>1])):  
-                $activity = new Activity;
-                $activity->user = Auth::user()->name;
-                $activity->activity = 'approve application';          
-                $activity->reference = $participant->id; 
-                $activity->save();         
+        
                 return response()->json(['success'=>'success']);
             endif;
         endif;
@@ -128,13 +129,13 @@ class RegisterController extends Controller
 
         if(Mail::to($email)->send(new ApplicationDeclineMail($details))):             
         else: 
-
+            $activity = new Activity;
+            $activity->user = Auth::user()->name;
+            $activity->activity = 'decline application';          
+            $activity->reference = $participant->id; 
+            $activity->save(); 
             if(Participant::where('id', $request->id)->update(['application_status'=>2, 'application_proof'=>Null, 'submit_date'=>Null, 'application_submit'=>0, 'application_status_msg'=>$request->message ]) && Storage::delete('public/participants/applications/'.$participant->application_proof)):            
-                $activity = new Activity;
-                $activity->user = Auth::user()->name;
-                $activity->activity = 'decline application';          
-                $activity->reference = $participant->id; 
-                $activity->save(); 
+
                 return response()->json(['success'=>'success']);
             endif;
             
@@ -150,12 +151,13 @@ class RegisterController extends Controller
 
         if(Mail::to($email)->send(new PaymentApproveMail($participant))):             
         else: 
+            $activity = new Activity;
+            $activity->user = Auth::user()->name;
+            $activity->activity = 'approve payment';          
+            $activity->reference = $participant->id; 
+            $activity->save();   
             if(Participant::where('id', $request->id)->update(['payment_status'=>1])):
-                $activity = new Activity;
-                $activity->user = Auth::user()->name;
-                $activity->activity = 'approve payment';          
-                $activity->reference = $participant->id; 
-                $activity->save();             
+          
                 return response()->json(['success'=>'success']);
             endif;
         endif;
@@ -174,12 +176,13 @@ class RegisterController extends Controller
 
         if(Mail::to($email)->send(new PaymentDeclineMail($details))):             
         else: 
+            $activity = new Activity;
+            $activity->user = Auth::user()->name;
+            $activity->activity = 'decline payment';          
+            $activity->reference = $participant->id; 
+            $activity->save(); 
             if(Participant::where('id', $request->id)->update(['payment_status'=>2, 'payment_proof'=>Null, 'payment_submit'=>0, 'payment_status_msg'=>$request->message ]) && Storage::delete('public/participants/payments/'.$participant->payment_proof)):
-                $activity = new Activity;
-                $activity->user = Auth::user()->name;
-                $activity->activity = 'decline payment';          
-                $activity->reference = $participant->id; 
-                $activity->save(); 
+
                 return response()->json(['success'=>'success']);
             endif;
         endif;
