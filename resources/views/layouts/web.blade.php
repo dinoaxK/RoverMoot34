@@ -39,7 +39,7 @@
     <div class="container">
       <a class="navbar-brand js-scroll-trigger mb-0 d-none" href="{{ url('') }}">
        <img src="{{ asset('img/logo/1.png') }}" alt="Moot Logo"  style="max-width: 50px;" class="">
-       34th NRSM
+       34th NCRSM
       </a>
       <button class="navbar-toggler mb-1" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -107,6 +107,12 @@
   <button title="Go to Top" data-tooltip="tooltip"  data-placement="bottom"  onclick="topFunction()" id="myBtn"><i class="fa fa-chevron-up"></i></button>
 <!-- /back to top button -->
   
+  {{-- mascot --}}
+  {{-- <a href="">
+    <img class="mascot-dialog wow bounceIn" src="{{ asset('/img/mascot/dialog.png') }}" alt="">
+    <img class="mascot wow bounceIn" src="{{ asset('/img/mascot/1.png') }}"  alt="">
+  </a> --}}
+  {{-- /mascot --}}
 
   <!-- Footer -->
   <footer class="py-5 bg-footer">
@@ -121,6 +127,30 @@
     <!-- /.container -->
   </footer>
   <!-- /Footer -->
+
+  <!-- Load Facebook SDK for JavaScript -->
+      <div id="fb-root"></div>
+      <script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            xfbml            : true,
+            version          : 'v10.0'
+          });
+        };
+
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+
+      <!-- Your Chat Plugin code -->
+      <div class="fb-customerchat"
+        attribution="setup_tool"
+        page_id="428285994301669">
+      </div>
 
   <!-- SCRIPTS -->
     <script src="{{ asset('js/app.js') }}" differ></script>
