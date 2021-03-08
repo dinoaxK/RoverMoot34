@@ -128,7 +128,7 @@
   </footer>
   <!-- /Footer -->
 
-  <!-- Load Facebook SDK for JavaScript -->
+<!-- Load Facebook SDK for JavaScript -->
       <div id="fb-root"></div>
       <script>
         window.fbAsyncInit = function() {
@@ -149,7 +149,8 @@
       <!-- Your Chat Plugin code -->
       <div class="fb-customerchat"
         attribution="setup_tool"
-        page_id="428285994301669">
+        page_id="428285994301669"
+        theme_color="#881919">
       </div>
 
   <!-- SCRIPTS -->
