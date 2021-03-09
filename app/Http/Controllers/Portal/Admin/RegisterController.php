@@ -191,13 +191,50 @@ class RegisterController extends Controller
         return response()->json(['error'=>'error']);     
     }
 
-    function excel()
+    function excel(Request $request)
     {
+        $participant_data = Participant::where('created_at', '!=', Null);
+        if($request->name != Null || $request->name != ""){
+            $participant_data = $participant_data->where('first_name','like', '%'. $request->name.'%')
+            ->orWhere('last_name','like', '%'. $request->name.'%')
+            ->orWhere('full_name','like', '%'. $request->name.'%')
+            ->orWhere('initials','like', '%'. $request->name.'%')
+            ->orWhere('middle_names','like', '%'. $request->name.'%');
+        }
+        if($request->nic!=null || $request->nic != ""){
+            $participant_data = $participant_data->where('number','like','%'. $request->nic.'%');
+        }            
+        if($request->application!=null || $request->application != ""){
+            if($request->application == 0){
+                $participant_data = $participant_data->where('application_status',NULL);
+            }else{
+                $participant_data = $participant_data->where('application_status',$request->application);
+            }
+        }
+        if($request->payment!=null || $request->payment != ""){
+            if($request->payment == 0){
+                $participant_data = $participant_data->where('payment_status',NULL);
+            }else{
+                $participant_data = $participant_data->where('payment_status',$request->payment);
+            }
+        }
+        if($request->registration!=null || $request->registration != ""){
+            if($request->registration == 0){
+                $participant_data = $participant_data->where('application_submit', 0)->orWhere('payment_submit', 0);
+            }else if($request->registration == 1){
+                $participant_data = $participant_data->where('application_submit', 1)->orWhere('payment_submit', 1);
+            }else if($request->registration == 2){
+                $participant_data = $participant_data->where('application_proof','!=', Null);
+            }else if($request->registration == 3){
+                $participant_data = $participant_data->where('payment_status',1)->orWhere('application_status', 1);
+            }
+        }
+        $participant_data = $participant_data->get();
 
-        $participant_data = Participant::get();
         foreach($participant_data as $participant)
         {
             $participant_array[] = array(
+                $participant->id,
                 $participant->crew_district,
                 $participant->title, 
                 $participant->first_name,

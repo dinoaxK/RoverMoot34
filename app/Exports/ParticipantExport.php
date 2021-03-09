@@ -18,6 +18,7 @@ class ParticipantExport implements FromArray, withHeadings
 
     public function headings(): array{
         return [
+            'ID',
             'District',
             'Title', 
             'First Name',

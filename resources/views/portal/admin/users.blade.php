@@ -21,6 +21,10 @@
                         <h2 class="mb-4 text-dark">Users</h2>
                         <button title="Create User" data-tooltip="tooltip"  data-placement="bottom" data-toggle="modal" data-target="#createUserModal"  class="btn btn-primary"><i class="fa fa-plus"></i></button>
                     </div>
+                    
+                    <div class="w-100">
+                      <a href="{{ route('user.list.export.excel') }}" class="btn btn-lg btn-outline-success float-right"><i class="fa fa-file-excel"></i> Export (Excel)</a>
+                    </div>
                     <table class="table table-bordered yajra-datatable text-center">
                         <thead>
                             <tr>

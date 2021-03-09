@@ -19,16 +19,16 @@
                     <h2 class="mb-4 text-dark">Participant Registrations</h2>            
                     <div class="card bg-transparent border-0">
                         <div class="card-body text-dark">
-                            <form action="">
+                            <form id="searcItems" action="{{ route('paricipant.list.export.excel') }}" method="GET">
                                 <div class="form-row">
                                     <div class="form-group col">
                                         <label for="name">Name</label>
-                                        <input type="text" class="form-control form-control-sm" id="name" aria-describedby="nameHelp"/>
+                                        <input type="text" class="form-control form-control-sm" name="name" id="name" aria-describedby="nameHelp"/>
                                         <small id="nameHelp" class="form-text text-muted">Enter Name Here</small>
                                     </div>
                                     <div class="form-group col">
                                       <label for="nic">NIC</label>
-                                      <input type="text" class="form-control form-control-sm" id="nic" aria-describedby="nicHelp"/>
+                                      <input type="text" class="form-control form-control-sm" name="nic" id="nic" aria-describedby="nicHelp"/>
                                       <small id="nicHelp" class="form-text text-muted">Enter NIC Here</small>
                                     </div>               
                                     <div class="form-group col">
@@ -64,7 +64,7 @@
                         </div>
                     </div>
                     <div class="w-100">
-                      <a href="{{ route('paricipant.list.export.excel') }}" class="btn btn-lg btn-outline-success float-right"><i class="fa fa-file-excel"></i> Export (Excel)</a>
+                      <button onclick="export_excel()" class="btn btn-lg btn-outline-success float-right"><i class="fa fa-file-excel"></i> Export (Excel)</a>
                     </div>
                     <table class="table table-bordered yajra-datatable text-center">
                         <thead>

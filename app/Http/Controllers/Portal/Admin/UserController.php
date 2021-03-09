@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Portal\Admin;
 
+use App\Exports\UserExport;
 use App\Http\Controllers\Controller;
 use App\Mail\AdminCreatedMail;
 use App\Models\User;
@@ -9,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
+use Excel;
 use Yajra\DataTables\Facades\DataTables;
 
 class UserController extends Controller
@@ -123,5 +125,28 @@ class UserController extends Controller
         endif;
         
         return response()->json(['error'=>'error']);
+    }
+
+    function excel()
+    {
+
+        $user_data = User::get();
+        foreach($user_data as $user)
+        {
+            $user_array[] = array(
+                $user->id,
+                $user->name,
+                $user->email, 
+                $user->email_verified_at,
+                $user->role
+            );
+        }
+
+        $user_array = new UserExport($user_array);
+        return Excel::download($user_array, 'Users_'.date('Y-m-d H:i:s').'.xlsx');
+
+        return redirect()->route('admin.register');
+
+
     }
 }

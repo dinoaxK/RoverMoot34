@@ -127,6 +127,12 @@
 
   }
 
+  export_excel = () => {
+
+    $('#searcItems').submit();
+
+  }
+
   $('.form-control').on('change', function(){
     search();
   });
