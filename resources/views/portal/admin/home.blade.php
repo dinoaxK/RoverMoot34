@@ -31,7 +31,7 @@
         <div class="col">
             <div class="card bg-secondary">
                 <div class="card-body">
-                    <h1>{{ App\Models\Participant::where('application_submit', 1)->where('payment_status', 0)->where('application_status', 0)->count() }}</h1>
+                    <h1>{{ App\Models\Participant::where('application_submit', 1)->where('payment_status', Null)->where('application_status', Null)->count() }}</h1>
                     <p>Pending Registrations</p>
                 </div>
             </div>
