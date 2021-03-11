@@ -5,11 +5,9 @@
     if( $('#citizenship').val() == 'Foreign National' ){
       $('#crewDistrict').val('Foreign');
       $("#idType[value='passport']").prop("checked",true);
-      $('.drop-zone').addClass("d-none");
       $('.pay-hide').addClass("d-none");
       $('#paymentProofHelp').addClass("d-none");
-    } else {
-      $('.drop-zone').removeClass("d-none");
+    } else {      
       $('.pay-hide').removeClass("d-none");
       $('#paymentProofHelp').removeClass("d-none");      
     }
@@ -31,11 +29,9 @@
     if( $('#citizenship').val() == 'Foreign National' ){
       $('#crewDistrict').val('Foreign');
       $("#idType[value='passport']").prop("checked",true);
-      $('.drop-zone').addClass("d-none");
       $('.pay-hide').addClass("d-none");
       $('#paymentProofHelp').addClass("d-none");
     } else {
-      $('.drop-zone').removeClass("d-none");
       $('.pay-hide').removeClass("d-none");
       $('#paymentProofHelp').removeClass("d-none");      
     }

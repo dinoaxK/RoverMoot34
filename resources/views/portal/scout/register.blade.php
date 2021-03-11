@@ -570,7 +570,7 @@
                         </div>
                     @else
                         <span id="paymentProofHelp" class="form-text text-white text-center">Upload your scanned bank slip/ payment proof here in JPEG/ PNG file format</span>
-                        <div class="drop-zone" id="paymentProof">
+                        <div class="drop-zone pay-hide" id="paymentProof">
                             <span class="drop-zone__prompt">Upload your Scanned Bank Slip/ Payment Proof * <br><small>Drop image File here or click to upload</small> </span>
                             <input accept="image/*" type="file" name="paymentProof"  class="drop-zone__input"/>
                         </div>
