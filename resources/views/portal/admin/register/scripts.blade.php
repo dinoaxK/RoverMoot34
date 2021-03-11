@@ -268,7 +268,7 @@
         SwalQuestionDanger.fire({
           title: "Reason to Decline ?",
           input: 'textarea',
-          inputLabel: 'Message',
+          inputLabel: 'Your application was declined due to ',
           inputPlaceholder: 'Type your message here...',
           inputAttributes: {
             'aria-label': 'Type your message here'
@@ -410,7 +410,7 @@
         SwalQuestionDanger.fire({
           title: "Reason to Decline ?",
           input: 'textarea',
-          inputLabel: 'Message',
+          inputLabel: 'Your payment was declined due to ',
           inputPlaceholder: 'Type your message here...',
           inputAttributes: {
             'aria-label': 'Type your message here'
