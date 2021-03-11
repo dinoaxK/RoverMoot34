@@ -519,14 +519,14 @@
                         </div>
                     </div>
 
-                    <h3 class="text-left mt-4 mb-4">Payment Details</h3>
-                    <p class=" text-center mb-0">
+                    <h3 class="text-left mt-4 mb-4 pay-hide">Payment Details</h3>
+                    <p class=" text-center mb-0 pay-hide">
                        <small>
                            Complete your Rover Moot Registration Payment <span class=" text-danger">(Rs. 300.00)</span> to the account below or by visiting National Scout Head Quarters; and snap a photo of the payment proof (e.g. Bank Slip) <br> <br>
                        </small> 
                     </p>
 
-                    <p class=" text-center">
+                    <p class=" text-center pay-hide">
                         <small>When the deposit is made, please specify “ROVER MOOT 2021 / DISTRICT” in the Bank Deposit slip<br><br>                                     
                         Account No: <strong>2041 0015 0085 323</strong> <br>
                         Bank: <strong>Peoples Bank</strong> <br>
@@ -535,7 +535,7 @@
                         (All Payments should be made payable in “Colombo”, and in favour of “Sri Lanka Scout Association”)</span>
                     </p>
         
-                    <div class="form-row justify-content-center"> 
+                    <div class="form-row justify-content-center pay-hide"> 
                         <div class="form-group col-md-6 mb-5">
                             <label for="paymentDate" class="col-form-label text-center w-100">Paid Date *</label>    
                             <input value="{{ $participant->payment_date ?? "" }}" id="paymentDate" type="date" class="form-control" name="paymentDate"required autocomplete="paidDate">
@@ -580,7 +580,7 @@
 
                 </form>
                 
-                <div class="form-group row mt-5 mb-0">
+                <div class="form-group row mt-5 mb-0 pay-hide">
                     <div class="col-md-12 text-center">
                         <button id="btnSaveScout" type="button" onclick="save_info()" class="btn btn-lg btn-primary w-25">
                             Save Info

@@ -289,11 +289,22 @@ class RegisterController extends Controller
 
             'educationDetails' => ['nullable', 'min:3'],
 
-            'paymentDate'=>['required', 'before_or_equal:today'],
-            'paymentReference'=>['required']
+
 
 
         ]);
+
+        if( $request->citizenship == 'Foreign National' ):
+            $payment_validator = Validator::make($request->all(), [
+                'paymentDate'=>['nullable', 'before_or_equal:today'],
+                'paymentReference'=>['nullable']
+            ]);
+        else:
+            $payment_validator = Validator::make($request->all(), [
+                'paymentDate'=>['required', 'before_or_equal:today'],
+                'paymentReference'=>['required']
+            ]);
+        endif;
 
         //CHECK UNIQUE TYPE AND VALIDATE UNIQUE ID
         $uniqueID_validator =  Validator::make($request->all(), [
@@ -304,18 +315,23 @@ class RegisterController extends Controller
                     $uniqueID_validator =  Validator::make($request->all(), [
                         'number' => ['required', 'numeric', 'digits:12', 'unique:participants,number'],
                     ]);
+                    $participant->number = $request->number;
                 endif;
             else:
                 if(is_null($participant->number)):
                     $uniqueID_validator =  Validator::make($request->all(), [
                         'number' => ['required', 'alpha_num', 'min:10', 'regex:/^([0-9]{9}[x|X|v|V])$/', 'unique:participants,number'],
                     ]);
+                    $participant->number = $request->number;
                 endif;
             endif;
         else:
-            $uniqueID_validator =  Validator::make($request->all(), [
-                'number' => ['nullable', 'alpha_num', 'max:9' ],
-            ]);
+            if(is_null($participant->number)):
+                $uniqueID_validator =  Validator::make($request->all(), [
+                    'number' => ['required', 'nullable', 'alpha_num', 'max:9' ],
+                ]);
+                $participant->number = $request->number;
+            endif;
         endif;            
 
         //CHECK PARTICIPANT TYPE AND VALIDATE WARRANT INFO
@@ -364,12 +380,20 @@ class RegisterController extends Controller
             );
         endif;
 
-        if($participant->payment_proof == Null):
-            $image_validator =  Validator::make($request->all(), 
-                [                         
-                    'paymentProof'=>['required', 'image', 'mimes:jpeg,png']
-                ]
-            );
+        if($participant->payment_proof == Null ):
+            if( $request->citizenship == 'Foreign National' ):
+                $image_validator =  Validator::make($request->all(), 
+                    [                         
+                        'paymentProof'=>['nullable', 'image', 'mimes:jpeg,png']
+                    ]
+                );
+            else:
+                $image_validator =  Validator::make($request->all(), 
+                    [                         
+                        'paymentProof'=>['required', 'image', 'mimes:jpeg,png']
+                    ]
+                );
+            endif;
         else:
             $image_validator =  Validator::make($request->all(), 
                 [                         
@@ -378,8 +402,8 @@ class RegisterController extends Controller
             );
         endif;
 
-        if($validator->fails() || $uniqueID_validator->fails() || $warrant_validator->fails() || $image_validator->fails()):
-            return response()->json(['errors'=>$validator->errors()->merge($uniqueID_validator->errors())->merge($warrant_validator->errors())->merge($image_validator->errors())]);
+        if($validator->fails() || $uniqueID_validator->fails() || $warrant_validator->fails() || $image_validator->fails() || $payment_validator->fails()):
+            return response()->json(['errors'=>$validator->errors()->merge($uniqueID_validator->errors())->merge($warrant_validator->errors())->merge($image_validator->errors())->merge($payment_validator->errors())]);
         else:
             
             $participant->title = $request->title;
@@ -392,7 +416,6 @@ class RegisterController extends Controller
             $participant->gender = $request->gender;
             $participant->citizenship = $request->citizenship;
             $participant->id_type = $request->idType;
-            $participant->number = $request->number;
             $participant->scout_award = $request->highestScoutAward;
             $participant->scout_award_date = $request->highestScoutAwardDate;
             $participant->rover_award = $request->highestRoverAward;
