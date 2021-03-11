@@ -61,6 +61,14 @@
                             <input accept="image/*" type="file" name="profileImage"  class="drop-zone__input"/>
                         </div>
                         <span id="profileImage-err" class="invalid-feedback text-center" role="alert"></span>  
+                        <div class="form-group row mt-5 mb-0">
+                            <div class="col-md-12 text-center">
+                                <button id="btnSaveScout" type="button" onclick="save_info()" class="btn btn-lg btn-primary w-25">
+                                    Upload Profile Picture 
+                                    <span id="btnSaveScoutSpinner" class="spinner-border spinner-border-sm d-none " role="status" aria-hidden="true"></span>
+                                </button>
+                            </div>
+                        </div>
                     {{-- </form> --}}
                     {{-- <p class="text-center text-white pt-2">
                         <small>Please recheck before submit, you can not change once Submitted</small> 
@@ -501,6 +509,14 @@
                             <input value="{{ $participant->contact_person_telephone ?? "" }}" id="contactPersonTelephoneNumber" type="number" min="0" class="form-control" name="contactPersonTelephoneNumber" placeholder="Number with country code (e.g. 94812212345)" >
                             <span id="contactPersonTelephoneNumber-err" class="invalid-feedback text-center" role="alert"></span>
                         </div>
+                        <div class="form-group col-md-12 mt-5 mb-0">
+                            <div class=" text-center">
+                                <button id="btnSaveScout" type="button" onclick="save_info()" class="btn btn-lg btn-primary w-25">
+                                    Save Info 
+                                    <span id="btnSaveScoutSpinner" class="spinner-border spinner-border-sm d-none " role="status" aria-hidden="true"></span>
+                                </button>
+                            </div>
+                        </div>
                     </div>
 
                     <h3 class="text-left mt-4 mb-4">Payment Details</h3>
@@ -559,7 +575,7 @@
                             <input accept="image/*" type="file" name="paymentProof"  class="drop-zone__input"/>
                         </div>
                         <span id="paymentProof-err" class="invalid-feedback text-center" role="alert"></span>
-                    
+
                     @endif
 
                 </form>
