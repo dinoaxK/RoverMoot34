@@ -21,9 +21,26 @@
                         <h2 class="mb-4 text-dark">Users</h2>
                         <button title="Create User" data-tooltip="tooltip"  data-placement="bottom" data-toggle="modal" data-target="#createUserModal"  class="btn btn-primary"><i class="fa fa-plus"></i></button>
                     </div>
-                    
+                    <div class="card bg-transparent border-0">
+                        <div class="card-body text-dark">
+                            <form id="searchItems" action="{{ route('user.list.export.excel') }}" method="GET">
+                                <div class="form-row">            
+                                    <div class="form-group col">
+                                      <label for="registration">Registration Status</label>
+                                      <select id="registration" name="registration" class="form-control form-control-sm">
+                                        <option value="">select here---</option>
+                                        <option value="0">Pending</option>
+                                        <option value="1">Application Submit</option>
+                                        <option value="2">Verification Submit</option>
+                                        <option value="3">Registered</option>
+                                      </select>
+                                    </div> 
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                     <div class="w-100">
-                      <a href="{{ route('user.list.export.excel') }}" class="btn btn-lg btn-outline-success float-right"><i class="fa fa-file-excel"></i> Export (Excel)</a>
+                      <button onclick="export_excel()" class="btn btn-lg btn-outline-success float-right"><i class="fa fa-file-excel"></i> Export (Excel)</button>
                     </div>
                     <table class="table table-bordered yajra-datatable text-center">
                         <thead>

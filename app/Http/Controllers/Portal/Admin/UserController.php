@@ -38,7 +38,21 @@ class UserController extends Controller
     public function get_users_list(Request $request)
     {
         if ($request->ajax()) {
-            $data = User::all();
+            $data = User::where('users.created_at', '!=', Null);        
+
+            if($request->registration!=null){
+                $data = $data->where( 'email_verified_at', '!=', Null )->join('participants', 'users.id', '=', 'participants.user_id');
+                if($request->registration == 0){
+                    $data = $data->where('application_submit', 0)->orWhere('payment_submit', 0);
+                }else if($request->registration == 1){
+                    $data = $data->where('application_submit', 1)->orWhere('payment_submit', 1);
+                }else if($request->registration == 2){
+                    $data = $data->where('application_proof','!=', Null);
+                }else if($request->registration == 3){
+                    $data = $data->where('payment_status',1)->orWhere('application_status', 1);
+                }
+            }
+            $data = $data->get();
             return DataTables::of($data)
                 ->addIndexColumn()
                 ->make(true);
@@ -127,10 +141,25 @@ class UserController extends Controller
         return response()->json(['error'=>'error']);
     }
 
-    function excel()
+    function excel(Request $request)
     {
 
-        $user_data = User::get();
+        // $user_data = User::get();
+        $user_data = User::where('users.created_at', '!=', Null);        
+
+        if($request->registration!=null){
+            $user_data = $user_data->where( 'email_verified_at', '!=', Null )->join('participants', 'users.id', '=', 'participants.user_id');
+            if($request->registration == 0){
+                $user_data = $user_data->where('application_submit', 0)->orWhere('payment_submit', 0);
+            }else if($request->registration == 1){
+                $user_data = $user_data->where('application_submit', 1)->orWhere('payment_submit', 1);
+            }else if($request->registration == 2){
+                $user_data = $user_data->where('application_proof','!=', Null);
+            }else if($request->registration == 3){
+                $user_data = $user_data->where('payment_status',1)->orWhere('application_status', 1);
+            }
+        }
+        $user_data = $user_data->get();
         foreach($user_data as $user)
         {
             $user_array[] = array(

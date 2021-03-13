@@ -7,7 +7,13 @@
       processing: true,
       serverSide: true,
 
-      ajax: "{{ route('user.list') }}",
+      ajax: 
+      {
+        url:"{{ route('user.list') }}",
+        data : function (d) {
+            d.registration = $('#registration').val();
+        }
+      },
       columns: [
           {
             data: 'id', 
@@ -76,6 +82,16 @@
     table.draw();
 
   }
+
+  export_excel = () => {
+
+    $('#searchItems').submit();
+
+  }
+
+  $('.form-control').on('change', function(){
+    search();
+  });
 
   activate = (id) => {
     // alert (id+' activated');
