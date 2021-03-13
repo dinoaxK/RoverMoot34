@@ -55,9 +55,9 @@
                         @csrf
                         <h3 class="text-left mt-4 mb-4">Profile Image</h3>
                         <hr class="bg-success">
-                        <p id="profileImageHelp" class="text-white text-center">Upload your Profile Image here in JPEG/ PNG file format. Max File Size: 2mb</span>
+                        <p id="profileImageHelp" class="text-white text-center">Upload your Profile Image here in JPEG/ PNG file format.</span>
                         <div class="drop-zone" id="profileImage">
-                            <span class="drop-zone__prompt">Upload your Profile Image (Max Size: 2mb) <br><small>Drop image File here or click to upload</small> </span>
+                            <span class="drop-zone__prompt">Upload your Profile Image * <br><small>Drop image File here or click to upload</small> </span>
                             <input accept="image/*" type="file" name="profileImage"  class="drop-zone__input"/>
                         </div>
                         <span id="profileImage-err" class="invalid-feedback text-center" role="alert"></span>  
@@ -569,9 +569,9 @@
                             </div>
                         </div>
                     @else
-                        <span id="paymentProofHelp" class="form-text text-white text-center">Upload your scanned bank slip/ payment proof here in JPEG/ PNG file format. Max File Size: 2mb</span>
+                        <span id="paymentProofHelp" class="form-text text-white text-center">Upload your scanned bank slip/ payment proof here in JPEG/ PNG file format</span>
                         <div class="drop-zone pay-hide" id="paymentProof">
-                            <span class="drop-zone__prompt">Upload your Scanned Bank Slip/ Payment Proof (Max Size: 2mb)* <br><small>Drop image File here or click to upload</small> </span>
+                            <span class="drop-zone__prompt">Upload your Scanned Bank Slip/ Payment Proof * <br><small>Drop image File here or click to upload</small> </span>
                             <input accept="image/*" type="file" name="paymentProof"  class="drop-zone__input"/>
                         </div>
                         <span id="paymentProof-err" class="invalid-feedback text-center" role="alert"></span>
@@ -636,9 +636,9 @@
                 @csrf
                 <h3 class="text-left mt-4 mb-4">Printed, Verified and Scanned Application</h3>    
 
-                <span id="applicationProofHelp" class="form-text text-white text-center">Upload your scanned application here in JPEG/ PNG file format. Max File Size: 2mb</span>
+                <span id="applicationProofHelp" class="form-text text-white text-center">Upload your scanned application here in JPEG/ PNG file format</span>
                 <div class="drop-zone" id="applicationProof">
-                    <span class="drop-zone__prompt">Upload your Scanned Application (Max Size: 2mb)*<br><small>Drop image File here or click to upload</small> </span>
+                    <span class="drop-zone__prompt">Upload your Scanned Application *<br><small>Drop image File here or click to upload</small> </span>
                     <input accept="image/*" type="file" name="applicationProof"  class="drop-zone__input"/>
                 </div>
                 <span id="applicationProof-err" class="invalid-feedback text-center" role="alert"></span>
