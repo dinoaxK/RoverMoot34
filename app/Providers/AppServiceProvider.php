@@ -41,7 +41,7 @@ class AppServiceProvider extends ServiceProvider
         });
         Validator::extend('address', function ($attribute, $value) {
             // This will only accept alphanumerics, spaces,[: . / - _ ].
-            return preg_match('/^[a-zA-Z0-9\s\:|\,|\.|\/|\-|_]*$/', $value); 
+            return preg_match('/^[a-zA-Z0-9\s\:|\,|\'|\"|\.|\/|\-|_]*$/', $value); 
         });
         Validator::extend('nic_old', function($attribute, $value) {
             //Old NIC number format

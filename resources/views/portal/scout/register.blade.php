@@ -426,7 +426,7 @@
                                 Include City (e.g. No.123, Street Name, City)
                             </small>
                             <input value="{{ $participant->address ?? "" }}" id="address" type="text" class="form-control text-capitalize" name="address" placeholder="Postal Address " required autocomplete="address" >
-                            <span id="adress-err" class="invalid-feedback text-center" role="alert"></span>
+                            <span id="address-err" class="invalid-feedback text-center" role="alert"></span>
 
                         </div>
                     </div>
