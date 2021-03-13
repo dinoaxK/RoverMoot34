@@ -41,6 +41,8 @@ Route::post('/admin/register/decline/application', [App\Http\Controllers\Portal\
 Route::post('/admin/register/approve/payment', [App\Http\Controllers\Portal\Admin\RegisterController::class, 'approve_payment'])->name('approve.payment');
 Route::post('/admin/register/decline/payment', [App\Http\Controllers\Portal\Admin\RegisterController::class, 'decline_payment'])->name('decline.payment');
 
+Route::post('/admin/register/general/email', [App\Http\Controllers\Portal\Admin\RegisterController::class, 'send_email'])->name('moot.general.email');
+
 Route::get('/admin/register/export/list/excel', [App\Http\Controllers\Portal\Admin\RegisterController::class, 'excel'])->name('paricipant.list.export.excel');
 Route::get('/admin/users/export/list/excel', [App\Http\Controllers\Portal\Admin\UserController::class, 'excel'])->name('user.list.export.excel');
 

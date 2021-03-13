@@ -6,10 +6,12 @@ use App\Exports\ParticipantExport;
 use App\Http\Controllers\Controller;
 use App\Mail\ApplicationApproveMail;
 use App\Mail\ApplicationDeclineMail;
+use App\Mail\GeneralEmail;
 use App\Mail\PaymentApproveMail;
 use App\Mail\PaymentDeclineMail;
 use App\Models\Activity;
 use App\Models\Participant;
+use App\Models\User;
 use Dotenv\Store\File\Paths;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -17,6 +19,7 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 use Yajra\DataTables\Facades\DataTables;
 use Excel;
+use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
 {
@@ -276,5 +279,72 @@ class RegisterController extends Controller
         return redirect()->route('admin.register');
 
 
+    }
+
+    public function send_email(Request $request)
+    {
+        $validator =  Validator::make($request->all(), [
+            'subject' => ['required'],
+            'emailBody' => ['required'],
+        ]);
+
+        $data = User::where('users.created_at', '!=', Null)->where( 'email_verified_at', '!=', Null )->join('participants', 'users.id', '=', 'participants.user_id');        
+        if($request->name!=null){
+            $data = $data->where('first_name','like', '%'. $request->name.'%')
+            ->orWhere('last_name','like', '%'. $request->name.'%')
+            ->orWhere('full_name','like', '%'. $request->name.'%')
+            ->orWhere('initials','like', '%'. $request->name.'%')
+            ->orWhere('middle_names','like', '%'. $request->name.'%');
+        }
+        if($request->nic!=null){
+            $data = $data->where('number','like','%'. $request->nic.'%');
+        }            
+        if($request->application!=null){
+            if($request->application == 0){
+                $data = $data->where('application_status',NULL);
+            }else{
+                $data = $data->where('application_status',$request->application);
+            }
+        }
+        if($request->payment!=null){
+            if($request->payment == 0){
+                $data = $data->where('payment_status',NULL);
+            }else{
+                $data = $data->where('payment_status',$request->payment);
+            }
+        }
+        if($request->registration!=null){
+            if($request->registration == 0){
+                $data = $data->where('application_submit', 0)->orWhere('payment_submit', 0);
+            }else if($request->registration == 1){
+                $data = $data->where('application_submit', 1)->orWhere('payment_submit', 1);
+            }else if($request->registration == 2){
+                $data = $data->where('application_proof','!=', Null);
+            }else if($request->registration == 3){
+                $data = $data->where('payment_status',1)->orWhere('application_status', 1);
+            }
+        }
+        $data = $data->get();
+
+        if($validator->fails()):
+            return response()->json(['errors'=>$validator->errors()]);
+        else:
+
+            foreach ($data as $participant):
+                $details = [
+                    'name' => $participant->name,
+                    'email' => $participant->email,
+                    'message' => $request->emailBody,
+                    'subject' => $request->subject
+                ];
+                if(Mail::to($participant->email)->send(new GeneralEmail($details))):
+                else: 
+                    sleep(10);
+                endif;
+            endforeach;
+            return response()->json(['success'=>'success']);
+
+        endif;
+        return response()->json(['error'=>'error']);
     }
 }

@@ -138,6 +138,75 @@
   });
 
 
+  email_model = () => {
+    $('#name-email').val($('#name').val());
+    $('#nic-email').val($('#nic').val());
+    $('#application-email').val($('#application').val());
+    $('#payment-email').val($('#payment').val());
+    $('#registration-email').val($('#registration').val());
+    $('#emailModal').modal('show');
+  }
+
+  send_email = () => {
+    // FORM PAYLOAD
+    var formData = new FormData($("#emailForm")[0]);
+    $('.form-control').removeClass('is-invalid');
+    $('.invalid-feedback').html('');
+    $('.invalid-feedback').hide();
+    $.ajax({
+      headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      },
+      url: "{{ route('moot.general.email') }}",
+      type: 'post',
+      data: formData,
+      processData: false,
+      contentType: false,           
+      beforeSend: function(){
+        // Show loader
+        $("#emailSpinner").removeClass('d-none');
+        $('#btnSendEmail').attr('disabled','disabled');
+      },
+      success: function(data){
+        console.log('Success in send mail ajax.');
+        $("#emailSpinner").addClass('d-none');
+        $('#btnSendEmail').removeAttr('disabled');
+        if(data['errors']){
+          $.each(data['errors'], function(key, value){
+            $('#'+key+'-err').show();
+            $('#'+key).addClass('is-invalid');
+            $('#'+key+'-err').append(value);   
+            window.location.hash = '#'+key;
+          });
+        }else if (data['success']){
+          $('.form-control').val('');
+          SwalDoneSuccess.fire({
+            title: 'Saved Successfully!',
+            text: 'Information Saved Successfully',
+          }).then((result) => {
+            if(result.isConfirmed) {
+              location.reload()
+            }
+          });
+        }else if (data['error']){
+          SwalSystemErrorDanger.fire({
+            title: 'Saving Failed!',
+            text: 'Please Try Again or Contact Administrator: rovermoot.2021@gmail.com',
+          })
+        }
+      },
+      error: function(err){
+        $("#emailSpinner").addClass('d-none');
+        $('#btnSendEmail').removeAttr('disabled');
+        SwalSystemErrorDanger.fire({
+          title: 'Saving Failed!'+err,
+          text: 'Please Try Again or Contact Administrator: rovermoot.2021@gmail.com',
+        })
+      }
+    });
+  }
+
+
   view_profile = (id) => {
     var url = '{{ route("participant.profile.admin", ":id") }}';
     url = url.replace(':id', id);

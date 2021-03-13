@@ -65,6 +65,7 @@
                     </div>
                     <div class="w-100">
                       <button onclick="export_excel()" class="btn btn-lg btn-outline-success float-right"><i class="fa fa-file-excel"></i> Export (Excel)</a>
+                      <button onclick="email_model()" class="btn btn-lg btn-outline-primary float-right mx-1"><i class="fa fa-envelope"></i> Send Email</a>
                     </div>
                     <table class="table table-bordered yajra-datatable text-center">
                         <thead>
