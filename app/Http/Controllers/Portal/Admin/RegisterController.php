@@ -289,38 +289,38 @@ class RegisterController extends Controller
         ]);
 
         $data = User::where('users.created_at', '!=', Null)->where( 'email_verified_at', '!=', Null )->join('participants', 'users.id', '=', 'participants.user_id');        
-        if($request->name!=null){
-            $data = $data->where('first_name','like', '%'. $request->name.'%')
-            ->orWhere('last_name','like', '%'. $request->name.'%')
-            ->orWhere('full_name','like', '%'. $request->name.'%')
-            ->orWhere('initials','like', '%'. $request->name.'%')
-            ->orWhere('middle_names','like', '%'. $request->name.'%');
+        if($request->nameemail!=null){
+            $data = $data->where('first_name','like', '%'. $request->nameemail.'%')
+            ->orWhere('last_name','like', '%'. $request->nameemail.'%')
+            ->orWhere('full_name','like', '%'. $request->nameemail.'%')
+            ->orWhere('initials','like', '%'. $request->nameemail.'%')
+            ->orWhere('middle_names','like', '%'. $request->nameemail.'%');
         }
-        if($request->nic!=null){
-            $data = $data->where('number','like','%'. $request->nic.'%');
+        if($request->nicemail!=null){
+            $data = $data->where('number','like','%'. $request->nicemail.'%');
         }            
-        if($request->application!=null){
-            if($request->application == 0){
+        if($request->applicationemail!=null){
+            if($request->applicationemail == 0){
                 $data = $data->where('application_status',NULL);
             }else{
-                $data = $data->where('application_status',$request->application);
+                $data = $data->where('application_status',$request->applicationemail);
             }
         }
-        if($request->payment!=null){
-            if($request->payment == 0){
+        if($request->paymentemail!=null){
+            if($request->paymentemail == 0){
                 $data = $data->where('payment_status',NULL);
             }else{
-                $data = $data->where('payment_status',$request->payment);
+                $data = $data->where('payment_status',$request->paymentemail);
             }
         }
-        if($request->registration!=null){
-            if($request->registration == 0){
+        if($request->registrationemail!=null){
+            if($request->registrationemail == 0){
                 $data = $data->where('application_submit', 0)->orWhere('payment_submit', 0);
-            }else if($request->registration == 1){
+            }else if($request->registrationemail == 1){
                 $data = $data->where('application_submit', 1)->orWhere('payment_submit', 1);
-            }else if($request->registration == 2){
+            }else if($request->registrationemail == 2){
                 $data = $data->where('application_proof','!=', Null);
-            }else if($request->registration == 3){
+            }else if($request->registrationemail == 3){
                 $data = $data->where('payment_status',1)->orWhere('application_status', 1);
             }
         }
@@ -337,6 +337,8 @@ class RegisterController extends Controller
                     'message' => $request->emailBody,
                     'subject' => $request->subject
                 ];
+
+                // echo $participant->email;
                 if(Mail::to($participant->email)->send(new GeneralEmail($details))):
                 else: 
                     sleep(10);

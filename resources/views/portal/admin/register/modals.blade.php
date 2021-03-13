@@ -88,18 +88,18 @@
         <form id="emailForm">
           <div class="form-row">
             <div class="form-group col">
-                <label for="name-email">Name</label>
-                <input type="text" class="form-control form-control-sm" name="name-email" id="name-email" aria-describedby="nameHelp"/>
+                <label for="nameemail">Name</label>
+                <input type="text" class="form-control form-control-sm" name="nameemail" id="nameemail" aria-describedby="nameHelp"/>
                 <small id="nameHelp" class="form-text text-muted">Enter Name Here</small>
             </div>
             <div class="form-group col">
-              <label for="nic-email">NIC</label>
-              <input type="text" class="form-control form-control-sm" name="nic-email" id="nic-email" aria-describedby="nicHelp"/>
+              <label for="nicemail">NIC</label>
+              <input type="text" class="form-control form-control-sm" name="nicemail" id="nicemail" aria-describedby="nicHelp"/>
               <small id="nicHelp" class="form-text text-muted">Enter NIC Here</small>
             </div>               
             <div class="form-group col">
-              <label for="application-email">Application Status</label>
-              <select id="application-email" name="application-email" class="form-control form-control-sm">
+              <label for="applicationemail">Application Status</label>
+              <select id="applicationemail" name="applicationemail" class="form-control form-control-sm">
                 <option value="">select here---</option>
                 <option value="0">Pending</option>
                 <option value="1">Approved</option>
@@ -107,8 +107,8 @@
               </select>
             </div>              
             <div class="form-group col">
-              <label for="payment-email">Payment Status</label>
-              <select id="payment-email" name="payment-email" class="form-control form-control-sm">
+              <label for="paymentemail">Payment Status</label>
+              <select id="paymentemail" name="paymentemail" class="form-control form-control-sm">
                 <option value="">select here---</option>
                 <option value="0">Pending</option>
                 <option value="1">Approved</option>
@@ -116,8 +116,8 @@
               </select>
             </div>              
             <div class="form-group col">
-              <label for="registration-email">Registration Status</label>
-              <select id="registration-email" name="registration-email" class="form-control form-control-sm">
+              <label for="registrationemail">Registration Status</label>
+              <select id="registrationemail" name="registrationemail" class="form-control form-control-sm">
                 <option value="">select here---</option>
                 <option value="0">Pending</option>
                 <option value="1">Application Submit</option>
@@ -128,7 +128,7 @@
           </div>
           <div class="form-row">
             <div class="form-group col">
-              <label for="nic-email">Subject</label>
+              <label for="subject">Subject</label>
               <input type="text" class="form-control" name="subject" id="subject" aria-describedby="nicHelp" required/>
               <span id="subject-err" class="invalid-feedback text-center" role="alert"></span>           
             </div>

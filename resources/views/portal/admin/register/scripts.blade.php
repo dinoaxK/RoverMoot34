@@ -139,11 +139,11 @@
 
 
   email_model = () => {
-    $('#name-email').val($('#name').val());
-    $('#nic-email').val($('#nic').val());
-    $('#application-email').val($('#application').val());
-    $('#payment-email').val($('#payment').val());
-    $('#registration-email').val($('#registration').val());
+    $('#nameemail').val($('#name').val());
+    $('#nicemail').val($('#nic').val());
+    $('#applicationemail').val($('#application').val());
+    $('#paymentemail').val($('#payment').val());
+    $('#registrationemail').val($('#registration').val());
     $('#emailModal').modal('show');
   }
 
