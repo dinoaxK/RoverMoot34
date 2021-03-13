@@ -29,6 +29,7 @@
                                       <label for="registration">Registration Status</label>
                                       <select id="registration" name="registration" class="form-control form-control-sm">
                                         <option value="">select here---</option>
+                                        <option value="4">Haven't Start filling</option>
                                         <option value="0">Pending</option>
                                         <option value="1">Application Submit</option>
                                         <option value="2">Verification Submit</option>
@@ -40,7 +41,8 @@
                         </div>
                     </div>
                     <div class="w-100">
-                      <button onclick="export_excel()" class="btn btn-lg btn-outline-success float-right"><i class="fa fa-file-excel"></i> Export (Excel)</button>
+                        <button onclick="export_excel()" class="btn btn-lg btn-outline-success float-right"><i class="fa fa-file-excel"></i> Export (Excel)</button>
+                        <button onclick="email_model()" class="btn btn-lg btn-outline-primary float-right mx-1"><i class="fa fa-envelope"></i> Send Email</a>
                     </div>
                     <table class="table table-bordered yajra-datatable text-center">
                         <thead>

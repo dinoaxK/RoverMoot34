@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Portal\Admin;
 use App\Exports\UserExport;
 use App\Http\Controllers\Controller;
 use App\Mail\AdminCreatedMail;
+use App\Mail\GeneralEmail;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -41,7 +42,7 @@ class UserController extends Controller
             $data = User::where('users.created_at', '!=', Null);        
 
             if($request->registration!=null){
-                $data = $data->where( 'email_verified_at', '!=', Null )->join('participants', 'users.id', '=', 'participants.user_id');
+                $data = $data->where( 'email_verified_at', '!=', Null )->leftJoin('participants', 'users.id', '=', 'participants.user_id');
                 if($request->registration == 0){
                     $data = $data->where('application_submit', 0)->orWhere('payment_submit', 0);
                 }else if($request->registration == 1){
@@ -50,9 +51,11 @@ class UserController extends Controller
                     $data = $data->where('application_proof','!=', Null);
                 }else if($request->registration == 3){
                     $data = $data->where('payment_status',1)->orWhere('application_status', 1);
+                }else if($request->registration == 4){
+                    $data = $data->where('participants.id',Null);
                 }
             }
-            $data = $data->get();
+            $data = $data->select('users.id', 'name', 'email', 'role', 'status')->get();
             return DataTables::of($data)
                 ->addIndexColumn()
                 ->make(true);
@@ -177,5 +180,54 @@ class UserController extends Controller
         return redirect()->route('admin.register');
 
 
+    }
+
+    public function send_email(Request $request)
+    {
+        $validator =  Validator::make($request->all(), [
+            'subject' => ['required'],
+            'emailBody' => ['required'],
+        ]);
+       
+        $data = User::where('users.created_at', '!=', Null)->where( 'email_verified_at', '!=', Null );        
+
+        if($request->registrationemail!=null){
+            $data = $data->where( 'email_verified_at', '!=', Null )->leftJoin('participants', 'users.id', '=', 'participants.user_id');
+            if($request->registrationemail == 0){
+                $data = $data->where('application_submit', 0)->orWhere('payment_submit', 0);
+            }else if($request->registrationemail == 1){
+                $data = $data->where('application_submit', 1)->orWhere('payment_submit', 1);
+            }else if($request->registrationemail == 2){
+                $data = $data->where('application_proof','!=', Null);
+            }else if($request->registrationemail == 3){
+                $data = $data->where('payment_status',1)->orWhere('application_status', 1);
+            }else if($request->registrationemail == 4){
+                $data = $data->where('participants.id',Null);
+            }
+        }
+        $data = $data->select('users.id', 'name', 'email', 'role', 'status')->get();
+
+        if($validator->fails()):
+            return response()->json(['errors'=>$validator->errors()]);
+        else:
+
+            foreach ($data as $participant):
+                $details = [
+                    'name' => $participant->name,
+                    'email' => $participant->email,
+                    'message' => $request->emailBody,
+                    'subject' => $request->subject
+                ];
+
+                // echo $participant->email;
+                if(Mail::to($participant->email)->send(new GeneralEmail($details))):
+                else: 
+                    sleep(10);
+                endif;
+            endforeach;
+            return response()->json(['success'=>'success']);
+
+        endif;
+        return response()->json(['error'=>'error']);
     }
 }
