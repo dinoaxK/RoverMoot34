@@ -222,7 +222,7 @@ class UserController extends Controller
                 // echo $participant->email;
                 if(Mail::to($participant->email)->send(new GeneralEmail($details))):
                 else: 
-                    sleep(10);
+                    sleep(1);
                 endif;
             endforeach;
             return response()->json(['success'=>'success']);
