@@ -62,6 +62,7 @@
         $('#btnSaveScout').attr('disabled','disabled');
       },
       success: function(data){
+        console.log('Success in save info ajax.');
         $("#btnSaveScoutSpinner").addClass('d-none');
         $('#btnSaveScout').removeAttr('disabled');
         if(data['errors']){
@@ -89,6 +90,7 @@
         }
       },
       error: function(err){
+        console.log('Error in save info ajax. '+err);
         $("#btnSaveScoutSpinner").addClass('d-none');
         $('#btnSaveScout').removeAttr('disabled');
         SwalSystemErrorDanger.fire({
@@ -124,6 +126,7 @@
         $('#btnSubmitScout').attr('disabled','disabled');
       },
       success: function(data){
+        console.log('Success in submit application ajax.');
         $("#btnSubmitScoutSpinner").addClass('d-none');
         $('#btnSubmitScout').removeAttr('disabled');
         if(data['errors']){
@@ -152,6 +155,7 @@
         }
       },
       error: function(err){
+        console.log('Error in submit application ajax. '+ err);
         $("#btnSubmitScoutSpinner").addClass('d-none');
         $('#btnSubmitScout').removeAttr('disabled');
         SwalSystemErrorDanger.fire({
