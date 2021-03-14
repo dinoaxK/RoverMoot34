@@ -7,6 +7,8 @@ $(document).ready(function(){
   $('body').css('background-color', '#fff');
   $('footer').addClass('d-none');
   $('nav').addClass('d-none');
+  $('.fb-customerchat').addClass('d-none');
+  $('#fb-root').addClass('d-none');
 
   window.print();
 
