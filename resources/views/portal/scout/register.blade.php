@@ -619,7 +619,7 @@
                     <br>
                 </p>
                 <p class="text-center">
-                    Application closing date will be <span class=" text-success">05th March 2021</span>, All <span class=" text-success">printed, verified and scanned Application</span>
+                    Application closing date will be <span class=" text-success">31st March 2021</span>, All <span class=" text-success">printed, verified and scanned Application</span>
                     must be submitted on or before the given deadline.   
                 </p>
             </div>
