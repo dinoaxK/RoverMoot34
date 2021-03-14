@@ -9,6 +9,7 @@ $(document).ready(function(){
   $('nav').addClass('d-none');
   $('.fb-customerchat').addClass('d-none');
   $('#fb-root').addClass('d-none');
+  $('#myBtn').addClass('d-none');
 
   window.print();
 
