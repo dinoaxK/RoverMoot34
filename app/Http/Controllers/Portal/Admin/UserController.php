@@ -23,7 +23,7 @@ class UserController extends Controller
      */
     public function __construct()
     {
-        $this->middleware(['auth', 'verified', 'admin']);
+        $this->middleware(['auth', 'verified', 'admin', 'super.admin']);
     }
 
     /**
