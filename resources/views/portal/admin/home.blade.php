@@ -13,6 +13,22 @@
     </div>
     <div class="row">
         <div class="col">
+            <div class="card bg-primary">
+                <div class="card-body">
+                    <h1>{{ App\Models\User::where('email_verified_at', '!=', Null)->count() }}</h1>
+                    <p>Genuine <br>Users</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card bg-danger">
+                <div class="card-body">
+                    <h1>{{ App\Models\User::where( 'email_verified_at', '!=', Null )->leftJoin('participants', 'users.id', '=', 'participants.user_id')->where('participants.id',Null)->count() }}</h1>
+                    <p>Not Attempted <br> to Register</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
             <div class="card bg-secondary">
                 <div class="card-body">
                     <h1>{{ App\Models\Participant::where('application_submit', 0)->where('application_status', Null)->count() }}</h1>
@@ -41,22 +57,6 @@
                 <div class="card-body">
                     <h1>{{ App\Models\Participant::where('application_status', 1)->where('payment_status', 1)->count() }}</h1>
                     <p>Successful Registrations</p>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card bg-danger">
-                <div class="card-body">
-                    <h1>{{ App\Models\Participant::where('application_status', 2)->count() }}</h1>
-                    <p>Declined Applications</p>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card bg-danger">
-                <div class="card-body">
-                    <h1>{{ App\Models\Participant::where('payment_status', 2)->count() }}</h1>
-                    <p>Declined Payments</p>
                 </div>
             </div>
         </div>
