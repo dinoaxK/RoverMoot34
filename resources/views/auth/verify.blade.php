@@ -22,6 +22,7 @@
                     <div class="alert alert-info" role="alert">
                         <h2 class="text-center alert-heading">{{ __('Before proceeding, please check your email for a verification link.') }}</h4>
                         <hr>
+                        <p  class="text-center">{{ __('Link Emailed to') }}: {{ Auth::user()->email }}</p>
                         <p  class="text-center">{{ __('If you did not receive the email') }},</p>
                         <form class="d-inline" method="POST" action="{{ route('verification.resend') }}">
                             @csrf
