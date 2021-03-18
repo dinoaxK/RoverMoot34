@@ -115,8 +115,8 @@
               <select id="registrationemail" name="registrationemail" class="form-control form-control-sm">
                 <option value="">select here---</option>
                 <option value="4">Haven't Start filling</option>
-                <option value="0">Pending</option>
-                <option value="1">Application Submit</option>
+                <option value="0">Submit Pending</option>
+                <option value="1">Verification Pending</option>
                 <option value="2">Verification Submit</option>
                 <option value="3">Registered</option>
               </select>
