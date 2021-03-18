@@ -75,7 +75,7 @@ class RegisterController extends Controller
                 if($request->registration == 0){
                     $data = $data->where('application_submit', 0)->orWhere('payment_submit', 0);
                 }else if($request->registration == 1){
-                    $data = $data->where('application_submit', 1)->orWhere('payment_submit', 1);
+                    $data = $data->where('application_submit', 1)->where('payment_submit', 1)->where('application_proof', Null);
                 }else if($request->registration == 2){
                     $data = $data->where('application_proof','!=', Null);
                 }else if($request->registration == 3){
@@ -225,7 +225,7 @@ class RegisterController extends Controller
             if($request->registration == 0){
                 $participant_data = $participant_data->where('application_submit', 0)->orWhere('payment_submit', 0);
             }else if($request->registration == 1){
-                $participant_data = $participant_data->where('application_submit', 1)->orWhere('payment_submit', 1);
+                $participant_data = $participant_data->where('application_submit', 1)->where('payment_submit', 1)->where('application_proof', Null);
             }else if($request->registration == 2){
                 $participant_data = $participant_data->where('application_proof','!=', Null);
             }else if($request->registration == 3){
@@ -317,7 +317,7 @@ class RegisterController extends Controller
             if($request->registrationemail == 0){
                 $data = $data->where('application_submit', 0)->orWhere('payment_submit', 0);
             }else if($request->registrationemail == 1){
-                $data = $data->where('application_submit', 1)->orWhere('payment_submit', 1);
+                $data = $data->where('application_submit', 1)->where('payment_submit', 1)->where('application_proof', Null);
             }else if($request->registrationemail == 2){
                 $data = $data->where('application_proof','!=', Null);
             }else if($request->registrationemail == 3){

@@ -46,7 +46,7 @@ class UserController extends Controller
                 if($request->registration == 0){
                     $data = $data->where('application_submit', 0)->orWhere('payment_submit', 0);
                 }else if($request->registration == 1){
-                    $data = $data->where('application_submit', 1)->orWhere('payment_submit', 1);
+                    $data = $data->where('application_submit', 1)->where('payment_submit', 1)->where('application_proof', Null);
                 }else if($request->registration == 2){
                     $data = $data->where('application_proof','!=', Null);
                 }else if($request->registration == 3){
@@ -155,7 +155,7 @@ class UserController extends Controller
             if($request->registration == 0){
                 $user_data = $user_data->where('application_submit', 0)->orWhere('payment_submit', 0);
             }else if($request->registration == 1){
-                $user_data = $user_data->where('application_submit', 1)->orWhere('payment_submit', 1);
+                $user_data = $user_data->where('application_submit', 1)->where('payment_submit', 1)->where('application_proof', Null);
             }else if($request->registration == 2){
                 $user_data = $user_data->where('application_proof','!=', Null);
             }else if($request->registration == 3){
@@ -196,7 +196,7 @@ class UserController extends Controller
             if($request->registrationemail == 0){
                 $data = $data->where('application_submit', 0)->orWhere('payment_submit', 0);
             }else if($request->registrationemail == 1){
-                $data = $data->where('application_submit', 1)->orWhere('payment_submit', 1);
+                $data = $data->where('application_submit', 1)->where('payment_submit', 1)->where('application_proof', Null);
             }else if($request->registrationemail == 2){
                 $data = $data->where('application_proof','!=', Null);
             }else if($request->registrationemail == 3){
