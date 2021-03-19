@@ -30,7 +30,7 @@
         
 
         // Set chart options
-        var options1 = {};
+        var options1 = {'height':800};
         var options2 = {};
 
         // Instantiate and draw our chart, passing in some options.
