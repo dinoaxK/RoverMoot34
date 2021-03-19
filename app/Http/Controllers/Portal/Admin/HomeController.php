@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Portal\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Activity;
+use App\Models\Participant;
+use App\Models\ScoutDistrict;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -26,6 +28,8 @@ class HomeController extends Controller
     public function index()
     {
         $activities = Activity::all();
-        return view('portal.admin.home', compact('activities'));
+        $districts = Participant::distinct()->select('crew_district')->get();
+        // echo $districts;
+        return view('portal.admin.home', compact('activities', 'districts'));
     }
 }

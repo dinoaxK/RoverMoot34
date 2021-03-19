@@ -61,7 +61,17 @@
             </div>
         </div>
         <div class="col-lg-12 mt-5">
-            <div class="card text-dark">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <h2 class=" text-center text-dark">District Distribution</h2>
+                </div>
+                <div id="chart_div1" class="col"></div>
+                <div id="chart_div2" class="col"></div>
+            </div>
+        </div>
+        </div>
+        <div class="col-lg-12 mt-5">
+            <div class="card text-dark" style=" max-height: 800px;overflow:auto;">
                 <div class="card-header">Activity Log</div>
                 <div class="card-body">
                     <table class="table">
@@ -94,3 +104,5 @@
 
 
 @endsection
+
+@include('portal.admin.home.scripts')

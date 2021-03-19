@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="{{ asset('vendor/datatables/css/dataTables.min.css') }}" >
     <link rel="stylesheet" href="{{ asset('vendor/datatables/css/dataTables.bootstrap4.min.css') }}" >
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.5/css/buttons.dataTables.min.css" >
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <!-- DATATABLE -->
 
     <!-- Custom styles -->
