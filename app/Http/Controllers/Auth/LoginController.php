@@ -31,7 +31,11 @@ class LoginController extends Controller
     public function redirectTo(){
         $status= Auth::user()->status;
         if($status != 'deactive'):
-            return ('/home');
+            if ( Auth::user()->role == 'admin' || Auth::user()->role == 'super_admin' ): 
+                return ('/admin/home');
+            else:
+                return ('/home');
+            endif;
         else:
             Auth::logout();
             return abort(403);
