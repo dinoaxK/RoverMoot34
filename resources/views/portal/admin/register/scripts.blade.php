@@ -13,8 +13,9 @@
         data : function (d) {
             d.name = $('#name').val();
             d.nic = $('#nic').val();
-            d.application = $('#application').val();
-            d.payment = $('#payment').val();
+            d.district = $('#district').val();
+            {{-- d.application = $('#application').val();
+            d.payment = $('#payment').val(); --}}
             d.registration = $('#registration').val();
         }
       },

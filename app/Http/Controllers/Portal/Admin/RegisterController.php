@@ -11,6 +11,7 @@ use App\Mail\PaymentApproveMail;
 use App\Mail\PaymentDeclineMail;
 use App\Models\Activity;
 use App\Models\Participant;
+use App\Models\ScoutDistrict;
 use App\Models\User;
 use Dotenv\Store\File\Paths;
 use Illuminate\Http\Request;
@@ -40,7 +41,8 @@ class RegisterController extends Controller
      */
     public function index()
     {
-        return view('portal.admin.register');
+        $districts = ScoutDistrict::all();
+        return view('portal.admin.register', compact('districts'));
     }
 
     public function get_participants_list(Request $request)
@@ -56,21 +58,24 @@ class RegisterController extends Controller
             }
             if($request->nic!=null){
                 $data = $data->where('number','like','%'. $request->nic.'%');
-            }            
-            if($request->application!=null){
-                if($request->application == 0){
-                    $data = $data->where('application_status',NULL);
-                }else{
-                    $data = $data->where('application_status',$request->application);
-                }
-            }
-            if($request->payment!=null){
-                if($request->payment == 0){
-                    $data = $data->where('payment_status',NULL);
-                }else{
-                    $data = $data->where('payment_status',$request->payment);
-                }
-            }
+            }  
+            if($request->district!=null){
+                $data = $data->where('crew_district',$request->district);
+            }          
+            // if($request->application!=null){
+            //     if($request->application == 0){
+            //         $data = $data->where('application_status',NULL);
+            //     }else{
+            //         $data = $data->where('application_status',$request->application);
+            //     }
+            // }
+            // if($request->payment!=null){
+            //     if($request->payment == 0){
+            //         $data = $data->where('payment_status',NULL);
+            //     }else{
+            //         $data = $data->where('payment_status',$request->payment);
+            //     }
+            // }
             if($request->registration!=null){
                 if($request->registration == 0){
                     $data = $data->where('application_submit', 0)->orWhere('payment_submit', 0);
@@ -206,21 +211,25 @@ class RegisterController extends Controller
         }
         if($request->nic!=null || $request->nic != ""){
             $participant_data = $participant_data->where('number','like','%'. $request->nic.'%');
-        }            
-        if($request->application!=null || $request->application != ""){
-            if($request->application == 0){
-                $participant_data = $participant_data->where('application_status',NULL);
-            }else{
-                $participant_data = $participant_data->where('application_status',$request->application);
-            }
         }
-        if($request->payment!=null || $request->payment != ""){
-            if($request->payment == 0){
-                $participant_data = $participant_data->where('payment_status',NULL);
-            }else{
-                $participant_data = $participant_data->where('payment_status',$request->payment);
-            }
-        }
+
+        if($request->district!=null || $request->district != ""){
+            $participant_data = $participant_data->where('crew_district',$request->district);
+        }              
+        // if($request->application!=null || $request->application != ""){
+        //     if($request->application == 0){
+        //         $participant_data = $participant_data->where('application_status',NULL);
+        //     }else{
+        //         $participant_data = $participant_data->where('application_status',$request->application);
+        //     }
+        // }
+        // if($request->payment!=null || $request->payment != ""){
+        //     if($request->payment == 0){
+        //         $participant_data = $participant_data->where('payment_status',NULL);
+        //     }else{
+        //         $participant_data = $participant_data->where('payment_status',$request->payment);
+        //     }
+        // }
         if($request->registration!=null || $request->registration != ""){
             if($request->registration == 0){
                 $participant_data = $participant_data->where('application_submit', 0)->orWhere('payment_submit', 0);
@@ -274,7 +283,7 @@ class RegisterController extends Controller
         }
 
         $participant_array = new ParticipantExport($participant_array);
-        return Excel::download($participant_array, 'Participants_'.date('Y-m-d H:i:s').'.xlsx');
+        return Excel::download($participant_array, $request->district.'Participants_'.date('Y-m-d H:i:s').'.xlsx');
 
         return redirect()->route('admin.register');
 
@@ -298,21 +307,25 @@ class RegisterController extends Controller
         }
         if($request->nicemail!=null){
             $data = $data->where('number','like','%'. $request->nicemail.'%');
+        }          
+        
+        if($request->district!=null){
+            $data = $data->where('crew_district',$request->district);
         }            
-        if($request->applicationemail!=null){
-            if($request->applicationemail == 0){
-                $data = $data->where('application_status',NULL);
-            }else{
-                $data = $data->where('application_status',$request->applicationemail);
-            }
-        }
-        if($request->paymentemail!=null){
-            if($request->paymentemail == 0){
-                $data = $data->where('payment_status',NULL);
-            }else{
-                $data = $data->where('payment_status',$request->paymentemail);
-            }
-        }
+        // if($request->applicationemail!=null){
+        //     if($request->applicationemail == 0){
+        //         $data = $data->where('application_status',NULL);
+        //     }else{
+        //         $data = $data->where('application_status',$request->applicationemail);
+        //     }
+        // }
+        // if($request->paymentemail!=null){
+        //     if($request->paymentemail == 0){
+        //         $data = $data->where('payment_status',NULL);
+        //     }else{
+        //         $data = $data->where('payment_status',$request->paymentemail);
+        //     }
+        // }
         if($request->registrationemail!=null){
             if($request->registrationemail == 0){
                 $data = $data->where('application_submit', 0)->orWhere('payment_submit', 0);

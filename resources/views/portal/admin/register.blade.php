@@ -30,8 +30,17 @@
                                       <label for="nic">NIC</label>
                                       <input type="text" class="form-control form-control-sm" name="nic" id="nic" aria-describedby="nicHelp"/>
                                       <small id="nicHelp" class="form-text text-muted">Enter NIC Here</small>
-                                    </div>               
+                                    </div>    
                                     <div class="form-group col">
+                                      <label for="district">District</label>
+                                      <select id="district" name="district" class="form-control form-control-sm">
+                                        <option value="">select here---</option>
+                                        @foreach($districts as $district)                                          
+                                        <option value="{{ $district->name }}">{{ $district->name }}</option>
+                                        @endforeach
+                                      </select>
+                                    </div>           
+                                    {{-- <div class="form-group col">
                                       <label for="application">Application Status</label>
                                       <select id="application" name="application" class="form-control form-control-sm">
                                         <option value="">select here---</option>
@@ -48,7 +57,7 @@
                                         <option value="1">Approved</option>
                                         <option value="2">Declined</option>
                                       </select>
-                                    </div>              
+                                    </div>               --}}
                                     <div class="form-group col">
                                       <label for="registration">Registration Status</label>
                                       <select id="registration" name="registration" class="form-control form-control-sm">
