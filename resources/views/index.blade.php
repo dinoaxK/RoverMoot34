@@ -132,10 +132,22 @@
         <div class="col-lg-12">
           <h5 class="text-center hero-header" style="font-size: 36px;">Register</h2>
         </div>
+        
         <div class="col-lg-12 mx-auto">
           <p class=" text-center">To join the Virtual National Rover Scout Moot, you need to follow these steps.</p>
 
+         
+         
           <div class="row mb-5">
+            <div class="col-12 my-3">
+              <div class="card wow fadeInUp border-0 h-100">
+
+                <div class="card-body p-0 m-0">
+                  <iframe width="100%" height="300" src="https://www.youtube.com/embed/axVdtsRZcWA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                </div>
+              </div>
+            </div>
 
             <div class="col-lg-6 my-3">
               <div class="card wow fadeInUp border-0 h-100">
@@ -244,4 +256,5 @@
       </div>
     </div>
   </section>
+
 @endsection

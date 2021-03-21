@@ -71,7 +71,7 @@
         </div>
         </div>
         <div class="col-lg-12 mt-5">
-            <div class="card text-dark" style=" max-height: 800px;overflow:auto;">
+            <div class="card text-dark" style=" max-height: 500px;overflow:auto;">
                 <div class="card-header">Activity Log</div>
                 <div class="card-body">
                     <table class="table">
