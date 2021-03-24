@@ -128,8 +128,8 @@
         }else if (data['success']){
           $('.form-control').val('');
           SwalDoneSuccess.fire({
-            title: 'Saved Successfully!',
-            text: 'Information Saved Successfully',
+            title: 'Sent Successfully!',
+            text: 'Email Sent Successfully',
           }).then((result) => {
             if(result.isConfirmed) {
               location.reload()
@@ -137,7 +137,7 @@
           });
         }else if (data['error']){
           SwalSystemErrorDanger.fire({
-            title: 'Saving Failed!',
+            title: 'Sending Failed!',
             text: 'Please Try Again or Contact Administrator: rovermoot.2021@gmail.com',
           })
         }
@@ -146,7 +146,7 @@
         $("#emailSpinner").addClass('d-none');
         $('#btnSendEmail').removeAttr('disabled');
         SwalSystemErrorDanger.fire({
-          title: 'Saving Failed!'+err,
+          title: 'Sending Failed!'+err,
           text: 'Please Try Again or Contact Administrator: rovermoot.2021@gmail.com',
         })
       }
