@@ -81,7 +81,7 @@ class RegisterController extends Controller
             'highestRoverAward' => ['nullable', 'exists:rover_awards,name'],
             'highestRoverAwardDate' => ['nullable', 'date', 'before:today'],
 
-            'participantType' => ['nullable', Rule::in(['Rover', 'Scout Master'])],
+            'participantType' => ['nullable', Rule::in(['Rover', 'Scout Master', 'Commissioner/ Other'])],
             'warrantNumber' => ['nullable'],
             'warrantRank' => ['nullable', 'exists:warrant_ranks,name'],
             'warrantSection' => ['nullable', 'exists:warrant_sections,name'],
@@ -271,7 +271,7 @@ class RegisterController extends Controller
             'highestRoverAward' => ['nullable', 'exists:rover_awards,name'],
             'highestRoverAwardDate' => ['nullable', 'date', 'before:today'],
 
-            'participantType' => ['required', Rule::in(['Rover', 'Scout Master'])],
+            'participantType' => ['required', Rule::in(['Rover', 'Scout Master', 'Commissioner/ Other'])],
 
             'crewNumber' => ['nullable', 'integer'],
             'crewDistrict' => ['required', 'exists:scout_districts,name'],
@@ -338,10 +338,10 @@ class RegisterController extends Controller
         if($request->participantType == 'Rover'):
             if($request->warrantRank != Null || $request->warrantSection != Null):
                 $warrant_validator =  Validator::make($request->all(), [
-                    'warrantNumber' => ['required'],
-                    'warrantRank' => ['required', 'exists:warrant_ranks,name'],
-                    'warrantSection' => ['required', 'exists:warrant_sections,name'],
-                    'warrantValidDate' => ['required', 'date'],
+                    'warrantNumber' => ['nullable'],
+                    'warrantRank' => ['nullable', 'exists:warrant_ranks,name'],
+                    'warrantSection' => ['nullable', 'exists:warrant_sections,name'],
+                    'warrantValidDate' => ['nullable', 'date'],
                 ]);
             else:
                 $warrant_validator =  Validator::make($request->all(), [
@@ -353,10 +353,10 @@ class RegisterController extends Controller
             endif;
         else:
             $warrant_validator =  Validator::make($request->all(), [
-                'warrantNumber' => ['required'],
-                'warrantRank' => ['required', 'exists:warrant_ranks,name'],
-                'warrantSection' => ['required', 'exists:warrant_sections,name'],
-                'warrantValidDate' => ['required', 'date'],
+                'warrantNumber' => ['nullable'],
+                'warrantRank' => ['nullable', 'exists:warrant_ranks,name'],
+                'warrantSection' => ['nullable', 'exists:warrant_sections,name'],
+                'warrantValidDate' => ['nullable', 'date'],
             ]);
         endif;
 

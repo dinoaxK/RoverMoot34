@@ -294,7 +294,11 @@
                             </div>   
                             <div class="form-check form-check-inline my-1">
                                 <input @if($participant != Null && $participant->participant_type == "Scout Master") checked @endif type="radio" class="form-check-input" name="participantType" id="participantType" value="Scout Master"/>
-                                <label for="Scout Master" class="form-check-label">Scout Master *</label>
+                                <label for="Scout Master" class="form-check-label">Scout Master</label>
+                            </div> 
+                            <div class="form-check form-check-inline my-1">
+                                <input @if($participant != Null && $participant->participant_type == "Commissioner/ Other") checked @endif type="radio" class="form-check-input" name="participantType" id="participantType" value="Commissioner/ Other"/>
+                                <label for="Commissioner/ Other" class="form-check-label">Commissioner/ Other *</label>
                             </div> 
                             <span id="participantType-err" class="invalid-feedback text-center" role="alert"></span>
                         </div>
@@ -613,12 +617,21 @@
             @endif
             
             @if( $participant != NULL && $participant->application_submit == 1 && $participant->application_proof ==NULL )
-            <div class="form-row justify-content-center">            
+            <div class="form-row justify-content-center">  
+                <h3 class="text-center text-success col-12">
+                    You are Partially Registered!                 
+                </h3> 
                 <p class="text-center">
-                    Printed application must be scanned and submitted along with the signature verifications of: <br> Rover Scout Master, ADC(Rovers) and District Commissioner                
+                    You Need to wait for your District Commissioner to approve your Application               
+                </p>
+                <p class="text-center  col-12">
+                    OR                
+                </p>          
+                <p class="text-center">
+                    Printed application must be scanned (Image/ Photo) and submitted along with the signature verifications of: <br> Rover Scout Master, ADC(Rovers) and District Commissioner                
                 </p>
                 <p class="text-center col-12">
-                    All <span class=" text-success">printed, verified and scanned Applications</span> should be uploaded inorder to complete the registration
+                    All <span class=" text-success">printed, verified and scanned Applications</span> should be uploaded in order to complete the registration
                     <br>
                 </p>
                 <p class="text-center">
@@ -660,7 +673,7 @@
             @endif
 
             
-            @if( $participant != NULL && $participant->application_submit == 1 && $participant->payment_submit == 1 && ($participant->application_status != 1 || $participant->payment_status != 1))
+            @if( $participant != NULL && $participant->application_submit == 1 && $participant->payment_submit == 1 && $participant->application_proof != NULL && ($participant->application_status != 1 || $participant->payment_status != 1))
 
             <div class="alert alert-success" role="alert">
                 <h4 class="alert-heading">Registration Successfully Submitted!</h4>
