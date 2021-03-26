@@ -44,13 +44,13 @@ class UserController extends Controller
             if($request->registration!=null){
                 $data = $data->where( 'email_verified_at', '!=', Null )->leftJoin('participants', 'users.id', '=', 'participants.user_id');
                 if($request->registration == 0){
-                    $data = $data->where('application_submit', 0)->orWhere('payment_submit', 0);
+                    $data = $data->where('application_submit', 0);
                 }else if($request->registration == 1){
                     $data = $data->where('application_submit', 1)->where('payment_submit', 1)->where('application_proof', Null);
                 }else if($request->registration == 2){
                     $data = $data->where('application_proof','!=', Null);
                 }else if($request->registration == 3){
-                    $data = $data->where('payment_status',1)->orWhere('application_status', 1);
+                    $data = $data->where('payment_status',1)->where('application_status', 1);
                 }else if($request->registration == 4){
                     $data = $data->where('participants.id',Null);
                 }
@@ -153,13 +153,13 @@ class UserController extends Controller
         if($request->registration!=null){
             $user_data = $user_data->where( 'email_verified_at', '!=', Null )->join('participants', 'users.id', '=', 'participants.user_id');
             if($request->registration == 0){
-                $user_data = $user_data->where('application_submit', 0)->orWhere('payment_submit', 0);
+                $user_data = $user_data->where('application_submit', 0);
             }else if($request->registration == 1){
                 $user_data = $user_data->where('application_submit', 1)->where('payment_submit', 1)->where('application_proof', Null);
             }else if($request->registration == 2){
                 $user_data = $user_data->where('application_proof','!=', Null);
             }else if($request->registration == 3){
-                $user_data = $user_data->where('payment_status',1)->orWhere('application_status', 1);
+                $user_data = $user_data->where('payment_status',1)->where('application_status', 1);
             }
         }
         $user_data = $user_data->get();
@@ -194,13 +194,13 @@ class UserController extends Controller
         if($request->registrationemail!=null){
             $data = $data->where( 'email_verified_at', '!=', Null )->leftJoin('participants', 'users.id', '=', 'participants.user_id');
             if($request->registrationemail == 0){
-                $data = $data->where('application_submit', 0)->orWhere('payment_submit', 0);
+                $data = $data->where('application_submit', 0);
             }else if($request->registrationemail == 1){
                 $data = $data->where('application_submit', 1)->where('payment_submit', 1)->where('application_proof', Null);
             }else if($request->registrationemail == 2){
                 $data = $data->where('application_proof','!=', Null);
             }else if($request->registrationemail == 3){
-                $data = $data->where('payment_status',1)->orWhere('application_status', 1);
+                $data = $data->where('payment_status',1)->where('application_status', 1);
             }else if($request->registrationemail == 4){
                 $data = $data->where('participants.id',Null);
             }
@@ -220,10 +220,8 @@ class UserController extends Controller
                 ];
 
                 // echo $participant->email;
-                if(Mail::to($participant->email)->send(new GeneralEmail($details))):
-                else: 
-                    sleep(5);
-                endif;
+
+                Mail::to($participant->email)->later(now()->addSeconds(5), new GeneralEmail($details));
             endforeach;
             return response()->json(['success'=>'success']);
 

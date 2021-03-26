@@ -47,21 +47,21 @@ class RegisterController extends Controller
 
     public function get_participants_list(Request $request)
     {
-        if ($request->ajax()) {
+        if ($request->ajax()) :
             $data = Participant::where('created_at', '!=', Null);
-            if($request->name!=null){
+            if($request->name!=null):
                 $data = $data->where('first_name','like', '%'. $request->name.'%')
                 ->orWhere('last_name','like', '%'. $request->name.'%')
                 ->orWhere('full_name','like', '%'. $request->name.'%')
                 ->orWhere('initials','like', '%'. $request->name.'%')
                 ->orWhere('middle_names','like', '%'. $request->name.'%');
-            }
-            if($request->nic!=null){
+            endif; 
+            if($request->nic!=null):
                 $data = $data->where('number','like','%'. $request->nic.'%');
-            }  
-            if($request->district!=null){
+            endif;  
+            if($request->district!=null):
                 $data = $data->where('crew_district',$request->district);
-            }          
+            endif;          
             // if($request->application!=null){
             //     if($request->application == 0){
             //         $data = $data->where('application_status',NULL);
@@ -76,22 +76,22 @@ class RegisterController extends Controller
             //         $data = $data->where('payment_status',$request->payment);
             //     }
             // }
-            if($request->registration!=null){
+            if($request->registration!=null):
                 if($request->registration == 0){
-                    $data = $data->where('application_submit', 0)->orWhere('payment_submit', 0);
+                    $data = $data->where('application_submit', 0);
                 }else if($request->registration == 1){
                     $data = $data->where('application_submit', 1)->where('payment_submit', 1)->where('application_proof', Null);
                 }else if($request->registration == 2){
                     $data = $data->where('application_proof','!=', Null);
                 }else if($request->registration == 3){
-                    $data = $data->where('payment_status',1)->orWhere('application_status', 1);
+                    $data = $data->where('payment_status',1)->where('application_status', 1);
                 }
-            }
+            endif; 
             $data = $data->get();
             return DataTables::of($data)
                 ->addIndexColumn()
                 ->make(true);
-        }
+        endif; 
     }
 
     public function loadApplication(Request $request)
@@ -202,20 +202,20 @@ class RegisterController extends Controller
     function excel(Request $request)
     {
         $participant_data = Participant::where('created_at', '!=', Null);
-        if($request->name != Null || $request->name != ""){
+        if($request->name != Null || $request->name != ""):
             $participant_data = $participant_data->where('first_name','like', '%'. $request->name.'%')
             ->orWhere('last_name','like', '%'. $request->name.'%')
             ->orWhere('full_name','like', '%'. $request->name.'%')
             ->orWhere('initials','like', '%'. $request->name.'%')
             ->orWhere('middle_names','like', '%'. $request->name.'%');
-        }
-        if($request->nic!=null || $request->nic != ""){
+        endif; 
+        if($request->nic!=null || $request->nic != ""):
             $participant_data = $participant_data->where('number','like','%'. $request->nic.'%');
-        }
+        endif; 
 
-        if($request->district!=null || $request->district != ""){
+        if($request->district!=null || $request->district != ""):
             $participant_data = $participant_data->where('crew_district',$request->district);
-        }              
+        endif;               
         // if($request->application!=null || $request->application != ""){
         //     if($request->application == 0){
         //         $participant_data = $participant_data->where('application_status',NULL);
@@ -230,17 +230,17 @@ class RegisterController extends Controller
         //         $participant_data = $participant_data->where('payment_status',$request->payment);
         //     }
         // }
-        if($request->registration!=null || $request->registration != ""){
+        if($request->registration!=null || $request->registration != ""):
             if($request->registration == 0){
-                $participant_data = $participant_data->where('application_submit', 0)->orWhere('payment_submit', 0);
+                $participant_data = $participant_data->where('application_submit', 0);
             }else if($request->registration == 1){
                 $participant_data = $participant_data->where('application_submit', 1)->where('payment_submit', 1)->where('application_proof', Null);
             }else if($request->registration == 2){
                 $participant_data = $participant_data->where('application_proof','!=', Null);
             }else if($request->registration == 3){
-                $participant_data = $participant_data->where('payment_status',1)->orWhere('application_status', 1);
+                $participant_data = $participant_data->where('payment_status',1)->where('application_status', 1);
             }
-        }
+        endif; 
         $participant_data = $participant_data->get();
 
         foreach($participant_data as $participant)
@@ -328,13 +328,13 @@ class RegisterController extends Controller
         // }
         if($request->registrationemail!=null){
             if($request->registrationemail == 0){
-                $data = $data->where('application_submit', 0)->orWhere('payment_submit', 0);
+                $data = $data->where('application_submit', 0);
             }else if($request->registrationemail == 1){
                 $data = $data->where('application_submit', 1)->where('payment_submit', 1)->where('application_proof', Null);
             }else if($request->registrationemail == 2){
                 $data = $data->where('application_proof','!=', Null);
             }else if($request->registrationemail == 3){
-                $data = $data->where('payment_status',1)->orWhere('application_status', 1);
+                $data = $data->where('payment_status',1)->where('application_status', 1);
             }
         }
         $data = $data->get();
@@ -352,10 +352,8 @@ class RegisterController extends Controller
                 ];
 
                 // echo $participant->email;
-                if(Mail::to($participant->email)->send(new GeneralEmail($details))):
-                else: 
-                    sleep(5);
-                endif;
+
+                Mail::to($participant->email)->later(now()->addSeconds(5), new GeneralEmail($details));
             endforeach;
             return response()->json(['success'=>'success']);
 
