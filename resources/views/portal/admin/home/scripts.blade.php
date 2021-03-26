@@ -21,6 +21,7 @@
         data.addRows([
           @php
           foreach($districts as $district):
+          //echo "['".$district->name."',".App\Models\Participant::where('application_submit', 1)->where('crew_district', $district->name)->count() ."],";
           echo "['".$district->crew_district."',".App\Models\Participant::where('application_submit', 1)->where('crew_district', $district->crew_district)->count() ."],";
           endforeach;
             

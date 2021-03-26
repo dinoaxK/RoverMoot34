@@ -28,7 +28,8 @@ class HomeController extends Controller
     public function index()
     {
         $activities = Activity::latest('created_at')->get();
-        $districts = Participant::distinct()->select('crew_district')->get();
+        $districts = Participant::where('application_submit', 1)->distinct()->select('crew_district')->get();
+        // $districts = ScoutDistrict::all();
         // echo $districts;
         return view('portal.admin.home', compact('activities', 'districts'));
     }
