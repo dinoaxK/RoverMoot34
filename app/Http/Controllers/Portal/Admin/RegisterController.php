@@ -353,7 +353,8 @@ class RegisterController extends Controller
 
                 // echo $participant->email;
 
-                Mail::to($participant->email)->later(now()->addSeconds(5), new GeneralEmail($details));
+                Mail::to($participant->email)->later(now()->addSeconds(10), new GeneralEmail($details));
+                sleep(5);
             endforeach;
             return response()->json(['success'=>'success']);
 
