@@ -390,7 +390,7 @@ class RegisterController extends Controller
             else:
                 $image_validator =  Validator::make($request->all(), 
                     [                         
-                        'paymentProof'=>['required', 'image', 'mimes:jpeg,png']
+                        'paymentProof'=>['nullable', 'image', 'mimes:jpeg,png']
                     ]
                 );
             endif;
