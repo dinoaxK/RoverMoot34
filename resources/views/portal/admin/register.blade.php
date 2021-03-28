@@ -79,7 +79,7 @@
                       <button onclick="email_model()" class="btn btn-lg btn-outline-primary float-right mx-1"><i class="fa fa-envelope"></i> Send Email</a>
                     @endif
                     </div>
-                    <table class="table table-bordered yajra-datatable text-center">
+                    <table class="table table-bordered table-striped yajra-datatable text-center">
                         <thead>
                             <tr>
                                 <th>updated_at</th>
