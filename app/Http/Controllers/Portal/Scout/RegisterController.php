@@ -70,7 +70,7 @@ class RegisterController extends Controller
             'lastName' => ['nullable', 'alpha', 'min:3'],
             'fullName' => ['nullable', 'alpha_dash_space'],
             'initials' => ['nullable', 'alpha_capital'],
-            'profileImage'=> ['nullable', 'image', 'mimes:jpeg,png'],
+            'profileImage'=> ['nullable', 'image', 'mimes:jpeg,png', 'max:5000'],
             'dob' => ['nullable' , 'date','before:today'],
             'gender' => ['nullable', Rule::in(['Male', 'Female', 'Other'])],
             'idType' => ['nullable', Rule::in(['nic', 'passport'])],
@@ -105,11 +105,14 @@ class RegisterController extends Controller
 
             'paymentDate'=>['nullable', 'before_or_equal:today'],
             'paymentReference'=>['nullable'],
-            'paymentProof'=>['nullable', 'image', 'mimes:jpeg,png']
+            'paymentProof'=>['nullable', 'image', 'mimes:jpeg,png', 'max:5000']
 
         ],
         [
-            'dimensions'=>'Image must be cropped to a square shape (Ratio= 1:1)'
+            
+            'profileImage.max' => 'The profile image may not be greater than 5MB.',
+            'paymentProof.max' => 'The payment proof may not be greater than 5MB.'
+            
         ]
     );
 
@@ -361,21 +364,21 @@ class RegisterController extends Controller
         endif;
 
         if($participant->image == Null):
-            $image_validator =  Validator::make($request->all(), 
+            $profile_image_validator =  Validator::make($request->all(), 
                 [                         
-                    'profileImage'=> ['required', 'image', 'mimes:jpeg,png'],
+                    'profileImage'=> ['nullable', 'image', 'mimes:jpeg,png', 'max:5000'],
                 ],
                 [
-                    'dimensions'=>'image must be cropped to a square shape (Ratio= 1:1)'
+                    'max' => 'The profile image may not be greater than 5MB.'
                 ]
             );
         else:
-            $image_validator =  Validator::make($request->all(), 
+            $profile_image_validator =  Validator::make($request->all(), 
                 [                         
-                    'profileImage'=> ['nullable', 'image', 'mimes:jpeg,png'],
+                    'profileImage'=> ['nullable', 'image', 'mimes:jpeg,png', 'max:5000'],
                 ],
                 [
-                    'dimensions'=>'image must be cropped to a square shape (Ratio= 1:1)'
+                    'max' => 'The profile image may not be greater than 5MB.'
                 ]
             );
         endif;
@@ -384,26 +387,35 @@ class RegisterController extends Controller
             if( $request->citizenship == 'Foreign National' ):
                 $image_validator =  Validator::make($request->all(), 
                     [                         
-                        'paymentProof'=>['nullable', 'image', 'mimes:jpeg,png']
+                        'paymentProof'=>['nullable', 'image', 'mimes:jpeg,png', 'max:5000']
+                    ],
+                    [
+                        'max' => 'The payment proof may not be greater than 5MB.'
                     ]
                 );
             else:
                 $image_validator =  Validator::make($request->all(), 
                     [                         
-                        'paymentProof'=>['nullable', 'image', 'mimes:jpeg,png']
+                        'paymentProof'=>['nullable', 'image', 'mimes:jpeg,png', 'max:5000']
+                    ],
+                    [
+                        'max' => 'The payment proof may not be greater than 5MB.'
                     ]
                 );
             endif;
         else:
             $image_validator =  Validator::make($request->all(), 
                 [                         
-                    'paymentProof'=>['nullable', 'image', 'mimes:jpeg,png']
+                    'paymentProof'=>['nullable', 'image', 'mimes:jpeg,png', 'max:5000']
+                ],
+                [
+                    'max' => 'The payment proof may not be greater than 5MB.'
                 ]
             );
         endif;
 
-        if($validator->fails() || $uniqueID_validator->fails() || $warrant_validator->fails() || $image_validator->fails() || $payment_validator->fails()):
-            return response()->json(['errors'=>$validator->errors()->merge($uniqueID_validator->errors())->merge($warrant_validator->errors())->merge($image_validator->errors())->merge($payment_validator->errors())]);
+        if($validator->fails() || $uniqueID_validator->fails() || $warrant_validator->fails() || $profile_image_validator->fails() || $image_validator->fails() || $payment_validator->fails()):
+            return response()->json(['errors'=>$validator->errors()->merge($uniqueID_validator->errors())->merge($warrant_validator->errors())->merge($profile_image_validator->errors())->merge($image_validator->errors())->merge($payment_validator->errors())]);
         else:
             
             $participant->title = $request->title;
