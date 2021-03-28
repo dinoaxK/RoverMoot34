@@ -82,6 +82,7 @@
                     <table class="table table-bordered yajra-datatable text-center">
                         <thead>
                             <tr>
+                                <th>updated_at</th>
                                 <th>No</th>
                                 <th>District</th>
                                 <th>Category</th>

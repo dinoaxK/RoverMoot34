@@ -6,7 +6,6 @@
     var table = $('.yajra-datatable').DataTable({
       processing: true,
       serverSide: true,
-
       ajax: 
       {
         url:"{{ route('paricipant.list') }}",
@@ -21,8 +20,12 @@
       },
       columns: [
           {
+            data: 'updated_at', 
+            name: 'updated_at' 
+          },
+          {
             data: 'id', 
-            name: 'id'
+            name: 'id' 
           },
           {
             data: 'crew_district', 
@@ -63,31 +66,11 @@
           {
               data: 'id', 
               name: 'id', 
-              orderable: true, 
-              searchable: true
+              orderable: false, 
+              searchable: false
           },
       ],
       columnDefs: [
-        {
-          targets: 8,
-          render: function ( data, type, row ) {
-            var color = 'success';
-            var status = 'Active';
-            if (data == 1) {
-              color = 'success';
-              status = 'check-circle';
-            } 
-            else if (data == 2){
-              color = 'danger';
-              status = 'ban';
-            }
-            else {
-              color = 'warning';
-              status = 'clock';
-            }
-            return '<span class="text-'+color+' font-weight-bold"><i class="fa fa-lg fa-'+status+'"></i></span>';
-          }
-        },
         {
           targets: 9,
           render: function ( data, type, row ) {
@@ -109,7 +92,27 @@
           }
         },
         {
-            targets: 10,
+          targets: 10,
+          render: function ( data, type, row ) {
+            var color = 'success';
+            var status = 'Active';
+            if (data == 1) {
+              color = 'success';
+              status = 'check-circle';
+            } 
+            else if (data == 2){
+              color = 'danger';
+              status = 'ban';
+            }
+            else {
+              color = 'warning';
+              status = 'clock';
+            }
+            return '<span class="text-'+color+' font-weight-bold"><i class="fa fa-lg fa-'+status+'"></i></span>';
+          }
+        },
+        {
+            targets: 11,
             render: function ( data, type, row ) {
               var button_group =  "<div class=\"btn-group\" role=\"group\" aria-label=\"Basic example\">"+
                                     "<button title=\"View Profile\" data-tooltip=\"tooltip\"  data-placement=\"bottom\" onclick=\"view_profile("+data+");\" type=\"button\" class=\"btn btn-outline-primary\"><i class=\"fas fa-user\"></i></button>"+

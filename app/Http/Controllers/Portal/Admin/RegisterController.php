@@ -13,6 +13,7 @@ use App\Models\Activity;
 use App\Models\Participant;
 use App\Models\ScoutDistrict;
 use App\Models\User;
+use Carbon\Carbon;
 use Dotenv\Store\File\Paths;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -89,6 +90,7 @@ class RegisterController extends Controller
             endif; 
             $data = $data->get();
             return DataTables::of($data)
+                ->editColumn('updated_at', function($data){ $formatedDate = Carbon::createFromFormat('Y-m-d H:i:s', $data->updated_at); return $formatedDate; })                
                 ->addIndexColumn()
                 ->make(true);
         endif; 
