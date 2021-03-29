@@ -223,7 +223,7 @@ class UserController extends Controller
                 // echo $participant->email;
 
                 Mail::to($participant->email)->later(now()->addSeconds($delay_seconds), new GeneralEmail($details));
-                $iteration ++;
+                $iteration = $iteration + 5;
                 
             endforeach;
             return response()->json(['success'=>'success']);
