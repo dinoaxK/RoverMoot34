@@ -210,8 +210,9 @@ class UserController extends Controller
         if($validator->fails()):
             return response()->json(['errors'=>$validator->errors()]);
         else:
-
+            $iteration = 0;
             foreach ($data as $participant):
+                $delay_seconds = $iteration + 15;
                 $details = [
                     'name' => $participant->name,
                     'email' => $participant->email,
@@ -221,8 +222,9 @@ class UserController extends Controller
 
                 // echo $participant->email;
 
-                Mail::to($participant->email)->later(now()->addSeconds(10), new GeneralEmail($details));
-                // sleep(5);
+                Mail::to($participant->email)->later(now()->addSeconds($delay_seconds), new GeneralEmail($details));
+                $iteration ++;
+                
             endforeach;
             return response()->json(['success'=>'success']);
 

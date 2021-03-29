@@ -345,7 +345,9 @@ class RegisterController extends Controller
             return response()->json(['errors'=>$validator->errors()]);
         else:
 
+            $iteration = 0;
             foreach ($data as $participant):
+                $delay_seconds = $iteration + 15;
                 $details = [
                     'name' => $participant->name,
                     'email' => $participant->email,
@@ -355,7 +357,8 @@ class RegisterController extends Controller
 
                 // echo $participant->email;
 
-                Mail::to($participant->email)->later(now()->addSeconds(10), new GeneralEmail($details));
+                Mail::to($participant->email)->later(now()->addSeconds($delay_seconds), new GeneralEmail($details));
+                $iteration ++;
                 // sleep(5);
             endforeach;
             return response()->json(['success'=>'success']);
