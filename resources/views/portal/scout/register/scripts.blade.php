@@ -59,11 +59,15 @@
       beforeSend: function(){
         // Show loader
         $("#btnSaveScoutSpinner").removeClass('d-none');
+        $("#btnSaveScoutSpinner1").removeClass('d-none');
+        $("#btnSaveScoutSpinner2").removeClass('d-none');
         $('#btnSaveScout').attr('disabled','disabled');
       },
       success: function(data){
         console.log('Success in save info ajax.');
         $("#btnSaveScoutSpinner").addClass('d-none');
+        $("#btnSaveScoutSpinner1").addClass('d-none');
+        $("#btnSaveScoutSpinner2").addClass('d-none');
         $('#btnSaveScout').removeAttr('disabled');
         if(data['errors']){
           $.each(data['errors'], function(key, value){
@@ -92,6 +96,8 @@
       error: function(err){
         console.log('Error in save info ajax. '+err);
         $("#btnSaveScoutSpinner").addClass('d-none');
+        $("#btnSaveScoutSpinner1").addClass('d-none');
+        $("#btnSaveScoutSpinner2").addClass('d-none');
         $('#btnSaveScout').removeAttr('disabled');
         SwalSystemErrorDanger.fire({
           title: 'Saving Failed!',

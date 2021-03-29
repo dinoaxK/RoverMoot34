@@ -520,7 +520,7 @@
                             <div class=" text-center">
                                 <button id="btnSaveScout" type="button" onclick="save_info()" class="btn btn-lg btn-primary w-25">
                                     Save Info 
-                                    <span id="btnSaveScoutSpinner" class="spinner-border spinner-border-sm d-none " role="status" aria-hidden="true"></span>
+                                    <span id="btnSaveScoutSpinner1" class="spinner-border spinner-border-sm d-none " role="status" aria-hidden="true"></span>
                                 </button>
                             </div>
                         </div>
@@ -591,7 +591,7 @@
                     <div class="col-md-12 text-center">
                         <button id="btnSaveScout" type="button" onclick="save_info()" class="btn btn-lg btn-primary w-25">
                             Save Info
-                            <span id="btnSaveScoutSpinner" class="spinner-border spinner-border-sm d-none " role="status" aria-hidden="true"></span>
+                            <span id="btnSaveScoutSpinner2" class="spinner-border spinner-border-sm d-none " role="status" aria-hidden="true"></span>
                         </button>
                     </div>
                 </div>                
