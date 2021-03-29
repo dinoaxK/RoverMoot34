@@ -69,7 +69,6 @@
                 <div id="chart_div2" class="col"></div>
             </div>
         </div>
-        </div>
         <div class="col-lg-12 mt-5">
             <div class="card text-dark" style=" max-height: 500px;overflow:auto;">
                 <div class="card-header">Activity Log</div>
@@ -99,6 +98,37 @@
                 </div>
             </div>
         </div>
+        @if(Auth::user()->role == 'super_admin')
+        <div class="col-lg-12 mt-5">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <h2 class=" text-center text-dark">Error Logs</h2>
+                </div>
+                <div>
+                    <h5 class=" text-center text-dark">Updated On : <b>{{ $laravellog['lastModified']->format('Y-m-d H:i:s') }}</b></h5>
+                    <h5 class=" text-center text-dark">File Size : <b>{{ $laravellog['size'] / 1024 }} KB</b></h5>
+                    <div class="card text-dark" style=" max-height: 500px;overflow:auto; max-width: 800px;">
+                    <p class=" text-dark"> <pre>{{ $laravellog['file'] }}</pre></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+                
+        <div class="col-lg-12 mt-5">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <h2 class=" text-center text-dark">Work Logs</h2>
+                </div>
+                <div>
+                    <h5 class=" text-center text-dark">Updated On : <b>{{ $worklog['lastModified']->format('Y-m-d H:i:s') }}</b></h5>
+                    <h5 class=" text-center text-dark">File Size : <b>{{ $worklog['size'] / 1024 }} KB</b></h5>
+                    <div class="card text-dark" style=" max-height: 500px;overflow:auto; max-width: 800px;">
+                    <p class=" text-dark"> <pre>{{ $worklog['file'] }}</pre></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @endif
     </div>
 </div>
 
