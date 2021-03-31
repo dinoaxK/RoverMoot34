@@ -24,7 +24,7 @@ class BlockRegistration
         // if(Participant::where('user_id', $uid)->first()!=Null || date('Y-m-d')<='2021-03-31'):
             return $next($request);
         // else:
-            return redirect('/login');
+            // return redirect('/login');
         // endif;
     }
 }
