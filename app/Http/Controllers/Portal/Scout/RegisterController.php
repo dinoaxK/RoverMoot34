@@ -304,7 +304,7 @@ class RegisterController extends Controller
             ]);
         else:
             $payment_validator = Validator::make($request->all(), [
-                'paymentDate'=>['required', 'before_or_equal:today'],
+                'paymentDate'=>['nullable', 'before_or_equal:today'],
                 'paymentReference'=>['required']
             ]);
         endif;
