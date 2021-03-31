@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => 'smtp2',
+    'default' => 'smtp5',
 
     /*
     |--------------------------------------------------------------------------
@@ -62,6 +62,28 @@ return [
             'port' => 587,
             'encryption' => 'tls',
             'username' => 'rovermoot.20212@gmail.com',
+            'password' => '34@Rm@21',
+            'timeout' => null,
+            'auth_mode' => null,
+        ],
+
+        'smtp4' => [
+            'transport' => 'smtp',
+            'host' => 'smtp.googlemail.com',
+            'port' => 587,
+            'encryption' => 'tls',
+            'username' => 'rovermoot.20213@gmail.com',
+            'password' => '34@Rm@21',
+            'timeout' => null,
+            'auth_mode' => null,
+        ],
+
+        'smtp5' => [
+            'transport' => 'smtp',
+            'host' => 'smtp.googlemail.com',
+            'port' => 587,
+            'encryption' => 'tls',
+            'username' => 'rovermoot.20214@gmail.com',
             'password' => '34@Rm@21',
             'timeout' => null,
             'auth_mode' => null,
