@@ -59,7 +59,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group row mb-0">
+                    <div class="form-group row mb-5">
                         <div class="col-md-12 text-center">
                             <button type="submit" class="btn btn-lg btn-primary m-2">
                                 {{ __('Login') }}
@@ -76,7 +76,7 @@
                     </div>
                 </form>
 
-                <p class=" text-center mt-1 mb-5">Don't have a account yet? <a href="{{ route('register') }}">Sign up here</a></p>
+                {{-- <p class=" text-center mt-1 mb-5">Don't have a account yet? <a href="{{ route('register') }}">Sign up here</a></p> --}}
             </div>
         </div>
     </div>
