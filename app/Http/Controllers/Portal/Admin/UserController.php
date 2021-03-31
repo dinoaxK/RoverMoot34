@@ -211,6 +211,7 @@ class UserController extends Controller
             return response()->json(['errors'=>$validator->errors()]);
         else:
             $iteration = 0;
+            $count = 0;
             foreach ($data as $participant):
                 $delay_seconds = $iteration + 15;
                 $details = [
@@ -221,9 +222,14 @@ class UserController extends Controller
                 ];
 
                 // echo $participant->email;
-
-                Mail::to($participant->email)->later(now()->addSeconds($delay_seconds), new GeneralEmail($details));
+                if( $count < 499 ):
+                    Mail::mailer('smtp')->to($participant->email)->later(now()->addSeconds($delay_seconds), new GeneralEmail($details));
+                else:
+                    Mail::mailer('smtp2')->to($participant->email)->later(now()->addSeconds($delay_seconds), new GeneralEmail($details));
+                endif;
+                
                 $iteration = $iteration + 5;
+                $count ++;
                 
             endforeach;
             return response()->json(['success'=>'success']);
