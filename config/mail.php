@@ -56,6 +56,17 @@ return [
             'auth_mode' => null,
         ],
 
+        'smtp3' => [
+            'transport' => 'smtp',
+            'host' => 'smtp.googlemail.com',
+            'port' => 587,
+            'encryption' => 'tls',
+            'username' => 'rovermoot.20212@gmail.com',
+            'password' => '34@Rm@21',
+            'timeout' => null,
+            'auth_mode' => null,
+        ],
+
         'ses' => [
             'transport' => 'ses',
         ],

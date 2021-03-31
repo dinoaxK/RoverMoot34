@@ -222,10 +222,12 @@ class UserController extends Controller
                 ];
 
                 // echo $participant->email;
-                if( $count < 499 ):
-                    Mail::mailer('smtp')->to($participant->email)->later(now()->addSeconds($delay_seconds), new GeneralEmail($details));
-                else:
+                if( $count < 100 ):
+                    Mail::mailer('smtp3')->to($participant->email)->later(now()->addSeconds($delay_seconds), new GeneralEmail($details));
+                elseif( $count < 200 ):
                     Mail::mailer('smtp2')->to($participant->email)->later(now()->addSeconds($delay_seconds), new GeneralEmail($details));
+                else:
+                    Mail::mailer('smtp')->to($participant->email)->later(now()->addSeconds($delay_seconds), new GeneralEmail($details));
                 endif;
                 
                 $iteration = $iteration + 5;
