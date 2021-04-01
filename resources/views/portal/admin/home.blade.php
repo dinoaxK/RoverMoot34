@@ -47,7 +47,25 @@
         <div class="col">
             <div class="card bg-secondary">
                 <div class="card-body">
-                    <h1>{{ App\Models\Participant::where('application_proof', '!=', Null)->where('payment_status', Null)->where('application_status', Null)->count() }}</h1>
+                    <h1>{{ App\Models\Participant::where('application_proof', '!=', Null)->where(function ($query) {
+            $query->where('payment_status', '!=', 1)
+            ->orWhereNull('payment_status');
+        })->where( function ($query1) {
+            $query1->where('application_status', '!=', 1)
+            ->orWhereNull('application_status');
+        })->orWhere( function ($query2) {
+            $query2->where('application_status', 1)->where('application_proof', '!=', Null)->where(function ($query3) {
+                $query3->where('payment_status', '!=', 1)
+                ->orWhereNull('payment_status')
+                ;
+            });
+        })->orWhere( function ($query4) {
+            $query4->where('payment_status',  1)->where('application_proof', '!=', Null)->where(function ($query5) {
+                $query5->where('application_status', '!=', 1)
+                ->orWhereNull('application_status')
+                ;
+            });
+        })->count() }}</h1>
                     <p>Pending Registrations</p>
                 </div>
             </div>
