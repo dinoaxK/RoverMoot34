@@ -47,9 +47,9 @@ return [
 
         'smtp2' => [
             'transport' => 'smtp',
-            'host' => 'smtp.googlemail.com',
-            'port' => 587,
-            'encryption' => 'tls',
+            'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
+            'port' => env('MAIL_PORT', 587),
+            'encryption' => env('MAIL_ENCRYPTION', 'tls'),
             'username' => 'rovermoot.20211@gmail.com',
             'password' => '34@Rm@21',
             'timeout' => null,
@@ -58,9 +58,9 @@ return [
 
         'smtp3' => [
             'transport' => 'smtp',
-            'host' => 'smtp.googlemail.com',
-            'port' => 587,
-            'encryption' => 'tls',
+            'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
+            'port' => env('MAIL_PORT', 587),
+            'encryption' => env('MAIL_ENCRYPTION', 'tls'),
             'username' => 'rovermoot.20212@gmail.com',
             'password' => '34@Rm@21',
             'timeout' => null,
@@ -69,9 +69,9 @@ return [
 
         'smtp4' => [
             'transport' => 'smtp',
-            'host' => 'smtp.googlemail.com',
-            'port' => 587,
-            'encryption' => 'tls',
+            'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
+            'port' => env('MAIL_PORT', 587),
+            'encryption' => env('MAIL_ENCRYPTION', 'tls'),
             'username' => 'rovermoot.20213@gmail.com',
             'password' => '34@Rm@21',
             'timeout' => null,
@@ -80,9 +80,9 @@ return [
 
         'smtp5' => [
             'transport' => 'smtp',
-            'host' => 'smtp.googlemail.com',
-            'port' => 587,
-            'encryption' => 'tls',
+            'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
+            'port' => env('MAIL_PORT', 587),
+            'encryption' => env('MAIL_ENCRYPTION', 'tls'),
             'username' => 'rovermoot.20214@gmail.com',
             'password' => '34@Rm@21',
             'timeout' => null,
