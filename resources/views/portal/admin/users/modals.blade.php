@@ -45,6 +45,7 @@
                 <select name="role" id="" class="form-control">
                   <option value="admin">Admin</option>
                   <option value="super_admin">Super-Admin</option>
+                  <option value="scout">Scout</option>
                 </select>
                 <span id="role-err" class="invalid-feedback text-center" role="alert"></span>
             </div>
