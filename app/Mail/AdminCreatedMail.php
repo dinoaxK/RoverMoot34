@@ -29,6 +29,6 @@ class AdminCreatedMail extends Mailable
      */
     public function build()
     {
-        return $this->subject('You are an Admin!')->markdown('emails.admin.created');
+        return $this->subject('Account Created!')->markdown('emails.admin.created');
     }
 }

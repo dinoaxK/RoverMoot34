@@ -1,7 +1,7 @@
 @component('mail::message')
 Hello {{ $details['name'] }},
 
-You have been granted an admin account!
+You have been granted an account!
 
 Click the button below and use below details to login.
 
