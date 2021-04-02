@@ -116,7 +116,62 @@
 
   <!-- Footer -->
   <footer class="py-5 bg-footer">
-    <div class="container">      
+    <div class="container">  
+      <div class="col-12">
+        <h5 class="mb10 text-center">Contact Us</p>
+          <hr class=" bg-light">
+        <div class="row">
+          <div class="col-12 col-md col-sm-3 text-center">
+            <h5 class="mb10"><small>Moot Organizing Commissioner</small> </p>
+            <p><b>Mr. Srilath De Silva</b> <br> Asst. Chief Commissioner-Rovers & IT</p>
+            <p><i class="fa fa-phone"></i>  +94-77 232 7065  </p>
+            <p><i class="fa fa fa-envelope"></i> srilath.desilva@gmail.com  </p>
+            <hr class=" bg-light">
+          </div>
+          <div class="col-12 col-md col-sm-3 text-center">
+            <h5 class="mb10"><small>Moot Secretary</small> </p>
+            <p><b>Mr. Kapila Priyantha</b> <br>Headquarter Commissioner</p>
+            <p><i class="fa fa-phone"></i>  +94-77 364 3000  </p>
+            <p><i class="fa fa fa-envelope"></i> kapilapriyantha1@gmail.com  </p>
+            <hr class=" bg-light">
+          </div>
+          <div class="col-12 col-md col-sm-3 text-center">
+            <h5 class="mb10"><small>Moot Co-Coordinator</small>  </p>
+            <p><b>Mr. Saliya Dahanayaka</b> <br>Asst. District Commissioner</p>
+            <p><i class="fa fa-phone"></i>  +94-77 777 5020  </p>
+            <p><i class="fa fa fa-envelope"></i> saliya.dahanayake82@gmail.com  </p>
+            <hr class=" bg-light">
+          </div>
+          <div class="col-12 col-md col-sm-3 text-center">
+            <h5 class="mb10"><small>Moot Co-Coordinator </small> </p>
+            <p><b>Mr. Janith Pathirana</b> <br>Asst. District Commissioner</p>
+            <p><i class="fa fa-phone"></i>  +94-71 909 0945   </p>
+            <p><i class="fa fa fa-envelope"></i> avishka.janith@gmail.com  </p>
+            <hr class=" bg-light">
+          </div>
+        </div>
+      </div>  
+    </div>
+    <div class="container">
+      <div class="row w-100">
+        <div class="col-12 text-center">
+          <ul class="foote_bottom_ul">
+            <li><a href="{{ url('/') }}">Home</a></li>
+            <li><a href="{{ url('/#about') }}">About</a></li>
+            <li><a href="{{ url('/#programme') }}">Programme</a></li>
+            <li><a href="{{ route('home') }}">Moot</a></li>
+            <li><a href="{{ url('/#register') }}">Register</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container social_footer_ul text-center">
+        <a class=" mx-2" href="https://www.facebook.com/slsarovers" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a class=" mx-2" href="https://twitter.com/RoverSri" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a class=" mx-2" href="https://www.youtube.com/channel/UCqnRNH1evcpbgMTuniu51Rw" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a class=" mx-2" href="https://www.instagram.com/rover_scouts_sl/" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+    <div class="container">   
       <div class="col-12 text-white mt-4 text-center">
           Copyright &copy;  {{ now()->year }}<strong><a target="_blank" href="" class="white"> SLSA</a> </strong>. All Rights Reserved 
       </div>                    
