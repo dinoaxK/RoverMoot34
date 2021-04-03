@@ -105,7 +105,7 @@
               </a>
             </li>
           </ul> 
-          <p class=" text-center"><small>All Times are in 24 Hour Format and Local Time - Colombo/Sri Lanka (+0530) </small></p>  
+          <p class=" text-center"><small>All the time slots are shown in 24 Hour format and in Local Time - Colombo/Sri Lanka (+0530) </small></p>  
           <div class="tab-content mx-3" id="pills-tabContent">
             <div class="tab-pane fade show active" id="pre_moot_fixtures" role="tabpanel" aria-labelledby="pre_moot_fixtures-tab">
               <div class="card-deck ">
