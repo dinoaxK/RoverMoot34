@@ -217,9 +217,68 @@ section {
 }
 
 /* Footer */
+footer p{
+  font-size: small !important;
+}
+
+.footer_ul {
+  margin:0px; 
+  list-style-type:none; 
+  padding:0px;
+}
+.footer_ul li p { 
+  display:table; 
+}
+.footer_ul li a:hover { 
+  text-decoration:none;
+}
+.footer_ul li i {
+  margin-top:5px;
+}
+
+
+.foote_bottom_ul {
+	list-style-type:none;
+	padding:0px;
+	display:table;
+	margin-top: 10px;
+	margin-right: auto;
+	margin-bottom: 10px;
+	margin-left: auto;
+}
+.foote_bottom_ul li { 
+  display:inline;
+}
+.foote_bottom_ul li a { 
+  color:#999; margin:0 12px;
+}
+
+.social_footer_ul { 
+  display:table; 
+  margin:15px auto 0 auto; 
+  list-style-type:none;  
+}
+/* .social_footer_ul li { 
+  padding-left:20px; 
+  padding-top:10px; 
+  float:left; 
+} */
+.social_footer_ul a { 
+  color:#CCC; 
+  border:1px solid #CCC; 
+  padding:8px;
+  border-radius:50%;
+}
+.social_footer_ul i {  
+  width:20px; 
+  height:20px; 
+  text-align:center;
+}
+
 .bg-footer{
   background-color: var(--bg-footer);
 }
+
 /* /Footer */
 
 
@@ -245,6 +304,30 @@ section {
 }
 /* /backtotop */
 
+/* mascot */
+.mascot{
+  position: fixed; /* Fixed/sticky position */
+  bottom: 40px; /* Place the button at the bottom of the page */
+  left: 7px; /* Place the button 70px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  width: 14%
+}
+
+.mascot-dialog{
+  position: fixed; /* Fixed/sticky position */
+  bottom: 220px; /* Place the button at the bottom of the page */
+  left: -37px; /* Place the button 70px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  width: 20%;
+}
+
+.mascot:hover{
+  width: 210px;
+  -webkit-transition:  0.25s; /* For Safari 3.1 to 6.0 */
+  transition:  0.25s;
+}
+/* /mascot */
+
 /* DATATABLE */
 .dataTables_wrapper .dataTables_paginate .paginate_button{
   padding: 0;
@@ -265,3 +348,59 @@ section {
 }
 
 /* /DATATABLE */
+
+/* PROGRAMME */
+
+#programme .nav-link.active{
+  color: #fff !important;
+  background-color: #2296a0;
+  border: 5px solid #deb455;
+  border-radius: 50px;
+  font-size: x-large;
+}
+
+#programme .nav-link:hover{
+  color: #fff !important;
+  background-color: #2296a0;
+  border: 5px solid #deb455;
+  border-radius: 50px;
+  font-size: x-large;
+}
+
+#programme .nav-link{
+  color: #2296a0 !important;
+  background-color: ;
+  border: 5px dashed #deb455;
+  border-radius: 50px;
+  font-size: x-large;
+}
+
+#programme .tab-pane .card-body p {
+  font-size: 12px;
+}
+
+
+#programme #moot_fixtures .nav-link.active{
+  color: #fff !important;
+  background-color: var( --theme-color);
+  border: none;
+  border-radius: 50px;
+  font-size: x-large;
+}
+
+#programme #moot_fixtures .nav-link:hover{
+  color: #fff !important;
+  background-color: var( --theme-color);
+  border: none;
+  border-radius: 50px;
+  font-size: x-large;
+}
+
+#programme #moot_fixtures .nav-link{
+  color: var( --theme-color) !important;
+  background-color: ;
+  border: none;
+  border-radius: 50px;
+  font-size: x-large;
+}
+/* /PROGRAMME */
