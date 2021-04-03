@@ -115,7 +115,7 @@
                     <h5 class="card-title text-center">New Youth Programme</h5>
                     <p class="card-text">A Webinar to introduce the New Youth Rover Scouting Programme</p>
                   </div>
-                  <div class="card-footer bg-transparent border-0 text-center"><p class="card-text"><small class="text-muted">10th April 2021 | 19:30 Local Time (Sri Lanka)</small></p></div>
+                  <div class="card-footer bg-transparent border-0 text-center"><p class="card-text"><small class="text-muted">11th April 2021 | 19:30 Local Time (Sri Lanka)</small></p></div>
                 </div>
                 <div class="card">
                   <img src="{{ asset('/img/Programme/Premoot/3.jpg') }}" class="card-img-top" alt="Image">
@@ -147,7 +147,7 @@
                   <img src="{{ asset('/img/Programme/Premoot/6.jpg') }}" class="card-img-top" alt="Image">
                   <div class="card-body">
                     <h5 class="card-title text-center">Environmental Development Programme</h5>
-                    <p class="card-text">Global Environmental Awareness session will be conduct by UNDP - Sri Lanka</p>
+                    <p class="card-text">Global Environmental Awareness session will be conducted by UNDP - Sri Lanka</p>
                   </div>
                   <div class="card-footer bg-transparent border-0 text-center"><p class="card-text"><small class="text-muted">20th April 2021 | 19:30 Local Time (Sri Lanka)</small></p></div>
                 </div>
