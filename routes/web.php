@@ -19,11 +19,12 @@ Route::get('/', function () {
     $newss = News::all();
     return view('index', compact('newss'));
 });
-Route::get('/register', function() { return redirect ('/'); })->name('register');
+// Route::get('/register', function() { return redirect ('/'); })->name('register');
 
 Route::post('logout',[App\Http\Controllers\Auth\LoginController::class,'logout']);
 
-Auth::routes(['verify' => true, 'register' => false]);
+Auth::routes(['verify' => true]);
+// Auth::routes(['verify' => true, 'register' => false]);
 // Auth::routes(['register' => false]);
 // Route::('/register')
 Route::post('/portal/update/password', [App\Http\Controllers\Portal\ProfileController::class, 'changePassword'])->name('change.password');
