@@ -110,6 +110,14 @@
             <div class="tab-pane fade show active" id="pre_moot_fixtures" role="tabpanel" aria-labelledby="pre_moot_fixtures-tab">
               <div class="card-deck ">
                 <div class="card">
+                  <img src="{{ asset('/img/Programme/Premoot/6.jpg') }}" class="card-img-top" alt="Image">
+                  <div class="card-body">
+                    <h5 class="card-title text-center">Environmental Development Programme</h5>
+                    <p class="card-text">Global Environmental Awareness session will be conducted by UNDP - Sri Lanka</p>
+                  </div>
+                  <div class="card-footer bg-transparent border-0 text-center"><p class="card-text"><small class="text-muted">10th April 2021 | 19:30 Local Time (Sri Lanka)</small></p></div>
+                </div>
+                <div class="card">
                   <img src="{{ asset('/img/Programme/Premoot/1.jpg') }}" class="card-img-top" alt="Image">
                   <div class="card-body">
                     <h5 class="card-title text-center">New Youth Programme</h5>
@@ -125,6 +133,8 @@
                   </div>
                   <div class="card-footer bg-transparent border-0 text-center"><p class="card-text"><small class="text-muted">17th April 2021 | 19:30 Local Time (Sri Lanka)</small></p></div>
                 </div>
+              </div>
+              <div class="card-deck mt-5">
                 <div class="card">
                   <img src="{{ asset('/img/Programme/Premoot/4.jpg') }}" class="card-img-top" alt="Image">
                   <div class="card-body">
@@ -133,8 +143,6 @@
                   </div>
                   <div class="card-footer bg-transparent border-0 text-center"><p class="card-text"><small class="text-muted">18th April 2021 | 21:00 Local Time (Sri Lanka)</small></p></div>
                 </div>
-              </div>
-              <div class="card-deck mt-5">
                 <div class="card">
                   <img src="{{ asset('/img/Programme/Premoot/5.jpg') }}" class="card-img-top" alt="Image">
                   <div class="card-body">
@@ -142,14 +150,6 @@
                     <p class="card-text">Releasing District Rover Video Presentation and the first session of Virtual Rover Youth Forum</p>
                   </div>
                   <div class="card-footer bg-transparent border-0 text-center"><p class="card-text"><small class="text-muted">19th April 2021 | 19:30 Local Time (Sri Lanka)</small></p></div>
-                </div>
-                <div class="card">
-                  <img src="{{ asset('/img/Programme/Premoot/6.jpg') }}" class="card-img-top" alt="Image">
-                  <div class="card-body">
-                    <h5 class="card-title text-center">Environmental Development Programme</h5>
-                    <p class="card-text">Global Environmental Awareness session will be conducted by UNDP - Sri Lanka</p>
-                  </div>
-                  <div class="card-footer bg-transparent border-0 text-center"><p class="card-text"><small class="text-muted">20th April 2021 | 19:30 Local Time (Sri Lanka)</small></p></div>
                 </div>
                 <div class="card">
                   <img src="{{ asset('/img/Programme/Premoot/2.jpg') }}" class="card-img-top" alt="Image">
