@@ -81,3 +81,5 @@ Route::post('/moot/register/scanned', [App\Http\Controllers\Portal\Scout\Registe
 
 Route::get('/moot/register/print/application', [App\Http\Controllers\Portal\Scout\PrintController::class, 'index'])->name('moot.application.print');
 // SCOUT PORTAL
+
+Addchat::routes();
