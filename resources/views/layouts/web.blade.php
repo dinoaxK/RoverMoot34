@@ -28,18 +28,11 @@
 
     
     <link href="{{ asset('vendor/animate/animate.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/addchat/css/addchat.min.css') }}" rel="stylesheet">
   <!-- /STYLES -->
 
 </head>
 
 <body id="page-top">
-
-<div id="addchat_app"
-  data-baseusrl="{{ url('') }}"
-  data-csrfname="X-CSRF-Token"
-  data-csrftoken="{{ csrf_token() }}">
-</div>
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light bg-0 fixed-top" id="mainNav">
@@ -236,10 +229,6 @@
     <!-- Custom JavaScript -->
     <script src="{{ asset('js/core.js') }}"></script>
     <script src="{{ asset('js/sweetalert.js') }}"></script>
-    <script src="{{ asset('assets/addchat/js/addchat.min.js') }}"></script>
-    <script src="{{ asset('assets/addchat/js/addchat-legacy.min.js') }}"></script>
-
-
     
   <!-- /SCRIPTS -->
 
