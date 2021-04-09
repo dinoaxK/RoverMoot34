@@ -444,7 +444,7 @@
                 text: 'Payment approved successfully',
               }).then((result) => {
                 if(result.isConfirmed) {
-                  location.reload()
+                  table.draw();
                 }
               });
             }else{
