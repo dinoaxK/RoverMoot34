@@ -444,6 +444,7 @@
                 text: 'Payment approved successfully',
               }).then((result) => {
                 if(result.isConfirmed) {
+                  $('#paymentModal').modal('hide');
                   table.draw();
                 }
               });
