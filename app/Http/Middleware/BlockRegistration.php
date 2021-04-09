@@ -19,12 +19,12 @@ class BlockRegistration
     public function handle(Request $request, Closure $next)
     {
         $participant = Null;
-        $uid = Auth::user()->id;
+        $role = Auth::user()->role;
 
-        // if(Participant::where('user_id', $uid)->first()!=Null || date('Y-m-d')<='2021-03-31'):
+        if( $role == 'foreign' ||  $role == 'super_admin' ):
             return $next($request);
-        // else:
-            // return redirect('/login');
-        // endif;
+        else:
+            return redirect('/login');
+        endif;
     }
 }
