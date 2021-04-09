@@ -43,6 +43,7 @@
             <div class="form-group col-md-12 mb-5">
                 <label for="role" class="col-form-label text-dark">Account Type *</label>    
                 <select name="role" id="" class="form-control">
+                  <option value="foreign">Foreign</option>
                   <option value="admin">Admin</option>
                   <option value="super_admin">Super-Admin</option>
                   <option value="scout">Scout</option>
@@ -80,6 +81,7 @@
             <div class="form-group col-md-12 mb-5">
                 <label for="editRole" class="col-form-label text-dark">Account Type *</label>    
                 <select name="editRole" id="editRole" class="form-control">
+                  <option value="foreign">Foreign</option>
                   <option value="admin">Admin</option>
                   <option value="super_admin">Super-Admin</option>
                   <option value="scout">Scout</option>
