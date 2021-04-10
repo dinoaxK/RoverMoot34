@@ -18,7 +18,7 @@ class AuthorizeAdmins
     public function handle(Request $request, Closure $next)
     {
         $role = Auth::user()->role;
-        if($role == 'scout'):
+        if($role == 'scout' || $role == 'foreign'):
             return redirect('login');
         else:
             return $next($request);
