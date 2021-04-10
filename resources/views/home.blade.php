@@ -20,18 +20,18 @@
                         <h1 class=" text-center">Today's Fixtures</h1>
                     <div class="row">
                         <div class="col-md-6 my-4 px-3">
-                            <a class="bg-transparent border-0 w-100" href="#">
-                                <img width="100%" src="{{ asset('/img/Programme/Premoot/6.jpg') }}" alt="">
+                            <a class="bg-transparent border-0 w-100 wow fadeInUp" href="#">
+                                <img class="wow fadeInUp" width="100%" src="{{ asset('/img/Programme/Premoot/6.jpg') }}" alt="">
                             </a>
                         </div>
                         <div class="col-md-6 my-4 px-3">
-                            <p class="mb-0"><small>Pre-moot Session one:</small></p>
-                            <h2>Planning Environment Conservation Projects with Sustainable Solutions</h3>
-                            <p>Conducted together with the United Nations Development Programme Sri Lanka addressing the importance of environmental conservation and related topics. </p>
-                            <p>Time: <span class=" text-success">1830 hours (Local Time - Colombo/Sri Lanka)</span> </p>
-                            <p>Platform: ZOOM</p>
-                            <p>Register in advance for this webinar: </p>
-                            <a href="https://us02web.zoom.us/meeting/register/tZUpcuGrrD0oHtGHuhDCHO97k1uWLaCLlbhT" target="_blank" class="btn btn-light btn-lg w-100">Click Here to Register</a>
+                            <p class="mb-0 wow fadeInUp"><small>Pre-moot Session one:</small></p>
+                            <h2 class="wow fadeInUp">Planning Environment Conservation Projects with Sustainable Solutions</h3>
+                            <p class="wow fadeInUp">Conducted together with the United Nations Development Programme Sri Lanka addressing the importance of environmental conservation and related topics. </p>
+                            <p class="wow fadeInUp">Time: <span class=" text-success">1830 hours (Local Time - Colombo/Sri Lanka)</span> </p>
+                            <p class="wow fadeInUp">Platform: ZOOM</p>
+                            <p class="wow fadeInUp">Register in advance for this webinar: </p>
+                            <a href="https://us02web.zoom.us/meeting/register/tZUpcuGrrD0oHtGHuhDCHO97k1uWLaCLlbhT" target="_blank" class="wow fadeInUp btn btn-light btn-lg w-100">Click Here to Register</a>
                         </div>
                     </div>
                     <div class="row mt-5" id="programme">
