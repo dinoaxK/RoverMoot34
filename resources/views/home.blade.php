@@ -83,7 +83,7 @@
                                     <h5 class="card-title text-center text-dark">Environmental Development Programme</h5>
                                     <p class="card-text text-dark">Global Environmental Awareness session will be conducted by UNDP - Sri Lanka</p>
                                   </div>
-                                  <div class="card-footer bg-transparent border-0 text-center"><p class="card-text"><small class="text-muted">10th April 2021 | 19:30 Local Time (Sri Lanka)</small></p></div>
+                                  <div class="card-footer bg-transparent border-0 text-center"><p class="card-text"><small class="text-muted">10th April 2021 | 18:30 Local Time (Sri Lanka)</small></p></div>
                                 </div>
                                 <div class="card">
                                   <img src="{{ asset('/img/Programme/Premoot/1.jpg') }}" class="card-img-top" alt="Image">
