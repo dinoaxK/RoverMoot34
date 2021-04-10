@@ -2,25 +2,14 @@
 
 @section('content')
 
-<header class="bg-dark min-vh-100" style="background-image: url({{ asset('img/background/2.jpg') }}); padding: 200px 0 200px;">
-<div class="container ">
-    <div class="row">
-    <div class="col-lg-5 order-lg-1 text-right">
-        <img src="{{ asset('img/logo/1.png') }}" alt="Moot Logo"  style="max-width: 100%;" class="mb-5">
+<header class="bg-dark text-white" style="background-image: url({{ asset('img/background/1.jpg') }}); padding: 110px 0 80px;">
+    <div class="container ">
+        <div class="row">
+        <div class="col-12">
+            <h1 class="hero-header text-center text-lg-left text-uppercase">Moot Events</h1>
+        </div>
+        </div>
     </div>
-    <div class="col-lg-7 order-lg-2">
-        <h1 class="hero-header">34th National Centenary<br> Rover Scout Moot</h1>
-        <p class="lead" style="font-size: 18px; font-weight: 500;">Welcome to the first ever virtual national rover scout moot</p>
-        
-        @if(Auth::user()->participant && Auth::user()->participant->application_status == 1 && Auth::user()->participant->payment_status == 1)
-        
-          <a href="{{ url('#carouselExampleIndicators') }}" class="btn  btn-outline-warning">Let's Start</a>
-        @else
-        <a href="{{ route('moot.register') }}" class="btn btn-lg btn-outline-rover">Register</a>
-        @endif
-    </div>
-    </div>
-</div>
 </header>
 <div class="container min-vh-80 mb-5">
     <div class="row justify-content-center">
