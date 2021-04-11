@@ -268,9 +268,9 @@
     <ol class="carousel-indicators">
     @foreach($newss as $news)
       @if($loop->first)        
-        <li data-target="#carouselExampleIndicators" data-slide-to="{{ $loop->index }}" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="{{ $loop->index }}" class="active bg-dark"></li>
       @else
-        <li data-target="#carouselExampleIndicators" data-slide-to="{{ $loop->index }}"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="{{ $loop->index }}" class="bg-dark"></li>
       @endif
 
     @endforeach
