@@ -20,6 +20,40 @@
   </header>
 
 
+  <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
+    <ol class="carousel-indicators">
+    @foreach($newss as $news)
+      @if($loop->first)        
+        <li data-target="#carouselExampleIndicators" data-slide-to="{{ $loop->index }}" class="active bg-dark"></li>
+      @else
+        <li data-target="#carouselExampleIndicators" data-slide-to="{{ $loop->index }}" class="bg-dark"></li>
+      @endif
+
+    @endforeach
+    </ol>
+    <div class="carousel-inner">
+    @foreach($newss as $news)
+      @if ($loop->first)      
+        <div class="carousel-item active">
+            <img   src="{{ asset('/storage/news/'.$news->image) }}" style="height: auto;" class="d-block w-100" alt="Moot News">
+        </div>
+      @else
+        <div class="carousel-item">
+            <img src="{{ asset('/storage/news/'.$news->image) }}" style="height: auto;" class="d-block w-100" alt="Moot News">
+        </div>
+      @endif
+      
+    @endforeach
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
 
 
   <section id="about">
@@ -38,6 +72,7 @@
       </div>
     </div>
   </section>
+
 
   <section class="my-0 py-0">
   @if(date('Y-m-d')<='2021-04-23')
@@ -68,6 +103,8 @@
 
     </div>
   </section><!-- #facts -->
+
+
 
   <section id="joinus" class="bg-light text-dark" style="background-image: url({{ asset('img/background/1.jpg') }});">
     <div class="container my-0 py-0" >
@@ -264,43 +301,10 @@
   </section>
 
 
-  <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
-    <ol class="carousel-indicators">
-    @foreach($newss as $news)
-      @if($loop->first)        
-        <li data-target="#carouselExampleIndicators" data-slide-to="{{ $loop->index }}" class="active bg-dark"></li>
-      @else
-        <li data-target="#carouselExampleIndicators" data-slide-to="{{ $loop->index }}" class="bg-dark"></li>
-      @endif
-
-    @endforeach
-    </ol>
-    <div class="carousel-inner">
-    @foreach($newss as $news)
-      @if ($loop->first)      
-        <div class="carousel-item active">
-            <img   src="{{ asset('/storage/news/'.$news->image) }}" style="height: auto;" class="d-block w-100" alt="Moot News">
-        </div>
-      @else
-        <div class="carousel-item">
-            <img src="{{ asset('/storage/news/'.$news->image) }}" style="height: auto;" class="d-block w-100" alt="Moot News">
-        </div>
-      @endif
-      
-    @endforeach
-    </div>
-    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
 
 
-  <section id="register" class="bg-light text-dark">
+
+  {{-- <section id="register" class="bg-light text-dark">
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
@@ -424,11 +428,9 @@
             <a class="btn btn-lg btn-outline-rover w-50 my-5 wow fadeInUp" href="{{ route('moot.register') }}">Register Now!</a>
           </div>
         </div>
-        {{-- <div class="col-lg-4 justify-content-center" style="background-image:url({{ asset('img/background/mascot1.jpg') }});">
-        
-        </div> --}}
+
       </div>
     </div>
-  </section>
+  </section> --}}
 
 @endsection
