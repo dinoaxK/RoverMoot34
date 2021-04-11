@@ -166,7 +166,7 @@
                   <img src="{{ asset('/img/Programme/Premoot/3.jpg') }}" class="card-img-top" alt="Image">
                   <div class="card-body">
                     <h5 class="card-title text-center">Disaster Management Training</h5>
-                    <p class="card-text">Online Training Programme (Webinar) will be conducted by Disaster Management Centre - Sri Lanka</p>
+                    <p class="card-text">Online Training Programme (Webinar) collaboratively conducted with the Disaster Management Centre - Sri Lanka</p>
                   </div>
                   <div class="card-footer bg-transparent border-0 text-center"><p class="card-text"><small class="text-muted">17th April 2021 | 19:30 Local Time (Sri Lanka)</small></p></div>
                 </div>
@@ -183,7 +183,7 @@
                 <div class="card wow fadeInUp" data-wow-delay="1s">
                   <img src="{{ asset('/img/Programme/Premoot/5.jpg') }}" class="card-img-top" alt="Image">
                   <div class="card-body">
-                    <h5 class="card-title text-center">Rover Youth Forum Pre-Session</h5>
+                    <h5 class="card-title text-center">Rover Youth Forum Pre-Moot Session</h5>
                     <p class="card-text">Releasing District Rover Video Presentation and the first session of Virtual Rover Youth Forum</p>
                   </div>
                   <div class="card-footer bg-transparent border-0 text-center"><p class="card-text"><small class="text-muted">19th April 2021 | 19:30 Local Time (Sri Lanka)</small></p></div>
