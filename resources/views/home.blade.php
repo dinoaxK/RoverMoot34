@@ -17,21 +17,21 @@
             <div class="py-5" >
                 @if(Auth::user()->participant && Auth::user()->participant->application_status == 1 && Auth::user()->participant->payment_status == 1)
 
-                        <h1 class=" text-center">Today's Fixtures</h1>
+                    <h1 class="hero-header text-center text-white">Upcoming Next</h1>
                     <div class="row">
                         <div class="col-md-6 my-4 px-3">
                             <a class="bg-transparent border-0 w-100 wow fadeInUp" href="#">
-                                <img class="wow fadeInUp" width="100%" src="{{ asset('/img/Programme/Premoot/1.jpg') }}" alt="">
+                                <img class="wow fadeInUp" width="100%" src="{{ asset('/img/Programme/Premoot/3.jpg') }}" alt="">
                             </a>
                         </div>
                         <div class="col-md-6 my-4 px-3">
-                            <p class="mb-0 wow fadeInUp"><small>Pre-moot Session two:</small></p>
-                            <h2 class="wow fadeInUp">New Youth Programme Introduction</h3>
-                            <p class="wow fadeInUp">A Webinar to introduce the New Youth Rover Scouting Programme</p>
-                            <p class="wow fadeInUp">Time: <span class=" text-success">1930 hours (Local Time - Colombo/Sri Lanka)</span> </p>
+                            <p class="mb-0 wow fadeInUp"><small>Pre-moot Session three:</small></p>
+                            <h2 class="wow fadeInUp">Disaster Management Training</h3>
+                            <p class="wow fadeInUp">Online Training Programme (Webinar) collaboratively conducted with the Disaster Management Centre - Sri Lanka</p>
+                            <p class="wow fadeInUp">Time: <span class=" text-success">17th April 2021 | 1930 hours (Local Time - Colombo/Sri Lanka)</span> </p>
                             <p class="wow fadeInUp">Platform: ZOOM</p>
                             <p class="wow fadeInUp">Register in advance for this webinar: </p>
-                            <a href="https://us02web.zoom.us/meeting/register/tZEpd-utrzsvEt2_zV9jTzPqflN3EdyG4oc5" target="_blank" class="wow fadeInUp btn btn-light btn-lg w-100">Click Here to Register</a>
+                            <a href="https://us02web.zoom.us/meeting/register/tZcpf-CppzwsGtfoXpp_RiOsKCsH6hQcTBB9" target="_blank" class="wow fadeInUp btn btn-light btn-lg w-100">Click Here to Register</a>
                         </div>
                     </div>
                     <div class="row mt-5" id="programme">
@@ -40,7 +40,6 @@
                             <p class=" text-center">The Moot programme will be carried out under two sections; specially programmed for your convenience</p>
                         </div>
                         <div class="col-lg-12 ">
-                          <!-- <p class=" text-center">Stay Tuned!</p>  -->
                 
                           <ul class="nav nav-pills nav-fill ">
                             <li class="nav-item border-info mx-5">
@@ -86,7 +85,7 @@
                                   <img src="{{ asset('/img/Programme/Premoot/3.jpg') }}" class="card-img-top" alt="Image">
                                   <div class="card-body">
                                     <h5 class="card-title text-center text-dark">Disaster Management Training</h5>
-                                    <p class="card-text text-dark">Online Training Programme (Webinar) will be conducted by Disaster Management Centre - Sri Lanka</p>
+                                    <p class="card-text text-dark">Online Training Programme (Webinar) collaboratively conducted with the Disaster Management Centre - Sri Lanka</p>
                                   </div>
                                   <div class="card-footer bg-transparent border-0 text-center"><p class="card-text"><small class="text-muted">17th April 2021 | 19:30 Local Time (Sri Lanka)</small></p></div>
                                 </div>
@@ -103,7 +102,7 @@
                                 <div class="card wow fadeInUp" data-wow-delay="1s">
                                   <img src="{{ asset('/img/Programme/Premoot/5.jpg') }}" class="card-img-top" alt="Image">
                                   <div class="card-body">
-                                    <h5 class="card-title text-center text-dark">Rover Youth Forum Pre-Session</h5>
+                                    <h5 class="card-title text-center text-dark">Rover Youth Forum Pre-Moot Session</h5>
                                     <p class="card-text text-dark">Releasing District Rover Video Presentation and the first session of Virtual Rover Youth Forum</p>
                                   </div>
                                   <div class="card-footer bg-transparent border-0 text-center"><p class="card-text"><small class="text-muted">19th April 2021 | 19:30 Local Time (Sri Lanka)</small></p></div>
