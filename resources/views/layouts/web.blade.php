@@ -268,7 +268,7 @@
   
   $(function () {
     $('.carousel').carousel({
-      interval: 4000
+      interval: 1000
     });
 
     // Initiate the wowjs
