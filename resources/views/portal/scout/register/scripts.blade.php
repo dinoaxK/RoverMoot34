@@ -149,7 +149,7 @@
             text: 'Application Submitted Successfully',
           }).then((result) => {
             if(result.isConfirmed) {
-              print_application();
+              {{-- print_application(); --}}
               location.reload()
             }
           });
