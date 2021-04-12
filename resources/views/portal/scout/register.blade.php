@@ -200,7 +200,7 @@
                                     <option value="Sri Lankan">Sri Lankan</option>
                                     <option value="Foreign National" Selected>Foreign National</option>
                                 @else
-                                    <option value="Sri Lankan">Sri Lankan</option>
+                                    {{-- <option value="Sri Lankan">Sri Lankan</option> --}}
                                     <option value="Foreign National" Selected>Foreign National</option>
                                 @endif
                             </select>
