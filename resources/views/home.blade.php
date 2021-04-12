@@ -17,7 +17,7 @@
             <div class="py-5" >
                 @if(Auth::user()->participant && Auth::user()->participant->application_status == 1 && Auth::user()->participant->payment_status == 1)
 
-                    <h1 class="hero-header text-center text-white">Upcoming Next</h1>
+                    <h1 class="hero-header text-center text-white">Coming up Next</h1>
                     <div class="row">
                         <div class="col-md-6 my-4 px-3">
                             <a class="bg-transparent border-0 w-100 wow fadeInUp" href="#">
