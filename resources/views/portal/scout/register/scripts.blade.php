@@ -7,9 +7,11 @@
       $("#idType[value='passport']").prop("checked",true);
       $('.pay-hide').addClass("d-none");
       $('#paymentProofHelp').addClass("d-none");
+      $('.local-scout').addClass("d-none");
     } else {      
       $('.pay-hide').removeClass("d-none");
-      $('#paymentProofHelp').removeClass("d-none");      
+      $('#paymentProofHelp').removeClass("d-none");  
+      $('.local-scout').removeClass("d-none");    
     }
  });
 
@@ -31,9 +33,11 @@
       $("#idType[value='passport']").prop("checked",true);
       $('.pay-hide').addClass("d-none");
       $('#paymentProofHelp').addClass("d-none");
+      $('.local-scout').addClass("d-none");
     } else {
       $('.pay-hide').removeClass("d-none");
-      $('#paymentProofHelp').removeClass("d-none");      
+      $('#paymentProofHelp').removeClass("d-none");    
+      $('.local-scout').removeClass("d-none");      
     }
   });
 
@@ -143,13 +147,17 @@
             window.location.hash = '#'+key;
           });
         }else if (data['success']){
-          $('.form-control').val('');
           SwalDoneSuccess.fire({
             title: 'Application Submitted!',
             text: 'Application Submitted Successfully',
           }).then((result) => {
             if(result.isConfirmed) {
-              {{-- print_application(); --}}
+              if( $('#citizenship').val() == 'Sri Lankan' ){
+                print_application();
+                $('.form-control').val('');
+              } else {     
+                $('.form-control').val('');
+              }
               location.reload()
             }
           });
