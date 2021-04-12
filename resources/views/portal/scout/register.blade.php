@@ -10,7 +10,7 @@
         </div>
     </div>
 </header>
-                  <iframe width="100%" height="400" src="https://www.youtube.com/embed/axVdtsRZcWA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  {{-- <iframe width="100%" height="400" src="https://www.youtube.com/embed/axVdtsRZcWA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> --}}
 
 <div class="container min-vh-80 mb-5">
     <div class="row justify-content-center">
@@ -201,18 +201,18 @@
                                     <option value="Foreign National" Selected>Foreign National</option>
                                 @else
                                     <option value="Sri Lankan">Sri Lankan</option>
-                                    <option value="Foreign National">Foreign National</option>
+                                    <option value="Foreign National" Selected>Foreign National</option>
                                 @endif
                             </select>
                             <span id="citizenship-err" class="invalid-feedback text-center" role="alert"></span>
                         </div>                      
                         <div class="form-group col-md-4 mb-5 text-center">
-                            <div class="form-check form-check-inline my-1">
+                            {{-- <div class="form-check form-check-inline my-1">
                                 <input type="radio" class="form-check-input" name="idType" id="idType" value="nic" checked />
                                 <label for="nic" class="form-check-label">National ID No</label>
-                            </div>   
+                            </div>    --}}
                             <div class="form-check form-check-inline my-1">
-                                <input @if($participant != Null && $participant->id_type == "passport") checked @endif type="radio" class="form-check-input" name="idType" id="idType" value="passport"/>
+                                <input @if($participant != Null && $participant->id_type == "passport") checked @endif type="radio" class="form-check-input" name="idType" id="idType" value="passport" checked/>
                                 <label for="passport" class="form-check-label">Passport *</label>
                             </div>   
                             <input value="{{ $participant->number ?? "" }}" id="number" type="text" class="form-control text-uppercase" name="number" placeholder="NIC/ Passport" required>
@@ -234,7 +234,7 @@
                     <h3 class="text-left mt-4 mb-4">Scouting Details</h3>
                     <hr class="bg-success">
 
-                    <div class="form-row justify-content-center">
+                    {{-- <div class="form-row justify-content-center">
                         <div class="form-group col-md-9 mb-5">
                             <label for="highestScoutAward" class="col-form-label text-center w-100">Highest Scout Award</label>    
                             <select name="highestScoutAward" id="highestScoutAward" class="form-control" required>                                
@@ -258,9 +258,9 @@
                             <input value="{{ $participant->scout_award_date ?? "" }}" id="highestScoutAwardDate" type="date" class="form-control" name="highestScoutAwardDate" required>
                             <span id="highestScoutAwardDate-err" class="invalid-feedback text-center" role="alert"></span>
                         </div> 
-                    </div>
+                    </div> --}}
 
-                    <div class="form-row justify-content-center">
+                    {{-- <div class="form-row justify-content-center">
                         <div class="form-group col-md-9 mb-5">
                             <label for="highestRoverAward" class="col-form-label text-center w-100">Highest Rover Award</label>    
                             <select name="highestRoverAward" id="highestRoverAward" class="form-control" required>                                
@@ -284,7 +284,7 @@
                             <input value="{{ $participant->rover_award_date ?? "" }}" id="highestRoverAwardDate" type="date" class="form-control" name="highestRoverAwardDate"  required>
                             <span id="highestRoverAwardDate-err" class="invalid-feedback text-center" role="alert"></span>
                         </div> 
-                    </div>
+                    </div> --}}
 
                     <div class="form-row justify-content-center">                                           
                         <div class="form-group col-md-12 mb-5 text-center">
@@ -304,7 +304,7 @@
                         </div>
                     </div>
 
-                    <div class="form-row justify-content-center">
+                    {{-- <div class="form-row justify-content-center">
                         <div class="form-group col-md-4 mb-5">
                             <label for="warrantNumber" class="col-form-label text-center w-100">Warrant Number (If Any)</label>    
                             <input value="{{ $participant->warrant_number ?? "" }}" id="warrantNumber" type="text" class="form-control text-uppercase" name="warrantNumber">
@@ -351,23 +351,23 @@
                             <input value="{{ $participant->warrant_expire ?? "" }}" id="warrantValidDate" type="date" class="form-control" name="warrantValidDate">
                             <span id="warrantValidDate-err" class="invalid-feedback text-center" role="alert"></span>
                         </div>
-                    </div>
+                    </div> --}}
                     
                     <div class="form-row justify-content-center">
-                        <div class="form-group col-md-12">
+                        {{-- <div class="form-group col-md-12">
                             <label class="col-form-label text-center w-100">Crew Details</label>
                             <small class="form-text text-center text-white">
                                 e.g. 500th Kandy Rego Rovers
                             </small>  
-                        </div> 
-                        <div class="form-group col-md-4 mb-5">
+                        </div>  --}}
+                        {{-- <div class="form-group col-md-4 mb-5">
                             <label for="crewNumber" class="col-form-label text-center w-100">Crew Number</label> 
                             <small class="form-text text-center text-white">
                                 e.g. 500 (Number Only)
                             </small>    
                             <input value="{{ $participant->crew_number ?? "" }}" id="crewNumber" type="number" min="0" class="form-control" name="crewNumber" placeholder="e.g. 500" required>
                             <span id="crewNumber-err" class="invalid-feedback text-center" role="alert"></span>
-                        </div>
+                        </div> --}}
                         <div class="form-group col-md-4 mb-5">
                             <label for="crewDistrict" class="col-form-label text-center w-100">Crew District *</label>  
                             <small class="form-text text-center text-white">
@@ -375,7 +375,8 @@
                             </small>   
                             <select name="crewDistrict" id="crewDistrict" class="form-control">                                
                                 <option value="">Select District</option>                      
-                                @foreach($districts as $district)
+                                <option value="Foreign">Foreign</option>                      
+                                {{-- @foreach($districts as $district)
                                     @if($participant != NULL)
                                         @if($participant->crew_district == $district->name)                                            
                                             <option value="{{ $district->name }}" selected>{{ $district->name }}</option> 
@@ -385,12 +386,13 @@
                                     @else
                                         <option value="{{ $district->name }}">{{ $district->name }}</option>   
                                     @endif                                                                 
-                                @endforeach
+                                @endforeach --}}
+
                             </select>
                             <span id="crewDistrict-err" class="invalid-feedback text-center" role="alert"></span>
                         </div>                        
                         <div class="form-group col-md-4 mb-5">
-                            <label for="crewName" class="col-form-label text-center w-100">Crew Name</label> 
+                            <label for="crewName" class="col-form-label text-center w-100">Rover Crew Name</label> 
                             <small class="form-text text-center text-white">
                                 e.g. Rego Rovers (Name Only)
                             </small>    

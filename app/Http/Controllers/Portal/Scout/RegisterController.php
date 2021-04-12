@@ -457,6 +457,11 @@ class RegisterController extends Controller
             $participant->payment_reference = $request->paymentReference;
             $participant->payment_submit = 1;
 
+            if($request->citizenship == 'Foreign National'):
+                $participant->application_proof = 'Foreign Participant need no verification';
+                $participant->payment_status = 1;
+            endif;
+
             if($request->paymentProof):
                 $file_ext = $request->file('paymentProof')->getClientOriginalExtension();
                 $file_name = $participant->id.'_'.date('Y-m-d').'_'.time().'.'. $file_ext;
