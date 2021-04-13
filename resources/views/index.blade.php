@@ -304,7 +304,7 @@
 
 
 
-  {{-- <section id="register" class="bg-light text-dark">
+  <section id="register" class="bg-light text-dark">
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
@@ -431,6 +431,6 @@
 
       </div>
     </div>
-  </section> --}}
+  </section>
 
 @endsection
