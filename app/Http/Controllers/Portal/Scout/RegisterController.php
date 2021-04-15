@@ -102,7 +102,7 @@ class RegisterController extends Controller
             'zipCode' => ['nullable', 'numeric', 'digits_between:5,10'],
             
             'contactPersontTitle' => ['nullable', 'exists:titles,name'],
-            'contactPersonName' => ['nullable', 'alpha_dash_space'],
+            'contactPersonName' => ['nullable'],
             'contactPersonMobileNumber'=>['nullable', 'numeric', 'digits_between:11,15'],
             'contactPersonTelephoneNumber'=>['nullable', 'numeric', 'digits_between:11,15'],
 
@@ -296,7 +296,7 @@ class RegisterController extends Controller
             'zipCode' => ['nullable', 'numeric', 'digits_between:5,10'],
             
             'contactPersontTitle' => ['required', 'exists:titles,name'],
-            'contactPersonName' => ['required', 'alpha_dash_space'],
+            'contactPersonName' => ['required'],
             'contactPersonMobileNumber'=>['required', 'numeric', 'digits_between:11,15'],
             'contactPersonTelephoneNumber'=>['nullable', 'numeric', 'digits_between:11,15'],
 
