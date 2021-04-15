@@ -371,7 +371,7 @@
                         <div class="form-group col-md-4 mb-5">
                             <label for="crewDistrict" class="col-form-label text-center w-100">Crew District *</label>  
                             <small class="form-text text-center text-white">
-                                If from NHQ or KDU; select 'National HQ' or 'KDU'
+                                If a foreign participant, select "Foreign"
                             </small>   
                             <select name="crewDistrict" id="crewDistrict" class="form-control">                                
                                 <option value="">Select District</option>                      
