@@ -94,7 +94,7 @@ class RegisterController extends Controller
 
             'crewNumber' => ['nullable', 'integer', 'min:0'],
             'crewDistrict' => ['nullable', 'exists:scout_districts,name'],
-            'crewName'=> ['nullable', 'alpha_dash_space', 'min:3'],
+            'crewName'=> ['nullable'],
             'mobileNumber'=>['nullable', 'numeric', 'digits_between:11,15'],
             'telephoneNumber'=>['nullable', 'numeric', 'digits_between:11,15'],            
             'address' => ['nullable', 'address'],
@@ -288,7 +288,7 @@ class RegisterController extends Controller
 
             'crewNumber' => ['nullable', 'integer'],
             'crewDistrict' => ['required', 'exists:scout_districts,name'],
-            'crewName'=> ['nullable', 'alpha_dash_space', 'min:3'],
+            'crewName'=> ['nullable'],
             'mobileNumber'=>['required', 'numeric', 'digits_between:11,15'],
             'telephoneNumber'=>['required', 'numeric', 'digits_between:11,15'],            
             'address' => ['required', 'address'],
