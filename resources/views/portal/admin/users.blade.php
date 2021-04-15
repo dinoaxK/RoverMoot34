@@ -36,6 +36,16 @@
                                         <option value="3">Registered</option>
                                       </select>
                                     </div> 
+                                    <div class="form-group col">
+                                      <label for="account">Account type</label>
+                                        <select id="account" name="account" class="form-control form-control-sm">
+                                            <option value="">select here---</option>
+                                            <option value="foreign">Foreign</option>
+                                            <option value="admin">Admin</option>
+                                            <option value="super_admin">Super-Admin</option>
+                                            <option value="scout">Scout</option>
+                                        </select>
+                                    </div> 
                                 </div>
                             </form>
                         </div>

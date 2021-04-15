@@ -124,6 +124,17 @@
                 <option value="3">Registered</option>
               </select>
             </div> 
+            
+            <div class="form-group col">
+              <label for="accountemail">Account type</label>
+                <select id="accountemail" name="accountemail" class="form-control form-control-sm">
+                    <option value="">select here---</option>
+                    <option value="foreign">Foreign</option>
+                    <option value="admin">Admin</option>
+                    <option value="super_admin">Super-Admin</option>
+                    <option value="scout">Scout</option>
+                </select>
+            </div> 
           </div>
           <div class="form-row">
             <div class="form-group col">

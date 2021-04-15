@@ -12,6 +12,7 @@
         url:"{{ route('user.list') }}",
         data : function (d) {
             d.registration = $('#registration').val();
+            d.account = $('#account').val();
         }
       },
       columns: [
@@ -91,6 +92,7 @@
 
   email_model = () => {
     $('#registrationemail').val($('#registration').val());
+    $('#accountemail').val($('#account').val());
     $('#emailModal').modal('show');
   }
 

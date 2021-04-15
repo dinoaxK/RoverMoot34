@@ -39,7 +39,16 @@
                                         <option value="{{ $district->name }}">{{ $district->name }}</option>
                                         @endforeach
                                       </select>
-                                    </div>           
+                                    </div>      
+                                    <div class="form-group col">
+                                      <label for="country">Country</label>
+                                      <select id="country" name="country" class="form-control form-control-sm">
+                                        <option value="">select here---</option>
+                                        @foreach($countries as $country)                                          
+                                        <option value="{{ $country->country }}">{{ $country->country }}</option>
+                                        @endforeach
+                                      </select>
+                                    </div>        
                                     {{-- <div class="form-group col">
                                       <label for="application">Application Status</label>
                                       <select id="application" name="application" class="form-control form-control-sm">

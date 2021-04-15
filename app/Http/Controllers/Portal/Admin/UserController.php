@@ -6,6 +6,7 @@ use App\Exports\UserExport;
 use App\Http\Controllers\Controller;
 use App\Mail\AdminCreatedMail;
 use App\Mail\GeneralEmail;
+use App\Models\Participant;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -54,6 +55,9 @@ class UserController extends Controller
                 }else if($request->registration == 4){
                     $data = $data->where('participants.id',Null);
                 }
+            }
+            if($request->account!=null){
+                $data = $data->where('role', $request->account);
             }
             $data = $data->select('users.id', 'name', 'email', 'role', 'status')->get();
             return DataTables::of($data)
@@ -204,6 +208,9 @@ class UserController extends Controller
             }else if($request->registrationemail == 4){
                 $data = $data->where('participants.id',Null);
             }
+        }        
+        if($request->accountemail!=null){
+            $data = $data->where('role', $request->accountemail);
         }
         $data = $data->select('users.id', 'name', 'email', 'role', 'status')->get();
 
@@ -242,5 +249,34 @@ class UserController extends Controller
 
         endif;
         return response()->json(['error'=>'error']);
+    }
+
+    public function whatsapp (){
+        // $participants = Participant::where('payment_status',1)->where('application_status', 1)->get();
+        // $mobiles =['+94777478292', '+94779880755', '+94705359749', '+94703098957', '+94719239600', '+94777775020', '+94719090945'];
+        // foreach ($participants as $participant) {
+        //     echo '+'.$participant->mobile;
+            // $data = [
+            //     'phone' => $participant->mobile, // Receivers phone
+            //     'body' => 'Hello, This sent via the system automatically for testing! *Please Ignore*', // Message
+            // ];
+            // $json = json_encode($data); // Encode data to JSON
+            // // URL for request POST /message
+            // $token = 'gqy4pdubki7wc6cn';
+            // $instanceId = '250938';
+            // $url = 'https://api.chat-api.com/instance'.$instanceId.'/message?token='.$token;
+            // // Make a POST request
+            // $options = stream_context_create(['http' => [
+            //         'method'  => 'POST',
+            //         'header'  => 'Content-type: application/json',
+            //         'content' => $json
+            //     ]
+            // ]);
+            // // Send a request
+            // $result = file_get_contents($url, false, $options);
+            // print_r($result);
+
+            // sleep(3);
+        }
     }
 }

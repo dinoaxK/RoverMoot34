@@ -43,7 +43,8 @@ class RegisterController extends Controller
     public function index()
     {
         $districts = ScoutDistrict::all();
-        return view('portal.admin.register', compact('districts'));
+        $countries = Participant::distinct()->select('country')->get();
+        return view('portal.admin.register', compact('districts', 'countries'));
     }
 
     public function get_participants_list(Request $request)
@@ -62,6 +63,9 @@ class RegisterController extends Controller
             endif;  
             if($request->district!=null):
                 $data = $data->where('crew_district',$request->district);
+            endif; 
+            if($request->country!=null):
+                $data = $data->where('country',$request->country);
             endif;          
             // if($request->application!=null){
             //     if($request->application == 0){
@@ -311,9 +315,13 @@ class RegisterController extends Controller
             $data = $data->where('number','like','%'. $request->nicemail.'%');
         }          
         
-        if($request->district!=null){
-            $data = $data->where('crew_district',$request->district);
-        }            
+        if($request->districtemail!=null){
+            $data = $data->where('crew_district',$request->districtemail);
+        }     
+        
+        if($request->countryemail!=null):
+            $data = $data->where('country',$request->countryemail);
+        endif;        
         // if($request->applicationemail!=null){
         //     if($request->applicationemail == 0){
         //         $data = $data->where('application_status',NULL);
@@ -358,15 +366,15 @@ class RegisterController extends Controller
 
                 // echo $participant->email;
                 // echo $delay_seconds;
-                if( $count < 100 ):
-                    Mail::mailer('smtp')->to($participant->email)->later(now()->addSeconds($delay_seconds), new GeneralEmail($details));
-                elseif( $count < 200 ):
+                if( $count < 200 ):
                     Mail::mailer('smtp2')->to($participant->email)->later(now()->addSeconds($delay_seconds), new GeneralEmail($details));
-                elseif( $count < 300 ):
-                    Mail::mailer('smtp3')->to($participant->email)->later(now()->addSeconds($delay_seconds), new GeneralEmail($details));
                 elseif( $count < 400 ):
+                    Mail::mailer('smtp')->to($participant->email)->later(now()->addSeconds($delay_seconds), new GeneralEmail($details));
+                elseif( $count < 600 ):
+                    Mail::mailer('smtp3')->to($participant->email)->later(now()->addSeconds($delay_seconds), new GeneralEmail($details));
+                elseif( $count < 800 ):
                     Mail::mailer('smtp4')->to($participant->email)->later(now()->addSeconds($delay_seconds), new GeneralEmail($details));
-                else:
+                elseif( $count < 1000 ):
                     Mail::mailer('smtp5')->to($participant->email)->later(now()->addSeconds($delay_seconds), new GeneralEmail($details));
                 endif;
                 $iteration = $iteration + 5;

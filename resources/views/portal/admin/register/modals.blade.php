@@ -105,7 +105,25 @@
                 <option value="1">Approved</option>
                 <option value="2">Declined</option>
               </select>
-            </div>              
+            </div>    
+            <div class="form-group col">
+              <label for="districtemail">District</label>
+              <select id="districtemail" name="districtemail" class="form-control form-control-sm">
+                <option value="">select here---</option>
+                @foreach($districts as $district)                                          
+                <option value="{{ $district->name }}">{{ $district->name }}</option>
+                @endforeach
+              </select>
+            </div> 
+            <div class="form-group col">
+              <label for="countryemail">Country</label>
+              <select id="countryemail" name="countryemail" class="form-control form-control-sm">
+                <option value="">select here---</option>
+                @foreach($countries as $country)                                          
+                <option value="{{ $country->country }}">{{ $country->country }}</option>
+                @endforeach
+              </select>
+            </div>               
             <div class="form-group col">
               <label for="paymentemail">Payment Status</label>
               <select id="paymentemail" name="paymentemail" class="form-control form-control-sm">

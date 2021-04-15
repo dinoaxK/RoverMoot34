@@ -13,6 +13,7 @@
             d.name = $('#name').val();
             d.nic = $('#nic').val();
             d.district = $('#district').val();
+            d.country = $('#country').val();
             {{-- d.application = $('#application').val();
             d.payment = $('#payment').val(); --}}
             d.registration = $('#registration').val();
@@ -148,6 +149,8 @@
     $('#applicationemail').val($('#application').val());
     $('#paymentemail').val($('#payment').val());
     $('#registrationemail').val($('#registration').val());
+    $('#countryemail').val($('#country').val());
+    $('#districtemail').val($('#district').val());
     $('#emailModal').modal('show');
   }
 
