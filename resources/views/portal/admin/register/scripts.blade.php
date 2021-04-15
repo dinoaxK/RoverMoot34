@@ -14,8 +14,8 @@
             d.nic = $('#nic').val();
             d.district = $('#district').val();
             d.country = $('#country').val();
-            {{-- d.application = $('#application').val();
-            d.payment = $('#payment').val(); --}}
+            {{-- d.application = $('#application').val();--}}
+            d.payment = $('#payment').val(); 
             d.registration = $('#registration').val();
         }
       },

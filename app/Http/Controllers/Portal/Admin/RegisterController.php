@@ -66,6 +66,13 @@ class RegisterController extends Controller
             endif; 
             if($request->country!=null):
                 $data = $data->where('country',$request->country);
+            endif; 
+            if($request->payment!=null):
+                if($request->payment==0){
+                    $data = $data->where('payment_proof',NULL);
+                }else if($request->payment==1){
+                    $data = $data->where('payment_proof','!=', NULL);
+                }
             endif;          
             // if($request->application!=null){
             //     if($request->application == 0){
@@ -221,7 +228,15 @@ class RegisterController extends Controller
 
         if($request->district!=null || $request->district != ""):
             $participant_data = $participant_data->where('crew_district',$request->district);
-        endif;               
+        endif;   
+        
+        if($request->payment!=null):
+            if($request->payment==0){
+                $participant_data = $participant_data->where('payment_proof',NULL);
+            }else if($request->payment==1){
+                $participant_data = $participant_data->where('payment_proof','!=', NULL);
+            }
+        endif;             
         // if($request->application!=null || $request->application != ""){
         //     if($request->application == 0){
         //         $participant_data = $participant_data->where('application_status',NULL);

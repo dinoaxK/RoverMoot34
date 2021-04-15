@@ -30,7 +30,15 @@
                                       <label for="nic">NIC</label>
                                       <input type="text" class="form-control form-control-sm" name="nic" id="nic" aria-describedby="nicHelp"/>
                                       <small id="nicHelp" class="form-text text-muted">Enter NIC Here</small>
-                                    </div>    
+                                    </div>     
+                                    <div class="form-group col">
+                                      <label for="payment">Payment</label>
+                                      <select id="payment" name="payment" class="form-control form-control-sm">
+                                        <option value="">select here---</option>
+                                        <option value="1">Proof uploaded</option>
+                                        <option value="0">No Proof</option>
+                                      </select>
+                                    </div>   
                                     <div class="form-group col">
                                       <label for="district">District</label>
                                       <select id="district" name="district" class="form-control form-control-sm">
