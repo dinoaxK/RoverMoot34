@@ -251,32 +251,32 @@ class UserController extends Controller
         return response()->json(['error'=>'error']);
     }
 
-    public function whatsapp (){
-        // $participants = Participant::where('payment_status',1)->where('application_status', 1)->get();
-        // $mobiles =['+94777478292', '+94779880755', '+94705359749', '+94703098957', '+94719239600', '+94777775020', '+94719090945'];
-        // foreach ($participants as $participant) {
-        //     echo '+'.$participant->mobile;
-            // $data = [
-            //     'phone' => $participant->mobile, // Receivers phone
-            //     'body' => 'Hello, This sent via the system automatically for testing! *Please Ignore*', // Message
-            // ];
-            // $json = json_encode($data); // Encode data to JSON
-            // // URL for request POST /message
-            // $token = 'gqy4pdubki7wc6cn';
-            // $instanceId = '250938';
-            // $url = 'https://api.chat-api.com/instance'.$instanceId.'/message?token='.$token;
-            // // Make a POST request
-            // $options = stream_context_create(['http' => [
-            //         'method'  => 'POST',
-            //         'header'  => 'Content-type: application/json',
-            //         'content' => $json
-            //     ]
-            // ]);
-            // // Send a request
-            // $result = file_get_contents($url, false, $options);
-            // print_r($result);
+    // public function whatsapp (){
+    //     // $participants = Participant::where('payment_status',1)->where('application_status', 1)->get();
+    //     // $mobiles =['+94777478292', '+94779880755', '+94705359749', '+94703098957', '+94719239600', '+94777775020', '+94719090945'];
+    //     // foreach ($participants as $participant) {
+    //     //     echo '+'.$participant->mobile;
+    //         // $data = [
+    //         //     'phone' => $participant->mobile, // Receivers phone
+    //         //     'body' => 'Hello, This sent via the system automatically for testing! *Please Ignore*', // Message
+    //         // ];
+    //         // $json = json_encode($data); // Encode data to JSON
+    //         // // URL for request POST /message
+    //         // $token = 'gqy4pdubki7wc6cn';
+    //         // $instanceId = '250938';
+    //         // $url = 'https://api.chat-api.com/instance'.$instanceId.'/message?token='.$token;
+    //         // // Make a POST request
+    //         // $options = stream_context_create(['http' => [
+    //         //         'method'  => 'POST',
+    //         //         'header'  => 'Content-type: application/json',
+    //         //         'content' => $json
+    //         //     ]
+    //         // ]);
+    //         // // Send a request
+    //         // $result = file_get_contents($url, false, $options);
+    //         // print_r($result);
 
-            // sleep(3);
-        }
-    }
+    //         // sleep(3);
+    //     }
+    // }
 }
