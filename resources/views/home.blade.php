@@ -21,17 +21,17 @@
                     <div class="row">
                         <div class="col-md-6 my-4 px-3">
                             <a class="bg-transparent border-0 w-100 wow fadeInUp" href="#">
-                                <img class="wow fadeInUp" width="100%" src="{{ asset('/img/Programme/Premoot/3.jpg') }}" alt="">
+                                <img class="wow fadeInUp" width="100%" src="{{ asset('/img/Programme/Premoot/4.jpg') }}" alt="">
                             </a>
                         </div>
                         <div class="col-md-6 my-4 px-3">
                             <p class="mb-0 wow fadeInUp"><small>Pre-moot Session three:</small></p>
-                            <h2 class="wow fadeInUp">Disaster Management Training</h3>
-                            <p class="wow fadeInUp">Online Training Programme (Webinar) collaboratively conducted with the Disaster Management Centre - Sri Lanka</p>
-                            <p class="wow fadeInUp">Time: <span class=" text-success">17th April 2021 | 1930 hours (Local Time - Colombo/Sri Lanka)</span> </p>
+                            <h2 class="wow fadeInUp">STD/ AIDS Awareness</h3>
+                            <p class="wow fadeInUp">Online Training Programme (Webinar) on STD and HIV/AIDS prevention</p>
+                            <p class="wow fadeInUp">Time: <span class=" text-success">18th April 2021 | 2100 hours (Local Time - Colombo/Sri Lanka)</span> </p>
                             <p class="wow fadeInUp">Platform: ZOOM</p>
                             <p class="wow fadeInUp">Register in advance for this webinar: </p>
-                            <a href="https://us02web.zoom.us/meeting/register/tZcpf-CppzwsGtfoXpp_RiOsKCsH6hQcTBB9" target="_blank" class="wow fadeInUp btn btn-light btn-lg w-100">Click Here to Register</a>
+                            <a href="https://us02web.zoom.us/meeting/register/tZIqd-yopzIpHdfON0QVfwEWwP_RvpjKYY3W" target="_blank" class="wow fadeInUp btn btn-light btn-lg w-100">Click Here to Register</a>
                         </div>
                     </div>
                     <div class="row mt-5" id="programme">
