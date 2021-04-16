@@ -113,7 +113,7 @@
                                     <h5 class="card-title text-center text-dark">Disaster Management Training</h5>
                                     <p class="card-text text-dark">Online Training Programme (Webinar) collaboratively conducted with the Disaster Management Centre - Sri Lanka</p>
                                   </div>
-                                  <div class="card-footer bg-transparent border-0 text-center"><p class="card-text"><small class="text-muted">21st April 2021 | 19:30 Local Time (Sri Lanka)</small></p></div>
+                                  <div class="card-footer bg-transparent border-0 text-center"><p class="card-text"><small class="text-muted">22nd April 2021 | 19:30 Local Time (Sri Lanka)</small></p></div>
                                 </div>
                               </div>
                             </div>
