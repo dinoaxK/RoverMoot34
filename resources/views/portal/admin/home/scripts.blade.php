@@ -28,6 +28,18 @@
           @endphp
         ]);
 
+        var data1 = new google.visualization.DataTable();
+        data1.addColumn('string', 'Countries');
+        data1.addColumn('number', 'Participants');
+        data1.addRows([
+          @php
+          foreach($countries as $country):
+          //echo "['".$district->name."',".App\Models\Participant::where('application_submit', 1)->where('crew_district', $district->name)->count() ."],";
+          echo "['".$country->country."',".App\Models\Participant::where('application_submit', 1)->where('country', $country->country)->count() ."],";
+          endforeach;
+            
+          @endphp
+        ]);
         
 
         // Set chart options
@@ -36,9 +48,13 @@
 
         // Instantiate and draw our chart, passing in some options.
         var chart1 = new google.visualization.PieChart(document.getElementById('chart_div1'));
-        chart1.draw(data, options1);
+        chart1.draw(data, options1);        
+        var chart3 = new google.visualization.PieChart(document.getElementById('chart_div3'));
+        chart3.draw(data1, options1);
         var chart2 = new google.visualization.BarChart(document.getElementById('chart_div2'));
         chart2.draw(data, options2);
+        var chart2 = new google.visualization.BarChart(document.getElementById('chart_div4'));
+        chart2.draw(data1, options2);
       }
  
 

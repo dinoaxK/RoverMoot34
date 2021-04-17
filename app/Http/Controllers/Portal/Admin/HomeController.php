@@ -31,6 +31,7 @@ class HomeController extends Controller
     {
         $activities = Activity::latest('created_at')->get();
         $districts = Participant::where('application_submit', 1)->distinct()->select('crew_district')->get();
+        $countries = Participant::where('application_submit', 1)->where('country', '!=', 'Sri Lanka')->distinct()->select('country')->get();
         // $districts = ScoutDistrict::all();
         // echo $districts;
 
@@ -56,7 +57,7 @@ class HomeController extends Controller
             ];
         endif;
 
-        return view('portal.admin.home', compact('activities', 'districts', 'laravellog', 'worklog'));
+        return view('portal.admin.home', compact('activities', 'districts', 'laravellog', 'worklog', 'countries'));
     }
 
  

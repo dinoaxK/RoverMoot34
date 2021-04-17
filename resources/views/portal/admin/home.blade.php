@@ -86,6 +86,13 @@
                 <div id="chart_div1" class="col"></div>
                 <div id="chart_div2" class="col"></div>
             </div>
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <h2 class=" text-center text-dark">Foreign Country Distribution</h2>
+                </div>
+                <div id="chart_div3" class="col"></div>
+                <div id="chart_div4" class="col"></div>
+            </div>
         </div>
         <div class="col-lg-12 mt-5">
             <div class="card text-dark" style=" max-height: 500px;overflow:auto;">
@@ -116,7 +123,7 @@
                 </div>
             </div>
         </div>
-        @if(Auth::user()->role == 'super_admin')
+        {{-- @if(Auth::user()->role == 'super_admin')
         <div class="col-lg-12 mt-5">
             <div class="row justify-content-center">
                 <div class="col-12">
@@ -146,7 +153,7 @@
                 </div>
             </div>
         </div>
-        @endif
+        @endif --}}
     </div>
 </div>
 
