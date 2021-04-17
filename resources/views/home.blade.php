@@ -28,7 +28,7 @@
                             <p class="mb-0 wow fadeInUp"><small>Pre-moot Session three:</small></p>
                             <h2 class="wow fadeInUp">STD/ AIDS Awareness</h3>
                             <p class="wow fadeInUp">Online Training Programme (Webinar) on STD and HIV/AIDS prevention</p>
-                            <p class="wow fadeInUp">Time: <span class=" text-success">18th April 2021 | 2100 hours (Local Time - Colombo/Sri Lanka)</span> </p>
+                            <p class="wow fadeInUp">Time: <span class=" text-success">18th April 2021 | 1900 hours (Local Time - Colombo/Sri Lanka)</span> </p>
                             <p class="wow fadeInUp">Platform: ZOOM</p>
                             <p class="wow fadeInUp">Register in advance for this webinar: </p>
                             <a href="https://us02web.zoom.us/meeting/register/tZIqd-yopzIpHdfON0QVfwEWwP_RvpjKYY3W" target="_blank" class="wow fadeInUp btn btn-light btn-lg w-100">Click Here to Register</a>
@@ -87,7 +87,7 @@
                                     <h5 class="card-title text-center text-dark">STD/ AIDS Awareness</h5>
                                     <p class="card-text text-dark">Online Training Programme (Webinar) on STD and HIV/AIDS prevention</p>
                                   </div>
-                                  <div class="card-footer bg-transparent border-0 text-center"><p class="card-text"><small class="text-muted">18th April 2021 | 21:00 Local Time (Sri Lanka)</small></p></div>
+                                  <div class="card-footer bg-transparent border-0 text-center"><p class="card-text"><small class="text-muted">18th April 2021 | 19:00 Local Time (Sri Lanka)</small></p></div>
                                 </div>
                               </div>
                               <div class="card-deck mt-5">

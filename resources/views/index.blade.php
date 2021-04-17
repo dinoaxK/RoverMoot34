@@ -168,7 +168,7 @@
                     <h5 class="card-title text-center text-dark">STD/ AIDS Awareness</h5>
                     <p class="card-text text-dark">Online Training Programme (Webinar) on STD and HIV/AIDS prevention</p>
                   </div>
-                  <div class="card-footer bg-transparent border-0 text-center"><p class="card-text"><small class="text-muted">18th April 2021 | 21:00 Local Time (Sri Lanka)</small></p></div>
+                  <div class="card-footer bg-transparent border-0 text-center"><p class="card-text"><small class="text-muted">18th April 2021 | 19:00 Local Time (Sri Lanka)</small></p></div>
                 </div>
               </div>
               <div class="card-deck mt-5">
