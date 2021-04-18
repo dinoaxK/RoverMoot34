@@ -21,17 +21,17 @@
                     <div class="row">
                         <div class="col-md-6 my-4 px-3">
                             <a class="bg-transparent border-0 w-100 wow fadeInUp" href="#">
-                                <img class="wow fadeInUp" width="100%" src="{{ asset('/img/Programme/Premoot/4.jpg') }}" alt="">
+                                <img class="wow fadeInUp" width="100%" src="{{ asset('/img/Programme/Premoot/5.jpg') }}" alt="">
                             </a>
                         </div>
                         <div class="col-md-6 my-4 px-3">
-                            <p class="mb-0 wow fadeInUp"><small>Pre-moot Session three:</small></p>
-                            <h2 class="wow fadeInUp">STD/ AIDS Awareness</h3>
-                            <p class="wow fadeInUp">Online Training Programme (Webinar) on STD and HIV/AIDS prevention</p>
-                            <p class="wow fadeInUp">Time: <span class=" text-success">18th April 2021 | 1900 hours (Local Time - Colombo/Sri Lanka)</span> </p>
+                            <p class="mb-0 wow fadeInUp"><small>Pre-moot Session four:</small></p>
+                            <h2 class="wow fadeInUp">Rover Scout Youth Forum Pre-Moot Session</h3>
+                            <p class="wow fadeInUp">The first session of the Virtual Rover Scout Youth Forum</p>
+                            <p class="wow fadeInUp">Time: <span class=" text-success">19th April 2021 | 1930 hours (Local Time - Colombo/Sri Lanka)</span> </p>
                             <p class="wow fadeInUp">Platform: ZOOM</p>
                             <p class="wow fadeInUp">Register in advance for this webinar: </p>
-                            <a href="https://us02web.zoom.us/meeting/register/tZIqd-yopzIpHdfON0QVfwEWwP_RvpjKYY3W" target="_blank" class="wow fadeInUp btn btn-light btn-lg w-100">Click Here to Register</a>
+                            <a href="https://us02web.zoom.us/meeting/register/tZArcuqgqDwpEtZmn-qJkxE7xiNNxSBUyq6y" target="_blank" class="wow fadeInUp btn btn-light btn-lg w-100">Click Here to Register</a>
                         </div>
                     </div>
                     <div class="row mt-5" id="programme">
@@ -95,7 +95,7 @@
                                   <img src="{{ asset('/img/Programme/Premoot/5.jpg') }}" class="card-img-top" alt="Image">
                                   <div class="card-body">
                                     <h5 class="card-title text-center text-dark">Rover Youth Forum Pre-Moot Session</h5>
-                                    <p class="card-text text-dark">Releasing District Rover Video Presentation and the first session of Virtual Rover Youth Forum</p>
+                                    <p class="card-text text-dark">The first session of the Virtual Rover Scout Youth Forum</p>
                                   </div>
                                   <div class="card-footer bg-transparent border-0 text-center"><p class="card-text"><small class="text-muted">19th April 2021 | 19:30 Local Time (Sri Lanka)</small></p></div>
                                 </div>
@@ -137,16 +137,16 @@
                                           <td>18:00 Local Time (Sri Lanka)</td>
                                         </tr>
                                         <tr>
+                                          <td>Moot Game Launch</td>
+                                          <td>19:00 Local Time (Sri Lanka)</td>
+                                        </tr>
+                                        <tr>
                                           <td>BP Award Pathway (Q & A Session)</td>
-                                          <td>19:30 Local Time (Sri Lanka)</td>
+                                          <td>20:00 Local Time (Sri Lanka)</td>
                                         </tr>
                                         <tr>
                                           <td>International Rover Exchange Programme</td>
                                           <td>21:30 Local Time (Sri Lanka)</td>
-                                        </tr>
-                                        <tr>
-                                          <td>Moot Game Launch</td>
-                                          <td>22:30 Local Time (Sri Lanka)</td>
                                         </tr>
                                       </table>
                                     </div>
@@ -154,16 +154,16 @@
                                       <h5 class=" text-center">24<sup>th</sup> April 2021</h5>
                                       <table class=" table text-center table-striped text-white">
                                         <tr>
-                                          <td>Environmental Development Programme (Review)</td>
-                                          <td>18:15 Local Time (Sri Lanka)</td>
+                                          <td>Youth Forum</td>
+                                          <td>16:30 Local Time (Sri Lanka)</td>
                                         </tr>
                                         <tr>
-                                          <td>100 Years Celebration</td>
-                                          <td>20:00 Local Time (Sri Lanka)</td>
+                                          <td>Environmental Development Programme (Review)</td>
+                                          <td>19:00 Local Time (Sri Lanka)</td>
                                         </tr>
                                         <tr>
                                           <td>Cultural Show</td>
-                                          <td>21:45 Local Time (Sri Lanka)</td>
+                                          <td>21:30 Local Time (Sri Lanka)</td>
                                         </tr>
                                       </table>                      
                                     </div>
@@ -171,20 +171,16 @@
                                       <h5 class=" text-center">25<sup>th</sup> April 2021</h5>
                                       <table class=" table text-center table-striped text-white">
                                         <tr>
-                                          <td>Youth Forum</td>
-                                          <td>16:30 Local Time (Sri Lanka)</td>
+                                          <td>Moot Rally & Award Ceremony</td>
+                                          <td>10:00 Local Time (Sri Lanka)</td>
                                         </tr>
                                         <tr>
                                           <td>STD/ AIDS Awareness Programme Commissioning</td>
-                                          <td>18:30 Local Time (Sri Lanka)</td>
+                                          <td>17:00 Local Time (Sri Lanka)</td>
                                         </tr>
                                         <tr>
-                                          <td>Virtual Campfire</td>
+                                          <td>BP Guild Gathering</td>
                                           <td>21:00 Local Time (Sri Lanka)</td>
-                                        </tr>
-                                        <tr>
-                                          <td>Torch Handover to 35<sup>th</sup> National RSM</td>
-                                          <td>22:00 Local Time (Sri Lanka)</td>
                                         </tr>
                                       </table>                      
                                     </div>
@@ -196,16 +192,12 @@
                                           <td>09:00 Local Time (Sri Lanka)</td>
                                         </tr>
                                         <tr>
-                                          <td>BP Guild Gathering</td>
-                                          <td>09:00 Local Time (Sri Lanka)</td>
-                                        </tr>
-                                        <tr>
                                           <td>District Rover Disaster Acton Team Launch</td>
-                                          <td>13:00 Local Time (Sri Lanka)</td>
+                                          <td>12:00 Local Time (Sri Lanka)</td>
                                         </tr>
                                         <tr>
-                                          <td>Closing Ceremony</td>
-                                          <td>16:00 Local Time (Sri Lanka)</td>
+                                          <td>Campfire & Torch Hand Over Ceremony</td>
+                                          <td>20:00 Local Time (Sri Lanka)</td>
                                         </tr>
                                       </table>                      
                                     </div>

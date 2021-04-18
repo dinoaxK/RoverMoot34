@@ -176,7 +176,7 @@
                   <img src="{{ asset('/img/Programme/Premoot/5.jpg') }}" class="card-img-top" alt="Image">
                   <div class="card-body">
                     <h5 class="card-title text-center text-dark">Rover Youth Forum Pre-Moot Session</h5>
-                    <p class="card-text text-dark">Releasing District Rover Video Presentation and the first session of Virtual Rover Youth Forum</p>
+                    <p class="card-text text-dark">The first session of the Virtual Rover Scout Youth Forum</p>
                   </div>
                   <div class="card-footer bg-transparent border-0 text-center"><p class="card-text"><small class="text-muted">19th April 2021 | 19:30 Local Time (Sri Lanka)</small></p></div>
                 </div>
@@ -212,81 +212,73 @@
                   <div class="tab-content" id="v-pills-tabContent">
                     <div class="tab-pane fade show active py-5" id="day1" role="tabpanel" aria-labelledby="day2_tab">
                       <h5 class=" text-center">23<sup>rd</sup> April 2021</h5>
-                      <table class=" table text-center table-striped">
+                      <table class=" table text-center table-striped text-white">
                         <tr>
                           <td>Opening Ceremony</td>
                           <td>18:00 Local Time (Sri Lanka)</td>
                         </tr>
                         <tr>
+                          <td>Moot Game Launch</td>
+                          <td>19:00 Local Time (Sri Lanka)</td>
+                        </tr>
+                        <tr>
                           <td>BP Award Pathway (Q & A Session)</td>
-                          <td>19:30 Local Time (Sri Lanka)</td>
+                          <td>20:00 Local Time (Sri Lanka)</td>
                         </tr>
                         <tr>
                           <td>International Rover Exchange Programme</td>
                           <td>21:30 Local Time (Sri Lanka)</td>
                         </tr>
-                        <tr>
-                          <td>Moot Game Launch</td>
-                          <td>22:30 Local Time (Sri Lanka)</td>
-                        </tr>
                       </table>
                     </div>
                     <div class="tab-pane fade py-5" id="day2" role="tabpanel" aria-labelledby="day2_tab">
                       <h5 class=" text-center">24<sup>th</sup> April 2021</h5>
-                      <table class=" table text-center table-striped">
-                        <tr>
-                          <td>Environmental Development Programme (Review)</td>
-                          <td>18:15 Local Time (Sri Lanka)</td>
-                        </tr>
-                        <tr>
-                          <td>100 Years Celebration</td>
-                          <td>20:00 Local Time (Sri Lanka)</td>
-                        </tr>
-                        <tr>
-                          <td>Cultural Show</td>
-                          <td>21:45 Local Time (Sri Lanka)</td>
-                        </tr>
-                      </table>                      
-                    </div>
-                    <div class="tab-pane fade py-5" id="day3" role="tabpanel" aria-labelledby="day3_tab">
-                      <h5 class=" text-center">25<sup>th</sup> April 2021</h5>
-                      <table class=" table text-center table-striped">
+                      <table class=" table text-center table-striped text-white">
                         <tr>
                           <td>Youth Forum</td>
                           <td>16:30 Local Time (Sri Lanka)</td>
                         </tr>
                         <tr>
+                          <td>Environmental Development Programme (Review)</td>
+                          <td>19:00 Local Time (Sri Lanka)</td>
+                        </tr>
+                        <tr>
+                          <td>Cultural Show</td>
+                          <td>21:30 Local Time (Sri Lanka)</td>
+                        </tr>
+                      </table>                      
+                    </div>
+                    <div class="tab-pane fade py-5" id="day3" role="tabpanel" aria-labelledby="day3_tab">
+                      <h5 class=" text-center">25<sup>th</sup> April 2021</h5>
+                      <table class=" table text-center table-striped text-white">
+                        <tr>
+                          <td>Moot Rally & Award Ceremony</td>
+                          <td>10:00 Local Time (Sri Lanka)</td>
+                        </tr>
+                        <tr>
                           <td>STD/ AIDS Awareness Programme Commissioning</td>
-                          <td>18:30 Local Time (Sri Lanka)</td>
+                          <td>17:00 Local Time (Sri Lanka)</td>
                         </tr>
                         <tr>
-                          <td>Virtual Campfire</td>
+                          <td>BP Guild Gathering</td>
                           <td>21:00 Local Time (Sri Lanka)</td>
-                        </tr>
-                        <tr>
-                          <td>Torch Handover to 35<sup>th</sup> National RSM</td>
-                          <td>22:00 Local Time (Sri Lanka)</td>
                         </tr>
                       </table>                      
                     </div>
                     <div class="tab-pane fade py-5" id="day4" role="tabpanel" aria-labelledby="day4_tab">
                       <h5 class=" text-center">26<sup>th</sup>  April 2021</h5>
-                      <table class=" table text-center table-striped">
+                      <table class=" table text-center table-striped text-white">
                         <tr>
                           <td>Career Guidance Programme</td>
                           <td>09:00 Local Time (Sri Lanka)</td>
                         </tr>
                         <tr>
-                          <td>BP Guild Gathering</td>
-                          <td>09:00 Local Time (Sri Lanka)</td>
-                        </tr>
-                        <tr>
                           <td>District Rover Disaster Acton Team Launch</td>
-                          <td>13:00 Local Time (Sri Lanka)</td>
+                          <td>12:00 Local Time (Sri Lanka)</td>
                         </tr>
                         <tr>
-                          <td>Closing Ceremony</td>
-                          <td>16:00 Local Time (Sri Lanka)</td>
+                          <td>Campfire & Torch Hand Over Ceremony</td>
+                          <td>20:00 Local Time (Sri Lanka)</td>
                         </tr>
                       </table>                      
                     </div>
