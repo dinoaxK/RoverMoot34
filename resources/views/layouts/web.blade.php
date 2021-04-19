@@ -28,6 +28,8 @@
 
     
     <link href="{{ asset('vendor/animate/animate.min.css') }}" rel="stylesheet">
+    <link href="https://cdn.rawgit.com/mervick/emojionearea/master/dist/emojionearea.min.css" rel="stylesheet">
+    {{-- <link href="{{ asset('css/emoji.css') }}" rel="stylesheet"> --}}
   <!-- /STYLES -->
 
 </head>
@@ -229,7 +231,12 @@
     <!-- Custom JavaScript -->
     <script src="{{ asset('js/core.js') }}"></script>
     <script src="{{ asset('js/sweetalert.js') }}"></script>
-    
+    <script src="https://cdn.rawgit.com/mervick/emojionearea/master/dist/emojionearea.min.js"></script>
+    {{-- <script src="{{ asset('js/config.js') }}"></script>
+    <script src="{{ asset('js/util.js') }}"></script>
+    <script src="{{ asset('js/jquery.emojiarea.js') }}"></script>
+    <script src="{{ asset('js/emoji-picker.js') }}"></script> --}}
+   
   <!-- /SCRIPTS -->
 
   <!-- Flyzoo script v3 -->

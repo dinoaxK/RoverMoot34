@@ -606,7 +606,7 @@
                 <p class="text-center text-white">
                     <small>Please recheck before submit, you can not change once Submitted</small> 
                 </p> 
-                <p class="text-center text-white">Safe from harm agreement:</p>
+                <p class="text-center text-white">Safe from harm policy:</p>
                 <p class="text-center text-white">
                     <small>I hearby declare that I will refrain from any activity which may affect the online safety of others such as cyber bullying, verbal, emotional and mental abuse, hate speech, and online grooming</small> 
                 </p> 
