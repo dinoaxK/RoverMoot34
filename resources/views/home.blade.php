@@ -21,17 +21,17 @@
                     <div class="row">
                         <div class="col-md-6 my-4 px-3">
                             <a class="bg-transparent border-0 w-100 wow fadeInUp" href="#">
-                                <img class="wow fadeInUp" width="100%" src="{{ asset('/img/Programme/Premoot/5.jpg') }}" alt="">
+                                <img class="wow fadeInUp" width="100%" src="{{ asset('/img/Programme/Premoot/2.jpg') }}" alt="">
                             </a>
                         </div>
                         <div class="col-md-6 my-4 px-3">
-                            <p class="mb-0 wow fadeInUp"><small>Pre-moot Session four:</small></p>
-                            <h2 class="wow fadeInUp">Rover Scout Youth Forum Pre-Moot Session</h3>
-                            <p class="wow fadeInUp">The first session of the Virtual Rover Scout Youth Forum</p>
-                            <p class="wow fadeInUp">Time: <span class=" text-success">19th April 2021 | 1930 hours (Local Time - Colombo/Sri Lanka)</span> </p>
+                            <p class="mb-0 wow fadeInUp"><small>Pre-moot Session five:</small></p>
+                            <h2 class="wow fadeInUp">International Rover Programme</h3>
+                            <p class="wow fadeInUp">Launching of the International Rover Scout Chat Room</p>
+                            <p class="wow fadeInUp">Time: <span class=" text-success">21st April 2021 | 21:00 Local Time (Sri Lanka)</span> </p>
                             <p class="wow fadeInUp">Platform: ZOOM</p>
                             <p class="wow fadeInUp">Register in advance for this webinar: </p>
-                            <a href="https://us02web.zoom.us/meeting/register/tZArcuqgqDwpEtZmn-qJkxE7xiNNxSBUyq6y" target="_blank" class="wow fadeInUp btn btn-light btn-lg w-100">Click Here to Register</a>
+                            <a href="https://us02web.zoom.us/meeting/register/tZ0rfu2upzgiGtLbZTPVZ9z7hnI-LwH6pghw" target="_blank" class="wow fadeInUp btn btn-light btn-lg w-100">Click Here to Register</a>
                         </div>
                     </div>
                     <div class="row mt-5" id="programme">
