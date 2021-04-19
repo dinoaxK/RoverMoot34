@@ -36,14 +36,14 @@ class ChatController extends Controller
             $number2 =  substr(str_repeat(0, 6) . ($message->user->id*5), -3);
             $color = '#'.$number2.$number1;
             if($message->user_id == Auth::user()->id):
-                $chat='<p class="text-right"> '.$message->message.' <strong style="color: #000;"> :You</strong> 21-04-2021 09:54</p>
+                $chat='<p class="text-right"> '.$message->message.' <strong style="color: #000;"> :You</strong> '.$message->created_at.'</p>
                 <hr class="bg-light">'.$chat;
             elseif($message->user_id == 1):
                 
-                $chat='<p>21-04-2021 09:54 <strong style="color: #881919;"> ADMIN: </strong>'.$message->message.' </p>
+                $chat='<p>'.$message->created_at.' <strong style="color: #881919;"> ADMIN: </strong>'.$message->message.' </p>
                 <hr class="bg-light">'.$chat;
             else:
-                $chat='<p>21-04-2021 09:54 <strong style="color: '.$color.';"> '.$message->user->participant->first_name.': </strong>'.$message->message.' </p>
+                $chat='<p>'.$message->created_at.' <strong style="color: '.$color.';"> '.$message->user->participant->first_name.': </strong>'.$message->message.' </p>
                 <hr class="bg-light">'.$chat;
             endif;
         }
