@@ -80,7 +80,7 @@ class ChatController extends Controller
 
     public function activeUsers()
     {        
-        $current_timestamp = strtotime(date('Y-m-d H:i:s'). '-30 second');
+        $current_timestamp = strtotime(date('Y-m-d H:i:s'). '-60 second');
         $current_timestamp = date('Y-m-d H:i:s', $current_timestamp);
         $users = LoginDetail::where('user_id', '!=', Auth::user()->id)->where('user_id', '!=', 1)->get();
         $user_list = '<p>ADMIN</p><hr>';
