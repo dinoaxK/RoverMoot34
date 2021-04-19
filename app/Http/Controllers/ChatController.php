@@ -86,7 +86,7 @@ class ChatController extends Controller
         $user_list = '<p>ADMIN</p><hr>';
         foreach ($users as $user) {
             if($user->updated_at > $current_timestamp):
-                $user_list .= '<p>'.$user->user->name.'</p>';
+                $user_list .= '<p>'.$user->user->participant->initials.' '.$user->user->participant->last_name.'</p>';
             endif;
         
         }
