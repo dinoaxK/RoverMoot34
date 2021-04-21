@@ -62,7 +62,7 @@
 <script type="text/javascript">
 
     $(document).ready(function(){
-
+        $('#myBtn1').addClass('d-none');
         user_active = () => {
             $.ajax({
                 headers: {

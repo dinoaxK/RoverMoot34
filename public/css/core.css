@@ -304,6 +304,28 @@ footer p{
 }
 /* /backtotop */
 
+/* Backtotop */
+#myBtn1 {
+  position: fixed; /* Fixed/sticky position */
+  bottom: 40px; /* Place the button at the bottom of the page */
+  left: 52px; /* Place the button 70px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: var(--backto-top-color); /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 2px 11px 2px 10px; /* Some padding */
+  border-radius: 500px; /* Rounded corners */
+  font-size: 34px; /* Increase font size */
+  box-shadow: 2px 2px 20px -2px #000
+}
+
+#myBtn1:hover {
+  background-color: var(--backto-top-hover); /* Add a color on hover */
+}
+/* /backtotop */
+
 /* mascot */
 .mascot{
   position: fixed; /* Fixed/sticky position */
