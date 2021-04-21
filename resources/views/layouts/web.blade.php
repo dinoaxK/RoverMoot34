@@ -73,6 +73,9 @@
                 <li class="nav-item">
                     <a class="nav-link mb-1" href="{{ route('home') }}">{{ __('Moot') }}</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link mb-1" href="{{ route('chat') }}">{{ __('Chat') }}</a>
+                </li>
                 @if(Auth::user()->participant && Auth::user()->participant->application_status == 1 && Auth::user()->participant->payment_status == 1)
                 @else
                 <li class="nav-item">
@@ -187,7 +190,7 @@
 
 <!-- Load Facebook SDK for JavaScript -->
       <div id="fb-root"></div>
-      <script>
+      {{-- <script>
         window.fbAsyncInit = function() {
           FB.init({
             xfbml            : true,
@@ -201,14 +204,14 @@
         js = d.createElement(s); js.id = id;
         js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
         fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));</script>
+      }(document, 'script', 'facebook-jssdk'));</script> --}}
 
       <!-- Your Chat Plugin code -->
-      <div class="fb-customerchat"
+      {{-- <div class="fb-customerchat"
         attribution="setup_tool"
         page_id="428285994301669"
         theme_color="#881919">
-      </div>
+      </div> --}}
 
   <!-- SCRIPTS -->
     <script src="{{ asset('js/app.js') }}" differ></script>

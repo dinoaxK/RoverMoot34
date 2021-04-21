@@ -20,7 +20,7 @@ Route::get('/', function () {
     return view('index', compact('newss'));
 });
 // Route::get('/register', function() { return redirect ('/'); })->name('register');
-Route::get('/chat', [\App\Http\Controllers\ChatController::class, 'index']);
+Route::get('/chat', [\App\Http\Controllers\ChatController::class, 'index'])->name('chat');
 Route::get('/chat/fetch', [\App\Http\Controllers\ChatController::class, 'fetchChat'])->name('moot.chat.fetch');
 Route::post('/chat/send', [\App\Http\Controllers\ChatController::class, 'sendMessage'])->name('moot.chat.send');
 Route::post('logout',[App\Http\Controllers\Auth\LoginController::class,'logout']);
