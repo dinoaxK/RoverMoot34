@@ -43,7 +43,7 @@ class RegisterController extends Controller
     public function index()
     {
         $districts = ScoutDistrict::all();
-        $countries = Participant::distinct()->select('country')->get();
+        $countries = Participant::where('country', '!=', NULL)->distinct()->select('country')->get();
         return view('portal.admin.register', compact('districts', 'countries'));
     }
 
