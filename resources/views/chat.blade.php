@@ -31,7 +31,7 @@
                     </div>
                     <div class="col-sm-9">
                         <div class="card">
-                            <div class="card-header text-dark">Moot Chat</div>
+                            <div class="card-header text-dark">Moot Chat | Language: English</div>
                             <div id="chatHistory" class="card-body overflow-auto  text-dark"  style=" height: 400px;">
 
                             </div>
