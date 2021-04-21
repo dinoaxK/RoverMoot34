@@ -8,9 +8,9 @@
           <img src="{{ asset('img/logo/1.png') }}" alt="Moot Logo"  style="max-width: 100%;" class="mb-5">
         </div>
         <div class="col-lg-7 order-lg-2">
-          <h1 class="hero-header wow pulse"><small>Centenary plus</small> <br><span style="font-family: 'worldsatwar_bbregular' !important;" >34th National<br> Rover Scout Moot</span>  </h1>
+          <h1 class="hero-header wow pulse mb-0"><small style="font-family: cinzelbold; font-size: 26px; color: #eec958;">Centenary plus</small> <br><span style="font-family: 'worldsatwar_bbregular' !important; font-size: 70px; line-height: 81%" >34th National<br> Rover Scout Moot</span>  </h1>
           {{-- <p class="lead" style="font-size: 18px; font-weight: 500;">Welcome to the first ever virtual national rover scout moot</p> --}}
-          <p class="lead" style="font-size: 18px; font-weight: 500;">Celebrating 100 years of Rover Scouting in Sri Lanka</p>
+          <p class="lead mb-4" style="font-size: 18px; font-weight: 500;">Celebrating 100 years of Rover Scouting in Sri Lanka</p>
           
           <a href="{{ route('moot.register') }}" class="btn btn-lg btn-outline-rover">Register Now!</a>
           <a href="{{ url('/#about') }}" class="btn  btn-outline-warning">Learn More</a>

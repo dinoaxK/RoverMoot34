@@ -29,7 +29,11 @@
     
     <link href="{{ asset('vendor/animate/animate.min.css') }}" rel="stylesheet">
     <link href="https://cdn.rawgit.com/mervick/emojionearea/master/dist/emojionearea.min.css" rel="stylesheet">
-    <link href="{{ asset('font/stylesheet.css') }}" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ asset('font/worlds_at_war/specimen_files/specimen_stylesheet.css') }}"  type="text/css" charset="utf-8" >
+    <link rel="stylesheet" href="{{ asset('font/worlds_at_war/stylesheet.css') }}" type="text/css" charset="utf-8" >
+    <link rel="stylesheet" href="{{ asset('font/cinzel/specimen_files/specimen_stylesheet.css') }}"  type="text/css" charset="utf-8" >
+    <link rel="stylesheet" href="{{ asset('font/cinzel/stylesheet.css') }}" type="text/css" charset="utf-8" >
   <!-- /STYLES -->
 
 </head>
