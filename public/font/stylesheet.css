@@ -4,8 +4,8 @@
 
 @font-face {
     font-family: 'worldsatwar_bbregular';
-    src: url('https://rovermoot.scout.lk/public/css/font/worldsatwarbb-webfont.woff2') format('woff2'),
-         url('https://rovermoot.scout.lk/public/css/font/worldsatwarbb-webfont.woff') format('woff');
+    src: url('https://rovermoot.scout.lk/public/font/worldsatwarbb-webfont.woff2') format('woff2'),
+         url('https://rovermoot.scout.lk/public/font/worldsatwarbb-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 

@@ -29,7 +29,7 @@
     
     <link href="{{ asset('vendor/animate/animate.min.css') }}" rel="stylesheet">
     <link href="https://cdn.rawgit.com/mervick/emojionearea/master/dist/emojionearea.min.css" rel="stylesheet">
-    {{-- <link href="{{ asset('css/emoji.css') }}" rel="stylesheet"> --}}
+    <link href="{{ asset('font/stylesheet.css') }}" rel="stylesheet">
   <!-- /STYLES -->
 
 </head>
