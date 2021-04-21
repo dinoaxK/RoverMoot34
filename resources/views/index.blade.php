@@ -8,7 +8,7 @@
           <img src="{{ asset('img/logo/1.png') }}" alt="Moot Logo"  style="max-width: 100%;" class="mb-5">
         </div>
         <div class="col-lg-7 order-lg-2">
-          <h1 class="hero-header wow pulse">34th National Centenary <br> Rover Scout Moot</h1>
+          <h1 class="hero-header wow pulse"><small>Centenary plus</small> <br><span style="font-family: 'worldsatwar_bbregular' !important;" >34th National<br> Rover Scout Moot</span>  </h1>
           {{-- <p class="lead" style="font-size: 18px; font-weight: 500;">Welcome to the first ever virtual national rover scout moot</p> --}}
           <p class="lead" style="font-size: 18px; font-weight: 500;">Celebrating 100 years of Rover Scouting in Sri Lanka</p>
           
