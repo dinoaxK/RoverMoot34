@@ -184,7 +184,7 @@ header {
 
 .hero-header{
   font-size: 48px;
-  font-weight: bolder;
+  /* font-weight: bolder; */
   font-family: 'Poppins', sans-serif;
   color: var(--theme-color);
 }
