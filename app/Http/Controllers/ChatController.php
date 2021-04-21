@@ -36,12 +36,12 @@ class ChatController extends Controller
             $number1 =  substr(str_repeat(0, 6) . $message->user->id, -3);
             $number2 =  substr(str_repeat(0, 6) . ($message->user->id*5), -3);
             $color = '#'.$number2.$number1;
-            if($message->user_id == Auth::user()->id):
-                $chat='<p class="text-right"> '.$message->message.' <strong style="color: #000;" title="'.$message->created_at.'" > :You</strong> </p>
-                <hr class="bg-light">'.$chat;
-            elseif($message->user_id == 1):
+            if($message->user_id == 1):
                 
-                $chat='<p><strong style="color: #881919;" title="'.$message->created_at.'" > ADMIN: </strong>'.$message->message.' </p>
+                $chat='<p class="text-center"><strong style="color: #881919;" title="'.$message->created_at.'" > ADMIN: </p><p class="text-center bg-warning"></strong><b>'.$message->message.'</b> </p>
+                <hr class="bg-light">'.$chat;
+            elseif($message->user_id == Auth::user()->id):
+                $chat='<p class="text-right"> '.$message->message.' <strong style="color: #000;" title="'.$message->created_at.'" > :You</strong> </p>
                 <hr class="bg-light">'.$chat;
             else:
                 $chat='<p><strong style="color: '.$color.';" title="'.$message->created_at.'" > '.$message->user->participant->first_name.': </strong>'.$message->message.' </p>
@@ -55,38 +55,20 @@ class ChatController extends Controller
     {
 
         if (
-            preg_match('/fuck/', strtolower($request->message)) ||
-            preg_match('/punda/', strtolower($request->message)) ||
-            preg_match('/kotte/', strtolower($request->message)) ||
-            preg_match('/oka/', strtolower($request->message)) ||
-            preg_match('/okka/', strtolower($request->message)) ||
-            preg_match('/suththukudi/', strtolower($request->message)) ||
-            preg_match('/suttukudi/', strtolower($request->message)) ||
-            preg_match('/kallawettama/', strtolower($request->message)) ||
-            preg_match('/kalla/', strtolower($request->message)) ||
-            preg_match('/wettama/', strtolower($request->message)) ||
-            preg_match('/suck/', strtolower($request->message)) ||
-            preg_match('/dick/', strtolower($request->message)) ||
-            preg_match('/pussy/', strtolower($request->message)) ||
-            preg_match('/ass/', strtolower($request->message)) ||
-            preg_match('/masturbate/', strtolower($request->message)) ||
-            preg_match('/masturbation/', strtolower($request->message)) ||
-            preg_match('/cock/', strtolower($request->message)) ||
-            preg_match('/boobs/', strtolower($request->message)) ||
-            preg_match('/boob/', strtolower($request->message)) ||
-            preg_match('/horny/', strtolower($request->message)) ||
-            preg_match('/pee/', strtolower($request->message)) ||
-            preg_match('/fucker/', strtolower($request->message)) ||
-            preg_match('/huth/', strtolower($request->message)) ||
-            preg_match('/paka/', strtolower($request->message)) ||
-            preg_match('/kari/', strtolower($request->message)) ||
-            preg_match('/wes/', strtolower($request->message)) ||
-            preg_match('/hukan/', strtolower($request->message)) ||
-            preg_match('/kimb/', strtolower($request->message)) ||
-            preg_match('/puka/', strtolower($request->message)) ||
-            preg_match('/walla/', strtolower($request->message)) ||
-            preg_match('/paiya/', strtolower($request->message)) ||
-            preg_match('/ponna/', strtolower($request->message)) 
+            preg_match('/\bfuck\b/', strtolower($request->message)) ||
+            preg_match('/\bsuck\b/', strtolower($request->message)) ||
+            preg_match('/\bsex\b/', strtolower($request->message)) ||
+            preg_match('/\bdick\b/', strtolower($request->message)) ||
+            preg_match('/\bpussy\b/', strtolower($request->message)) ||
+            preg_match('/\bass\b/', strtolower($request->message)) ||
+            preg_match('/\bmasturbate\b/', strtolower($request->message)) ||
+            preg_match('/\bmasturbation\b/', strtolower($request->message)) ||
+            preg_match('/\bcock\b/', strtolower($request->message)) ||
+            preg_match('/\bboobs\b/', strtolower($request->message)) ||
+            preg_match('/\bboob\b/', strtolower($request->message)) ||
+            preg_match('/\bhorny\b/', strtolower($request->message)) ||
+            preg_match('/\bpee\b/', strtolower($request->message)) ||
+            preg_match('/\bfucker\b/', strtolower($request->message)) 
             ):
             return 'bad words';
         endif;

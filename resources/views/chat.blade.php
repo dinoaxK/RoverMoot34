@@ -15,7 +15,7 @@
     <div class="row justify-content-center">
         <div class="col-lg-10 mt-5">
             <div class="py-5  chat" >
-                <h3 class="text-center">Proceed only if you comply with the following Safe from harm policy</h3>
+                <h3 id="focus" class="text-center">Proceed only if you comply with the following Safe from harm policy</h3>
                 <p class="text-center my-4"><em>"I hereby declare that I will refrain from any activity which may affect the online safety of others such as cyber bullying, verbal, emotional and mental abuse, hate speech, and online grooming</em> </p>
                 <p class="text-center my-4"><em>Moreover, I will refrain from disclosing my personal data such as personal information, email addresses, passwords, and credit card numbers to third parties which may threaten my safety online."</em> </p>
                 <div class="row">
@@ -164,7 +164,7 @@
                     else{
                         // alert ('done');
                         fetch_chat()
-                        window.location.hash = '#chat-header';
+                        window.location.hash = '#focus';
                         
                     }
                     user_active()
