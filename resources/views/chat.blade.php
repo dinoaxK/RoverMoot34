@@ -16,12 +16,12 @@
         <div class="col-lg-10 mt-5">
             <div class="py-5  chat" >
                 <h3 class="text-center">Proceed only if you comply with the following Safe from harm policy</h3>
-                <p class="text-center my-4"><em>"I hearby declare that I will refrain from any activity which may affect the online safety of others such as cyber bullying, verbal, emotional and mental abuse, hate speech, and online grooming</em> </p>
+                <p class="text-center my-4"><em>"I hereby declare that I will refrain from any activity which may affect the online safety of others such as cyber bullying, verbal, emotional and mental abuse, hate speech, and online grooming</em> </p>
                 <p class="text-center my-4"><em>Moreover, I will refrain from disclosing my personal data such as personal information, email addresses, passwords, and credit card numbers to third parties which may threaten my safety online."</em> </p>
                 <div class="row">
                     <div class="col-sm-3">
                         <div class="card bg-transparent">
-                            <div class="card-header">
+                            <div class="card-header" id="chat-header">
                                 Online Users <i class="fa fa-circle text-success"></i>
                             </div>
                             <div id="activeUsers" class="card-body overflow-auto text-left"  style=" max-height: 400px;">
@@ -37,10 +37,11 @@
                             </div>
                             <div class="card-footer bg-light">
                                 <span class="text-dark form-text">Please use only ENGLISH language as this is an international chat room and immediate actions will be taken against misbehavers.</span>
-                                <span class="text-dark form-text">Please be advised that you are solely responsible for the personal information and the contact details shared in the chatroom</span>
+                                <span class="text-dark form-text">Please be advised that you are solely responsible for the personal information and the contact details you share in the chatroom</span>
                                 <span class="text-dark form-text">Stick to the Safe from harm Policies ( <a href="https://www.scout.org/safefromharm#:~:text=Safe%20from%20Harm%20is%20a,feel%20safe%2C%20at%20any%20time.">Safe From Harm - WOSM</a> ) and Enjoy!</span>
                                 <textarea class=" form-control" name="message" id="message" width=100%></textarea>
-                                <button onclick="send_message()" class="btn btn-outline-primary"style="float: right; margin-right: 10px; margin-left: -25px; margin-top: -39px; position: relative; z-index: 2;">Send <i class="fa fa-paper-plane"></i></button>
+                                <span id="message-err" class="invalid-feedback text-center" role="alert"></span>
+                                <button id="sendBtn" onclick="send_message()" class="btn btn-outline-primary"style="float: right; margin-right: 10px; margin-left: -25px; margin-top: -39px; position: relative; z-index: 2;">Send <i class="fa fa-paper-plane"></i></button>
                             </div>
                         </div>
                     </div>
@@ -131,7 +132,11 @@
     
         
         send_message = () => {
-            
+            var message = $('#message').val();
+            $(".emojionearea-editor").html('');
+            $('.invalid-feedback').html('');
+            $('.invalid-feedback').hide();
+            $('#message').val('');
             $.ajax({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -139,7 +144,7 @@
                 url: "{{ route('moot.chat.send') }}",
                 type: 'post', 
                 data: {
-                    'message': $('#message').val()
+                    'message': message
                 },
                 success: function(data){
 
@@ -148,11 +153,17 @@
                             title: 'Avoid Such Words!',
                             text: 'If you continue to use such words, admins will be notified! and will be blocked without prior notice',
                         })
-                    }else{
+                    }
+                    if(data['errors']){   
+                        $.each(data['errors'], function(key, value){                     
+                            $('#'+key+'-err').show();
+                            $('#'+key+'-err').append(value);
+                        });
+                    }
+                    else{
                         // alert ('done');
-                        $('#message').val('');
                         fetch_chat()
-                        $(".emojionearea-editor").html('');
+                        window.location.hash = '#chat-header';
                         
                     }
                     user_active()
@@ -172,6 +183,17 @@
             fetch_chat(); 
             fetch_users();
         }, 1000)
+
+        $(document).keyup(function (e) {
+            
+            //alert(code);
+            if (e.which == 13) {
+                $('#sendBtn').click();
+                return false;
+            }
+        });
+
+
     });
     // setInterval(function(){
     //     user_active();

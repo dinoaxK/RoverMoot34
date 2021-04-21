@@ -608,7 +608,7 @@
                 </p> 
                 <p class="text-center text-white">Safe from harm policy:</p>
                 <p class="text-center text-white">
-                    <small>I hearby declare that I will refrain from any activity which may affect the online safety of others such as cyber bullying, verbal, emotional and mental abuse, hate speech, and online grooming</small> 
+                    <small>I hereby declare that I will refrain from any activity which may affect the online safety of others such as cyber bullying, verbal, emotional and mental abuse, hate speech, and online grooming</small> 
                 </p> 
                 <p class="text-center text-white">
                     <small>Moreover, I will refrain from disclosing my personal data such as personal information, email addresses, passwords, and credit card numbers to third parties which may threaten my safety online.</small> 
