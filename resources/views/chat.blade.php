@@ -39,6 +39,7 @@
                                 <span class="text-dark form-text">Please use only ENGLISH language as this is an international chat room and immediate actions will be taken against misbehavers.</span>
                                 <span class="text-dark form-text">Please be advised that you are solely responsible for the personal information and the contact details you share in the chatroom</span>
                                 <span class="text-dark form-text">Stick to the Safe from harm Policies ( <a href="https://www.scout.org/safefromharm#:~:text=Safe%20from%20Harm%20is%20a,feel%20safe%2C%20at%20any%20time.">Safe From Harm - WOSM</a> ) and Enjoy!</span>
+                                <span class="text-dark form-text"><small>Click on Send to send your message</small> </span>
                                 <textarea class=" form-control" name="message" id="message" width=100%></textarea>
                                 <span id="message-err" class="invalid-feedback text-center" role="alert"></span>
                                 <button id="sendBtn" onclick="send_message()" class="btn btn-outline-primary"style="float: right; margin-right: 10px; margin-left: -25px; margin-top: -39px; position: relative; z-index: 2;">Send <i class="fa fa-paper-plane"></i></button>
@@ -184,14 +185,14 @@
             fetch_users();
         }, 1000)
 
-        $(document).keyup(function (e) {
+        // $(document).keyup(function (e) {
             
-            //alert(code);
-            if (e.which == 13) {
-                $('#sendBtn').click();
-                return false;
-            }
-        });
+        //     //alert(code);
+        //     if (e.which == 13) {
+        //         $('#sendBtn').click();
+        //         return false;
+        //     }
+        // });
 
 
     });
