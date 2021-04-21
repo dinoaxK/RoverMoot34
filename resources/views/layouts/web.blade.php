@@ -107,9 +107,15 @@
   </nav>
 
 @yield('content')
-<!-- back to top button -->
+@guest
+  @else
+@if(Auth::user()->participant && Auth::user()->participant->application_status == 1 && Auth::user()->participant->payment_status == 1)
+<!-- chat button -->
   <a title="Moot Chat" data-tooltip="tooltip"  data-placement="bottom"  href="{{ route('chat') }}" target="_blank" id="myBtn1"><i class="fa fa-comments"></i></a>
-<!-- /back to top button -->
+<!-- /chat button -->
+  
+@endif
+@endguest
 <!-- back to top button -->
   <button title="Go to Top" data-tooltip="tooltip"  data-placement="bottom"  onclick="topFunction()" id="myBtn"><i class="fa fa-chevron-up"></i></button>
 <!-- /back to top button -->
