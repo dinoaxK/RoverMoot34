@@ -307,8 +307,8 @@ footer p{
 /* Backtotop */
 #myBtn1 {
   position: fixed; /* Fixed/sticky position */
-  bottom: 40px; /* Place the button at the bottom of the page */
-  left: 52px; /* Place the button 70px from the right */
+  bottom: 29px; /* Place the button at the bottom of the page */
+  left: 13px; /* Place the button 70px from the right */
   z-index: 99; /* Make sure it does not overlap */
   border: none; /* Remove borders */
   outline: none; /* Remove outline */
