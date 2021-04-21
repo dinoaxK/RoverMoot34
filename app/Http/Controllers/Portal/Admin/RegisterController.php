@@ -382,9 +382,9 @@ class RegisterController extends Controller
                 // echo $participant->email;
                 // echo $delay_seconds;
                 if( $count < 200 ):
-                    Mail::mailer('smtp2')->to($participant->email)->later(now()->addSeconds($delay_seconds), new GeneralEmail($details));
-                elseif( $count < 400 ):
                     Mail::mailer('smtp')->to($participant->email)->later(now()->addSeconds($delay_seconds), new GeneralEmail($details));
+                elseif( $count < 400 ):
+                    Mail::mailer('smtp2')->to($participant->email)->later(now()->addSeconds($delay_seconds), new GeneralEmail($details));
                 elseif( $count < 600 ):
                     Mail::mailer('smtp3')->to($participant->email)->later(now()->addSeconds($delay_seconds), new GeneralEmail($details));
                 elseif( $count < 800 ):
