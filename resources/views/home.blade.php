@@ -18,21 +18,45 @@
                 @if(Auth::user()->participant && Auth::user()->participant->application_status == 1 && Auth::user()->participant->payment_status == 1)
 
                     <h1 class="hero-header text-center text-white">Coming up Next</h1>
-                    <div class="row">
-                        <div class="col-md-6 my-4 px-3">
-                            <a class="bg-transparent border-0 w-100 wow fadeInUp" href="#">
-                                <img class="wow fadeInUp" width="100%" src="{{ asset('/img/Programme/Premoot/3.jpg') }}" alt="">
-                            </a>
+                    <div class="row justify-content-center">
+                      <div class="col-12  px-3">
+                        <h2 class="wow fadeInUp text-center m-0">Day 01</h3>
+                        <p class="wow fadeInUp text-center">23rd April 2021</p>
+                        <p class="wow fadeInUp text-center">Register in advance for this webinar: </p>
+                      </div>
+
+                      <div class="col-md-7 my-2 px-3">
+                        <div class="card wow fadeInUp border-0">
+                          <div class="card-header text-dark text-center">
+                            <h5 class="my-0">Opening Ceremony & Moot Game Launch | 18:00 Local Time (Sri Lanka)</h3>                            
+                          </div>
                         </div>
-                        <div class="col-md-6 my-4 px-3">
-                            <p class="mb-0 wow fadeInUp"><small>Pre-moot Session six:</small></p>
-                            <h2 class="wow fadeInUp">Disaster Management Training</h3>
-                            <p class="wow fadeInUp">Online Training Programme (Webinar) collaboratively conducted with the Disaster Management Centre - Sri Lanka</p>
-                            <p class="wow fadeInUp">Time: <span class=" text-success">22nd April 2021 | 19:30 Local Time (Sri Lanka)</span> </p>
-                            <p class="wow fadeInUp">Platform: ZOOM</p>
-                            <p class="wow fadeInUp">Register in advance for this webinar: </p>
-                            <a href="https://us02web.zoom.us/meeting/register/tZcpf-CppzwsGtfoXpp_RiOsKCsH6hQcTBB9" target="_blank" class="wow fadeInUp btn btn-light btn-lg w-100">Click Here to Register</a>
+                      </div>
+                      <div class="col-md-5 my-2 px-3">
+                        <a href="https://us02web.zoom.us/meeting/register/tZUsfuGspjgqGdSfwbP0LhpAp73jrsGbStfL" target="_blank" class="wow fadeInUp btn btn-success btn-lg w-100">Click Here to Register</a>
+                      </div>
+
+                      <div class="col-md-7 my-2 px-3">
+                        <div class="card wow fadeInUp border-0">
+                          <div class="card-header text-dark text-center">
+                            <h5 class="my-0">BP Award Pathway Q & A Webinar | 20:00 Local Time (Sri Lanka)</h3>
+                          </div>
                         </div>
+                      </div>
+                      <div class="col-md-5 my-2 px-3">
+                        <a href="https://us02web.zoom.us/meeting/register/tZ0pduuspz8iGtLQz6MQ2gU3ioOjatrZhvvA" target="_blank" class="wow fadeInUp btn btn-success btn-lg w-100">Click Here to Register</a>
+                      </div>
+
+                      <div class="col-md-7 my-2 px-3">
+                        <div class="card wow fadeInUp border-0">
+                          <div class="card-header text-dark text-center">
+                            <h5 class="my-0">International Rover Exchange Programme | 21:30 Local Time (Sri Lanka)</h3>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-5 my-2 px-3">
+                        <a href=" https://us02web.zoom.us/meeting/register/tZwsf-CrrTIoG9d-mfl7RHGu72_cxCFWaeTv" target="_blank" class="wow fadeInUp btn btn-success btn-lg w-100">Click Here to Register</a>
+                      </div>
                     </div>
                     <div class="row mt-5" id="programme">
                         <div class="col-lg-12">
