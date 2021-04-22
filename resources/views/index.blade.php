@@ -212,7 +212,7 @@
                   <div class="tab-content" id="v-pills-tabContent">
                     <div class="tab-pane fade show active py-5" id="day1" role="tabpanel" aria-labelledby="day2_tab">
                       <h5 class=" text-center">23<sup>rd</sup> April 2021</h5>
-                      <table class=" table text-center table-striped text-white">
+                      <table class=" table text-center table-striped">
                         <tr>
                           <td>Opening Ceremony</td>
                           <td>18:00 Local Time (Sri Lanka)</td>
