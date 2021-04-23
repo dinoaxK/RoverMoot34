@@ -22,7 +22,7 @@ Route::get('/', function () {
 Route::get('/game/instructions', function () {
     return view('game');
 })->name('game')->middleware('check.registration');
-// Route::get('/register', function() { return redirect ('/'); })->name('register');
+Route::get('/register', function() { return redirect ('/'); })->name('register');
 Route::get('/chat', [\App\Http\Controllers\ChatController::class, 'index'])->name('chat');
 Route::get('/chat/fetch', [\App\Http\Controllers\ChatController::class, 'fetchChat'])->name('moot.chat.fetch');
 Route::post('/chat/send', [\App\Http\Controllers\ChatController::class, 'sendMessage'])->name('moot.chat.send');
@@ -33,9 +33,9 @@ Route::get('/game', function () {
 Route::get('/still/active', [\App\Http\Controllers\ChatController::class, 'stillActive'])->name('moot.chat.active');
 Route::get('/users/active', [\App\Http\Controllers\ChatController::class, 'activeUsers'])->name('moot.user.fetch');
 
-Auth::routes(['verify' => true]);
+// Auth::routes(['verify' => true]);
 // Auth::routes(['verify' => true, 'register' => false]);
-// Auth::routes(['register' => false]);
+Auth::routes(['register' => false]);
 // Route::('/register')
 Route::post('/portal/update/password', [App\Http\Controllers\Portal\ProfileController::class, 'changePassword'])->name('change.password');
 

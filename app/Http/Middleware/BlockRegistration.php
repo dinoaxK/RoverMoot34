@@ -21,7 +21,7 @@ class BlockRegistration
         $participant = Null;
         $role = Auth::user()->role;
 
-        if( $role == 'foreign' ||  $role == 'super_admin' ):
+        if( $role == 'super_admin' ):
             return $next($request);
         else:
             return redirect('/login');
