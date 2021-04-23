@@ -19,12 +19,17 @@ Route::get('/', function () {
     $newss = News::all();
     return view('index', compact('newss'));
 });
+Route::get('/game/instructions', function () {
+    return view('game');
+})->name('game')->middleware('check.registration');
 // Route::get('/register', function() { return redirect ('/'); })->name('register');
 Route::get('/chat', [\App\Http\Controllers\ChatController::class, 'index'])->name('chat');
 Route::get('/chat/fetch', [\App\Http\Controllers\ChatController::class, 'fetchChat'])->name('moot.chat.fetch');
 Route::post('/chat/send', [\App\Http\Controllers\ChatController::class, 'sendMessage'])->name('moot.chat.send');
 Route::post('logout',[App\Http\Controllers\Auth\LoginController::class,'logout']);
-
+Route::get('/game', function () {
+    return redirect('https://rovermoot.scout.lk/game/?fbclid=IwAR3SYK7R8e0IkNcMy4j3NGDNIdLlnaWz4JILHOWTD0AOY7JqbJ__Y1zX-Ag');
+})->middleware('check.registration');
 Route::get('/still/active', [\App\Http\Controllers\ChatController::class, 'stillActive'])->name('moot.chat.active');
 Route::get('/users/active', [\App\Http\Controllers\ChatController::class, 'activeUsers'])->name('moot.user.fetch');
 

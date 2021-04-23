@@ -80,6 +80,9 @@
                 <li class="nav-item">
                     <a class="nav-link mb-1" href="{{ route('chat') }}">{{ __('Chat') }}</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link mb-1" href="{{ route('game') }}">{{ __('Game') }}</a>
+                </li>
                 @if(Auth::user()->participant && Auth::user()->participant->application_status == 1 && Auth::user()->participant->payment_status == 1)
                 @else
                 <li class="nav-item">
@@ -117,7 +120,9 @@
 <!-- chat button -->
   <a title="Moot Chat" data-tooltip="tooltip"  data-placement="bottom"  href="{{ route('chat') }}" target="_blank" id="myBtn1"><i class="fa fa-comments"></i></a>
 <!-- /chat button -->
-  
+<!-- game button -->
+  <a title="Moot Game" data-tooltip="tooltip"  data-placement="bottom"  href="{{ route('game') }}" target="_blank" id="myBtn2"><i class="fa fa-gamepad"></i></a>
+<!-- /gane button -->
 @endif
 @endguest
 <!-- back to top button -->
