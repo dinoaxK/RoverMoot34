@@ -20,42 +20,42 @@
                     <h1 class="hero-header text-center text-white">Coming up Next</h1>
                     <div class="row justify-content-center">
                       <div class="col-12  px-3">
-                        <h2 class="wow fadeInUp text-center m-0">Day 01</h3>
-                        <p class="wow fadeInUp text-center">23rd April 2021</p>
-                        <p class="wow fadeInUp text-center">Register in advance for this webinar: </p>
+                        <h2 class="wow fadeInUp text-center m-0">Day 02</h3>
+                        <p class="wow fadeInUp text-center">24th April 2021</p>
+                        <p class="wow fadeInUp text-center">Register in advance for these webinars: </p>
                       </div>
 
                       <div class="col-md-7 my-2 px-3">
                         <div class="card wow fadeInUp border-0">
                           <div class="card-header text-dark text-center">
-                            <h5 class="my-0">Opening Ceremony & Moot Game Launch | 18:00 Local Time (Sri Lanka)</h3>                            
+                            <h5 class="my-0">Rover Scout Youth Forum | 16:30 Local Time (Sri Lanka)</h3>                            
                           </div>
                         </div>
                       </div>
                       <div class="col-md-5 my-2 px-3">
-                        <a href="https://us02web.zoom.us/meeting/register/tZUsfuGspjgqGdSfwbP0LhpAp73jrsGbStfL" target="_blank" class="wow fadeInUp btn btn-success btn-lg w-100">Click Here to Register</a>
+                        <a href="https://us02web.zoom.us/meeting/register/tZYpceGvqjsuHddaGe3r6t41V1d1q1cPWOnS" target="_blank" class="wow fadeInUp btn btn-success btn-lg w-100">Click Here to Register</a>
                       </div>
 
                       <div class="col-md-7 my-2 px-3">
                         <div class="card wow fadeInUp border-0">
                           <div class="card-header text-dark text-center">
-                            <h5 class="my-0">BP Award Pathway Q & A Webinar | 20:00 Local Time (Sri Lanka)</h3>
+                            <h5 class="my-0">Environment Development Programme | 19:00 Local Time (Sri Lanka)</h3>
                           </div>
                         </div>
                       </div>
                       <div class="col-md-5 my-2 px-3">
-                        <a href="https://us02web.zoom.us/meeting/register/tZ0pduuspz8iGtLQz6MQ2gU3ioOjatrZhvvA" target="_blank" class="wow fadeInUp btn btn-success btn-lg w-100">Click Here to Register</a>
+                        <a href="https://us02web.zoom.us/meeting/register/tZUodOytpjgpE91aX_inlWbB4bpqf82E_O-7" target="_blank" class="wow fadeInUp btn btn-success btn-lg w-100">Click Here to Register</a>
                       </div>
 
                       <div class="col-md-7 my-2 px-3">
                         <div class="card wow fadeInUp border-0">
                           <div class="card-header text-dark text-center">
-                            <h5 class="my-0">International Rover Exchange Programme | 21:30 Local Time (Sri Lanka)</h3>
+                            <h5 class="my-0">Cultural show and Moot night | 21:30 Local Time (Sri Lanka)</h3>
                           </div>
                         </div>
                       </div>
                       <div class="col-md-5 my-2 px-3">
-                        <a href=" https://us02web.zoom.us/meeting/register/tZwsf-CrrTIoG9d-mfl7RHGu72_cxCFWaeTv" target="_blank" class="wow fadeInUp btn btn-success btn-lg w-100">Click Here to Register</a>
+                        <a href="https://us02web.zoom.us/meeting/register/tZAqceCgrzgvGtb5I1f5EzZJsWDgruBSp-Gt" target="_blank" class="wow fadeInUp btn btn-success btn-lg w-100">Click Here to Register</a>
                       </div>
                     </div>
                     <div class="row mt-5" id="programme">
