@@ -39,7 +39,7 @@
         <div class="col">
             <div class="card bg-primary">
                 <div class="card-body">
-                    <h1>{{ App\Models\Participant::where('application_submit', 1)->where('payment_submit', 1)->where('application_proof', Null)->count() }}</h1>
+                    <h1>{{ App\Models\Participant::where('application_submit', 1)->where('payment_submit', 1)->where('application_status', 1)->where('payment_status', '!=', 1)->where('application_proof', Null)->count() }}</h1>
                     <p>Application Proof Pending</p>
                 </div>
             </div>
