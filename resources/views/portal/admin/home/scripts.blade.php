@@ -1,6 +1,17 @@
 @section('script')
 <script type="text/javascript">
 
+  print_page = () => {
+    document.title = "{{ date('Y-m-d') }} Moot Application";
+    $('body').css('background-color', '#fff');
+    $('footer').addClass('d-none');
+    $('nav').addClass('d-none');
+    $('#myBtn').addClass('d-none');
+    $('.fa-print').addClass('d-none');
+
+    window.print();
+  }
+
   $(document).ready(function(){
 
       // Load the Visualization API and the corechart package.

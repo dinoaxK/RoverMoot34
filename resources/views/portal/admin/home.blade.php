@@ -4,7 +4,7 @@
 
 
 <div class="container min-vh-100 mt-5 mb-5 pt-5">
-    <div class="row pt-5">
+    <div class="row justify-content-between pt-5">
         <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item active" aria-current="page">Home</li>
@@ -78,6 +78,32 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col">
+            <div class="card border-rover">
+                <div class="card-body  text-rover">
+                    <h1>{{ App\Models\Participant::where('application_status', 1)->where('payment_status', 1)->distinct()->count('country') }}</h1>
+                    <p>No. of countries</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card border-rover">
+                <div class="card-body text-rover">
+                    <h1>{{ App\Models\Participant::where('application_status', 1)->where('payment_status', 1)->where('crew_district', 'Foreign')->count() }}</h1>
+                    <p>No. of foreign participants</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card border-rover">
+                <div class="card-body text-rover">
+                    <h1>{{ App\Models\Participant::where('application_status', 1)->where('payment_status', 1)->where('crew_district', '!=', 'Foreign')->count() }}</h1>
+                    <p>No. local participants</p>
+                </div>
+            </div>
+        </div>
         <div class="col-lg-12 mt-5">
             <div class="row justify-content-center">
                 <div class="col-12">
@@ -86,8 +112,8 @@
                 <div id="chart_div1" class="col"></div>
                 <div id="chart_div2" class="col"></div>
             </div>
-            <div class="row justify-content-center">
-                <div class="col-12">
+            <div class="row justify-content-center ">
+                <div class="col-12 mt-5">
                     <h2 class=" text-center text-dark">Foreign Country Distribution</h2>
                 </div>
                 <div id="chart_div3" class="col"></div>
@@ -155,6 +181,7 @@
         </div>
         @endif --}}
     </div>
+
 </div>
 
 

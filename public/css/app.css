@@ -28,6 +28,7 @@
   --danger: #e3342f;
   --light: #f8f9fa;
   --dark: #343a40;
+  --rover: #891919;
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
   --breakpoint-md: 768px;
@@ -6217,6 +6218,10 @@ button.bg-dark:focus {
 
 .border-danger {
   border-color: #e3342f !important;
+}
+
+.border-rover {
+  border-color: #891919 !important;
 }
 
 .border-light {
