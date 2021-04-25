@@ -83,21 +83,31 @@
 
   <section id="facts" class="bg-light text-dark">
     <div class="container wow fadeInUp">
+      <div class="row">
+        
+      </div>
       <div class="row counters">
-        <div class="col-lg-4 col-12 text-center">
+        <div class="col-lg-3 col-12 text-center">
           <span data-toggle="counter-up">1000</span>
           <p>+ Participants</p>
         </div>
 
-        <div class="col-lg-4 col-12 text-center">
+        <div class="col-lg-3 col-12 text-center">
+          <span data-toggle="counter-up">10</span>
+          <p>+ Countries</p>
+        </div>
+
+        <div class="col-lg-3 col-12 text-center">
           <span data-toggle="counter-up">37</span>
           <p>Districts</p>
         </div>
 
-        <div class="col-lg-4 col-12 text-center">
+        <div class="col-lg-3 col-12 text-center">
           <span data-toggle="counter-up">4</span>
           <p>Days</p>
         </div>
+
+
 
       </div>
 

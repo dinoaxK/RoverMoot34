@@ -19,6 +19,9 @@ Route::get('/', function () {
     $newss = News::all();
     return view('index', compact('newss'));
 });
+Route::get('/environment', function () {
+    return view('environment');
+});
 Route::get('/game/instructions', function () {
     return view('game');
 })->name('game')->middleware('check.registration');

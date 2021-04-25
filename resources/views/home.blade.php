@@ -14,48 +14,51 @@
 <div class="container min-vh-80 mb-5">
     <div class="row justify-content-center">
         <div class="col-lg-12 mt-5">
-            <div class="py-5" >
+            <div class="py-5 justify-content-center w-100 text-center" >
+
+                <!-- <a class="btn btn-lg btn-outline-success"><i class="fa fa-leaf"></i> Environment Project Challenge</a> -->
+
                 @if(Auth::user()->participant && Auth::user()->participant->application_status == 1 && Auth::user()->participant->payment_status == 1)
 
                     <h1 class="hero-header text-center text-white">Coming up Next</h1>
                     <div class="row justify-content-center">
                       <div class="col-12  px-3">
-                        <h2 class="wow fadeInUp text-center m-0">Day 02</h3>
-                        <p class="wow fadeInUp text-center">24th April 2021</p>
+                        <h2 class="wow fadeInUp text-center m-0">Day 03</h3>
+                        <p class="wow fadeInUp text-center">25th April 2021</p>
                         <p class="wow fadeInUp text-center">Register in advance for these webinars: </p>
                       </div>
 
                       <div class="col-md-7 my-2 px-3">
                         <div class="card wow fadeInUp border-0">
                           <div class="card-header text-dark text-center">
-                            <h5 class="my-0">Rover Scout Youth Forum | 16:30 Local Time (Sri Lanka)</h3>                            
+                            <h5 class="my-0">Moot Rally & Award Ceremony | 10:00 Local Time (Sri Lanka)</h3>                            
                           </div>
                         </div>
                       </div>
                       <div class="col-md-5 my-2 px-3">
-                        <a href="https://us02web.zoom.us/meeting/register/tZYpceGvqjsuHddaGe3r6t41V1d1q1cPWOnS" target="_blank" class="wow fadeInUp btn btn-success btn-lg w-100">Click Here to Register</a>
+                        <a href="https://us02web.zoom.us/meeting/register/tZwsdOCtqzguH9eo2APimsuJ-Kc4Hs_jBUsI" target="_blank" class="wow fadeInUp btn btn-success btn-lg w-100">Click Here to Register</a>
                       </div>
 
                       <div class="col-md-7 my-2 px-3">
                         <div class="card wow fadeInUp border-0">
                           <div class="card-header text-dark text-center">
-                            <h5 class="my-0">Environment Development Programme | 19:00 Local Time (Sri Lanka)</h3>
+                            <h5 class="my-0">BP Guild Gathering | 12:30 Local Time (Sri Lanka)</h3>
                           </div>
                         </div>
                       </div>
                       <div class="col-md-5 my-2 px-3">
-                        <a href="https://us02web.zoom.us/meeting/register/tZUodOytpjgpE91aX_inlWbB4bpqf82E_O-7" target="_blank" class="wow fadeInUp btn btn-success btn-lg w-100">Click Here to Register</a>
+                        <a href="https://us02web.zoom.us/j/81577664592?pwd=SExTc0Rudzc5eCtMdXZ6N2I2eTBEZz09" target="_blank" class="wow fadeInUp btn btn-success btn-lg w-100">Click Here to Join</a>
                       </div>
 
                       <div class="col-md-7 my-2 px-3">
                         <div class="card wow fadeInUp border-0">
                           <div class="card-header text-dark text-center">
-                            <h5 class="my-0">Cultural show and Moot night | 21:30 Local Time (Sri Lanka)</h3>
+                            <h5 class="my-0">STD/ AIDS Awareness Programme launch | 17:00 Local Time (Sri Lanka)</h3>
                           </div>
                         </div>
                       </div>
                       <div class="col-md-5 my-2 px-3">
-                        <a href="https://us02web.zoom.us/meeting/register/tZAqceCgrzgvGtb5I1f5EzZJsWDgruBSp-Gt" target="_blank" class="wow fadeInUp btn btn-success btn-lg w-100">Click Here to Register</a>
+                        <a href="https://us02web.zoom.us/meeting/register/tZUvc--upz4uH9EG65jmazxYO0oYUglW25qW" target="_blank" class="wow fadeInUp btn btn-success btn-lg w-100">Click Here to Register</a>
                       </div>
                     </div>
                     <div class="row mt-5" id="programme">
@@ -238,6 +241,7 @@
 
 
                 @else
+
                     <div class="alert alert-warning" role="alert">
                         <h2 class="alert-heading">Register Now!</h4>
                         <p>Moot will be available as soon as you are registered!! </p>
