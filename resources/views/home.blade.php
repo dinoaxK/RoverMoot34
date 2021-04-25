@@ -23,43 +23,33 @@
                     <h1 class="hero-header text-center text-white">Coming up Next</h1>
                     <div class="row justify-content-center">
                       <div class="col-12  px-3">
-                        <h2 class="wow fadeInUp text-center m-0">Day 03</h3>
-                        <p class="wow fadeInUp text-center">25th April 2021</p>
+                        <h2 class="wow fadeInUp text-center m-0">Day 04</h3>
+                        <p class="wow fadeInUp text-center">26th April 2021</p>
                         <p class="wow fadeInUp text-center">Register in advance for these webinars: </p>
                       </div>
 
                       <div class="col-md-7 my-2 px-3">
                         <div class="card wow fadeInUp border-0">
                           <div class="card-header text-dark text-center">
-                            <h5 class="my-0">Moot Rally & Award Ceremony | 10:00 Local Time (Sri Lanka)</h3>                            
+                            <h5 class="my-0">District Rover Disaster Action Team Launch | 14:00 Local Time (Sri Lanka)</h3>                            
                           </div>
                         </div>
                       </div>
                       <div class="col-md-5 my-2 px-3">
-                        <a href="https://us02web.zoom.us/meeting/register/tZwsdOCtqzguH9eo2APimsuJ-Kc4Hs_jBUsI" target="_blank" class="wow fadeInUp btn btn-success btn-lg w-100">Click Here to Register</a>
+                        <a href="https://us02web.zoom.us/meeting/register/tZ0qc-2gqzovEt0da-UJBq3kcsz2m4-qDylB" target="_blank" class="wow fadeInUp btn btn-success btn-lg w-100">Click Here to Register</a>
                       </div>
 
                       <div class="col-md-7 my-2 px-3">
                         <div class="card wow fadeInUp border-0">
                           <div class="card-header text-dark text-center">
-                            <h5 class="my-0">BP Guild Gathering | 12:30 Local Time (Sri Lanka)</h3>
+                            <h5 class="my-0">Camp Fire and Torch Handover Ceremony | 20:00 Local Time (Sri Lanka)</h3>
                           </div>
                         </div>
                       </div>
                       <div class="col-md-5 my-2 px-3">
-                        <a href="https://us02web.zoom.us/j/81577664592?pwd=SExTc0Rudzc5eCtMdXZ6N2I2eTBEZz09" target="_blank" class="wow fadeInUp btn btn-success btn-lg w-100">Click Here to Join</a>
+                        <a href="https://us02web.zoom.us/meeting/register/tZYof-mrqzgsGd1D0iqizkTkZa4z8O50ox43" target="_blank" class="wow fadeInUp btn btn-success btn-lg w-100">Click Here to Join</a>
                       </div>
 
-                      <div class="col-md-7 my-2 px-3">
-                        <div class="card wow fadeInUp border-0">
-                          <div class="card-header text-dark text-center">
-                            <h5 class="my-0">STD/ AIDS Awareness Programme launch | 17:00 Local Time (Sri Lanka)</h3>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-5 my-2 px-3">
-                        <a href="https://us02web.zoom.us/meeting/register/tZUvc--upz4uH9EG65jmazxYO0oYUglW25qW" target="_blank" class="wow fadeInUp btn btn-success btn-lg w-100">Click Here to Register</a>
-                      </div>
                     </div>
                     <div class="row mt-5" id="programme">
                         <div class="col-lg-12">
@@ -214,10 +204,6 @@
                                     <div class="tab-pane fade py-5" id="day4" role="tabpanel" aria-labelledby="day4_tab">
                                       <h5 class=" text-center">26<sup>th</sup>  April 2021</h5>
                                       <table class=" table text-center table-striped text-white">
-                                        <tr>
-                                          <td>Career Guidance Programme</td>
-                                          <td>09:00 Local Time (Sri Lanka)</td>
-                                        </tr>
                                         <tr>
                                           <td>District Rover Disaster Acton Team Launch</td>
                                           <td>12:00 Local Time (Sri Lanka)</td>
