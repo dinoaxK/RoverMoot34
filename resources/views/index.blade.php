@@ -55,6 +55,15 @@
     </a>
   </div>
 
+  <section id="souvenir">
+    <div class="row justify-content-center">
+      <h5 class="text-center hero-header text-white" style="font-size: 36px;">Moot Digital Souvenir</h2>
+    </div>
+    <div class="row">
+      <iframe style="width:100%;height:700px" src="https://online.fliphtml5.com/vyywa/hjbf/"  seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" ></iframe>
+    </div>
+  </section>
+
 
   <section id="about">
     <div class="container">
@@ -280,10 +289,6 @@
                     <div class="tab-pane fade py-5" id="day4" role="tabpanel" aria-labelledby="day4_tab">
                       <h5 class=" text-center">26<sup>th</sup>  April 2021</h5>
                       <table class=" table text-center table-striped">
-                        <tr>
-                          <td>Career Guidance Programme</td>
-                          <td>09:00 Local Time (Sri Lanka)</td>
-                        </tr>
                         <tr>
                           <td>District Rover Disaster Acton Team Launch</td>
                           <td>12:00 Local Time (Sri Lanka)</td>

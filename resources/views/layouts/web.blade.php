@@ -56,7 +56,7 @@
             <a class="nav-link mb-1"  href="{{ url('/') }}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mb-1" href="{{ url('/#about') }}">About</a>
+            <a class="nav-link mb-1" href="{{ url('/#souvenir') }}">Souvenir</a>
           </li>
           <li class="nav-item">
             <a class="nav-link mb-1" href="{{ url('/#programme') }}">Programme</a>
