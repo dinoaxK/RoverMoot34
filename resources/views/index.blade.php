@@ -245,7 +245,7 @@
                     </div>
                     <div class="tab-pane fade py-5" id="day2" role="tabpanel" aria-labelledby="day2_tab">
                       <h5 class=" text-center">24<sup>th</sup> April 2021</h5>
-                      <table class=" table text-center table-striped text-white">
+                      <table class=" table text-center table-striped">
                         <tr>
                           <td>Youth Forum</td>
                           <td>16:30 Local Time (Sri Lanka)</td>
@@ -262,7 +262,7 @@
                     </div>
                     <div class="tab-pane fade py-5" id="day3" role="tabpanel" aria-labelledby="day3_tab">
                       <h5 class=" text-center">25<sup>th</sup> April 2021</h5>
-                      <table class=" table text-center table-striped text-white">
+                      <table class=" table text-center table-striped">
                         <tr>
                           <td>Moot Rally & Award Ceremony</td>
                           <td>10:00 Local Time (Sri Lanka)</td>
@@ -279,7 +279,7 @@
                     </div>
                     <div class="tab-pane fade py-5" id="day4" role="tabpanel" aria-labelledby="day4_tab">
                       <h5 class=" text-center">26<sup>th</sup>  April 2021</h5>
-                      <table class=" table text-center table-striped text-white">
+                      <table class=" table text-center table-striped">
                         <tr>
                           <td>Career Guidance Programme</td>
                           <td>09:00 Local Time (Sri Lanka)</td>
