@@ -84,7 +84,9 @@
   <section id="facts" class="bg-light text-dark">
     <div class="container wow fadeInUp">
       <div class="row">
-        
+        <div class="col-12">
+
+        </div>
       </div>
       <div class="row counters">
         <div class="col-lg-3 col-12 text-center">
@@ -266,12 +268,12 @@
                           <td>10:00 Local Time (Sri Lanka)</td>
                         </tr>
                         <tr>
-                          <td>STD/ AIDS Awareness Programme Commissioning</td>
-                          <td>17:00 Local Time (Sri Lanka)</td>
+                          <td>BP Guild Gathering</td>
+                          <td>12:30 Local Time (Sri Lanka)</td>
                         </tr>
                         <tr>
-                          <td>BP Guild Gathering</td>
-                          <td>21:00 Local Time (Sri Lanka)</td>
+                          <td>STD/ AIDS Awareness Programme Commissioning</td>
+                          <td>17:00 Local Time (Sri Lanka)</td>
                         </tr>
                       </table>                      
                     </div>

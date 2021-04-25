@@ -202,12 +202,12 @@
                                           <td>10:00 Local Time (Sri Lanka)</td>
                                         </tr>
                                         <tr>
-                                          <td>STD/ AIDS Awareness Programme Commissioning</td>
-                                          <td>17:00 Local Time (Sri Lanka)</td>
+                                          <td>BP Guild Gathering</td>
+                                          <td>12:30 Local Time (Sri Lanka)</td>
                                         </tr>
                                         <tr>
-                                          <td>BP Guild Gathering</td>
-                                          <td>21:00 Local Time (Sri Lanka)</td>
+                                          <td>STD/ AIDS Awareness Programme Commissioning</td>
+                                          <td>17:00 Local Time (Sri Lanka)</td>
                                         </tr>
                                       </table>                      
                                     </div>
