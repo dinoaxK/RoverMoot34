@@ -23,12 +23,11 @@
                     <h1 class="hero-header text-center text-white">Coming up Next</h1>
                     <div class="row justify-content-center">
                       <div class="col-12  px-3">
-                        <h2 class="wow fadeInUp text-center m-0">Day 04</h3>
-                        <p class="wow fadeInUp text-center">26th April 2021</p>
-                        <p class="wow fadeInUp text-center">Register in advance for these webinars: </p>
+                        <h2 class="wow fadeInUp text-center m-0">Moot Concluded!</h3>
+                        <p class="wow fadeInUp text-center">Thank you all for your participation!</p>
                       </div>
 
-                      <div class="col-md-7 my-2 px-3">
+                      {{-- <div class="col-md-7 my-2 px-3">
                         <div class="card wow fadeInUp border-0">
                           <div class="card-header text-dark text-center">
                             <h5 class="my-0">District Rover Disaster Action Team Launch | 14:00 Local Time (Sri Lanka)</h3>                            
@@ -37,9 +36,9 @@
                       </div>
                       <div class="col-md-5 my-2 px-3">
                         <a href="https://us02web.zoom.us/meeting/register/tZ0qc-2gqzovEt0da-UJBq3kcsz2m4-qDylB" target="_blank" class="wow fadeInUp btn btn-success btn-lg w-100">Click Here to Register</a>
-                      </div>
+                      </div> --}}
 
-                      <div class="col-md-7 my-2 px-3">
+                      {{-- <div class="col-md-7 my-2 px-3">
                         <div class="card wow fadeInUp border-0">
                           <div class="card-header text-dark text-center">
                             <h5 class="my-0">Camp Fire and Torch Handover Ceremony | 20:00 Local Time (Sri Lanka)</h3>
@@ -48,7 +47,7 @@
                       </div>
                       <div class="col-md-5 my-2 px-3">
                         <a href="https://us02web.zoom.us/j/82580353639?pwd=aEpxcmwzNGdtUFkreENXWEZiV202Zz09" target="_blank" class="wow fadeInUp btn btn-success btn-lg w-100">Click Here to Join</a>
-                      </div>
+                      </div> --}}
 
                     </div>
                     <div class="row mt-5" id="programme">
