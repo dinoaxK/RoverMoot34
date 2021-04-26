@@ -16,7 +16,7 @@
         <div class="col-lg-12 mt-5">
             <div class="py-5 justify-content-center w-100 text-center" >
 
-                <!-- <a class="btn btn-lg btn-outline-success"><i class="fa fa-leaf"></i> Environment Project Challenge</a> -->
+                <!-- <a class="btn btn-lg btn-outline-success" href="{{ url('/environment') }}"><i class="fa fa-leaf"></i> Environment Project Challenge</a> -->
 
                 @if(Auth::user()->participant && Auth::user()->participant->application_status == 1 && Auth::user()->participant->payment_status == 1)
 
@@ -47,7 +47,7 @@
                         </div>
                       </div>
                       <div class="col-md-5 my-2 px-3">
-                        <a href="https://us02web.zoom.us/meeting/register/tZYof-mrqzgsGd1D0iqizkTkZa4z8O50ox43" target="_blank" class="wow fadeInUp btn btn-success btn-lg w-100">Click Here to Join</a>
+                        <a href="https://us02web.zoom.us/j/82580353639?pwd=aEpxcmwzNGdtUFkreENXWEZiV202Zz09" target="_blank" class="wow fadeInUp btn btn-success btn-lg w-100">Click Here to Join</a>
                       </div>
 
                     </div>
