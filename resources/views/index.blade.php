@@ -311,7 +311,7 @@
 
 
 
-
+{{-- 
 
   <section id="register" class="bg-light text-dark">
     <div class="container">
@@ -440,6 +440,6 @@
 
       </div>
     </div>
-  </section>
+  </section> --}}
 
 @endsection

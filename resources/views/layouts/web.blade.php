@@ -64,9 +64,9 @@
 
            @guest
            
-              <li class="nav-item">
+              {{-- <li class="nav-item">
                 <a class="nav-link mb-1" href="{{ url('/#register') }}">Register</a>
-              </li>
+              </li> --}}
                 @if (Route::has('login'))
                     <li class="nav-item">
                         <a class="nav-link mb-1" href="{{ route('login') }}">{{ __('Login') }}</a>
