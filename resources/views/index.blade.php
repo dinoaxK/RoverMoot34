@@ -61,9 +61,7 @@
         <h5 class="text-center hero-header text-white" style="font-size: 36px;">Moot Digital Souvenir</h2>
       </div>
       <div class="row ">
-        <!-- <div class="col-12"> -->
-          <iframe style="width:100%;height:700px" src="https://online.fliphtml5.com/vyywa/hjbf/"  seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" ></iframe>    
-        <!-- </div> -->
+          <iframe style="width:100%;height:700px" src="https://online.fliphtml5.com/vyywa/hjbf/"  seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" ></iframe> 
       </div>
     </div>
   </section>
