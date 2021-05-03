@@ -230,6 +230,9 @@ class RegisterController extends Controller
             $participant_data = $participant_data->where('crew_district',$request->district);
         endif;   
         
+        if($request->country!=null):
+            $participant_data = $participant_data->where('country',$request->country);
+        endif; 
         if($request->payment!=null):
             if($request->payment==0){
                 $participant_data = $participant_data->where('payment_proof',NULL);
